@@ -1,6 +1,7 @@
 """Hub app views."""
 
 from django.shortcuts import render
+from django.utils.translation import gettext as _
 
 import folium
 from folium import Popup
@@ -15,12 +16,12 @@ def home(request):
     current_map = folium.Map(location=start_location, zoom_start=6)
 
     # Fullscreen map button
-    Fullscreen(position="topright", title="Полный экран", title_cancel="Выход").add_to(
+    Fullscreen(position="topright", title=_("Полный экран"), title_cancel=_("Выход")).add_to(
         current_map
     )
     # A button to define user's location
     LocateControl(
-        auto_start=False, position="topright", strings={"title": "Где я"}
+        auto_start=False, position="topright", strings={"title": _(str("Где я"))}
     ).add_to(current_map)
 
     # Rewrite the default popup text to use custom popup with only coordinates
