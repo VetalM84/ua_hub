@@ -42,9 +42,12 @@ INSTALLED_APPS = [
     # Custom apps
     'apps.accounts',
     'apps.hub.apps.HubConfig',
+    # Installed apps
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
