@@ -139,14 +139,14 @@ LOCALE_PATHS = (
 )
 
 LANGUAGES = (
-    ('uk', _('Українська')),
-    ('ru', _('Русский')),
-    ('en', _('English')),
-    ('pl', _('Polish')),
-    ('de', _('German')),
-    ('fr', _('French')),
-    ('it', _('Italian')),
-    ('es', _('Spanish')),
+    ('uk', 'Українська'),
+    ('ru', 'Русский'),
+    ('en', 'English'),
+    ('pl', 'Polish'),
+    ('de', 'German'),
+    ('fr', 'French'),
+    ('it', 'Italian'),
+    ('es', 'Spanish'),
 )
 
 # Static files (CSS, JavaScript, Images)
