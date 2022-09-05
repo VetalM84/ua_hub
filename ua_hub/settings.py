@@ -133,7 +133,9 @@ USE_L10N = True
 USE_TZ = True
 
 LOCALE_PATHS = (
-    'apps/hub/locale/',
+    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'apps/accounts/locale'),
+    os.path.join(BASE_DIR, 'apps/hub/locale'),
 )
 
 LANGUAGES = (
