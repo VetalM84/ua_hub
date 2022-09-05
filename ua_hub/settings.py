@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'apps.hub.apps.HubConfig',
     # Installed apps
     'debug_toolbar',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
