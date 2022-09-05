@@ -21,7 +21,7 @@ def home(request):
     )
     # A button to define user's location
     LocateControl(
-        auto_start=False, position="topright", strings={"title": _(str("Где я"))}
+        auto_start=False, position="topright", strings={"title": _("Где я")}
     ).add_to(current_map)
 
     # Rewrite the default popup text to use custom popup with only coordinates
