@@ -51,4 +51,4 @@ def home(request):
 
     maps = current_map._repr_html_()
 
-    return render(request, template_name="hub/index.html", context={"maps": maps})
+    return render(request, template_name="index.html", context={"maps": maps})
