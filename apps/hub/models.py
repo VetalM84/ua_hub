@@ -61,6 +61,6 @@ class Icon(models.Model):
         return _({self.name})
 
     class Meta:
-        verbose_name = _("Категория")
-        verbose_name_plural = _("Категории")
+        verbose_name = _("Иконка")
+        verbose_name_plural = _("Иконки")
         ordering = ["name"]
