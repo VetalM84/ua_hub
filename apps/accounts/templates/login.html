@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Login</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+<h1 class="h2">Login</h1>
+    {% if request.user.is_authenticated %}
+        <p>You are logged in, {{ request.user.email }}! <a href="{% url 'logout' %}">Logout</a></p>
+        <p>You may change your password by this <a href="{% url 'change_password' %}">link</a></p>
+    {% endif %}
+
+    {% if not request.user.is_authenticated %}
+    <p>Not yet registered? <a href="{% url 'register' %}">Sign up</a></p>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Sign in</button>
+    </form>
+    {% endif %}
+
+</div>
+{% endblock %}
+
+

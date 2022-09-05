@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Custom apps
-    # 'apps.accounts',
+    'apps.accounts.apps.AccountsConfig',
     'apps.hub.apps.HubConfig',
     # Installed apps
     'debug_toolbar',
@@ -84,7 +84,7 @@ TEMPLATES = [
         },
     },
 ]
-# AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 WSGI_APPLICATION = 'ua_hub.wsgi.application'
 
