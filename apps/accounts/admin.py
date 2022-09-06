@@ -9,30 +9,26 @@ from apps.accounts.models import User
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
-    """Custom User creation and changing forms."""
+    """Custom User creation and changing forms on backend."""
 
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = User
-    # list of columns in admin users list
+    # list of columns of users list on backend
     list_display = (
         "email",
-        "username",
         "get_full_name",
-        "get_age",
-        "created_at",
-        "updated_at",
+        "hometown",
+        "date_joined",
         "is_staff",
     )
     list_filter = ("is_staff",)
     readonly_fields = (
         "get_full_name",
-        "get_age",
-        "created_at",
-        "updated_at",
+        "date_joined",
     )
     fieldsets = (
-        # fields we see in Change User
+        # fields we see in Change User on backend
         (
             None,
             {
@@ -46,17 +42,19 @@ class UserAdmin(BaseUserAdmin):
             "Personal info",
             {
                 "fields": (
-                    "username",
-                    "dob",
                     "first_name",
                     "last_name",
+                    "facebook_link",
+                    "contacts",
+                    "hometown",
+                    "avatar",
                 ),
             },
         ),
         ("Permissions", {"fields": ("is_staff", "is_active")}),
     )
     add_fieldsets = (
-        # fields we see in Add User
+        # fields we see in Add User on backend
         (
             None,
             {

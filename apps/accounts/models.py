@@ -1,7 +1,5 @@
 """DB objects for User model."""
 
-from datetime import date
-
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -12,11 +10,20 @@ from apps.accounts.managers import UserManager
 class User(AbstractUser):
     """Custom User model."""
 
-    email = models.EmailField(blank=False, unique=True, verbose_name=_("email address"))
-    username = models.CharField(max_length=150, unique=False, verbose_name=_("username"))
-    dob = models.DateField(blank=True, null=True, verbose_name=_("Date of birth"))
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Created"))
-    updated_at = models.DateTimeField(auto_now=True, verbose_name=_("Updated"))
+    username = None
+    email = models.EmailField(blank=False, unique=True, verbose_name=_("Email адрес"))
+    facebook_link = models.URLField(
+        blank=True, verbose_name=_("Ссылка на профиль Facebook")
+    )
+    contacts = models.CharField(blank=True, max_length=250, verbose_name=_("Контакты"))
+    hometown = models.CharField(
+        blank=True, max_length=250, verbose_name=_("Родной город")
+    )
+    avatar = models.ImageField(
+        upload_to="avatar/",
+        verbose_name=_("Изображение"),
+        default="avatar/default_avatar.jpg",
+    )
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
@@ -29,23 +36,11 @@ class User(AbstractUser):
 
     def get_full_name(self):
         """Concatenate fist and last names."""
-        return " ".join([self.first_name, self.last_name])
+        full_name = " ".join([self.first_name, self.last_name])
+        return full_name.strip()
 
-    get_full_name.short_description = "Full name"
-
-    def get_age(self):
-        """Return age according to given dob."""
-        if self.dob:
-            today = date.today()
-            return (
-                today.year
-                - self.dob.year
-                - ((today.month, today.day) < (self.dob.month, self.dob.day))
-            )
-        return "None"
-
-    get_age.short_description = "Age"
+    get_full_name.short_description = _("Полное имя")
 
     class Meta:
-        verbose_name = _("User")
-        verbose_name_plural = _("Users")
+        verbose_name = _("Пользователь")
+        verbose_name_plural = _("Пользователи")
