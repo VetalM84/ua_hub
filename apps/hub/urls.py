@@ -1,6 +1,6 @@
 """URL path for user management on frontend."""
 
-from django.urls import path, include
+from django.urls import include, path
 
 from apps.hub.views import home
 

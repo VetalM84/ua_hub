@@ -1,9 +1,8 @@
 """Hub app views."""
 
+import folium
 from django.shortcuts import render
 from django.utils.translation import gettext as _
-
-import folium
 from folium import Popup
 from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
