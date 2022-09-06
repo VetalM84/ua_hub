@@ -12,8 +12,20 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label={% translate "Закрыть" %}></button>
           </div>
           <div class="modal-body">
-            <form>
-                {{ add_marker_form.as_div }}
+            <form class="row g-3" method="post" id="addMarkerForm" name="addMarkerForm">
+                {% csrf_token %}
+                {% for field in form.visible_fields|slice:":2" %}
+                     <div class="col-md-6">
+                       <label for="{{ field.label }}" class="form-label">{{ field.label }}</label>
+                       {{ field }}
+                     </div>
+                {% endfor %}
+                {% for field in form.visible_fields|slice:"2:" %}
+                     <div class="col-12">
+                         <label for="{{ field.label }}" class="form-label">{{ field.label }}</label>
+                         {{ field }}
+                     </div>
+                {% endfor %}
             </form>
           </div>
           <div class="modal-footer">
