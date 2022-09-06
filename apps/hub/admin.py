@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from apps.hub.models import Category, Icon, Marker
+from apps.hub.models import Category, Color, Icon, Marker
 
 
 @admin.register(Category)
@@ -34,3 +34,13 @@ class MarkerAdmin(admin.ModelAdmin):
     list_filter = ("category",)
     ordering = ("created_at", "category")
     search_fields = ("text",)
+
+
+@admin.register(Color)
+class ColorAdmin(admin.ModelAdmin):
+    """Icon model views on backend."""
+
+    list_display = ("id", "name")
+    list_display_links = ("id", "name")
+    ordering = ("name",)
+    search_fields = ("name",)
