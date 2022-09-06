@@ -38,8 +38,8 @@ def home(request):
                         .setLatLng(e.latlng)
                         .setContent(e.latlng.lat.toFixed(4) + ", " + e.latlng.lng.toFixed(4))
                         .openOn({{this._parent.get_name()}});
-                        parent.document.getElementById("coordinates").value = 
-                        e.latlng.lat.toFixed(4) + "," + e.latlng.lng.toFixed(4);
+                        parent.document.getElementById("latitude").value = e.latlng.lat.toFixed(4);
+                        parent.document.getElementById("longitude").value = e.latlng.lng.toFixed(4);
                     }
                 {{this._parent.get_name()}}.on('click', latLngPop);
             {% endmacro %}
