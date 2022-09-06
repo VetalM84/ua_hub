@@ -8,9 +8,13 @@ from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
 
+from .forms import AddMarkerForm
+
 
 def home(request):
     """Home page with map."""
+    add_marker_form = AddMarkerForm
+
     start_location = (50.45, 30.52)  # Ukraine
     current_map = folium.Map(location=start_location, zoom_start=6)
 
@@ -50,4 +54,6 @@ def home(request):
 
     maps = current_map._repr_html_()
 
-    return render(request, template_name="index.html", context={"maps": maps})
+    context = {"maps": maps, "add_marker_form": add_marker_form}
+
+    return render(request, template_name="index.html", context=context)
