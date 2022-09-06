@@ -13,7 +13,7 @@ from .forms import AddMarkerForm
 
 def home(request):
     """Home page with map."""
-    add_marker_form = AddMarkerForm
+    form = AddMarkerForm()
 
     start_location = (50.45, 30.52)  # Ukraine
     current_map = folium.Map(location=start_location, zoom_start=6)
@@ -54,6 +54,6 @@ def home(request):
 
     maps = current_map._repr_html_()
 
-    context = {"maps": maps, "add_marker_form": add_marker_form}
+    context = {"maps": maps, "form": form}
 
     return render(request, template_name="index.html", context=context)
