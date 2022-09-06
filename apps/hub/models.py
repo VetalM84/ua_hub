@@ -26,11 +26,11 @@ class Marker(models.Model):
         on_delete=models.SET_NULL,
         verbose_name=_("Владелец"),
     )
-    ip = models.CharField(max_length=128, blank=False, verbose_name=_("IP адрес"))
+    ip = models.CharField(max_length=128, blank=True, verbose_name=_("IP адрес"))
 
     def __str__(self):
         """Model representation."""
-        return _(f"Маркер №{self.pk} от {self.created_at}. {self.category}")
+        return f"Маркер №{self.pk} от {self.created_at.date().strftime('%d-%m-%Y')}. {self.category}"
 
     class Meta:
         verbose_name = _("Маркер")
@@ -46,12 +46,12 @@ class Category(models.Model):
         to="Icon", on_delete=models.PROTECT, verbose_name=_("Иконка")
     )
     color = models.ForeignKey(
-        to="Color", default="blue", on_delete=models.SET_DEFAULT, verbose_name=_("Цвет")
+        to="Color", on_delete=models.PROTECT, verbose_name=_("Цвет")
     )
 
     def __str__(self):
         """Model representation."""
-        return _(f"{self.name}, {self.icon.name}, {self.color.name}")
+        return self.name
 
     class Meta:
         verbose_name = _("Категория")
@@ -66,7 +66,7 @@ class Icon(models.Model):
 
     def __str__(self):
         """Model representation."""
-        return _({self.name})
+        return self.name
 
     class Meta:
         verbose_name = _("Иконка")
@@ -81,7 +81,7 @@ class Color(models.Model):
 
     def __str__(self):
         """Model representation."""
-        return _({self.name})
+        return self.name
 
     class Meta:
         verbose_name = _("Цвет")
