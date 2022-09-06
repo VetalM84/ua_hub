@@ -2,5 +2,31 @@
 {% load i18n %}
 
 {% block body %}
+
+    <!-- Modal windows add marker -->
+    <div class="modal fade" id="addMarker" tabindex="-1" aria-labelledby="addMarkerLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addMarkerLabel">{% translate "Добавить маркер" %}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label={% translate "Закрыть" %}></button>
+          </div>
+          <div class="modal-body">
+            <form>
+                {{ add_marker_form.as_div }}
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% translate "Закрыть" %}</button>
+            <button type="button" class="btn btn-primary">{% translate "Добавить" %}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal window add marker END -->
+
+    <!-- Map -->
     {{ maps | safe }}
+    <!-- Map END-->
+
 {% endblock %}
