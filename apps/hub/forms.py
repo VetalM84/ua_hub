@@ -18,6 +18,6 @@ class AddMarkerForm(forms.ModelForm):
             "longitude": forms.TextInput(
                 attrs={"class": "form-control", "id": "longitude"}
             ),
-            "comment": forms.TextInput(attrs={"class": "form-control", "rows": 3}),
+            "comment": forms.Textarea(attrs={"class": "form-control", "rows": 3}),
             "category": forms.Select(attrs={"class": "form-select"}),
         }
