@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 
-# from apps.accounts.models import User
+from apps.accounts.models import User
 
 
 class Marker(models.Model):
@@ -13,15 +13,19 @@ class Marker(models.Model):
     latitude = models.FloatField(blank=False, verbose_name=_("Широта"))
     longitude = models.FloatField(blank=False, verbose_name=_("Долгота"))
     category = models.ForeignKey(
-        "Category", on_delete=models.PROTECT, verbose_name=_("Категория")
+        to="Category", on_delete=models.PROTECT, verbose_name=_("Категория")
     )
     comment = models.CharField(
         max_length=200, blank=True, verbose_name=_("Комментарий")
     )
     created_at = models.DateTimeField(default=now, verbose_name=_("Дата"))
-    # owner = models.ForeignKey(
-    #     "User", on_delete=models.PROTECT, verbose_name=_("Владелец")
-    # )
+    owner = models.ForeignKey(
+        to=User,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        verbose_name=_("Владелец"),
+    )
     ip = models.CharField(max_length=128, blank=False, verbose_name=_("IP адрес"))
 
     def __str__(self):
