@@ -29,6 +29,7 @@ class Marker(models.Model):
     ip = models.CharField(max_length=128, blank=False, verbose_name=_("IP адрес"))
 
     def __str__(self):
+        """Model representation."""
         return _(f"Маркер №{self.pk} от {self.created_at}. {self.category}")
 
     class Meta:
@@ -38,19 +39,19 @@ class Marker(models.Model):
 
 
 class Category(models.Model):
-    RATING_VALUES = (
-        ("blue", _("Синий")),
-        ("red", _("Красный")),
-        ("green", _("Зеленый")),
-        ("yellow", _("Желтый")),
-        ("orange", _("Оранжевый")),
-    )
+    """Category model for marker."""
+
     name = models.CharField(max_length=50, verbose_name=_("Название"))
-    icon = models.ForeignKey("Icon", on_delete=models.PROTECT, verbose_name=_("Иконка"))
-    color = models.CharField(max_length=1, verbose_name=_("Цвет"))
+    icon = models.ForeignKey(
+        to="Icon", on_delete=models.PROTECT, verbose_name=_("Иконка")
+    )
+    color = models.ForeignKey(
+        to="Color", default="blue", on_delete=models.SET_DEFAULT, verbose_name=_("Цвет")
+    )
 
     def __str__(self):
-        return _(f"{self.name}, {self.icon.name}, {self.color}")
+        """Model representation."""
+        return _(f"{self.name}, {self.icon.name}, {self.color.name}")
 
     class Meta:
         verbose_name = _("Категория")
@@ -59,12 +60,30 @@ class Category(models.Model):
 
 
 class Icon(models.Model):
-    name = models.CharField(max_length=50, verbose_name=_("Название"))
+    """Icon type model for marker."""
+
+    name = models.CharField(max_length=100, verbose_name=_("Название"))
 
     def __str__(self):
+        """Model representation."""
         return _({self.name})
 
     class Meta:
         verbose_name = _("Иконка")
         verbose_name_plural = _("Иконки")
+        ordering = ["name"]
+
+
+class Color(models.Model):
+    """Color model for the marker."""
+
+    name = models.CharField(max_length=100, verbose_name=_("Название"))
+
+    def __str__(self):
+        """Model representation."""
+        return _({self.name})
+
+    class Meta:
+        verbose_name = _("Цвет")
+        verbose_name_plural = _("Цвета")
         ordering = ["name"]
