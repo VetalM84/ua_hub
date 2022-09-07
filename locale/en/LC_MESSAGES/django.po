@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-07 12:34+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\inc\_footer.html:14 .\templates\inc\_header.html:13
+msgid "Главная"
+msgstr "Home"
+
+#: .\templates\inc\_footer.html:15 .\templates\inc\_header.html:15
+msgid "О Проекте"
+msgstr "About"
+
+#: .\templates\inc\_header.html:14
+msgid "Добавить маркер"
+msgstr "Add marker"
+
+#: .\templates\inc\_header.html:53
+msgid "Мой профиль"
+msgstr "My profile"
+
+#: .\templates\inc\_header.html:54
+msgid "Мои метки"
+msgstr "My markers"
+
+#: .\templates\inc\_header.html:58
+msgid "Выход"
+msgstr "Sign out"
+
+#: .\templates\inc\_header.html:70
+msgid "Логин"
+msgstr "Login"
+
+#: .\templates\inc\_header.html:71
+msgid "Регистрация"
+msgstr "Sign-up"
