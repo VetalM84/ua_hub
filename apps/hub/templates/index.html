@@ -13,7 +13,8 @@
                             aria-label={% translate "Закрыть" %}></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3" method="post" id="addMarkerForm" name="addMarkerForm">
+                    <form class="row g-3" method="post" action="{% url 'home' %}" enctype="multipart/form-data" id="addMarkerForm"
+                          name="addMarkerForm">
                         {% csrf_token %}
                         {% for field in form.visible_fields|slice:":2" %}
                             <div class="col-md-6">
@@ -25,20 +26,23 @@
                                 {{ field }}
                             </div>
                         {% endfor %}
+                        <input type="hidden" id="owner" name="owner"
+                               value="{% if request.user %}{{ request.user.id }}{% endif %}">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">{% translate "Закрыть" %}</button>
+                            <button type="submit" class="btn btn-primary">{% translate "Добавить" %}</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">{% translate "Закрыть" %}</button>
-                    <button type="button" class="btn btn-primary">{% translate "Добавить" %}</button>
                 </div>
             </div>
         </div>
     </div>
+    {{ form.media }}
     <!-- Modal window add marker END -->
 
     <!-- Map -->
-    {{ maps | safe }}
+    {{ current_map | safe }}
     <!-- Map END-->
 
 {% endblock %}
