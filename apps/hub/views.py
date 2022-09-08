@@ -71,7 +71,9 @@ def home(request):
             location=(marker.latitude, marker.longitude),
             popup=folium.Popup(iframe, max_width=400),
             icon=folium.Icon(
-                color=marker.category.color.name, icon=marker.category.icon.name
+                color=marker.category.color.name,
+                icon=marker.category.icon.name,
+                prefix="fa",
             ),
             # tooltip=tooltip,
         ).add_to(current_map)
