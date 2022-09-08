@@ -57,3 +57,18 @@ def home(request):
     context = {"maps": maps, "form": form}
 
     return render(request, template_name="index.html", context=context)
+
+
+def about(request):
+    """About project page."""
+    return render(request, template_name="about.html")
+
+
+# def get_client_ip(request):
+#     """Get client IP address."""
+#     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#     if x_forwarded_for:
+#         ip = x_forwarded_for.split(',')[0]
+#     else:
+#         ip = request.META.get('REMOTE_ADDR')
+#     return ip

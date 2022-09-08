@@ -2,9 +2,10 @@
 
 from django.urls import include, path
 
-from apps.hub.views import home
+from apps.hub.views import about, home
 
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("", home, name="home"),
+    path("", about, name="about"),
 ]
