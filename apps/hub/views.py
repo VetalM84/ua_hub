@@ -79,14 +79,13 @@ def home(request):
     if request.method == "POST":
         form = AddMarkerForm(request.POST)
         if form.is_valid():
-            try:
-                # form.save(commit=False)
-                # form.ip = get_client_ip(request)
-                form.save()
-                messages.success(request, _("Маркер успешно опубликован!"))
-                return redirect(to="home")
-            except Exception as e:
-                messages.error(request, _(f"Ошибка. {e}"))
+            # form.save(commit=False)
+            # form.ip = get_client_ip(request)
+            form.save()
+            messages.success(request, _("Маркер успешно опубликован!"), "success")
+            return redirect(to="home")
+        else:
+            messages.error(request, _(f"Ошибка. Проверьте координаты."), "danger")
     else:
         form = AddMarkerForm()
 
