@@ -1,7 +1,7 @@
 """Form management for HUB app."""
 
 from django import forms
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 from .models import Category, Marker
 
@@ -9,6 +9,24 @@ from .models import Category, Marker
 class AddMarkerForm(forms.ModelForm):
     """Form for adding a new marker on a frontend."""
 
+    latitude = forms.FloatField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "id": "latitude",
+                "placeholder": _("Широта"),
+            }
+        ),
+    )
+    longitude = forms.FloatField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "id": "longitude",
+                "placeholder": _("Долгота"),
+            }
+        )
+    )
     category = forms.ModelChoiceField(
         queryset=Category.objects.all(),
         empty_label=_("Выберите категорию"),
@@ -19,20 +37,6 @@ class AddMarkerForm(forms.ModelForm):
         model = Marker
         fields = ["latitude", "longitude", "comment", "category"]
         widgets = {
-            "latitude": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "id": "latitude",
-                    "placeholder": _("Широта"),
-                }
-            ),
-            "longitude": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "id": "longitude",
-                    "placeholder": _("Долгота"),
-                }
-            ),
             "comment": forms.Textarea(
                 attrs={
                     "class": "form-control",
