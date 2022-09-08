@@ -26,7 +26,7 @@ class Marker(models.Model):
         on_delete=models.SET_NULL,
         verbose_name=_("Владелец"),
     )
-    ip = models.CharField(max_length=128, blank=True, verbose_name=_("IP адрес"))
+    ip = models.GenericIPAddressField(max_length=128, null=True, verbose_name=_("IP адрес"))
 
     def __str__(self):
         """Model representation."""
