@@ -51,16 +51,22 @@ def home(request):
     # deliver_layer = folium.FeatureGroup(name="Вручают").add_to(current_map)
 
     html = """
-        <h1> This is a big popup</h1><br>
-        With a few lines of code...
-        <p>
-        <code>
-            from numpy import *<br>
-            exp(-2*pi)
-        </code>
-        </p>
-        """
-    iframe = folium.IFrame(html=html, width=1900, height=300)
+        <div style="text-align:center;">
+            <img style="max-width: 64px; border-radius: 50%;" 
+                src="https://epicbootstrap.com/freebies/snippets/team-cards/assets/img/2.jpg">
+            <h3 style="font-weight:bold; margin:10px 0px 0px 0px;">
+                Ben Johnson
+            </h3>
+            <p style="font-size:15px; margin-top:10px; margin-bottom:10px;">
+                Aenean tortor est, vulputate quis leo Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. 
+                Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id
+            </p>
+            <div>
+                <a href="#" target="_top" style="margin:0 10px; display:inline-block;">Facebook</a>
+            </div>
+        </div>
+    """
+    iframe = folium.IFrame(html=html, width=260, height=260)
 
     # Layer control button
     folium.LayerControl(position="bottomright").add_to(current_map)
@@ -69,7 +75,7 @@ def home(request):
     for marker in markers:
         folium.Marker(
             location=(marker.latitude, marker.longitude),
-            popup=folium.Popup(iframe, max_width=400),
+            popup=folium.Popup(iframe, max_width=280, max_height=320),
             icon=folium.Icon(
                 color=marker.category.color.name,
                 icon=marker.category.icon.name,
