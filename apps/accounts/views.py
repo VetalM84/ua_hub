@@ -23,7 +23,7 @@ def change_password(request):
             messages.error(request, "Please correct the error below.")
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, "change_password.html", {"form": form})
+    return render(request, "accounts/change_password.html", {"form": form})
 
 
 def user_login(request):
@@ -37,7 +37,7 @@ def user_login(request):
             print("To change your password follow http://127.0.0.1:8000/password/")
     else:
         form = UserLoginForm()
-    return render(request, "login.html", {"form": form})
+    return render(request, "accounts/login.html", {"form": form})
 
 
 def user_logout(request):
@@ -60,4 +60,4 @@ def user_register(request):
             messages.error(request, "Error registering!")
     else:
         form = UserRegisterForm()
-    return render(request, "register.html", {"form": form})
+    return render(request, "accounts/register.html", {"form": form})

@@ -93,12 +93,12 @@ def home(request):
 
     m = current_map._repr_html_()
     context = {"current_map": m, "form": form}
-    return render(request, template_name="index.html", context=context)
+    return render(request, template_name="hub/index.html", context=context)
 
 
 def about(request):
     """About project page."""
-    return render(request, template_name="about.html")
+    return render(request, template_name="hub/about.html")
 
 
 # def get_client_ip(request):
