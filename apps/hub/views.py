@@ -20,11 +20,11 @@ def home(request):
 
     # Fullscreen map button
     Fullscreen(
-        position="topright", title=_("Полный экран"), title_cancel=_("Выход")
+        position="bottomright", title=_("Полный экран"), title_cancel=_("Выход")
     ).add_to(current_map)
     # A button to define user's location
     LocateControl(
-        auto_start=False, position="topright", strings={"title": _("Где я")}
+        auto_start=False, position="bottomright", strings={"title": _("Где я")}
     ).add_to(current_map)
 
     # Rewrite the default popup text to use custom popup with only coordinates
@@ -63,7 +63,7 @@ def home(request):
     iframe = folium.IFrame(html=html, width=1900, height=300)
 
     # Layer control button
-    folium.LayerControl().add_to(current_map)
+    folium.LayerControl(position="bottomright").add_to(current_map)
 
     markers = Marker.objects.all().select_related()
     for marker in markers:
