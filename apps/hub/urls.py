@@ -7,5 +7,5 @@ from apps.hub.views import about, home
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("", home, name="home"),
-    path("", about, name="about"),
+    path("about/", about, name="about"),
 ]
