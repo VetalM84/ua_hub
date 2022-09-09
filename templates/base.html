@@ -14,43 +14,6 @@
 <body>
 
 {% include "inc/_header.html" %}
-<!-- Modal window add marker -->
-<div class="modal fade" id="addMarker" tabindex="-1" aria-labelledby="addMarkerLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addMarkerLabel">{% translate "Добавить маркер" %}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label={% translate "Закрыть" %}></button>
-            </div>
-            <div class="modal-body">
-                <form class="row g-3" method="post" action="{% url 'home' %}" enctype="multipart/form-data" id="addMarkerForm"
-                      name="addMarkerForm">
-                    {% csrf_token %}
-                    {% for field in form.visible_fields|slice:":2" %}
-                        <div class="col-md-6">
-                            {{ field }}
-                        </div>
-                    {% endfor %}
-                    {% for field in form.visible_fields|slice:"2:" %}
-                        <div class="col-12">
-                            {{ field }}
-                        </div>
-                    {% endfor %}
-                    <input type="hidden" id="owner" name="owner"
-                           value="{% if request.user %}{{ request.user.id }}{% endif %}">
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-bs-dismiss="modal">{% translate "Закрыть" %}</button>
-                        <button type="submit" class="btn btn-primary">{% translate "Добавить" %}</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-{{ form.media }}
-<!-- Modal window add marker END -->
 <!-- alert messages -->
 {% if messages %}
     {% for message in messages %}
