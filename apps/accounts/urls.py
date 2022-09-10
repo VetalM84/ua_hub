@@ -2,9 +2,16 @@
 
 from django.urls import path
 
-from apps.accounts.views import change_password, user_login, user_logout, user_register
+from apps.accounts.views import (
+    change_password,
+    user_login,
+    user_logout,
+    user_profile,
+    user_register,
+)
 
 urlpatterns = [
+    path("profile/", user_profile, name="profile"),
     path("register/", user_register, name="register"),
     path("login/", user_login, name="login"),
     path("logout/", user_logout, name="logout"),
