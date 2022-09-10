@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    <title>Registration</title>
+    <title>{% translate "Регистрация" %}</title>
 
     <link href="{% static "css/login.css" %}" rel="stylesheet">
 {% endblock %}
@@ -15,9 +15,9 @@
             <div class="card-group mb-0">
                 <div class="card p-4">
                     <div class="card-body">
-                        <h1>Sign Up</h1>
-                        <p class="text-muted">Sign Un for your account</p>
-                            <form method="POST" novalidate>
+                        <h1>{% translate "Регистрация" %}</h1>
+                        <p class="text-muted">{% translate "Войти в ваш аккаунт" %}</p>
+                            <form action="{% url "home" %}" method="POST">
                             <div class="row g-3 input-group mb-3">
                                 {% csrf_token %}
                                 {% for field in form.visible_fields|slice:":2" %}
@@ -26,7 +26,7 @@
                                         {{ field }}
                                     </div>
                                 {% endfor %}
-                                {% for field in form.visible_fields|slice:"3:" %}
+                                {% for field in form.visible_fields|slice:"2:" %}
                                     <div class="col-12">
                                         {{ field.label }}
                                         {{ field }}
@@ -35,7 +35,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <button type="button" class="btn btn-primary px-4">Login</button>
+                                    <button type="submit" class="btn btn-primary px-4">{% translate "Войти" %}</button>
                                 </div>
                             </div>
                         </form>
