@@ -12,13 +12,13 @@
 <!-- login -->
 <div class="container">
     <div class="row justify-content-center pt-5">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <div class="card-group mb-0">
                 <div class="card p-4">
                     <div class="card-body">
                         <h1>Login</h1>
                         <p class="text-muted">Sign In to your account</p>
-                            <form method="POST" novalidate>
+                            <form method="POST">
                             <div class="input-group mb-3">
                                 {% csrf_token %}
                                 {{ form.as_div }}
@@ -40,7 +40,7 @@
                             <h2>Sign up</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="{% url "register" %}" type="button" class="btn btn-light mt-3">Register Now!</a>
+                            <a href="{% url "register" %}" type="submit" class="btn btn-light mt-3">Register Now!</a>
                         </div>
                     </div>
                 </div>
