@@ -19,11 +19,9 @@ def user_profile(request):
         form = UserProfileForm(data=request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(
-                request, _("Your profile was successfully updated!"), "success"
-            )
+            messages.success(request, _("Профиль обновлен!"), "success")
         else:
-            messages.error(request, _("Please correct the errors."), "danger")
+            messages.error(request, _("Пожалуйста исправьте ошибки."), "danger")
     else:
         form = UserProfileForm(
             initial={
@@ -46,10 +44,10 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, "Your password was successfully updated!")
+            messages.success(request, _("Пароль обновлен!"), "success")
             return redirect("change_password")
         else:
-            messages.error(request, "Please correct the error below.")
+            messages.error(request, _("Пожалуйста исправьте ошибки."), "danger")
     else:
         form = PasswordChangeForm(request.user)
     return render(request, "accounts/change_password.html", {"form": form})
@@ -62,8 +60,7 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            messages.success(request, "You are logged in!")
-            print("To change your password follow http://127.0.0.1:8000/password/")
+            messages.success(request, _("Вы успешно вошли!"), "success")
     else:
         form = UserLoginForm()
     return render(request, "accounts/login.html", {"form": form})
@@ -82,11 +79,10 @@ def user_register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, "You have been registered!")
-            print("To change your password follow http://127.0.0.1:8000/password/")
-            # TODO add redirect
+            messages.success(request, _("Вы успешно зарегистрировались!"), "success")
+            return redirect(to="profile")
         else:
-            messages.error(request, "Error registering!")
+            messages.error(request, _("Ошибка регистрации!"), "danger")
     else:
         form = UserRegisterForm()
     return render(request, "accounts/register.html", {"form": form})
