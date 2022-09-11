@@ -2,7 +2,9 @@
 
 import folium
 from django.contrib import messages
-from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext as _
 from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
@@ -105,6 +107,22 @@ def home(request):
 def about(request):
     """About project page."""
     return render(request, template_name="hub/about.html")
+
+
+@login_required(redirect_field_name="login")
+def user_markers(request):
+    """User markers list page."""
+    markers = Marker.objects.filter(owner_id=request.user.id).select_related()
+    if request.method == "POST":
+        get_object_or_404(
+            Marker, owner=request.user, pk=request.POST.get("delete")
+        ).delete()
+        messages.success(request, _("Метка удалена!"), "success")
+        return redirect("markers")
+    context = {
+        "markers": markers,
+    }
+    return render(request, "hub/markers.html", context)
 
 
 # def get_client_ip(request):

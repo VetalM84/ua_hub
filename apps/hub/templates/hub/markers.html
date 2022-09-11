@@ -1,8 +1,80 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load static %}
 {% block title %}
-    <title>Мои метки</title>
+    <title>{% translate "Мои метки" %}</title>
+
+    <link href="{% static "css/markers.css" %}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">JobLabs</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav topnav  ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">All categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Creative</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <form method="post">
+        <div class="row">
+               {% csrf_token %}
+               {% for marker in markers %}
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="category card mb-4">
+                        <div class="card-body marker">
+                            <h6 class="card-title color mb-4" style="background: {{ marker.category.color.name }};">
+                                {{ marker.category.name }}
+                            </h6>
+                            <p class="card-text">{{ marker.comment|truncatechars_html:167 }}</p>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <div class="time">
+                                    <p>{{ marker.created_at|date:"SHORT_DATETIME_FORMAT" }}</p>
+                                </div>
+                                <div class="marker-controls">
+                                    <button name="edit" id="edit" value="{{ marker.pk }}" type="submit" class="border-0 btn btn-outline-success">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button name="delete" id="delete" value="{{ marker.pk }}" type="submit" class="border-0 btn btn-outline-danger">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="btn btn-primary mb-4">
+                    <span>Find More</span>
+                    <span class="fa fa-arrow-right"></span>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
 {% endblock %}
+
+    <div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <ol>
+            {% for marker in markers %}
+                <li>
+                    {{ marker }} - <button class="button btn-primary" name="delete" id="delete" value="{{ marker.pk }}" type="submit">Delete</button>
+                </li>
+            {% endfor %}
+        </ol>
+    </form>
+    </div>
