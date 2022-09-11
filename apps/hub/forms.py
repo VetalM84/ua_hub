@@ -41,6 +41,7 @@ class AddMarkerForm(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "rows": 3,
+                    "max-length": 200,
                     "placeholder": _("Комментарий, не обязательно"),
                 }
             ),
