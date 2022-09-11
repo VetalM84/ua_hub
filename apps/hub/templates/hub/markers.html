@@ -8,25 +8,8 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">JobLabs</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav topnav  ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">All categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Creative</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <div class="container mt-4 mb-4">
+        <h1 class="h2 mb-3">{% translate "Мои метки" %}</h1>
         <form method="post">
         <div class="row">
                {% csrf_token %}
@@ -59,7 +42,7 @@
                 <nav>
                     {% if page_obj.has_other_pages %}
                       <ul class="pagination">
-                        {% if users.has_previous %}
+                        {% if page_obj.has_previous %}
                           <li class="page-item">
                               <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
                           </li>
