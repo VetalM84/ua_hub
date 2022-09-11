@@ -119,8 +119,14 @@ def user_markers(request):
         ).delete()
         messages.success(request, _("Метка удалена!"), "success")
         return redirect("markers")
+
+    paginator = Paginator(markers, 10)
+    page_number = request.GET.get("page", 1)
+    page_obj = paginator.get_page(page_number)
+
     context = {
         "markers": markers,
+        "page_obj": page_obj,
     }
     return render(request, "hub/markers.html", context)
 

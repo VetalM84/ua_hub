@@ -30,7 +30,7 @@
         <form method="post">
         <div class="row">
                {% csrf_token %}
-               {% for marker in markers %}
+               {% for marker in page_obj.object_list %}
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="category card mb-4">
                         <div class="card-body marker">
@@ -56,25 +56,41 @@
                 </div>
                 {% endfor %}
             <div class="col-12 d-flex align-items-center justify-content-center">
-                <div class="btn btn-primary mb-4">
-                    <span>Find More</span>
-                    <span class="fa fa-arrow-right"></span>
-                </div>
+                <nav>
+                    {% if page_obj.has_other_pages %}
+                      <ul class="pagination">
+                        {% if users.has_previous %}
+                          <li class="page-item">
+                              <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+                          </li>
+                        {% else %}
+                          <li class="page-item disabled">
+                              <span class="page-link">&laquo;</span>
+                          </li>
+                        {% endif %}
+                        {% for page in page_obj.paginator.page_range %}
+                          {% if page_obj.number == page %}
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">{{ page }}</span>
+                            </li>
+                          {% else %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                          <li class="page-item">
+                              <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+                          </li>
+                        {% else %}
+                          <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                        {% endif %}
+                      </ul>
+                    {% endif %}
+                </nav>
             </div>
         </div>
         </form>
     </div>
 {% endblock %}
-
-    <div class="container">
-    <form method="POST">
-        {% csrf_token %}
-        <ol>
-            {% for marker in markers %}
-                <li>
-                    {{ marker }} - <button class="button btn-primary" name="delete" id="delete" value="{{ marker.pk }}" type="submit">Delete</button>
-                </li>
-            {% endfor %}
-        </ol>
-    </form>
-    </div>
