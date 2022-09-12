@@ -92,10 +92,14 @@ def home(request):
             # form.save(commit=False)
             # form.ip = get_client_ip(request)
             form.save()
-            messages.success(request, _("Маркер успешно опубликован!"), "success")
+            messages.success(
+                request, _("Маркер успешно опубликован!"), extra_tags="success"
+            )
             return redirect(to="home")
         else:
-            messages.error(request, _(f"Ошибка. Проверьте координаты."), "danger")
+            messages.error(
+                request, _(f"Ошибка. Проверьте координаты."), extra_tags="danger"
+            )
     else:
         form = AddMarkerForm()
 
@@ -117,7 +121,7 @@ def user_markers(request):
         get_object_or_404(
             Marker, owner=request.user, pk=request.POST.get("delete")
         ).delete()
-        messages.success(request, _("Метка удалена!"), "success")
+        messages.success(request, _("Метка удалена!"), extra_tags="success")
         return redirect("markers")
 
     paginator = Paginator(markers, 10)
