@@ -154,7 +154,11 @@ def edit_marker(request, marker_id):
         else:
             messages.error(request, _("Доступ запрещен!"), extra_tags="danger")
             raise ValueError(_("Access forbidden"))
-    return render(request, "hub/edit-marker.html", {"form": form})
+    context = {
+        "form": form,
+        "marker_id": marker_id
+    }
+    return render(request, "hub/edit-marker.html", context)
 
 
 # def get_client_ip(request):
