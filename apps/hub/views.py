@@ -135,6 +135,24 @@ def user_markers(request):
     return render(request, "hub/markers.html", context)
 
 
+@login_required(redirect_field_name="login")
+def edit_marker(request, marker_id):
+    """Edit marker data page."""
+    marker = get_object_or_404(Marker, pk=marker_id)
+    if request.method == "POST":
+        form = UpdateMarkerForm(data=request.POST, instance=marker)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _("Метка обновлена!"), extra_tags="success")
+        else:
+            messages.error(
+                request, _("Пожалуйста исправьте ошибки."), extra_tags="danger"
+            )
+    else:
+        form = UpdateMarkerForm(instance=marker)
+    return render(request, "hub/edit-marker.html", {"form": form})
+
+
 # def get_client_ip(request):
 #     """Get client IP address."""
 #     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
