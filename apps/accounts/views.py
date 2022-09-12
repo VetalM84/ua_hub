@@ -65,6 +65,7 @@ def user_login(request):
             user = form.get_user()
             login(request, user)
             messages.success(request, _("Вы успешно вошли!"), extra_tags="success")
+            return redirect(to="markers")
     else:
         form = UserLoginForm()
     return render(request, "accounts/login.html", {"form": form})
