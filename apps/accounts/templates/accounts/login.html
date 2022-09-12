@@ -19,16 +19,18 @@
                         <h1>{% translate "Вход" %}</h1>
                         <p class="text-muted">{% translate "Войдите в ваш аккаунт" %}</p>
                             <form method="POST">
-                            <div class="input-group mb-3">
+                            <div class="mb-3">
                                 {% csrf_token %}
                                 {{ form.as_div }}
                             </div>
-                            <div class="row">
-                                <div class="col-6">
+                            <div class="d-flex">
+                                <div class="flex-fill">
                                     <button type="submit" class="btn btn-primary px-4">{% translate "Войти" %}</button>
                                 </div>
-                                <div class="col-6 text-right">
-                                    <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                                <div class="flex-fill text-end">
+                                    <a href="{% url 'change_password' %}" type="button" class="btn btn-link px-0">
+                                        {% translate "Забыли пароль?" %}
+                                    </a>
                                 </div>
                             </div>
                         </form>
