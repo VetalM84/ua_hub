@@ -20,7 +20,13 @@
                             <h6 class="card-title color mb-4" style="background: {{ marker.category.color.name }};">
                                 {{ marker.category.name }}
                             </h6>
-                            <p class="card-text">{{ marker.comment|truncatechars_html:167 }}</p>
+                            <p class="card-text">
+                                {% if marker.comment %}
+                                    {{ marker.comment|truncatechars_html:167 }}
+                                {% else %}
+                                    {% translate "Комментарий пуст" %}
+                                {% endif %}
+                            </p>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <div class="time">
                                     <p>{{ marker.created_at|date:"SHORT_DATETIME_FORMAT" }}</p>
@@ -37,6 +43,8 @@
                         </div>
                     </div>
                 </div>
+               {% empty %}
+                   <p>{% translate "У вас еще нет меток. Помогите другим, добавьте их." %}</p>
                 {% endfor %}
             <div class="col-12 d-flex align-items-center justify-content-center">
                 <nav>
