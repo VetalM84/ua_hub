@@ -1,40 +1,17 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
-.topnav a {
-    float: left;
-    display: block;
-    color: #8d8b8b;
-    font-weight: 800;
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 14px 10px;
-    text-decoration: none;
-    border-bottom: 3px solid transparent;
-}
-
-.topnav a:hover {
-    color: black;
-    border-bottom: 3px solid red;
-}
-
-.topnav .active {
-    color: black;
-    border-bottom: 3px solid red;
-}
-
 .category {
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
 .category .marker h6 {
     padding: 6px 20px;
-    font-weight: 400;
+    font-weight: 700;
     border-radius: 26px;
     display: inline-block;
 }
 
 .category .marker .color {
-    font-weight: 800;
     color: #ffffff;
 }
 
