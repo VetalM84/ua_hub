@@ -10,7 +10,7 @@ from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
 
-from .forms import AddMarkerForm
+from .forms import AddMarkerForm, UpdateMarkerForm
 from .models import Marker
 
 

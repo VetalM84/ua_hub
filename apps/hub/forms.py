@@ -46,3 +46,24 @@ class AddMarkerForm(forms.ModelForm):
                 }
             ),
         }
+
+
+class UpdateMarkerForm(forms.ModelForm):
+    """Form for updating marker on a frontend."""
+
+    class Meta:
+        model = Marker
+        fields = ["latitude", "longitude", "comment", "category"]
+        widgets = {
+            "latitude": forms.TextInput(attrs={"class": "form-control"}),
+            "longitude": forms.TextInput(attrs={"class": "form-control"}),
+            "comment": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "rows": 5,
+                    "max-length": 200,
+                    "placeholder": _("Комментарий, не обязательно"),
+                }
+            ),
+            "category": forms.Select(attrs={"class": "form-select"}),
+        }
