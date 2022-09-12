@@ -26,9 +26,9 @@
                                     <p>{{ marker.created_at|date:"SHORT_DATETIME_FORMAT" }}</p>
                                 </div>
                                 <div class="marker-controls">
-                                    <button name="edit" id="edit" value="{{ marker.pk }}" type="submit" class="border-0 btn btn-outline-success">
+                                    <a href="{% url "edit_marker" marker.pk %}" id="edit-{{ marker.pk }}" type="button" class="border-0 btn btn-outline-success">
                                         <i class="bi bi-pencil-square"></i>
-                                    </button>
+                                    </a>
                                     <button name="delete" id="delete" value="{{ marker.pk }}" type="submit" class="border-0 btn btn-outline-danger">
                                         <i class="bi bi-trash-fill"></i>
                                     </button>
