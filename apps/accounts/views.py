@@ -14,7 +14,7 @@ from apps.accounts.forms import UserLoginForm, UserProfileForm, UserRegisterForm
 def user_profile(request):
     """User profile page."""
     if request.method == "POST":
-        form = UserProfileForm(data=request.POST, instance=request.user)
+        form = UserProfileForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, _("Профиль обновлен!"), extra_tags="success")
