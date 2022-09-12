@@ -149,7 +149,11 @@ def edit_marker(request, marker_id):
                 request, _("Пожалуйста исправьте ошибки."), extra_tags="danger"
             )
     else:
-        form = UpdateMarkerForm(instance=marker)
+        if marker.owner == request.user:
+            form = UpdateMarkerForm(instance=marker)
+        else:
+            messages.error(request, _("Доступ запрещен!"), extra_tags="danger")
+            raise ValueError(_("Access forbidden"))
     return render(request, "hub/edit-marker.html", {"form": form})
 
 
