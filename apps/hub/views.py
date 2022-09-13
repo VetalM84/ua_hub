@@ -157,9 +157,9 @@ def popup_html(marker):
         <div style="text-align:center;">
             <img style="max-width: 56px; border-radius: 50%;" 
                 src="media/{owner.avatar if owner else "avatar/default_avatar.jpg"}">
-            <h5 style="font-weight:bold; margin:10px 0px 0px 0px;">
+            <h4 style="font-weight:bold; margin:10px 0px 0px 0px;">
                 {owner.get_full_name() if owner else ""}
-            </h5>
+            </h4>
             <p style="font-size:15px; margin-top:10px; margin-bottom:10px;">
                 {comment}
             </p>
