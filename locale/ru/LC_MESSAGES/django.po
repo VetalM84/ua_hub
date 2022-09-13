@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-13 17:11+0300\n"
+"POT-Creation-Date: 2022-09-13 22:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,36 +16,37 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 #: .\templates\inc\_footer.html:14 .\templates\inc\_header.html:11
-msgid "Главная"
-msgstr "Home"
+msgid "Home"
+msgstr "Главная"
 
 #: .\templates\inc\_footer.html:15 .\templates\inc\_header.html:12
-msgid "О Проекте"
-msgstr "About"
+msgid "About"
+msgstr "О Проекте"
 
 #: .\templates\inc\_header.html:16
-msgid "Добавить метку"
-msgstr "Add marker"
+msgid "Add mark"
+msgstr "Добавить метку"
 
 #: .\templates\inc\_header.html:55
-msgid "Мой профиль"
-msgstr "My profile"
+msgid "My profile"
+msgstr "Мой профиль"
 
 #: .\templates\inc\_header.html:56
-msgid "Мои метки"
-msgstr "My markers"
+msgid "My marks"
+msgstr "Мои метки"
 
 #: .\templates\inc\_header.html:60
-msgid "Выход"
-msgstr "Sign out"
+msgid "Log out"
+msgstr "Выход"
 
 #: .\templates\inc\_header.html:72
-msgid "Логин"
-msgstr "Login"
+msgid "Sign in"
+msgstr "Логин"
 
 #: .\templates\inc\_header.html:73
-msgid "Регистрация"
-msgstr "Sign-up"
+msgid "Sign up"
+msgstr "Регистрация"

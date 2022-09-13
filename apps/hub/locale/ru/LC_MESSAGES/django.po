@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-13 22:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\apps\hub\forms.py:17 .\apps\hub\models.py:13
+msgid "Latitude"
+msgstr "Широта"
+
+#: .\apps\hub\forms.py:26 .\apps\hub\models.py:14
+msgid "Longitude"
+msgstr "Долгота"
+
+#: .\apps\hub\forms.py:32
+msgid "Choose category"
+msgstr "Выберите категорию"
+
+#: .\apps\hub\forms.py:45 .\apps\hub\forms.py:65
+msgid "Comment, not required"
+msgstr "Комментарий, не обязательно"
+
+#: .\apps\hub\models.py:16 .\apps\hub\models.py:57
+msgid "Category"
+msgstr "Категория"
+
+#: .\apps\hub\models.py:18
+msgid "Comment"
+msgstr "Комментарий"
+
+#: .\apps\hub\models.py:19
+msgid "Date"
+msgstr "Дата"
+
+#: .\apps\hub\models.py:25
+msgid "Owner"
+msgstr "Владелец"
+
+#: .\apps\hub\models.py:28
+msgid "IP address"
+msgstr "IP адрес"
+
+#: .\apps\hub\models.py:36
+msgid "Mark"
+msgstr "Метка"
+
+#: .\apps\hub\models.py:37
+msgid "Marks"
+msgstr "Метки"
+
+#: .\apps\hub\models.py:44 .\apps\hub\models.py:65 .\apps\hub\models.py:80
+msgid "Name"
+msgstr "Название"
+
+#: .\apps\hub\models.py:46 .\apps\hub\models.py:72
+msgid "Icon"
+msgstr "Иконка"
+
+#: .\apps\hub\models.py:49 .\apps\hub\models.py:87
+msgid "Color"
+msgstr "Цвет"
+
+#: .\apps\hub\models.py:58
+msgid "Categories"
+msgstr "Категории"
+
+#: .\apps\hub\models.py:73
+msgid "Icons"
+msgstr "Иконки"
+
+#: .\apps\hub\models.py:88
+msgid "Colors"
+msgstr "Цвета"
+
+#: .\apps\hub\templates\hub\edit-marker.html:4
+#: .\apps\hub\templates\hub\edit-marker.html:13
+msgid "Edit mark #"
+msgstr "Редактирование метки #"
+
+#: .\apps\hub\templates\hub\edit-marker.html:22
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\apps\hub\templates\hub\index.html:10
+msgid "Add mark"
+msgstr "Добавить метку"
+
+#: .\apps\hub\templates\hub\index.html:12
+#: .\apps\hub\templates\hub\index.html:32
+msgid "Close"
+msgstr "Закрыть"
+
+#: .\apps\hub\templates\hub\index.html:33
+msgid "Add"
+msgstr "Добавить"
+
+#: .\apps\hub\templates\hub\markers.html:5
+#: .\apps\hub\templates\hub\markers.html:12
+msgid "My marks"
+msgstr "Мои метки"
+
+#: .\apps\hub\templates\hub\markers.html:32
+msgid "Comment is empty"
+msgstr "Комментарий пуст"
+
+#: .\apps\hub\templates\hub\markers.html:52
+msgid "You have no any markers. Why not to add some?"
+msgstr "У вас еще нет меток. Помогите другим, добавьте их."
+
+#: .\apps\hub\translation.py:14
+msgid "-- sorry, no translation provided --"
+msgstr "-- извините, нет перевода --"
+
+#: .\apps\hub\views.py:26
+msgid "Fullscreen"
+msgstr "Полный экран"
+
+#: .\apps\hub\views.py:26
+msgid "Exit"
+msgstr "Выход"
+
+#: .\apps\hub\views.py:30
+msgid "My location"
+msgstr "Где я"
+
+#: .\apps\hub\views.py:78
+msgid "Marker added successfully!"
+msgstr "Метка успешно добавлена!"
+
+#: .\apps\hub\views.py:82
+msgid "Error. Check coordinates."
+msgstr "Ошибка. Проверьте координаты."
+
+#: .\apps\hub\views.py:105
+msgid "The marker has been deleted!"
+msgstr "Метка удалена!"
+
+#: .\apps\hub\views.py:129
+msgid "The marker has been updated!"
+msgstr "Метка обновлена!"
+
+#: .\apps\hub\views.py:132
+msgid "Please, correct errors."
+msgstr "Пожалуйста исправьте ошибки."
+
+#: .\apps\hub\views.py:137 .\apps\hub\views.py:138
+msgid "Access forbidden!"
+msgstr "Доступ запрещен!"

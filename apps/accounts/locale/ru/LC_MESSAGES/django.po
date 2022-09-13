@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-13 22:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\apps\accounts\forms.py:18 .\apps\accounts\forms.py:41
+#: .\apps\accounts\forms.py:78 .\apps\accounts\models.py:14
+msgid "Email"
+msgstr "Email"
+
+#: .\apps\accounts\forms.py:22 .\apps\accounts\forms.py:45
+msgid "Password"
+msgstr "Пароль"
+
+#: .\apps\accounts\forms.py:32 .\apps\accounts\forms.py:64
+msgid "First name"
+msgstr "Имя"
+
+#: .\apps\accounts\forms.py:37 .\apps\accounts\forms.py:69
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\apps\accounts\forms.py:49
+msgid "Repeat password"
+msgstr "Повторите пароль"
+
+#: .\apps\accounts\forms.py:74 .\apps\accounts\models.py:20
+msgid "Hometown"
+msgstr "Родной город"
+
+#: .\apps\accounts\forms.py:83
+msgid "Facebook"
+msgstr "Facebook"
+
+#: .\apps\accounts\forms.py:88 .\apps\accounts\models.py:18
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\apps\accounts\forms.py:93 .\apps\accounts\models.py:24
+msgid "Image"
+msgstr "Изображение"
+
+#: .\apps\accounts\managers.py:16
+msgid "Email required"
+msgstr "Email обязателен"
+
+#: .\apps\accounts\managers.py:29
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: .\apps\accounts\managers.py:31
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: .\apps\accounts\models.py:16
+msgid "Facebook profile link"
+msgstr "Ссылка на профиль Facebook"
+
+#: .\apps\accounts\models.py:42
+msgid "Full name"
+msgstr "Полное имя"
+
+#: .\apps\accounts\models.py:45
+msgid "User"
+msgstr "Пользователь"
+
+#: .\apps\accounts\models.py:46
+msgid "Users"
+msgstr "Пользователи"
+
+#: .\apps\accounts\templates\accounts\login.html:6
+#: .\apps\accounts\templates\accounts\login.html:19
+#: .\apps\accounts\templates\accounts\login.html:28
+#: .\apps\accounts\templates\accounts\register.html:47
+#: .\apps\accounts\templates\accounts\register.html:49
+msgid "Sign in"
+msgstr "Вход"
+
+#: .\apps\accounts\templates\accounts\login.html:20
+msgid "Sign in to your account"
+msgstr "Войдите в ваш аккаунт"
+
+#: .\apps\accounts\templates\accounts\login.html:32
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: .\apps\accounts\templates\accounts\login.html:42
+#: .\apps\accounts\templates\accounts\login.html:44
+#: .\apps\accounts\templates\accounts\register.html:6
+#: .\apps\accounts\templates\accounts\register.html:18
+#: .\apps\accounts\templates\accounts\register.html:38
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: .\apps\accounts\templates\accounts\login.html:43
+msgid ""
+"Creating an account is not required, but you'll have an access to all your "
+"markers."
+msgstr ""
+"Регистрация необязательна, но зарегистрированные пользователи имеют доступ "
+"ко всем своим меткам."
+
+#: .\apps\accounts\templates\accounts\profile.html:4
+#: .\apps\accounts\templates\accounts\profile.html:22
+msgid "My profile"
+msgstr "Мой профиль"
+
+#: .\apps\accounts\templates\accounts\profile.html:15
+msgid "Sign up date"
+msgstr "Дата регистрации"
+
+#: .\apps\accounts\templates\accounts\profile.html:31
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\apps\accounts\templates\accounts\register.html:19
+msgid "Create your account"
+msgstr "Создайте ваш аккаунт"
+
+#: .\apps\accounts\templates\accounts\register.html:48
+msgid "Already have an account?"
+msgstr "Уже зарегистрированы?"
+
+#: .\apps\accounts\views.py:20
+msgid "Profile updated!"
+msgstr "Профиль обновлен!"
+
+#: .\apps\accounts\views.py:23 .\apps\accounts\views.py:44
+msgid "Please, correct the errors."
+msgstr "Пожалуйста исправьте ошибки."
+
+#: .\apps\accounts\views.py:39
+msgid "Password has been updated!"
+msgstr "Пароль обновлен!"
+
+#: .\apps\accounts\views.py:59
+msgid "You have successfully signed in!"
+msgstr "Вы успешно вошли!"
+
+#: .\apps\accounts\views.py:81
+msgid "You have successfully signed up!"
+msgstr "Вы успешно зарегистрировались!"
+
+#: .\apps\accounts\views.py:85
+msgid "Error registering!"
+msgstr "Ошибка регистрации!"
