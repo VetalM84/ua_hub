@@ -64,7 +64,7 @@ def home(request):
                 icon=marker.category.icon.name,
                 prefix="fa",
             ),
-            # tooltip=tooltip,
+            tooltip=marker.category.name,
         ).add_to(current_map)
 
     if request.method == "POST":
@@ -143,6 +143,7 @@ def popup_html(marker):
     """Return HTML template for Marker popup window on a map."""
     comment = marker.comment
     created_at = marker.created_at
+    print(created_at)
     owner = marker.owner
 
     html = f"""
@@ -152,10 +153,10 @@ def popup_html(marker):
     <body>
         <div style="text-align:center;">
             <img style="max-width: 56px; border-radius: 50%;" 
-                src="media/{owner.avatar if owner else ""}">
-            <h3 style="font-weight:bold; margin:10px 0px 0px 0px;">
+                src="media/{owner.avatar if owner else "avatar/default_avatar.jpg"}">
+            <h5 style="font-weight:bold; margin:10px 0px 0px 0px;">
                 {owner.get_full_name() if owner else ""}
-            </h3>
+            </h5>
             <p style="font-size:15px; margin-top:10px; margin-bottom:10px;">
                 {comment}
             </p>
