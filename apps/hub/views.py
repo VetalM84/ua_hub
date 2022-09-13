@@ -51,25 +51,6 @@ def home(request):
     lat_lng_popup.add_to(current_map)
 
     # deliver_layer = folium.FeatureGroup(name="Вручают").add_to(current_map)
-
-    html = """
-        <div style="text-align:center;">
-            <img style="max-width: 64px; border-radius: 50%;" 
-                src="https://epicbootstrap.com/freebies/snippets/team-cards/assets/img/2.jpg">
-            <h3 style="font-weight:bold; margin:10px 0px 0px 0px;">
-                Ben Johnson
-            </h3>
-            <p style="font-size:15px; margin-top:10px; margin-bottom:10px;">
-                Aenean tortor est, vulputate quis leo Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. 
-                Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id
-            </p>
-            <div>
-                <a href="#" target="_top" style="margin:0 10px; display:inline-block;">Facebook</a>
-            </div>
-        </div>
-    """
-    iframe = folium.IFrame(html=html, width=260, height=260)
-
     # Layer control button
     folium.LayerControl(position="topleft").add_to(current_map)
 
@@ -77,7 +58,7 @@ def home(request):
     for marker in markers:
         folium.Marker(
             location=(marker.latitude, marker.longitude),
-            popup=folium.Popup(iframe, max_width=280, max_height=320),
+            popup=folium.Popup(html=popup_html(marker), max_width=280, max_height=320),
             icon=folium.Icon(
                 color=marker.category.color.name,
                 icon=marker.category.icon.name,
@@ -154,11 +135,40 @@ def edit_marker(request, marker_id):
         else:
             messages.error(request, _("Доступ запрещен!"), extra_tags="danger")
             raise ValueError(_("Access forbidden"))
-    context = {
-        "form": form,
-        "marker_id": marker_id
-    }
+    context = {"form": form, "marker_id": marker_id}
     return render(request, "hub/edit-marker.html", context)
+
+
+def popup_html(marker):
+    """Return HTML template for Marker popup window on a map."""
+    comment = marker.comment
+    created_at = marker.created_at
+    owner = marker.owner
+
+    html = f"""
+    <!DOCTYPE html>
+    <html>
+    <head></head>
+    <body>
+        <div style="text-align:center;">
+            <img style="max-width: 56px; border-radius: 50%;" 
+                src="media/{owner.avatar if owner else ""}">
+            <h3 style="font-weight:bold; margin:10px 0px 0px 0px;">
+                {owner.get_full_name() if owner else ""}
+            </h3>
+            <p style="font-size:15px; margin-top:10px; margin-bottom:10px;">
+                {comment}
+            </p>
+            <div class="row">
+                <div>{created_at}</div>
+                <div><a href="{owner.facebook_link if owner else ""}" target="_top" style="margin:0 10px; display:inline-block;">
+                Facebook</a></div>
+            </div>
+        </div>
+        </body>
+    </html>
+    """
+    return html
 
 
 # def get_client_ip(request):
