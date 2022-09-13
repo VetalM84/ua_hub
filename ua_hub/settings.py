@@ -156,7 +156,9 @@ LANGUAGES = (
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'ua_hub/static')
+    os.path.join(BASE_DIR, 'ua_hub/static'),
+    os.path.join(BASE_DIR, 'apps/hub/static'),
+    os.path.join(BASE_DIR, 'apps/accounts/static')
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
