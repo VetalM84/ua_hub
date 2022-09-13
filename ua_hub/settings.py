@@ -37,6 +37,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Installed app for model translation
+    'modeltranslation',
     # Django app
     'django.contrib.admin',
     'django.contrib.auth',
@@ -132,6 +134,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

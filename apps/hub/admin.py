@@ -1,6 +1,7 @@
 """Backend admin page."""
 
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
 
 from apps.hub.models import Category, Color, Icon, Marker
 
@@ -13,6 +14,12 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ("id", "name")
     ordering = ("name",)
     search_fields = ("name",)
+
+
+class TranslatedCategoryAdmin(CategoryAdmin, TranslationAdmin):
+    """Translation for Category name on backend."""
+
+    pass
 
 
 @admin.register(Icon)
@@ -44,3 +51,7 @@ class ColorAdmin(admin.ModelAdmin):
     list_display_links = ("id", "name")
     ordering = ("name",)
     search_fields = ("name",)
+
+
+admin.site.unregister(Category)
+admin.site.register(Category, TranslatedCategoryAdmin)
