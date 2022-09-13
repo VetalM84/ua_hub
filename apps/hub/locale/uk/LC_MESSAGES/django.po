@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-13 19:33+0300\n"
+"POT-Creation-Date: 2022-09-13 22:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,145 +20,146 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
 #: .\apps\hub\forms.py:17 .\apps\hub\models.py:13
-msgid "Широта"
+msgid "Latitude"
 msgstr "Широта"
 
 #: .\apps\hub\forms.py:26 .\apps\hub\models.py:14
-msgid "Долгота"
+msgid "Longitude"
 msgstr "Довгота"
 
 #: .\apps\hub\forms.py:32
-msgid "Выберите категорию"
+msgid "Choose category"
 msgstr "Виберіть категорію"
 
 #: .\apps\hub\forms.py:45 .\apps\hub\forms.py:65
-msgid "Комментарий, не обязательно"
+msgid "Comment, not required"
 msgstr "Коментар, не обов'язково"
 
 #: .\apps\hub\models.py:16 .\apps\hub\models.py:57
-msgid "Категория"
+msgid "Category"
 msgstr "Категорія"
 
-#: .\apps\hub\models.py:19
-msgid "Комментарий"
+#: .\apps\hub\models.py:18
+msgid "Comment"
 msgstr "Коментар"
 
-#: .\apps\hub\models.py:21
-msgid "Дата"
+#: .\apps\hub\models.py:19
+msgid "Date"
 msgstr "Дата"
 
-#: .\apps\hub\models.py:27
-msgid "Владелец"
+#: .\apps\hub\models.py:25
+msgid "Owner"
 msgstr "Власник"
 
-#: .\apps\hub\models.py:29
-msgid "IP адрес"
+#: .\apps\hub\models.py:28
+msgid "IP address"
 msgstr "IP адреса"
 
 #: .\apps\hub\models.py:36
-msgid "Метка"
+msgid "Mark"
 msgstr "Мітка"
 
 #: .\apps\hub\models.py:37
-msgid "Метки"
+msgid "Marks"
 msgstr "Мітки"
 
 #: .\apps\hub\models.py:44 .\apps\hub\models.py:65 .\apps\hub\models.py:80
-msgid "Название"
+msgid "Name"
 msgstr "Назва"
 
 #: .\apps\hub\models.py:46 .\apps\hub\models.py:72
-msgid "Иконка"
+msgid "Icon"
 msgstr "Іконка"
 
 #: .\apps\hub\models.py:49 .\apps\hub\models.py:87
-msgid "Цвет"
+msgid "Color"
 msgstr "Колір"
 
 #: .\apps\hub\models.py:58
-msgid "Категории"
+msgid "Categories"
 msgstr "Категорії"
 
 #: .\apps\hub\models.py:73
-msgid "Иконки"
+msgid "Icons"
 msgstr "Іконки"
 
 #: .\apps\hub\models.py:88
-msgid "Цвета"
+msgid "Colors"
 msgstr "Кольори"
 
 #: .\apps\hub\templates\hub\edit-marker.html:4
 #: .\apps\hub\templates\hub\edit-marker.html:13
-msgid "Редактирование метки #"
+msgid "Edit mark #"
 msgstr "Редагування мітки #"
 
 #: .\apps\hub\templates\hub\edit-marker.html:22
-msgid "Сохранить"
+msgid "Save"
 msgstr "Зберегти"
 
 #: .\apps\hub\templates\hub\index.html:10
-msgid "Добавить метку"
+msgid "Add mark"
 msgstr "Додати мітку"
 
 #: .\apps\hub\templates\hub\index.html:12
 #: .\apps\hub\templates\hub\index.html:32
-msgid "Закрыть"
+msgid "Close"
 msgstr "Закрити"
 
 #: .\apps\hub\templates\hub\index.html:33
-msgid "Добавить"
+msgid "Add"
 msgstr "Додати"
 
 #: .\apps\hub\templates\hub\markers.html:5
 #: .\apps\hub\templates\hub\markers.html:12
-msgid "Мои метки"
+msgid "My marks"
 msgstr "Мої мітки"
 
 #: .\apps\hub\templates\hub\markers.html:32
-msgid "Комментарий пуст"
+msgid "Comment is empty"
 msgstr "Коментар порожній"
 
 #: .\apps\hub\templates\hub\markers.html:52
-msgid "У вас еще нет меток. Помогите другим, добавьте их."
+msgid "You have no any markers. Why not to add some?"
 msgstr "У вас ще немає міток. Допоможіть іншим, додайте їх."
 
-#: .\apps\hub\translation.py:13
-msgid "-- извините, нет перевода --"
+#: .\apps\hub\translation.py:14
+msgid "-- sorry, no translation provided --"
 msgstr "-- вибачте, немає перекладу --"
 
 #: .\apps\hub\views.py:26
-msgid "Полный экран"
+msgid "Fullscreen"
 msgstr "Повний екран"
 
 #: .\apps\hub\views.py:26
-msgid "Выход"
+msgid "Exit"
 msgstr "Вихід"
 
 #: .\apps\hub\views.py:30
-msgid "Где я"
+msgid "My location"
 msgstr "Де я"
 
 #: .\apps\hub\views.py:78
-msgid "Метка успешно опубликована!"
-msgstr "Мітка успішно опублікована!"
+msgid "Marker added successfully!"
+msgstr "Мітка успішно додана!"
 
-#: .\apps\hub\views.py:83
-msgid "Ошибка. Проверьте координаты."
+#: .\apps\hub\views.py:82
+msgid "Error. Check coordinates."
 msgstr "Помилка. Перевірте координати."
 
-#: .\apps\hub\views.py:106
-msgid "Метка удалена!"
+#: .\apps\hub\views.py:105
+msgid "The marker has been deleted!"
 msgstr "Мітка видалена!"
 
-#: .\apps\hub\views.py:128
-msgid "Метка обновлена!"
+#: .\apps\hub\views.py:129
+msgid "The marker has been updated!"
 msgstr "Мітка оновлена!"
 
-#: .\apps\hub\views.py:131
-msgid "Пожалуйста исправьте ошибки."
+#: .\apps\hub\views.py:132
+msgid "Please, correct errors."
 msgstr "Будь ласка, виправте помилки."
 
 #: .\apps\hub\views.py:137 .\apps\hub\views.py:138
-msgid "Доступ запрещен!"
+msgid "Access forbidden!"
 msgstr "Доступ заборонено!"
