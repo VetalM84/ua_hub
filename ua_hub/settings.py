@@ -147,11 +147,11 @@ LANGUAGES = (
     ('uk', 'Українська'),
     ('ru', 'Русский'),
     ('en', 'English'),
-    ('pl', 'Polish'),
-    ('de', 'German'),
-    ('fr', 'French'),
-    ('it', 'Italian'),
-    ('es', 'Spanish'),
+    # ('pl', 'Polish'),
+    # ('de', 'German'),
+    # ('fr', 'French'),
+    # ('it', 'Italian'),
+    # ('es', 'Spanish'),
 )
 
 # Static files (CSS, JavaScript, Images)
