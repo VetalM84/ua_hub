@@ -5,11 +5,11 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.formats import date_format
 from django.utils.translation import gettext as _
 from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
-from django.utils.formats import date_format
 
 from .forms import AddMarkerForm, UpdateMarkerForm
 from .models import Marker
