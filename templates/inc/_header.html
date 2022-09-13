@@ -8,12 +8,12 @@
 
             <!-- Nav links -->
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{% url "home" %}" class="nav-link px-2 text-secondary">{% translate "Главная" %}</a></li>
-                <li><a href="{% url "about" %}" class="nav-link px-2 text-white">{% translate "О Проекте" %}</a></li>
+                <li><a href="{% url "home" %}" class="nav-link px-2 text-secondary">{% translate "Home" %}</a></li>
+                <li><a href="{% url "about" %}" class="nav-link px-2 text-white">{% translate "About" %}</a></li>
             </ul>
             {% if request.path == "/" %}
             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                    data-bs-target="#addMarker">{% translate "Добавить метку" %}</button>
+                    data-bs-target="#addMarker">{% translate "Add mark" %}</button>
             {% endif %}
             <!-- Nav links END -->
 
@@ -52,12 +52,12 @@
                              class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="{% url "profile" %}">{% translate "Мой профиль" %}</a></li>
-                        <li><a class="dropdown-item" href="{% url "markers" %}">{% translate "Мои метки" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url "profile" %}">{% translate "My profile" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url "markers" %}">{% translate "My marks" %}</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="{% url "logout" %}">{% translate "Выход" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url "logout" %}">{% translate "Log out" %}</a></li>
                     </ul>
                 {% else %}
                     <a href="#" class="d-block nav-link px-2 link-light text-decoration-none dropdown-toggle"
@@ -69,8 +69,8 @@
                         </svg>
                     </a>
                     <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="{% url "login" %}">{% translate "Логин" %}</a></li>
-                        <li><a class="dropdown-item" href="{% url "register" %}">{% translate "Регистрация" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url "login" %}">{% translate "Sign in" %}</a></li>
+                        <li><a class="dropdown-item" href="{% url "register" %}">{% translate "Sign up" %}</a></li>
                     </ul>
                 {% endif %}
             </div>

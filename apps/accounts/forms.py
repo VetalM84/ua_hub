@@ -1,7 +1,11 @@
 """Forms management."""
 
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
+from django.contrib.auth.forms import (
+    AuthenticationForm,
+    UserChangeForm,
+    UserCreationForm,
+)
 from django.utils.translation import gettext_lazy as _
 
 from apps.accounts.models import User
@@ -15,7 +19,7 @@ class UserLoginForm(AuthenticationForm):
         widget=forms.EmailInput(attrs={"class": "form-control"}),
     )
     password = forms.CharField(
-        label=_("Пароль"),
+        label=_("Password"),
         widget=forms.PasswordInput(attrs={"class": "form-control"}),
     )
 
@@ -25,12 +29,12 @@ class UserRegisterForm(UserCreationForm):
 
     first_name = forms.CharField(
         required=False,
-        label=_("Имя"),
+        label=_("First name"),
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     last_name = forms.CharField(
         required=False,
-        label=_("Фамилия"),
+        label=_("Last name"),
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     email = forms.EmailField(
@@ -38,11 +42,11 @@ class UserRegisterForm(UserCreationForm):
         widget=forms.EmailInput(attrs={"class": "form-control"}),
     )
     password1 = forms.CharField(
-        label=_("Пароль"),
+        label=_("Password"),
         widget=forms.PasswordInput(attrs={"class": "form-control"}),
     )
     password2 = forms.CharField(
-        label=_("Подтвердите пароль"),
+        label=_("Repeat password"),
         widget=forms.PasswordInput(attrs={"class": "form-control"}),
     )
 
@@ -57,17 +61,17 @@ class UserProfileForm(forms.ModelForm):
 
     first_name = forms.CharField(
         required=False,
-        label=_("Имя"),
+        label=_("First name"),
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     last_name = forms.CharField(
         required=False,
-        label=_("Фамилия"),
+        label=_("Last name"),
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     hometown = forms.CharField(
         required=False,
-        label=_("Родной город"),
+        label=_("Hometown"),
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     email = forms.EmailField(
@@ -81,12 +85,12 @@ class UserProfileForm(forms.ModelForm):
     )
     contacts = forms.CharField(
         required=False,
-        label=_("Контакты"),
+        label=_("Contacts"),
         widget=forms.Textarea(attrs={"class": "form-control", "rows": 3}),
     )
     avatar = forms.ImageField(
         required=False,
-        label=_("Изображение"),
+        label=_("Image"),
         widget=forms.FileInput(attrs={"class": "form-control"}),
     )
 

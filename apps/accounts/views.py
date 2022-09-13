@@ -17,10 +17,10 @@ def user_profile(request):
         form = UserProfileForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, _("Профиль обновлен!"), extra_tags="success")
+            messages.success(request, _("Profile updated!"), extra_tags="success")
         else:
             messages.error(
-                request, _("Пожалуйста исправьте ошибки."), extra_tags="danger"
+                request, _("Please, correct the errors."), extra_tags="danger"
             )
     else:
         form = UserProfileForm(instance=request.user)
@@ -35,11 +35,13 @@ def change_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, _("Пароль обновлен!"), extra_tags="success")
+            messages.success(
+                request, _("Password has been updated!"), extra_tags="success"
+            )
             return redirect("change_password")
         else:
             messages.error(
-                request, _("Пожалуйста исправьте ошибки."), extra_tags="danger"
+                request, _("Please, correct the errors."), extra_tags="danger"
             )
     else:
         form = PasswordChangeForm(request.user)
@@ -53,7 +55,9 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            messages.success(request, _("Вы успешно вошли!"), extra_tags="success")
+            messages.success(
+                request, _("You have successfully signed in!"), extra_tags="success"
+            )
             return redirect(to="markers")
     else:
         form = UserLoginForm()
@@ -74,11 +78,11 @@ def user_register(request):
             user = form.save()
             login(request, user)
             messages.success(
-                request, _("Вы успешно зарегистрировались!"), extra_tags="success"
+                request, _("You have successfully signed up!"), extra_tags="success"
             )
             return redirect(to="profile")
         else:
-            messages.error(request, _("Ошибка регистрации!"), extra_tags="danger")
+            messages.error(request, _("Error registering!"), extra_tags="danger")
     else:
         form = UserRegisterForm()
     return render(request, "accounts/register.html", {"form": form})

@@ -125,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -135,7 +135,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
+MODELTRANSLATION_FALLBACK_LANGUAGES = {
+    'default': ('uk', 'ru', 'en'),
+    # 'pl': ('uk',),
+    # 'fr': ('en',),
+    # 'de': ('en',),
+    # 'it': ('en',),
+    # 'es': ('en',),
+}
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
@@ -144,9 +153,9 @@ LOCALE_PATHS = (
 )
 
 LANGUAGES = (
+    ('en', 'English'),
     ('uk', 'Українська'),
     ('ru', 'Русский'),
-    ('en', 'English'),
     # ('pl', 'Polish'),
     # ('de', 'German'),
     # ('fr', 'French'),

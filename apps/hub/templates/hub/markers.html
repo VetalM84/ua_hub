@@ -2,14 +2,14 @@
 {% load i18n %}
 {% load static %}
 {% block title %}
-    <title>{% translate "Мои метки" %}</title>
+    <title>{% translate "My marks" %}</title>
 
     <link href="{% static "css/markers.css" %}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
     <div class="container mt-4 mb-4">
-        <h1 class="h2 mb-3">{% translate "Мои метки" %}</h1>
+        <h1 class="h2 mb-3">{% translate "My marks" %}</h1>
         <form method="post">
         <div class="row">
                {% csrf_token %}
@@ -29,7 +29,7 @@
                                 {% if marker.comment %}
                                     {{ marker.comment|truncatechars_html:167 }}
                                 {% else %}
-                                    {% translate "Комментарий пуст" %}
+                                    {% translate "Comment is empty" %}
                                 {% endif %}
                             </p>
                             <div class="card-footer d-flex align-items-center justify-content-between">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                {% empty %}
-                   <p>{% translate "У вас еще нет меток. Помогите другим, добавьте их." %}</p>
+                   <p>{% translate "You have no any markers. Why not to add some?" %}</p>
                 {% endfor %}
             <div class="col-12 d-flex align-items-center justify-content-center">
                 <nav>

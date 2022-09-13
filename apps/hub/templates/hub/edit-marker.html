@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}
-    <title>{% translate "Редактирование метки #" %}{{ marker_id }}</title>
+    <title>{% translate "Edit mark #" %}{{ marker_id }}</title>
 {% endblock %}
 
 {% block body %}
@@ -10,7 +10,7 @@
             <div class="col-sm-6">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">{% translate "Редактирование метки #" %}{{ marker_id }}</h4>
+                        <h4 class="text-right">{% translate "Edit mark #" %}{{ marker_id }}</h4>
                     </div>
                     <form method="POST" id="marker_update_form" name="marker_update_form">
                         {% csrf_token %}
@@ -19,7 +19,7 @@
                         </div>
                         <div class="mt-4 text-center">
                             <button class="btn btn-primary profile-button" type="submit">
-                                {% translate "Сохранить" %}</button>
+                                {% translate "Save" %}</button>
                         </div>
                     </form>
                 </div>

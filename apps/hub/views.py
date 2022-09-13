@@ -23,11 +23,11 @@ def home(request):
 
     # Fullscreen map button
     Fullscreen(
-        position="topleft", title=_("Полный экран"), title_cancel=_("Выход")
+        position="topleft", title=_("Fullscreen"), title_cancel=_("Exit")
     ).add_to(current_map)
     # A button to define user's location
     LocateControl(
-        auto_start=False, position="topleft", strings={"title": _("Где я")}
+        auto_start=False, position="topleft", strings={"title": _("My location")}
     ).add_to(current_map)
 
     # Rewrite the default popup text to use custom popup with only coordinates
@@ -75,13 +75,11 @@ def home(request):
             # form.ip = get_client_ip(request)
             form.save()
             messages.success(
-                request, _("Метка успешно опубликована!"), extra_tags="success"
+                request, _("Marker added successfully!"), extra_tags="success"
             )
             return redirect(to="home")
         else:
-            messages.error(
-                request, _(f"Ошибка. Проверьте координаты."), extra_tags="danger"
-            )
+            messages.error(request, _("Error. Check coordinates."), extra_tags="danger")
     else:
         form = AddMarkerForm()
 
@@ -103,7 +101,9 @@ def user_markers(request):
         get_object_or_404(
             Marker, owner=request.user, pk=request.POST.get("delete")
         ).delete()
-        messages.success(request, _("Метка удалена!"), extra_tags="success")
+        messages.success(
+            request, _("The marker has been deleted!"), extra_tags="success"
+        )
         return redirect("markers")
 
     paginator = Paginator(markers, 10)
@@ -125,17 +125,17 @@ def edit_marker(request, marker_id):
         form = UpdateMarkerForm(data=request.POST, instance=marker)
         if form.is_valid():
             form.save()
-            messages.success(request, _("Метка обновлена!"), extra_tags="success")
-        else:
-            messages.error(
-                request, _("Пожалуйста исправьте ошибки."), extra_tags="danger"
+            messages.success(
+                request, _("The marker has been updated!"), extra_tags="success"
             )
+        else:
+            messages.error(request, _("Please, correct errors."), extra_tags="danger")
     else:
         if marker.owner == request.user:
             form = UpdateMarkerForm(instance=marker)
         else:
-            messages.error(request, _("Доступ запрещен!"), extra_tags="danger")
-            raise ValueError(_("Доступ запрещен!"))
+            messages.error(request, _("Access forbidden!"), extra_tags="danger")
+            raise ValueError(_("Access forbidden!"))
     context = {"form": form, "marker_id": marker_id}
     return render(request, "hub/edit-marker.html", context)
 

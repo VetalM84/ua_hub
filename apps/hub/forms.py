@@ -14,7 +14,7 @@ class AddMarkerForm(forms.ModelForm):
             attrs={
                 "class": "form-control",
                 "id": "latitude",
-                "placeholder": _("Широта"),
+                "placeholder": _("Latitude"),
             }
         ),
     )
@@ -23,13 +23,13 @@ class AddMarkerForm(forms.ModelForm):
             attrs={
                 "class": "form-control",
                 "id": "longitude",
-                "placeholder": _("Долгота"),
+                "placeholder": _("Longitude"),
             }
         )
     )
     category = forms.ModelChoiceField(
         queryset=Category.objects.all(),
-        empty_label=_("Выберите категорию"),
+        empty_label=_("Choose category"),
         widget=forms.Select(attrs={"class": "form-select"}),
     )
 
@@ -42,7 +42,7 @@ class AddMarkerForm(forms.ModelForm):
                     "class": "form-control",
                     "rows": 3,
                     "max-length": 200,
-                    "placeholder": _("Комментарий, не обязательно"),
+                    "placeholder": _("Comment, not required"),
                 }
             ),
         }
@@ -62,7 +62,7 @@ class UpdateMarkerForm(forms.ModelForm):
                     "class": "form-control",
                     "rows": 5,
                     "max-length": 200,
-                    "placeholder": _("Комментарий, не обязательно"),
+                    "placeholder": _("Comment, not required"),
                 }
             ),
             "category": forms.Select(attrs={"class": "form-select"}),

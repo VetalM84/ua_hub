@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}
-    <title>{% translate "Мой профиль" %}</title>
+    <title>{% translate "My profile" %}</title>
 {% endblock %}
 
 {% block body %}
@@ -12,14 +12,14 @@
                     <img class="rounded-circle mt-5" width="150px" src="{{ MEDIA_URL }}{{ request.user.avatar }}">
                     <span class="font-weight-bold">{{ request.user.first_name }}</span>
                     <span class="text-black-50">{{ request.user.email }}</span>
-                    <span class="font-weight-bold mt-3">{% translate "Дата регистрации" %}:</span>
+                    <span class="font-weight-bold mt-3">{% translate "Sign up date" %}:</span>
                     <span class="text-black-50">{{ request.user.date_joined }}</span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">{% translate "Мой профиль" %}</h4>
+                        <h4 class="text-right">{% translate "My profile" %}</h4>
                     </div>
                     <form method="POST" id="user_update_form" enctype="multipart/form-data">
                         {% csrf_token %}
@@ -28,7 +28,7 @@
                         </div>
                         <div class="mt-4 text-center">
                             <button class="btn btn-primary profile-button" type="submit">
-                                {% translate "Сохранить" %}</button>
+                                {% translate "Save" %}</button>
                         </div>
                     </form>
                 </div>
