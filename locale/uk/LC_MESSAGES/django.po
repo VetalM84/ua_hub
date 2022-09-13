@@ -30,7 +30,7 @@ msgstr "Про проєкт"
 
 #: .\templates\inc\_header.html:16
 msgid "Добавить метку"
-msgstr "Добавити мітку"
+msgstr "Додати мітку"
 
 #: .\templates\inc\_header.html:55
 msgid "Мой профиль"
