@@ -75,7 +75,7 @@ def home(request):
             # form.ip = get_client_ip(request)
             form.save()
             messages.success(
-                request, _("Маркер успешно опубликован!"), extra_tags="success"
+                request, _("Метка успешно опубликована!"), extra_tags="success"
             )
             return redirect(to="home")
         else:
@@ -135,7 +135,7 @@ def edit_marker(request, marker_id):
             form = UpdateMarkerForm(instance=marker)
         else:
             messages.error(request, _("Доступ запрещен!"), extra_tags="danger")
-            raise ValueError(_("Access forbidden"))
+            raise ValueError(_("Доступ запрещен!"))
     context = {"form": form, "marker_id": marker_id}
     return render(request, "hub/edit-marker.html", context)
 

@@ -30,11 +30,11 @@ class Marker(models.Model):
 
     def __str__(self):
         """Model representation."""
-        return f"Маркер №{self.pk} от {self.created_at.date().strftime('%d-%m-%Y')}. {self.category}"
+        return f"Метка №{self.pk} ({self.category}) от {self.created_at.date().strftime('%d-%m-%Y')}."
 
     class Meta:
-        verbose_name = _("Маркер")
-        verbose_name_plural = _("Маркеры")
+        verbose_name = _("Метка")
+        verbose_name_plural = _("Метки")
         ordering = ["created_at"]
 
 

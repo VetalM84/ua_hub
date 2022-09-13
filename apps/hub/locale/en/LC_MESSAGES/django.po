@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-07 12:34+0300\n"
+"POT-Creation-Date: 2022-09-13 18:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\apps\hub\forms.py:14
-msgid "Выберите категорию"
-msgstr "Choose category"
-
-#: .\apps\hub\forms.py:26 .\apps\hub\models.py:13
+#: .\apps\hub\forms.py:17 .\apps\hub\models.py:13
 msgid "Широта"
 msgstr "Latitude"
 
-#: .\apps\hub\forms.py:33 .\apps\hub\models.py:14
+#: .\apps\hub\forms.py:26 .\apps\hub\models.py:14
 msgid "Долгота"
 msgstr "Longitude"
 
-#: .\apps\hub\forms.py:40
+#: .\apps\hub\forms.py:32
+msgid "Выберите категорию"
+msgstr "Choose category"
+
+#: .\apps\hub\forms.py:45 .\apps\hub\forms.py:65
 msgid "Комментарий, не обязательно"
 msgstr "Comment, not required"
 
@@ -55,11 +55,11 @@ msgid "IP адрес"
 msgstr "IP address"
 
 #: .\apps\hub\models.py:36
-msgid "Маркер"
+msgid "Метка"
 msgstr "Marker"
 
 #: .\apps\hub\models.py:37
-msgid "Маркеры"
+msgid "Метки"
 msgstr "Markers"
 
 #: .\apps\hub\models.py:44 .\apps\hub\models.py:65 .\apps\hub\models.py:80
@@ -86,26 +86,77 @@ msgstr "Icons"
 msgid "Цвета"
 msgstr "Colors"
 
-#: .\apps\hub\templates\index.html:11
-msgid "Добавить маркер"
+#: .\apps\hub\templates\hub\edit-marker.html:4
+#: .\apps\hub\templates\hub\edit-marker.html:13
+msgid "Редактирование метки #"
+msgstr "Edit marker #"
+
+#: .\apps\hub\templates\hub\edit-marker.html:22
+msgid "Сохранить"
+msgstr "Save"
+
+#: .\apps\hub\templates\hub\index.html:10
+msgid "Добавить метку"
 msgstr "Add marker"
 
-#: .\apps\hub\templates\index.html:13 .\apps\hub\templates\index.html:32
+#: .\apps\hub\templates\hub\index.html:12
+#: .\apps\hub\templates\hub\index.html:32
 msgid "Закрыть"
 msgstr "Close"
 
-#: .\apps\hub\templates\index.html:33
+#: .\apps\hub\templates\hub\index.html:33
 msgid "Добавить"
 msgstr "Add"
 
-#: .\apps\hub\views.py:22
+#: .\apps\hub\templates\hub\markers.html:5
+#: .\apps\hub\templates\hub\markers.html:12
+msgid "Мои метки"
+msgstr "My markers"
+
+#: .\apps\hub\templates\hub\markers.html:32
+msgid "Комментарий пуст"
+msgstr "Comment is empty"
+
+#: .\apps\hub\templates\hub\markers.html:52
+msgid "У вас еще нет меток. Помогите другим, добавьте их."
+msgstr "You have no any markers. Why not to add some?"
+
+#: .\apps\hub\translation.py:13
+msgid "-- извините, нет перевода --"
+msgstr "-- sorry, no translation provided --"
+
+#: .\apps\hub\views.py:26
 msgid "Полный экран"
 msgstr "Fullscreen"
 
-#: .\apps\hub\views.py:22
+#: .\apps\hub\views.py:26
 msgid "Выход"
 msgstr "Exit"
 
-#: .\apps\hub\views.py:27
+#: .\apps\hub\views.py:30
 msgid "Где я"
 msgstr "My location"
+
+#: .\apps\hub\views.py:78
+msgid "Метка успешно опубликована!"
+msgstr "Marker added successfully!"
+
+#: .\apps\hub\views.py:83
+msgid "Ошибка. Проверьте координаты."
+msgstr "Error. Check coordinates."
+
+#: .\apps\hub\views.py:106
+msgid "Метка удалена!"
+msgstr "The marker has been deleted!"
+
+#: .\apps\hub\views.py:128
+msgid "Метка обновлена!"
+msgstr "Tha marker has been updated!"
+
+#: .\apps\hub\views.py:131
+msgid "Пожалуйста исправьте ошибки."
+msgstr "Please, correct errors."
+
+#: .\apps\hub\views.py:137 .\apps\hub\views.py:138
+msgid "Доступ запрещен!"
+msgstr "Access forbidden!"

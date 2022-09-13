@@ -13,7 +13,7 @@
             </ul>
             {% if request.path == "/" %}
             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                    data-bs-target="#addMarker">{% translate "Добавить маркер" %}</button>
+                    data-bs-target="#addMarker">{% translate "Добавить метку" %}</button>
             {% endif %}
             <!-- Nav links END -->
 
@@ -34,7 +34,8 @@
                     <ul class="dropdown-menu">
                         {% for language in languages %}
                             <li><a class="dropdown-item" href="#"
-                                   onclick="document.lang.language.value='{{ language.code }}'; document.lang.submit();">{{ language.name_local }}</a>
+                                   onclick="document.lang.language.value='{{ language.code }}'; document.lang.submit();">
+                                {{ language.name_local }}</a>
                             </li>
                         {% endfor %}
                     </ul>
