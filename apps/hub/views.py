@@ -9,6 +9,7 @@ from django.utils.translation import gettext as _
 from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
+from django.utils.formats import date_format
 
 from .forms import AddMarkerForm, UpdateMarkerForm
 from .models import Marker
@@ -142,8 +143,10 @@ def edit_marker(request, marker_id):
 def popup_html(marker):
     """Return HTML template for Marker popup window on a map."""
     comment = marker.comment
-    created_at = marker.created_at
-    print(created_at)
+    # format UTC timestamp from DB to local user's short datetime format with appropriate timezone
+    created_at = date_format(
+        marker.created_at.astimezone(), format="SHORT_DATETIME_FORMAT", use_l10n=True
+    )
     owner = marker.owner
 
     html = f"""
@@ -161,7 +164,7 @@ def popup_html(marker):
                 {comment}
             </p>
             <div class="row">
-                <div>{created_at}</div>
+                <div><strong>{created_at}</strong></div>
                 <div><a href="{owner.facebook_link if owner else ""}" target="_top" style="margin:0 10px; display:inline-block;">
                 Facebook</a></div>
             </div>
