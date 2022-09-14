@@ -1,65 +1,70 @@
 {% load i18n %}
-<header class="p-3 text-bg-dark sticky-sm-top">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Navbar">
     <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                <i class="fa fa-cloud">M</i>
-            </a>
+        <a href="{% url "home" %}" class="me-3">
+            <img style="height: 32px;" src="{{ MEDIA_URL }}logo.png" alt="UAHub">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Nav links -->
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{% url "home" %}" class="nav-link px-2 text-secondary">{% translate "Home" %}</a></li>
-                <li><a href="{% url "about" %}" class="nav-link px-2 text-white">{% translate "About" %}</a></li>
+        <div class="navbar-collapse collapse" id="navbarsExample03" style="">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url "home" %}">{% translate "Home" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "about" %}">{% translate "About" %}</a>
+                </li>
             </ul>
-            {% if request.path == "/" %}
-            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                    data-bs-target="#addMarker">{% translate "Add mark" %}</button>
-            {% endif %}
-            <!-- Nav links END -->
 
-            <!-- Language selector -->
-            <div class="dropdown">
-                <form name="lang" action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                    <input name="language" type="hidden"/>
-                    <a class="nav-link px-2 text-white dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                       aria-haspopup="true" aria-expanded="false">
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_language_info for LANGUAGE_CODE as lang %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {{ lang.name_local }}
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        {% for language in languages %}
-                            <li><a class="dropdown-item" href="#"
-                                   onclick="document.lang.language.value='{{ language.code }}'; document.lang.submit();">
-                                {{ language.name_local }}</a>
+            <ul class="navbar-nav mb-2 mb-sm-0">
+                <!-- Language selector -->
+                <li class="nav-item dropdown my-auto">
+                    <form name="lang" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                        <input name="language" type="hidden"/>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                           aria-expanded="false">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_language_info for LANGUAGE_CODE as lang %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {{ lang.name_local }}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% for language in languages %}
+                                <li><a class="dropdown-item" href="#"
+                                       onclick="document.lang.language.value='{{ language.code }}'; document.lang.submit();">
+                                    {{ language.name_local }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </form>
+                </li>
+                <!-- Language selector END -->
+                <!-- Avatar -->
+                <li class="nav-item dropdown my-auto">
+                    {% if request.user.is_authenticated %}
+                        <a href="#" class="nav-link link-light text-decoration-none dropdown-toggle"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" alt="mdo" width="32" height="32"
+                                 class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-start">
+                            <li><a class="dropdown-item" href="{% url "profile" %}">{% translate "My profile" %}</a>
                             </li>
-                        {% endfor %}
-                    </ul>
-                </form>
-            </div>
-            <!-- Language selector END -->
-
-            <!-- Avatar -->
-            <div class="dropdown text-end">
-                {% if request.user.is_authenticated %}
-                    <a href="#" class="d-block link-light text-decoration-none dropdown-toggle"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" alt="mdo" width="32" height="32"
-                             class="rounded-circle">
-                    </a>
-                    <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="{% url "profile" %}">{% translate "My profile" %}</a></li>
-                        <li><a class="dropdown-item" href="{% url "markers" %}">{% translate "My marks" %}</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="{% url "logout" %}">{% translate "Log out" %}</a></li>
-                    </ul>
-                {% else %}
+                            <li><a class="dropdown-item" href="{% url "markers" %}">{% translate "My marks" %}</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url "logout" %}">{% translate "Log out" %}</a></li>
+                        </ul>
+                    {% else %}
                     <a href="#" class="d-block nav-link px-2 link-light text-decoration-none dropdown-toggle"
                        data-bs-toggle="dropdown" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -68,13 +73,21 @@
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg>
                     </a>
-                    <ul class="dropdown-menu text-small">
+                    <ul class="dropdown-menu text-small" style="position: absolute;inset: auto 0px 0px auto;margin: 0px;transform: translate3d(0px, -34px, 0px);">
                         <li><a class="dropdown-item" href="{% url "login" %}">{% translate "Sign in" %}</a></li>
                         <li><a class="dropdown-item" href="{% url "register" %}">{% translate "Sign up" %}</a></li>
                     </ul>
+                    {% endif %}
+                </li>
+                {% if request.path == "/" %}
+                    <li class="nav-item my-auto ms-2">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                                data-bs-target="#addMarker">{% translate "Add mark" %}</button>
+                    </li>
                 {% endif %}
-            </div>
-            <!-- Avatar END -->
-        </div>
+            </ul>
+        <!-- Avatar END -->
+      </div>
     </div>
-</header>
+  </nav>
+<!-- Navbar END -->
