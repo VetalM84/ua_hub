@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-13 22:46+0300\n"
+"POT-Creation-Date: 2022-09-14 12:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
 #: .\apps\hub\forms.py:17 .\apps\hub\models.py:13
 msgid "Latitude"
 msgstr "Широта"
@@ -35,7 +36,7 @@ msgstr "Выберите категорию"
 msgid "Comment, not required"
 msgstr "Комментарий, не обязательно"
 
-#: .\apps\hub\models.py:16 .\apps\hub\models.py:57
+#: .\apps\hub\models.py:16 .\apps\hub\models.py:76
 msgid "Category"
 msgstr "Категория"
 
@@ -63,29 +64,25 @@ msgstr "Метка"
 msgid "Marks"
 msgstr "Метки"
 
-#: .\apps\hub\models.py:44 .\apps\hub\models.py:65 .\apps\hub\models.py:80
+#: .\apps\hub\models.py:65 .\apps\hub\models.py:84
 msgid "Name"
 msgstr "Название"
 
-#: .\apps\hub\models.py:46 .\apps\hub\models.py:72
+#: .\apps\hub\models.py:67 .\apps\hub\models.py:91
 msgid "Icon"
 msgstr "Иконка"
 
-#: .\apps\hub\models.py:49 .\apps\hub\models.py:87
+#: .\apps\hub\models.py:69
 msgid "Color"
 msgstr "Цвет"
 
-#: .\apps\hub\models.py:58
+#: .\apps\hub\models.py:77
 msgid "Categories"
 msgstr "Категории"
 
-#: .\apps\hub\models.py:73
+#: .\apps\hub\models.py:92
 msgid "Icons"
 msgstr "Иконки"
-
-#: .\apps\hub\models.py:88
-msgid "Colors"
-msgstr "Цвета"
 
 #: .\apps\hub\templates\hub\edit-marker.html:4
 #: .\apps\hub\templates\hub\edit-marker.html:13

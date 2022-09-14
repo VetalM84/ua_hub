@@ -41,13 +41,32 @@ class Marker(models.Model):
 class Category(models.Model):
     """Category model for marker."""
 
+    COLORS = (
+        ("cadetblue", "cadetblue"),
+        ("lightred", "lightred"),
+        ("beige", "beige"),
+        ("green", "green"),
+        ("blue", "blue"),
+        ("red", "red"),
+        ("purple", "purple"),
+        ("lightgreen", "lightgreen"),
+        ("darkblue", "darkblue"),
+        ("orange", "orange"),
+        ("gray", "gray"),
+        ("pink", "pink"),
+        ("lightblue", "lightblue"),
+        ("lightgray", "lightgray"),
+        ("darkpurple", "darkpurple"),
+        ("darkgreen", "darkgreen"),
+        ("darkred", "darkred"),
+        ("black", "black"),
+        ("white", "white"),
+    )
     name = models.CharField(max_length=50, verbose_name=_("Name"))
     icon = models.ForeignKey(
         to="Icon", on_delete=models.PROTECT, verbose_name=_("Icon")
     )
-    color = models.ForeignKey(
-        to="Color", on_delete=models.PROTECT, verbose_name=_("Color")
-    )
+    color = models.CharField(choices=COLORS, max_length=50, verbose_name=_("Color"))
 
     def __str__(self):
         """Model representation."""
@@ -71,19 +90,4 @@ class Icon(models.Model):
     class Meta:
         verbose_name = _("Icon")
         verbose_name_plural = _("Icons")
-        ordering = ["name"]
-
-
-class Color(models.Model):
-    """Color model for the marker."""
-
-    name = models.CharField(max_length=100, verbose_name=_("Name"))
-
-    def __str__(self):
-        """Model representation."""
-        return self.name
-
-    class Meta:
-        verbose_name = _("Color")
-        verbose_name_plural = _("Colors")
         ordering = ["name"]

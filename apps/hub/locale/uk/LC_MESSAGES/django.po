@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-13 22:46+0300\n"
+"POT-Creation-Date: 2022-09-14 12:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr "Виберіть категорію"
 msgid "Comment, not required"
 msgstr "Коментар, не обов'язково"
 
-#: .\apps\hub\models.py:16 .\apps\hub\models.py:57
+#: .\apps\hub\models.py:16 .\apps\hub\models.py:76
 msgid "Category"
 msgstr "Категорія"
 
@@ -65,29 +65,25 @@ msgstr "Мітка"
 msgid "Marks"
 msgstr "Мітки"
 
-#: .\apps\hub\models.py:44 .\apps\hub\models.py:65 .\apps\hub\models.py:80
+#: .\apps\hub\models.py:65 .\apps\hub\models.py:84
 msgid "Name"
 msgstr "Назва"
 
-#: .\apps\hub\models.py:46 .\apps\hub\models.py:72
+#: .\apps\hub\models.py:67 .\apps\hub\models.py:91
 msgid "Icon"
 msgstr "Іконка"
 
-#: .\apps\hub\models.py:49 .\apps\hub\models.py:87
+#: .\apps\hub\models.py:69
 msgid "Color"
 msgstr "Колір"
 
-#: .\apps\hub\models.py:58
+#: .\apps\hub\models.py:77
 msgid "Categories"
 msgstr "Категорії"
 
-#: .\apps\hub\models.py:73
+#: .\apps\hub\models.py:92
 msgid "Icons"
 msgstr "Іконки"
-
-#: .\apps\hub\models.py:88
-msgid "Colors"
-msgstr "Кольори"
 
 #: .\apps\hub\templates\hub\edit-marker.html:4
 #: .\apps\hub\templates\hub\edit-marker.html:13

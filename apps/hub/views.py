@@ -61,7 +61,7 @@ def home(request):
             location=(marker.latitude, marker.longitude),
             popup=folium.Popup(html=popup_html(marker), max_width=280, max_height=320),
             icon=folium.Icon(
-                color=marker.category.color.name,
+                color=marker.category.color,
                 icon=marker.category.icon.name,
                 prefix="fa",
             ),
