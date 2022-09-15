@@ -25,8 +25,6 @@
                                 {{ field }}
                             </div>
                         {% endfor %}
-                        <input type="hidden" id="owner" name="owner"
-                               value="{% if request.user %}{{ request.user.id }}{% endif %}">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">{% translate "Close" %}</button>
