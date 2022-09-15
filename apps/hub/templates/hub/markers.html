@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load custom_filters %}
 {% load static %}
 {% block title %}
     <title>{% translate "My marks" %}</title>
@@ -34,7 +35,7 @@
                             </p>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <div class="time">
-                                    <p>{{ marker.created_at|date:"SHORT_DATETIME_FORMAT" }}</p>
+                                    <p>{{ marker.created_at|to_user_tz_short }}</p>
                                 </div>
                                 <div class="marker-controls">
                                     <a href="{% url "edit_marker" marker.pk %}" id="edit-{{ marker.pk }}" type="button" class="border-0 btn btn-outline-success">
