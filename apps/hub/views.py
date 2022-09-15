@@ -72,7 +72,7 @@ def home(request):
         form = AddMarkerForm(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
-            # form.ip = get_client_ip(request)
+            form.ip = get_client_ip(request)
             form.owner = request.user
             form.save()
             messages.success(
@@ -176,11 +176,11 @@ def popup_html(marker):
     return html
 
 
-# def get_client_ip(request):
-#     """Get client IP address."""
-#     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-#     if x_forwarded_for:
-#         ip = x_forwarded_for.split(',')[0]
-#     else:
-#         ip = request.META.get('REMOTE_ADDR')
-#     return ip
+def get_client_ip(request):
+    """Get client IP address."""
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
