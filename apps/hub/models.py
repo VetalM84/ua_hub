@@ -22,6 +22,7 @@ class Marker(models.Model):
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
+        related_name="markers",
         verbose_name=_("Owner"),
     )
     ip = models.GenericIPAddressField(
