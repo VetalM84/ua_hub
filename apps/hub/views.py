@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
 from django.core.paginator import Paginator
+from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.formats import date_format
 from django.utils.translation import gettext as _
@@ -12,6 +13,7 @@ from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
 
+from ..accounts.models import User
 from .forms import AddMarkerForm, UpdateMarkerForm
 from .models import Marker
 
@@ -57,7 +59,13 @@ def home(request):
     folium.LayerControl(position="topleft").add_to(current_map)
 
     # get or set cache for markers queryset
-    markers = cache.get_or_set("markers_frontend", Marker.objects.all().select_related(), 20)
+    markers = cache.get_or_set(
+        "markers_frontend",
+        Marker.objects.prefetch_related(
+            Prefetch("owner", queryset=User.objects.all())
+        ).select_related(),
+        300,
+    )
 
     for marker in markers:
         folium.Marker(
