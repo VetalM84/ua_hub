@@ -3,6 +3,7 @@
 import folium
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.cache import cache
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.formats import date_format
@@ -55,7 +56,9 @@ def home(request):
     # Layer control button
     folium.LayerControl(position="topleft").add_to(current_map)
 
-    markers = Marker.objects.all().select_related()
+    # get or set cache for markers queryset
+    markers = cache.get_or_set("markers_frontend", Marker.objects.all().select_related(), 20)
+
     for marker in markers:
         folium.Marker(
             location=(marker.latitude, marker.longitude),
@@ -68,6 +71,7 @@ def home(request):
             tooltip=marker.category.name,
         ).add_to(current_map)
 
+    # add new Marker
     if request.method == "POST":
         form = AddMarkerForm(request.POST)
         if form.is_valid():
@@ -96,7 +100,7 @@ def about(request):
 
 @login_required(redirect_field_name="login")
 def user_markers(request):
-    """User markers list page."""
+    """User markers list page with Delete functionality on POST."""
     markers = Marker.objects.filter(owner_id=request.user.id).select_related()
     if request.method == "POST":
         get_object_or_404(
