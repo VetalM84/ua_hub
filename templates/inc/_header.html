@@ -67,6 +67,8 @@
                     {% else %}
                     <a href="#" class="d-block nav-link px-2 link-light text-decoration-none dropdown-toggle"
                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ MEDIA_URL }}avatar/default_avatar.jpg" alt="mdo" width="32" height="32"
+                                                         class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" href="{% url "login" %}">{% translate "Sign in" %}</a></li>
