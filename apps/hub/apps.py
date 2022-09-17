@@ -9,6 +9,3 @@ class HubConfig(AppConfig):
         """Register all signals."""
         # Implicitly connect a signal handlers decorated with @receiver.
         from . import signals
-
-        # Explicitly connect a signal handler.
-        # request_finished.connect(signals.my_callback)

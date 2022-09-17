@@ -13,7 +13,8 @@ from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
 
-from ..accounts.models import User
+from apps.accounts.models import User
+
 from .forms import AddMarkerForm, UpdateMarkerForm
 from .models import Marker
 
