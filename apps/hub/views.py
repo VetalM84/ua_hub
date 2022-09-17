@@ -170,8 +170,10 @@ def popup_html(marker):
     <head></head>
     <body>
         <div style="text-align:center;">
-            <img style="max-width: 56px; border-radius: 50%;" 
+          <a target="_top" href="{"profile-public/" + str(owner.pk) if owner else "#"}/">
+            <img style="max-width: 56px; border-radius: 50%;" alt="user_image"
                 src="media/{owner.avatar if owner else "avatar/default_avatar.jpg"}">
+          </a>
             <h4 style="font-weight:bold; margin:10px 0px 0px 0px;">
                 {owner.get_full_name() if owner else ""}
             </h4>
@@ -180,8 +182,6 @@ def popup_html(marker):
             </p>
             <div class="row">
                 <div><strong>{created_at}</strong></div>
-                <div><a href="{owner.facebook_link if owner else ""}" target="_top" style="margin:0 10px; display:inline-block;">
-                Facebook</a></div>
             </div>
         </div>
         </body>
