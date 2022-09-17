@@ -86,7 +86,7 @@ def home(request):
         if form.is_valid():
             form = form.save(commit=False)
             form.ip = get_client_ip(request)
-            form.owner = request.user
+            form.owner = request.user if isinstance(request.user, User) else None
             form.save()
             messages.success(
                 request, _("Marker added successfully!"), extra_tags="success"
