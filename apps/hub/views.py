@@ -141,6 +141,7 @@ def edit_marker(request, marker_id):
             messages.success(
                 request, _("The marker has been updated!"), extra_tags="success"
             )
+            return redirect(to="markers")
         else:
             messages.error(request, _("Please, correct errors."), extra_tags="danger")
     else:
