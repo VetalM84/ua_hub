@@ -1,6 +1,5 @@
 """Tests for HUB app."""
 
-from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
@@ -8,7 +7,7 @@ from apps.accounts.models import User
 from apps.hub.models import Category, Icon, Marker
 
 
-class ViewsTest(TestCase):
+class ViewsWithLoggedInUserTest(TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -50,9 +49,11 @@ class ViewsTest(TestCase):
         """Test home page."""
         response = self.client.get(path=reverse("home"))
         self.assertEqual(response.status_code, 200)
+
         self.assertTemplateUsed(response, "base.html")
         self.assertTemplateUsed(response, "inc/_header.html")
         self.assertTemplateUsed(response, "hub/index.html")
+
         # check for Add button popup form
         self.assertContains(response, text='name="addMarkerForm"')
         # check for a map rendered
@@ -69,6 +70,12 @@ class ViewsTest(TestCase):
             html=True,
         )
 
+    def test_user_logout(self):
+        """Test user log out with redirect to login page."""
+        response = self.client.get(path=reverse("logout"))
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("login"))
+
     def test_index_post(self):
         """Test post Marker request to home page."""
         response = self.client.post(
@@ -84,8 +91,60 @@ class ViewsTest(TestCase):
         )
         self.assertEqual(Marker.objects.all().count(), 2)
         self.assertEqual(response.status_code, 200)
+
         # check if there is a marker on a map
         self.assertContains(response, text="[48.3544, 31.928]")
         # check if there is a Popup windows with user logged in
         self.assertContains(response, text="profile-public/1/")
-        print(response.content)
+
+    def test_lang_change(self):
+        """Test language change."""
+        response = self.client.post(
+            path="/i18n/setlang/", data={"language": "ru"}, follow=True
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, text='<html lang="ru">')
+
+    def test_about_page(self):
+        """Test about page."""
+        response = self.client.get(path=reverse("about"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "hub/about.html")
+
+    def test_public_user_profile(self):
+        """Test public user profile page."""
+        # url = reverse("public-profile", args=(User.objects.get(pk=1).id,))
+        url = reverse("public-profile", args=(1,))
+        response = self.client.get(path=url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, text="TestFirstName TestLastName")
+        self.assertTemplateUsed(response, "accounts/profile-public.html")
+
+    def test_user_profile(self):
+        """Test user profile page."""
+        response = self.client.get(path=reverse("profile"))
+        self.assertEqual(response.status_code, 200)
+
+        self.assertTemplateUsed(response, "base.html")
+        self.assertTemplateUsed(response, "inc/_header.html")
+        self.assertTemplateUsed(response, "accounts/profile.html")
+
+        self.assertContains(response, text="TestFirstName")
+        self.assertContains(
+            response,
+            text='<form method="POST" id="user_update_form" enctype="multipart/form-data">',
+            html=True,
+        )
+        # print(response.content)
+
+    def test_user_register(self):
+        """Test user register page."""
+        pass
+
+    def test_user_login(self):
+        """Test user login page."""
+        pass
+
+    def test_change_password(self):
+        """Test change password method page."""
+        pass
