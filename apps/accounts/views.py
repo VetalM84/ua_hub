@@ -4,10 +4,11 @@ from django.contrib import messages
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext as _
 
 from apps.accounts.forms import UserLoginForm, UserProfileForm, UserRegisterForm
+from apps.accounts.models import User
 
 
 @login_required(redirect_field_name="login")
@@ -25,6 +26,24 @@ def user_profile(request):
     else:
         form = UserProfileForm(instance=request.user)
     return render(request, "accounts/profile.html", {"form": form})
+
+
+def public_user_profile(request, user_id):
+    """User public profile page."""
+    user = get_object_or_404(
+        User.objects.only(
+            "id",
+            "first_name",
+            "last_name",
+            "date_joined",
+            "facebook_link",
+            "contacts",
+            "hometown",
+            "avatar",
+        ),
+        pk=user_id,
+    )
+    return render(request, "accounts/profile-public.html", {"user": user})
 
 
 @login_required(redirect_field_name="login")

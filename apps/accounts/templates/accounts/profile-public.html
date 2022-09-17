@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    <title>{% translate "User" %}: {{ user.get_full_name }}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" alt="user" width="150px" src="{{ MEDIA_URL }}{{ user.avatar }}">
+                    <span class="font-weight-bold">{{ user.get_full_name }}</span>
+                    <span class="font-weight-bold mt-3">{% translate "Sign up date" %}:</span>
+                    <span class="text-black-50">{{ user.date_joined }}</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">{% translate "User profile" %}</h4>
+                    </div>
+                    <div class="row mt-3">
+                        <p>
+                            <strong>{% translate "Hometown" %}: </strong>
+                            {% if user.hometown %}
+                                {{ user.hometown.title }}
+                            {% else %}
+                                {% translate "No data" %}
+                            {% endif %}
+                        </p>
+                        <p>
+                            {% if user.facebook_link %}
+                                <a href="{{ user.facebook_link }}">{% translate "Facebook profile link" %}</a>
+                            {% else %}
+                                {% translate "No data" %}
+                            {% endif %}
+                        </p>
+                        <p>
+                            <strong>{% translate "Contacts" %}: </strong>
+                            {% if user.contacts %}
+                                {{ user.contacts }}
+                            {% else %}
+                                {% translate "No data" %}
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+                        <h4 class="text-right">{% translate "User marks" %}</h4>
+                    </div>
+                    <div class="row mt-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
