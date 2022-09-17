@@ -2,6 +2,7 @@
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
 from apps.accounts.managers import UserManager
@@ -12,13 +13,9 @@ class User(AbstractUser):
 
     username = None
     email = models.EmailField(blank=False, unique=True, verbose_name=_("Email"))
-    facebook_link = models.URLField(
-        blank=True, verbose_name=_("Facebook profile link")
-    )
+    facebook_link = models.URLField(blank=True, verbose_name=_("Facebook profile link"))
     contacts = models.CharField(blank=True, max_length=250, verbose_name=_("Contacts"))
-    hometown = models.CharField(
-        blank=True, max_length=250, verbose_name=_("Hometown")
-    )
+    hometown = models.CharField(blank=True, max_length=250, verbose_name=_("Hometown"))
     avatar = models.ImageField(
         upload_to="avatar/",
         verbose_name=_("Image"),
@@ -33,6 +30,10 @@ class User(AbstractUser):
     def __str__(self):
         """Model representation."""
         return self.email
+
+    def get_absolute_url(self):
+        """Get url to User's model instance."""
+        return reverse_lazy("public-profile", kwargs={"user_id": self.pk})
 
     def get_full_name(self):
         """Concatenate fist and last names."""
