@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load cache %}
 {% load custom_filters %}
 {% load static %}
 {% block title %}
@@ -13,7 +14,8 @@
         <h1 class="h2 mb-3">{% translate "My marks" %}</h1>
         <form method="post">
         <div class="row">
-               {% csrf_token %}
+            {% csrf_token %}
+            {% cache 3600 markers_list request.user.pk request.LANGUAGE_CODE %}
                {% for marker in page_obj.object_list %}
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="category card mb-4">
@@ -52,6 +54,7 @@
                {% empty %}
                    <p>{% translate "You have no any markers. Why not to add some?" %}</p>
                 {% endfor %}
+            {% endcache %}
             <div class="col-12 d-flex align-items-center justify-content-center">
                 <nav>
                     {% if page_obj.has_other_pages %}
