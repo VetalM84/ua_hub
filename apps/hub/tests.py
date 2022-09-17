@@ -12,7 +12,16 @@ class ViewsTest(TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        User.objects.create_user(email="test@test.com", password="test")
+        User.objects.create_user(
+            email="test@test.com",
+            password="test",
+            first_name="TestFirstName",
+            last_name="TestLastName",
+            hometown="Kiev",
+            facebook_link="https://www.facebook.com/profile.php?id=1000",
+            contacts="+380991111111",
+            avatar="src='/media/avatar/test_avatar.jpg'",
+        )
         Icon.objects.create(name="cloud")
         Category.objects.create(name="Test category", icon_id=1, color="red")
         Marker.objects.create(
@@ -53,6 +62,7 @@ class ViewsTest(TestCase):
         """Check that test user are logged in."""
         response = self.client.get(path=reverse("home"))
         self.assertEqual(response.status_code, 200)
+        self.assertContains(response, text="/media/avatar/test_avatar.jpg")
         self.assertContains(
             response,
             text='<a class="dropdown-item" href="/logout/">Log out</a>',
@@ -74,5 +84,8 @@ class ViewsTest(TestCase):
         )
         self.assertEqual(Marker.objects.all().count(), 2)
         self.assertEqual(response.status_code, 200)
+        # check if there is a marker on a map
         self.assertContains(response, text="[48.3544, 31.928]")
+        # check if there is a Popup windows with user logged in
+        self.assertContains(response, text="profile-public/1/")
         print(response.content)
