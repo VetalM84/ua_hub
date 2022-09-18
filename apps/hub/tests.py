@@ -54,7 +54,7 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertTemplateUsed(response, "inc/_header.html")
         self.assertTemplateUsed(response, "hub/index.html")
 
-        # check for Add button popup form
+        # check for Add marker button popup form
         self.assertContains(response, text='name="addMarkerForm"')
         # check for a map rendered
         self.assertContains(response, text="center: [50.45, 30.52],")
@@ -74,7 +74,7 @@ class ViewsWithLoggedInUserTest(TestCase):
         """Test user log out with redirect to login page."""
         response = self.client.get(path=reverse("logout"))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse("login"))
+        self.assertRedirects(response, expected_url=reverse("login"))
 
     def test_index_post(self):
         """Test post Marker request to home page."""
@@ -90,6 +90,7 @@ class ViewsWithLoggedInUserTest(TestCase):
             follow=True,
         )
         self.assertEqual(Marker.objects.all().count(), 2)
+        self.assertEqual(Marker.objects.filter(owner_id=1).count(), 1)
         self.assertEqual(response.status_code, 200)
 
         # check if there is a marker on a map
@@ -110,6 +111,8 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.get(path=reverse("about"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "hub/about.html")
+        # check for Add marker button popup form
+        self.assertNotContains(response, text='name="addMarkerForm"')
 
     def test_public_user_profile(self):
         """Test public user profile page."""
@@ -120,30 +123,74 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertContains(response, text="TestFirstName TestLastName")
         self.assertTemplateUsed(response, "accounts/profile-public.html")
 
-    def test_user_profile(self):
-        """Test user profile page."""
+    def test_user_profile_update_form(self):
+        """Test user profile page with update data form."""
         response = self.client.get(path=reverse("profile"))
         self.assertEqual(response.status_code, 200)
 
         self.assertTemplateUsed(response, "base.html")
-        self.assertTemplateUsed(response, "inc/_header.html")
         self.assertTemplateUsed(response, "accounts/profile.html")
 
         self.assertContains(response, text="TestFirstName")
         self.assertContains(
             response,
-            text='<form method="POST" id="user_update_form" enctype="multipart/form-data">',
-            html=True,
+            text=b'<form method="POST" id="user_update_form" enctype="multipart/form-data">',
         )
-        # print(response.content)
+        fields = [
+            'id="id_first_name"',
+            'id="id_last_name"',
+            'id="id_hometown"',
+            'id="id_email"',
+            'id="id_facebook_link"',
+            'id="id_contacts"',
+            'id="id_avatar"',
+        ]
+        for field in fields:
+            self.assertContains(
+                response,
+                text=field,
+            )
 
-    def test_user_register(self):
-        """Test user register page."""
-        pass
+    def test_user_profile_update(self):
+        """Test user profile update data."""
+        data = {"first_name": "TestUpdateFirstName"}
+        response = self.client.post(path=reverse("profile"), data=data)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, text="TestUpdateFirstName")
 
-    def test_user_login(self):
-        """Test user login page."""
-        pass
+    def test_user_markers_page(self):
+        """Test user markers list page."""
+        Marker.objects.create(
+            latitude=31.6329,
+            longitude=51.1747,
+            category_id=1,
+            comment="Test2 comment",
+            owner=self.user,
+            ip="127.0.0.2",
+        )
+        response = self.client.get(path=reverse("markers"))
+        self.assertEqual(Marker.objects.filter(owner=self.user).count(), 1)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "hub/markers.html")
+
+        self.assertContains(response, text="Test category")
+        self.assertContains(response, text="Test2 comment")
+
+    def test_user_markers_delete(self):
+        """Test user markers delete."""
+        Marker.objects.create(
+            latitude=31.6329,
+            longitude=51.1747,
+            category_id=1,
+            comment="Test2 comment",
+            owner=self.user,
+            ip="127.0.0.2",
+        )
+        response = self.client.post(path=reverse("markers"), data={"delete": 2})
+        self.assertRedirects(response, expected_url=reverse("markers"))
+        self.assertEqual(Marker.objects.filter(owner=self.user).count(), 0)
+        print(response.content)
+        # TODO: edit marker, edit foreign marker (access restr.)
 
     def test_change_password(self):
         """Test change password method page."""
