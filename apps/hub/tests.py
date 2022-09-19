@@ -239,3 +239,60 @@ class ViewsWithLoggedInUserTest(TestCase):
     def test_change_password(self):
         """Test change password method page."""
         pass
+
+
+class ViewsWithNoUserLoggedInTest(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        Icon.objects.create(name="cloud")
+        Category.objects.create(name="Test category", icon_id=1, color="red")
+        Marker.objects.create(
+            latitude=30.6329,
+            longitude=50.1747,
+            category_id=1,
+            comment="Test comment",
+            owner=None,
+            ip="127.0.0.1",
+        )
+        print("setUpClass")
+
+    @classmethod
+    def tearDownClass(cls):
+        print("tearDownClass")
+
+    def setUp(self):
+        print("setUp")
+
+    def tearDown(self):
+        print("tearDown")
+
+    def test_access_user_markers_page(self):
+        """Test access to user markers page with redirect for non-logged-in users."""
+        response = self.client.get(path=reverse("markers"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_user_profile_page(self):
+        """Test access to user profile page with redirect for non-logged-in users."""
+        response = self.client.get(path=reverse("profile"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_access_edit_marker_page(self):
+        """Test access to user edit marker page with redirect for non-logged-in users."""
+        url = reverse("edit_marker", args=(1,))
+        response = self.client.get(path=url)
+        self.assertEqual(response.status_code, 302)
+
+    def test_user_register(self):
+        """Test user register page."""
+        response = self.client.get(path=reverse("profile"))
+        self.assertEqual(response.status_code, 200)
+
+        self.assertTemplateUsed(response, "base.html")
+        self.assertTemplateUsed(response, "inc/_header.html")
+        self.assertTemplateUsed(response, "accounts/register.html")
+        print(response.content)
+
+    def test_user_login(self):
+        """Test user login page."""
+        pass
