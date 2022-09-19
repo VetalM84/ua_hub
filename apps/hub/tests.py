@@ -1,4 +1,5 @@
 """Tests for HUB app."""
+from unittest import skip
 
 from django.test import TestCase
 from django.urls import reverse
@@ -189,9 +190,52 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.post(path=reverse("markers"), data={"delete": 2})
         self.assertRedirects(response, expected_url=reverse("markers"))
         self.assertEqual(Marker.objects.filter(owner=self.user).count(), 0)
-        print(response.content)
-        # TODO: edit marker, edit foreign marker (access restr.)
 
+    def test_edit_marker_page(self):
+        """Test edit marker page."""
+        Marker.objects.create(
+            latitude=32.6329,
+            longitude=52.1747,
+            category_id=1,
+            comment="Test3 comment",
+            owner=self.user,
+            ip="127.0.0.3",
+        )
+        response = self.client.get(path=reverse("edit_marker", args=(2,)))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "hub/edit-marker.html")
+        self.assertContains(response, text="Test3 comment")
+
+    def test_edit_foreign_marker(self):
+        """Test edit foreign marker with exception raises."""
+        with self.assertRaises(expected_exception=ValueError):
+            self.client.get(path=reverse("edit_marker", args=(1,)))
+
+    def test_edit_marker_post(self):
+        """Test edit marker with post request."""
+        Marker.objects.create(
+            latitude=32.6329,
+            longitude=52.1747,
+            category_id=1,
+            comment="Test3 comment",
+            owner=self.user,
+            ip="127.0.0.3",
+        )
+        response = self.client.post(
+            path=reverse("edit_marker", args=(2,)),
+            data={
+                "latitude": 48.3544,
+                "longitude": 31.9280,
+                "comment": "Test Edit Marker",
+                "category": 1,
+                "owner": self.user.pk,
+            },
+            follow=True,
+        )
+        self.assertRedirects(response, expected_url=reverse("markers"))
+        self.assertContains(response, text="Test Edit Marker")
+
+    @skip
     def test_change_password(self):
         """Test change password method page."""
         pass
