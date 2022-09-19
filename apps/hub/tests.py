@@ -75,7 +75,7 @@ class ViewsWithLoggedInUserTest(TestCase):
         """Test user log out with redirect to login page."""
         response = self.client.get(path=reverse("logout"))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, expected_url=reverse("login"))
+        self.assertRedirects(response, expected_url=reverse("home"))
 
     def test_index_post(self):
         """Test post Marker request to home page."""
