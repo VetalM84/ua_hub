@@ -11,7 +11,7 @@ from apps.accounts.forms import UserLoginForm, UserProfileForm, UserRegisterForm
 from apps.accounts.models import User
 
 
-@login_required(redirect_field_name="login")
+@login_required
 def user_profile(request):
     """User profile page."""
     if request.method == "POST":
@@ -47,7 +47,7 @@ def public_user_profile(request, user_id):
     return render(request, "accounts/profile-public.html", {"user": user})
 
 
-@login_required(redirect_field_name="login")
+@login_required
 def change_password(request):
     """User change password method."""
     if request.method == "POST":

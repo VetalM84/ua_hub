@@ -107,7 +107,7 @@ def about(request):
     return render(request, template_name="hub/about.html")
 
 
-@login_required(redirect_field_name="login")
+@login_required
 def user_markers(request):
     """User markers list page with Delete functionality on POST."""
     markers = Marker.objects.filter(owner_id=request.user.id).select_related()
@@ -131,7 +131,7 @@ def user_markers(request):
     return render(request, "hub/markers.html", context)
 
 
-@login_required(redirect_field_name="login")
+@login_required
 def edit_marker(request, marker_id):
     """Edit marker data page."""
     marker = get_object_or_404(Marker, pk=marker_id)
