@@ -87,7 +87,7 @@ def user_login(request):
 def user_logout(request):
     """User logout method."""
     logout(request)
-    return redirect(to="login")
+    return redirect(to="home")
 
 
 def user_register(request):
