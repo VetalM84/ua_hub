@@ -19,6 +19,7 @@ def user_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, _("Profile updated!"), extra_tags="success")
+            redirect(to="profile")
         else:
             messages.error(
                 request, _("Please, correct the errors."), extra_tags="danger"
