@@ -89,6 +89,8 @@ TEMPLATES = [
 ]
 AUTH_USER_MODEL = 'accounts.User'
 
+LOGIN_URL = '/login/'
+
 WSGI_APPLICATION = 'ua_hub.wsgi.application'
 
 
