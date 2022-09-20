@@ -79,6 +79,8 @@ def user_login(request):
                 request, _("You have successfully signed in!"), extra_tags="success"
             )
             return redirect(to="markers")
+        else:
+            messages.error(request, _("Error logging-in!"), extra_tags="danger")
     else:
         form = UserLoginForm()
     return render(request, "accounts/login.html", {"form": form})
