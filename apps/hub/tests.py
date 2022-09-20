@@ -147,10 +147,7 @@ class ViewsWithLoggedInUserTest(TestCase):
             'id="id_avatar"',
         ]
         for field in fields:
-            self.assertContains(
-                response,
-                text=field,
-            )
+            self.assertContains(response, text=field)
 
     def test_user_profile_update(self):
         """Test user profile update data."""
@@ -283,16 +280,64 @@ class ViewsWithNoUserLoggedInTest(TestCase):
         response = self.client.get(path=url)
         self.assertEqual(response.status_code, 302)
 
-    def test_user_register(self):
+    def test_user_register_page(self):
         """Test user register page."""
-        response = self.client.get(path=reverse("profile"))
-        self.assertEqual(response.status_code, 200)
-
+        response = self.client.get(path=reverse("register"))
         self.assertTemplateUsed(response, "base.html")
         self.assertTemplateUsed(response, "inc/_header.html")
         self.assertTemplateUsed(response, "accounts/register.html")
-        print(response.content)
 
-    def test_user_login(self):
+        self.assertEqual(response.status_code, 200)
+        fields = [
+            'id="id_first_name"',
+            'id="id_last_name"',
+            'id="id_email"',
+            'id="id_password1"',
+            'id="id_password2"',
+        ]
+        for field in fields:
+            self.assertContains(response, text=field)
+
+    def test_user_register_post(self):
+        """Test user register post data."""
+        data = {
+            "first_name": "TestFirstName2",
+            "last_name": "TestLastName2",
+            "email": "test222@test.com",
+            "password1": "i2Cmb3xnpC69",
+            "password2": "i2Cmb3xnpC69",
+        }
+        response = self.client.post(path=reverse("register"), data=data, follow=True)
+        self.assertRedirects(response, expected_url=reverse("profile"))
+
+        self.assertContains(response, text="test222@test.com")
+        self.assertContains(
+            response,
+            text=b'<div class="alert alert-success success alert-dismissible fade show" role="alert">',
+        )
+
+    def test_user_login_page(self):
         """Test user login page."""
-        pass
+        response = self.client.get(path=reverse("login"))
+        self.assertEqual(response.status_code, 200)
+        fields = [
+            'id="id_username"',
+            'id="id_password"',
+            'type="submit"',
+        ]
+        for field in fields:
+            self.assertContains(response, text=field)
+
+    def test_user_login_post_fails(self):
+        """Test user login post data with fails due to user not exists."""
+        data = {
+            "username": "test222@test.com",
+            "password": "i2Cmb3xnpC69",
+        }
+        response = self.client.post(path=reverse("login"), data=data, follow=True)
+        self.assertTrue(response.status_code, 200)
+        self.assertTemplateUsed(response, "accounts/login.html")
+        self.assertContains(
+            response,
+            text=b'<div class="alert alert-danger error alert-dismissible fade show" role="alert">',
+        )
