@@ -44,7 +44,10 @@ def home(request):
                 function latLngPop(e) {
                     {{this.get_name()}}
                         .setLatLng(e.latlng)
-                        .setContent(e.latlng.lat.toFixed(4) + ", " + e.latlng.lng.toFixed(4))
+                        .setContent(e.latlng.lat.toFixed(4) + ", " + e.latlng.lng.toFixed(4) + 
+                        "<br><div style='text-align: center; font-size: 2em;'>" +
+                        "<a data-bs-toggle='modal' data-bs-target='#addMarker' role='button'>" + 
+                        "<i class='fa fa-map-marker' aria-hidden='true'></i></a></div>")
                         .openOn({{this._parent.get_name()}});
                         parent.document.getElementById("latitude").value = e.latlng.lat.toFixed(4);
                         parent.document.getElementById("longitude").value = e.latlng.lng.toFixed(4);
