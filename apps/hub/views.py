@@ -167,6 +167,17 @@ def popup_html(marker):
         marker.created_at.astimezone(), format="SHORT_DATETIME_FORMAT", use_l10n=True
     )
     owner = marker.owner
+    owner_data = ""
+    if owner:
+        owner_data = f"""
+              <a target="_top" href="profile-public/{owner.pk}/">
+                <img style="max-width: 56px; border-radius: 50%;" alt="user_image"
+                    src="media/{owner.avatar if owner else "avatar/default_avatar.jpg"}">
+              </a>
+                <h4 style="font-weight:bold; margin:10px 0px 0px 0px;">
+                    {owner.get_full_name() if owner else ""}
+                </h4>
+        """
 
     html = f"""
     <!DOCTYPE html>
@@ -174,13 +185,7 @@ def popup_html(marker):
     <head></head>
     <body>
         <div style="text-align:center;">
-          <a target="_top" href="{"profile-public/" + str(owner.pk) if owner else "#"}/">
-            <img style="max-width: 56px; border-radius: 50%;" alt="user_image"
-                src="media/{owner.avatar if owner else "avatar/default_avatar.jpg"}">
-          </a>
-            <h4 style="font-weight:bold; margin:10px 0px 0px 0px;">
-                {owner.get_full_name() if owner else ""}
-            </h4>
+            {owner_data}
             <p style="font-size:15px; margin-top:10px; margin-bottom:10px;">
                 {comment}
             </p>
