@@ -1,5 +1,5 @@
 """Hub app views."""
-
+import branca
 import folium
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -24,6 +24,8 @@ def home(request):
 
     start_location = (50.45, 30.52)  # Ukraine
     current_map = folium.Map(location=start_location, zoom_start=6)
+    map_container = branca.element.Figure(height="100%")
+    map_container.add_child(current_map)
 
     # Fullscreen map button
     Fullscreen(
@@ -100,8 +102,7 @@ def home(request):
     else:
         form = AddMarkerForm()
 
-    m = current_map._repr_html_()
-    context = {"current_map": m, "form": form}
+    context = {"current_map": map_container.render(), "form": form}
     return render(request, template_name="hub/index.html", context=context)
 
 
