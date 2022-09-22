@@ -37,7 +37,14 @@
     </div>
     {{ form.media }}
     <!-- Modal window add marker END -->
+    <!-- Floating button add marker -->
+    <a class="btn btn-danger btn-lg rounded-circle" data-bs-toggle="modal" data-bs-target="#addMarker"
+       style="font-size: larger; height: 52px; width: 52px; position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 1000; line-height: 34px;"
+       role="button" title="{% translate "Add mark" %}">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </a>
+    <!-- Floating button add marker END -->
     <!-- Map -->
-    {{ current_map | safe }}
+        {{ current_map | safe }}
     <!-- Map END-->
 {% endblock %}
