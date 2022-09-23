@@ -14,20 +14,21 @@
         <div class="navbar-collapse collapse" id="navbarsExample03" style="">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url "home" %}">{% translate "Map" %}</a>
+                    <a class="nav-link link-light" href="{% url "home" %}">{% translate "Map" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url "about" %}">{% translate "About" %}</a>
+                    <a class="nav-link link-light" href="{% url "about" %}">{% translate "About" %}</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav mb-2 mb-sm-0">
                 <!-- Language selector -->
                 <li class="nav-item dropdown my-auto">
-                    <form name="lang" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                    <form name="lang" action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
                         <input name="next" type="hidden" value="{{ redirect_to }}"/>
                         <input name="language" type="hidden"/>
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        <a class="nav-link dropdown-toggle link-light" data-bs-toggle="dropdown" href="#" role="button"
                            aria-expanded="false">
                             {% get_current_language as LANGUAGE_CODE %}
                             {% get_language_info for LANGUAGE_CODE as lang %}
@@ -56,10 +57,10 @@
                                  class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="{% url "profile" %}">{% translate "My profile" %}</a>
-                            </li>
                             <li><a class="dropdown-item" href="{% url "markers" %}">{% translate "My marks" %}</a></li>
                             <li>
+                            <li><a class="dropdown-item" href="{% url "profile" %}">{% translate "My profile" %}</a>
+                            </li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="{% url "logout" %}">{% translate "Log out" %}</a></li>
