@@ -114,7 +114,9 @@ def about(request):
 @login_required
 def user_markers(request):
     """User markers list page with Delete functionality on POST."""
-    markers = Marker.objects.filter(owner_id=request.user.id).select_related()
+    markers = (
+        Marker.objects.filter(owner_id=request.user.id).order_by("-pk").select_related()
+    )
     if request.method == "POST":
         get_object_or_404(
             Marker, owner=request.user, pk=request.POST.get("delete")
