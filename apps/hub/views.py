@@ -8,6 +8,7 @@ from django.core.paginator import Paginator
 from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.formats import date_format
+from django.utils.translation import get_language
 from django.utils.translation import gettext as _
 from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
@@ -70,7 +71,7 @@ def home(request):
         Marker.objects.prefetch_related(
             Prefetch("owner", queryset=User.objects.all())
         ).select_related(),
-        300,
+        3600,
     )
 
     for marker in markers:
@@ -114,8 +115,11 @@ def about(request):
 @login_required
 def user_markers(request):
     """User markers list page with Delete functionality on POST."""
-    markers = (
-        Marker.objects.filter(owner_id=request.user.id).order_by("-pk").select_related()
+
+    markers = cache.get_or_set(
+        f"markers_user_{request.user.pk}_{get_language()}",
+        Marker.objects.filter(owner_id=request.user.id).order_by("-pk").select_related(),
+        3600,
     )
     if request.method == "POST":
         get_object_or_404(
