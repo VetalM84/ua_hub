@@ -10,6 +10,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.formats import date_format
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
+from django.views.decorators.cache import cache_page
 from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
@@ -107,6 +108,7 @@ def home(request):
     return render(request, template_name="hub/index.html", context=context)
 
 
+@cache_page(0)
 def about(request):
     """About project page."""
     return render(request, template_name="hub/about.html")
