@@ -1,4 +1,5 @@
 """Hub app views."""
+
 import branca
 import folium
 from django.contrib import messages
@@ -182,9 +183,9 @@ def popup_html(marker):
                 <img style="max-width: 56px; border-radius: 50%;" alt="user_image"
                     src="media/{owner.avatar if owner else "avatar/default_avatar.jpg"}">
               </a>
-                <h4 style="font-weight:bold; margin:10px 0px 0px 0px;">
+                <h5 style="font-weight:bold; margin:10px 0px 0px 0px;">
                     {owner.get_full_name() if owner else ""}
-                </h4>
+                </h5>
         """
 
     html = f"""
