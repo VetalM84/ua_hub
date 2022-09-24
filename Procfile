@@ -1,0 +1,1 @@
+web: python manage.py migrate gunicorn ua_hub.wsgi
