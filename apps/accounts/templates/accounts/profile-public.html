@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-md-3">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" alt="user" width="150px" src="{{ MEDIA_URL }}{{ user.avatar }}">
+                    <img class="rounded-circle mt-5" alt="user" width="150px" height="150px" src="{{ MEDIA_URL }}{{ user.avatar }}">
                     <span class="font-weight-bold">{{ user.get_full_name }}</span>
                     <span class="font-weight-bold mt-3">{% translate "Sign up date" %}:</span>
                     <span class="text-black-50">{{ user.date_joined }}</span>
@@ -29,13 +29,11 @@
                                 {% translate "No data" %}
                             {% endif %}
                         </p>
-                        <p>
-                            {% if user.facebook_link %}
+                        {% if user.facebook_link %}
+                            <p>
                                 <a href="{{ user.facebook_link }}">{% translate "Facebook profile link" %}</a>
-                            {% else %}
-                                {% translate "No data" %}
-                            {% endif %}
-                        </p>
+                            </p>
+                        {% endif %}
                         <p>
                             <strong>{% translate "Contacts" %}: </strong>
                             {% if user.contacts %}
