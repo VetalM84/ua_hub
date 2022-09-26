@@ -232,10 +232,21 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertRedirects(response, expected_url=reverse("markers"))
         self.assertContains(response, text="Test Edit Marker")
 
-    @skip
-    def test_change_password(self):
+    def test_change_password_page(self):
         """Test change password method page."""
-        pass
+        response = self.client.get(path=reverse("password_change"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "accounts/password_change.html")
+
+    def test_change_password_success(self):
+        """Test change password method page with success."""
+        data = {
+            "old_password": "test",
+            "new_password1": "test_new_password",
+            "new_password2": "test_new_password",
+        }
+        response = self.client.post(path=reverse("password_change"), data=data)
+        self.assertRedirects(response, expected_url=reverse("profile"))
 
 
 class ViewsWithNoUserLoggedInTest(TestCase):
