@@ -3,7 +3,7 @@
 from django.urls import path
 
 from apps.accounts.views import (
-    change_password,
+    password_change,
     public_user_profile,
     user_login,
     user_logout,
@@ -17,5 +17,5 @@ urlpatterns = [
     path("register/", user_register, name="register"),
     path("login/", user_login, name="login"),
     path("logout/", user_logout, name="logout"),
-    path("password/", change_password, name="change_password"),
+    path("password-change/", password_change, name="password_change"),
 ]

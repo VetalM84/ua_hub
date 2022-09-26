@@ -48,7 +48,7 @@ def public_user_profile(request, user_id):
 
 
 @login_required
-def change_password(request):
+def password_change(request):
     """User change password method."""
     if request.method == "POST":
         form = PasswordChangeForm(request.user, request.POST)
@@ -58,14 +58,14 @@ def change_password(request):
             messages.success(
                 request, _("Password has been updated!"), extra_tags="success"
             )
-            return redirect("change_password")
+            return redirect("profile")
         else:
             messages.error(
                 request, _("Please, correct the errors."), extra_tags="danger"
             )
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, "accounts/change_password.html", {"form": form})
+    return render(request, "accounts/password_change.html", {"form": form})
 
 
 def user_login(request):
