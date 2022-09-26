@@ -9,5 +9,5 @@ urlpatterns = [
     path("", home, name="home"),
     path("about/", about, name="about"),
     path("markers/", user_markers, name="markers"),
-    path("edit-marker/<int:marker_id>", edit_marker, name="edit_marker"),
+    path("edit-marker/<int:marker_id>/", edit_marker, name="edit_marker"),
 ]
