@@ -341,3 +341,23 @@ class ViewsWithNoUserLoggedInTest(TestCase):
             response,
             text=b'<div class="alert alert-danger error alert-dismissible fade show" role="alert">',
         )
+
+    def test_user_login_post_success(self):
+        """Test user login post data."""
+        User.objects.create_user(
+            email="test222@test.com",
+            password="i2Cmb3xnpC69",
+            first_name="TestFirstName",
+            last_name="TestLastName",
+            hometown="Kiev",
+            facebook_link="https://www.facebook.com/profile.php?id=1000",
+            contacts="+380991111111",
+            avatar="src='/media/avatar/test_avatar.jpg'",
+        )
+
+        data = {
+            "username": "test222@test.com",
+            "password": "i2Cmb3xnpC69",
+        }
+        response = self.client.post(path=reverse("login"), data=data, follow=True)
+        self.assertRedirects(response, expected_url=reverse("markers"))
