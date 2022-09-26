@@ -14,6 +14,7 @@
                     <span class="text-black-50">{{ request.user.email }}</span>
                     <span class="font-weight-bold mt-3">{% translate "Sign up date" %}:</span>
                     <span class="text-black-50">{{ request.user.date_joined }}</span>
+                    <a href="{% url "password_change" %}">{% translate "Change password" %}</a>
                 </div>
             </div>
             <div class="col-md-6">
