@@ -80,7 +80,9 @@ def home(request):
     for marker in markers:
         folium.Marker(
             location=(marker.latitude, marker.longitude),
-            popup=folium.Popup(html=popup_html(marker), min_width=130, max_width=280, max_height=320),
+            popup=folium.Popup(
+                html=popup_html(marker), min_width=130, max_width=280, max_height=320
+            ),
             icon=folium.Icon(
                 color=marker.category.color,
                 icon=marker.category.icon.name,
@@ -112,11 +114,12 @@ def home(request):
 
 def get_marker(request, marker_id):
     """Get marker page."""
-    marker = get_object_or_404(Marker, pk=marker_id)
-    comments = marker.comments.select_related()
+    marker = get_object_or_404(
+        Marker.objects.select_related("category", "owner").prefetch_related("comments"),
+        pk=marker_id,
+    )
     context = {
         "marker": marker,
-        "comments": comments,
     }
     return render(request, "hub/marker.html", context)
 
