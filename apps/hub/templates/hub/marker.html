@@ -28,6 +28,20 @@
                             {{ marker.created_at|to_user_tz_short }}
                         </div>
                     </div>
+
+                    <!-- likes -->
+                    <div class="mb-3">
+                        {% csrf_token %}
+                        <span id="like_count_{{ marker.pk }}">{{ marker.likes_count }}</span>
+                        {% if request.user.is_authenticated %}
+                            <button class="btn btn-link bi bi-heart" data-id="{{ marker.pk }}"
+                                    value="{{ marker.pk }}"></button>
+                        {% else %}
+                            <i class="bi bi-heart"></i>
+                        {% endif %}
+                    </div>
+                    <!-- likes END -->
+
                     <p><i class="bi bi-quote"></i>{{ marker.comment }}</p>
                     <hr>
 
@@ -35,4 +49,28 @@
             </div>
         </section>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click', '.bi-heart', function (e) {
+                var id = $(this).attr('data-id');
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "like" %}',
+                    data: {
+                        marker_id: id,
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                        action: 'post'
+                    },
+                    success: function (json) {
+                        document.getElementById("like_count_" + id).innerHTML = json['result']
+                    },
+                    error: function (xhr, errmsg, err) {
+
+                    }
+                });
+            })
+        })
+    </script>
 {% endblock %}

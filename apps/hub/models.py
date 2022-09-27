@@ -25,6 +25,10 @@ class Marker(models.Model):
         related_name="markers",
         verbose_name=_("Owner"),
     )
+    like = models.ManyToManyField(
+        to=User, related_name="likes", default=None, blank=True, verbose_name=_("Like")
+    )
+    likes_count = models.BigIntegerField(default="0", verbose_name=_("Likes count"))
     ip = models.GenericIPAddressField(
         max_length=128, null=True, verbose_name=_("IP address")
     )

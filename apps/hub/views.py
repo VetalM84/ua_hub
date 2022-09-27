@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
 from django.core.paginator import Paginator
 from django.db.models import Prefetch
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.formats import date_format
 from django.utils.translation import get_language
@@ -227,3 +228,25 @@ def get_client_ip(request):
     else:
         ip = request.META.get("REMOTE_ADDR")
     return ip
+
+
+def like(request):
+    """Add like to marker."""
+    if request.POST.get("action") == "post":
+        marker_id = int(request.POST.get("marker_id"))
+        marker = get_object_or_404(Marker, id=marker_id)
+        if marker.like.filter(id=request.user.pk).exists():
+            marker.like.remove(request.user)
+            marker.likes_count -= 1
+            result = marker.likes_count
+            marker.save()
+        else:
+            marker.like.add(request.user)
+            marker.likes_count += 1
+            result = marker.likes_count
+            marker.save()
+        return JsonResponse(
+            {
+                "result": result,
+            }
+        )
