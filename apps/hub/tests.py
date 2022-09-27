@@ -253,6 +253,12 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.post(path=reverse("password_change"), data=data)
         self.assertRedirects(response, expected_url=reverse("profile"))
 
+    def test_marker_page(self):
+        """Test single marker view page."""
+        response = self.client.get(path=reverse("get_marker", args=(1,)))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "hub/marker.html")
+
 
 class ViewsWithNoUserLoggedInTest(TestCase):
     @classmethod

@@ -133,7 +133,9 @@ def user_markers(request):
 
     markers = cache.get_or_set(
         f"markers_user_{request.user.pk}_{get_language()}",
-        Marker.objects.filter(owner_id=request.user.id).order_by("-pk").select_related(),
+        Marker.objects.filter(owner_id=request.user.id)
+        .order_by("-pk")
+        .select_related(),
         3600,
     )
     if request.method == "POST":
