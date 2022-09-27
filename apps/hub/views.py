@@ -187,6 +187,14 @@ def popup_html(marker):
     created_at = date_format(
         marker.created_at.astimezone(), format="SHORT_DATETIME_FORMAT", use_l10n=True
     )
+    likes = marker.likes_count
+    likes_data = ""
+    if likes:
+        likes_data = f"""
+        <div class="position-absolute" style="right: 0px; top: 0px;">
+            {likes}<i class="fa-solid fa-heart p-1"></i>
+        </div>
+        """
     owner = marker.owner
     owner_data = ""
     if owner:
@@ -205,9 +213,10 @@ def popup_html(marker):
     <html>
     <head></head>
     <body>
-        <div style="text-align:center;">
+        <div class="text-center position-relative">
+            {likes_data}
             {owner_data}
-            <p style="font-size:15px; margin-top:10px; margin-bottom:10px;">
+            <p style="font-size:15px; margin:10px 0;">
                 {comment}
             </p>
             <div class="row">
