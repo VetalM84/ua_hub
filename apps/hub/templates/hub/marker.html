@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load cache %}
+{% load custom_filters %}
+{% load static %}
+{% block title %}
+    <title>{% translate "Mark #" %} {{ marker.pk }}</title>
+
+    <link href="{% static "css/markers.css" %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <section class="mx-auto my-5 col-md-6">
+            <div class="card testimonial-card mt-2 mb-3">
+                <div class="card-up aqua-gradient"></div>
+                <div class="avatar mx-auto white">
+                    <img src="{{ MEDIA_URL }}{{ marker.owner.avatar }}" class="rounded-circle img-fluid" alt="image">
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="card-title font-weight-bold">{{ marker.owner.get_full_name }}</h4>
+                    <div class="d-flex" style="font-size: small;">
+                        <div class="flex-fill text-end me-2">
+                            {% translate "Category" %}: {{ marker.category.name }}
+                        </div>
+                        <div class="flex-fill text-start ms-2">
+                            {{ marker.created_at|to_user_tz_short }}
+                        </div>
+                    </div>
+                    <p><i class="bi bi-quote"></i>{{ marker.comment }}</p>
+                    <hr>
+
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

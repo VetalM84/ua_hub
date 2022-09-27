@@ -1,4 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+body {
+    background: #eee !important;
+}
 
 .category {
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
@@ -30,4 +33,23 @@
     color: #fff;
     background-color: #3ac47d;
     border-color: #3ac47d;
+}
+
+.testimonial-card .card-up {
+  height: 120px;
+  overflow: hidden;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.aqua-gradient {
+  background: linear-gradient(40deg, #fdec79, #2096ff) !important;
+}
+
+.testimonial-card .avatar {
+  width: 120px;
+  margin-top: -60px;
+  overflow: hidden;
+  border: 5px solid #fff;
+  border-radius: 50%;
 }

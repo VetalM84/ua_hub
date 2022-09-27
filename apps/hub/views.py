@@ -109,6 +109,17 @@ def home(request):
     return render(request, template_name="hub/index.html", context=context)
 
 
+def get_marker(request, marker_id):
+    """Get marker page."""
+    marker = get_object_or_404(Marker, pk=marker_id)
+    comments = marker.comments.select_related()
+    context = {
+        "marker": marker,
+        "comments": comments,
+    }
+    return render(request, "hub/marker.html", context)
+
+
 @cache_page(0)
 def about(request):
     """About project page."""
