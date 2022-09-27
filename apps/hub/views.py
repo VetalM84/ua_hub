@@ -80,7 +80,7 @@ def home(request):
     for marker in markers:
         folium.Marker(
             location=(marker.latitude, marker.longitude),
-            popup=folium.Popup(html=popup_html(marker), max_width=280, max_height=320),
+            popup=folium.Popup(html=popup_html(marker), min_width=130, max_width=280, max_height=320),
             icon=folium.Icon(
                 color=marker.category.color,
                 icon=marker.category.icon.name,
