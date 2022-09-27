@@ -221,11 +221,16 @@ def popup_html(marker):
             <p style="font-size:15px; margin:10px 0;">
                 {comment}
             </p>
-            <div class="row">
-                <div><strong>{created_at}</strong></div>
+            <div class="d-flex">
+                <div class="flex-fill text-start fw-bold">{created_at}</div>
+                <div class="flex-fill text-end">
+                    <a href="marker/{marker.pk}/">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
             </div>
         </div>
-        </body>
+    </body>
     </html>
     """
     return html
