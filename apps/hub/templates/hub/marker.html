@@ -18,7 +18,19 @@
                 <div class="avatar mx-auto white">
                     <img src="{{ MEDIA_URL }}{{ marker.owner.avatar }}" class="rounded-circle img-fluid" alt="image">
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body text-center position-relative">
+                    <!-- likes -->
+                    <div class="position-absolute" style="right: 16px; top: -50px;">
+                        {% csrf_token %}
+                        <span id="like_count_{{ marker.pk }}">{{ marker.likes_count }}</span>
+                        {% if request.user.is_authenticated %}
+                            <button class="btn btn-link bi bi-heart-fill p-1" data-id="{{ marker.pk }}"
+                                    value="{{ marker.pk }}"></button>
+                        {% else %}
+                            <i class="link-primary bi bi-heart-fill p-1"></i>
+                        {% endif %}
+                    </div>
+                    <!-- likes END -->
                     <h4 class="card-title font-weight-bold">{{ marker.owner.get_full_name }}</h4>
                     <div class="d-flex" style="font-size: small;">
                         <div class="flex-fill text-end me-2">
@@ -52,7 +64,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $(document).on('click', '.bi-heart', function (e) {
+            $(document).on('click', '.bi-heart-fill', function (e) {
                 var id = $(this).attr('data-id');
                 e.preventDefault();
                 $.ajax({
