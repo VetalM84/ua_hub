@@ -177,6 +177,7 @@ class ViewsWithLoggedInUserTest(TestCase):
     def test_user_markers_delete(self):
         """Test user markers delete."""
         Marker.objects.create(
+            id=2,
             latitude=31.6329,
             longitude=51.1747,
             category_id=1,
@@ -211,6 +212,7 @@ class ViewsWithLoggedInUserTest(TestCase):
     def test_edit_marker_post(self):
         """Test edit marker with post request."""
         Marker.objects.create(
+            id=3,
             latitude=32.6329,
             longitude=52.1747,
             category_id=1,
@@ -219,7 +221,7 @@ class ViewsWithLoggedInUserTest(TestCase):
             ip="127.0.0.3",
         )
         response = self.client.post(
-            path=reverse("edit_marker", args=(2,)),
+            path=reverse("edit_marker", args=(3,)),
             data={
                 "latitude": 48.3544,
                 "longitude": 31.9280,
@@ -229,6 +231,9 @@ class ViewsWithLoggedInUserTest(TestCase):
             },
             follow=True,
         )
+        print(response.content)
+        m = Marker.objects.all()
+        print([i.pk for i in m])
         self.assertRedirects(response, expected_url=reverse("markers"))
         self.assertContains(response, text="Test Edit Marker")
 
