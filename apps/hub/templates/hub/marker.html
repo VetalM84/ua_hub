@@ -151,6 +151,8 @@
                         div_el.innerHTML = '';
                         var p = document.createElement("p").innerHTML = json['message']
                         div_el.append(p)
+                        var cmnts_cnt = document.getElementById("comments-count-" + {{ marker.pk }});
+                        cmnts_cnt.innerHTML = Number(cmnts_cnt.innerHTML) - 1;
                     },
                     error: function (xhr, errmsg, err) {
                     }
