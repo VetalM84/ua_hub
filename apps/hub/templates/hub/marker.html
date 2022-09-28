@@ -48,9 +48,9 @@
                     <hr>
                     <!-- comments -->
                     <h3 class="h5 mb-4 text-start">{% translate "Comments" %}
-                        (<span id="comments_count_{{ marker.pk }}">{{ marker.comments.count }}</span>)</h3>
+                        (<span id="comments-count-{{ marker.pk }}">{{ marker.comments.count }}</span>)</h3>
                     {% for item in marker.comments.all %}
-                        <div class="d-flex flex-row comment-row text-start">
+                        <div id="div-comment-{{ item.pk }}" class="d-flex flex-row comment-row text-start">
                             <div class="p-2">
                                 <a href="{% url "public-profile" item.owner.pk %}">
                                     <img class="rounded-circle" src="{{ MEDIA_URL }}{{ item.owner.avatar }}" alt="user" width="50">
@@ -60,6 +60,10 @@
                                 <h5 class="fs-6">{{ item.owner.get_full_name }}</h5>
                                 <div>
                                     <span class="text-muted" style="font-size: small">{{ item.created_at|to_user_tz_short }}</span>
+                                    {% if item.owner.pk == request.user.id %}
+                                        <button class="btn btn-link btn-sm text-muted delete-comment-btn" data-id="{{ item.pk }}"
+                                                value="{{ item.pk }}" type="button"><i class="bi bi-trash-fill"></i></button>
+                                    {% endif %}
                                 </div>
                                 <div class="m-b-5 m-t-10" style="font-size: smaller">{{ item.comment_text }}</div>
                             </div>
@@ -85,6 +89,7 @@
         </section>
     </div>
     <script type="text/javascript">
+        {#Add like#}
         $(document).ready(function () {
             $(document).on('click', '.bi-heart-fill', function (e) {
                 var id = $(this).attr('data-id');
@@ -104,7 +109,7 @@
                     }
                 });
             })
-
+            {#Add comment#}
             $(document).on('click', '.add-comment-btn', function (e) {
                 var id = $(this).attr('data-id');
                 e.preventDefault();
@@ -122,13 +127,36 @@
                     },
                     success: function (json) {
                         document.getElementById("message_" + id).innerHTML = json['message']
-                        document.getElementById("comments_count_" + id).innerHTML = json['result']
+                        document.getElementById("comments-count-" + id).innerHTML = json['result']
                         eraseText()
                     },
                     error: function (xhr, errmsg, err) {
                     }
                 });
             })
+            {#Delete comment#}
+            $(document).on('click', '.delete-comment-btn', function (e) {
+                var id = $(this).attr('data-id');
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "delete_comment" %}',
+                    data: {
+                        comment_id: id,
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                        action: 'post'
+                    },
+                    success: function (json) {
+                        var div_el = document.getElementById("div-comment-" + id);
+                        div_el.innerHTML = '';
+                        var p = document.createElement("p").innerHTML = json['message']
+                        div_el.append(p)
+                    },
+                    error: function (xhr, errmsg, err) {
+                    }
+                });
+            })
+
         })
     </script>
 {% endblock %}

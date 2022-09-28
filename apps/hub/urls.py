@@ -2,7 +2,16 @@
 
 from django.urls import include, path
 
-from apps.hub.views import about, add_comment, edit_marker, get_marker, home, like, user_markers
+from apps.hub.views import (
+    about,
+    add_comment,
+    delete_comment,
+    edit_marker,
+    get_marker,
+    home,
+    like,
+    user_markers,
+)
 
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
@@ -13,4 +22,5 @@ urlpatterns = [
     path("marker/<int:marker_id>/", get_marker, name="get_marker"),
     path("like/", like, name="like"),
     path("add_comment/", add_comment, name="add_comment"),
+    path("delete_comment/", delete_comment, name="delete_comment"),
 ]

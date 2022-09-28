@@ -303,3 +303,18 @@ def add_comment(request):
             result = ""
             message = _("Sign in to leave a comment")
         return JsonResponse({"result": result, "message": message})
+
+
+def delete_comment(request):
+    """Delete comment from Marker."""
+    if request.POST.get("action") == "post":
+        comment_id = int(request.POST.get("comment_id"))
+        comment = get_object_or_404(Comment, id=comment_id)
+        if request.user.is_authenticated and comment.owner == request.user:
+            comment.delete()
+            message = _("You've deleted the mark. Reload page.")
+        else:
+            message = _("Error!")
+    else:
+        message = _("Sign in to delete a comment")
+    return JsonResponse({"message": message})
