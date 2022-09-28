@@ -194,14 +194,16 @@ def popup_html(marker):
     created_at = date_format(
         marker.created_at.astimezone(), format="SHORT_DATETIME_FORMAT", use_l10n=True
     )
+    comments = marker.comments.count()
+    comments_data = ""
+    if comments:
+        comments_data = f"""{comments}<i class="fa-solid fa-comments p-1"></i>"""
+
     likes = marker.likes_count
     likes_data = ""
     if likes:
-        likes_data = f"""
-        <div class="position-absolute" style="right: 0px; top: 0px;">
-            {likes}<i class="fa-solid fa-heart p-1"></i>
-        </div>
-        """
+        likes_data = f"""{likes}<i class="fa-solid fa-heart p-1"></i>"""
+
     owner = marker.owner
     owner_data = ""
     if owner:
@@ -221,7 +223,10 @@ def popup_html(marker):
     <head></head>
     <body>
         <div class="text-center position-relative">
-            {likes_data}
+            <div class="d-flex position-absolute" style="right: 0px; top: 0px;">
+                <div>{comments_data}</div>
+                <div>{likes_data}</div>
+            </div>
             {owner_data}
             <p style="font-size:15px; margin:10px 0;">
                 {comment}
@@ -286,7 +291,7 @@ def add_comment(request):
                 )
                 result = marker.comments.all().count()
                 comment.save()
-                message = _("Comment has added!")
+                message = _("Comment has added. Reload page.")
             else:
                 result = ""
                 message = _("Error! Enter at least 10 symbols.")

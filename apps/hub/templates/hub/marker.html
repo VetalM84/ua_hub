@@ -45,7 +45,8 @@
                     {% endif %}
                     <hr>
                     <!-- comments -->
-                    <h3 class="h5 mb-4 text-start">{% translate "Comments" %}</h3>
+                    <h3 class="h5 mb-4 text-start">{% translate "Comments" %}
+                        (<span id="comments_count_{{ marker.pk }}">{{ marker.comments.count }}</span>)</h3>
                     {% for item in marker.comments.all %}
                         <div class="d-flex flex-row comment-row text-start">
                             <div class="p-2"><img class="rounded-circle" src="{{ MEDIA_URL }}{{ item.owner.avatar }}" alt="user" width="50"></div>
