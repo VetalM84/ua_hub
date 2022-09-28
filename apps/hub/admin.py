@@ -3,7 +3,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from apps.hub.models import Category, Icon, Marker
+from apps.hub.models import Category, Comment, Icon, Marker
 
 
 @admin.register(Category)
@@ -41,6 +41,16 @@ class MarkerAdmin(admin.ModelAdmin):
     list_filter = ("category",)
     ordering = ("created_at", "category")
     search_fields = ("text",)
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """Comment model views on backend."""
+
+    list_display = ("id", "owner", "created_at")
+    list_display_links = ("id", "owner")
+    ordering = ("-created_at",)
+    search_fields = ("comment_text",)
 
 
 admin.site.unregister(Category)

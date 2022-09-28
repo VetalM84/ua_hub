@@ -20,7 +20,7 @@ from jinja2 import Template
 from apps.accounts.models import User
 
 from .forms import AddMarkerForm, UpdateMarkerForm
-from .models import Marker
+from .models import Comment, Marker
 
 
 def home(request):
@@ -269,3 +269,26 @@ def like(request):
                 "result": result,
             }
         )
+
+
+def add_comment(request):
+    """Add comment to Marker."""
+    if request.POST.get("action") == "post":
+        marker_id = int(request.POST.get("marker_id"))
+        marker = get_object_or_404(Marker, id=marker_id)
+        comment_text = request.POST.get("comment_text")
+        if request.user.is_authenticated:
+            if len(comment_text) >= 10:
+                comment = Comment.objects.create(
+                    owner=request.user, marker=marker, comment_text=comment_text
+                )
+                result = marker.comments.all().count()
+                comment.save()
+                message = _("Comment has added!")
+            else:
+                result = ""
+                message = _("Error! Enter at least 10 symbols.")
+        else:
+            result = ""
+            message = _("Sign in to leave a comment")
+        return JsonResponse({"result": result, "message": message})

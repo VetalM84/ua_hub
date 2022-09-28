@@ -43,6 +43,29 @@ class Marker(models.Model):
         ordering = ["created_at"]
 
 
+class Comment(models.Model):
+    """Comment model for Marker."""
+
+    owner = models.ForeignKey(to=User, on_delete=models.PROTECT, verbose_name=_("Owner"))
+    marker = models.ForeignKey(
+        to="Marker",
+        related_name="comments",
+        on_delete=models.PROTECT,
+        verbose_name=_("Mark"),
+    )
+    comment_text = models.TextField(
+        blank=False, max_length=300, verbose_name=_("Comment")
+    )
+    created_at = models.DateTimeField(default=now, verbose_name=_("Date"))
+
+    def __str__(self):
+        return self.marker.pk
+
+    class Meta:
+        verbose_name = _("Comment")
+        verbose_name_plural = _("Comments")
+
+
 class Category(models.Model):
     """Category model for marker."""
 
