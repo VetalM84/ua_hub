@@ -115,7 +115,9 @@ def home(request):
 def get_marker(request, marker_id):
     """Get marker page."""
     marker = get_object_or_404(
-        Marker.objects.select_related("category", "owner").prefetch_related("comments"),
+        Marker.objects.select_related("category", "owner").prefetch_related(
+            "comments__owner", "comments"
+        ),
         pk=marker_id,
     )
     context = {
