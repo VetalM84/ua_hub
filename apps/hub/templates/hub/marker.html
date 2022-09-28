@@ -40,19 +40,21 @@
                         </div>
                     </div>
                     {% if marker.comment %}
-                        <hr><p><i class="bi bi-quote"></i>{{ marker.comment }}</p>
+                        <hr>
+                        <p><i class="bi bi-quote"></i>{{ marker.comment }}</p>
                     {% endif %}
                     <hr>
                     <!-- comments -->
+                    <h3 class="h5 mb-4 text-start">{% translate "Comments" %}</h3>
                     {% for item in marker.comments.all %}
                         <div class="d-flex flex-row comment-row text-start">
                             <div class="p-2"><img class="rounded-circle" src="{{ MEDIA_URL }}{{ item.owner.avatar }}" alt="user" width="50"></div>
-                            <div class="comment-text w-100">
-                                <h5 class="h6">{{ item.owner.get_full_name }}</h5>
-                                <div class="comment-footer">
+                            <div class="w-100">
+                                <h5 class="fs-6">{{ item.owner.get_full_name }}</h5>
+                                <div>
                                     <span class="text-muted" style="font-size: small">{{ item.created_at|to_user_tz_short }}</span>
                                 </div>
-                                <div class="m-b-5 m-t-10">{{ item.comment_text }}</div>
+                                <div class="m-b-5 m-t-10" style="font-size: smaller">{{ item.comment_text }}</div>
                             </div>
                         </div>
                         <hr>
