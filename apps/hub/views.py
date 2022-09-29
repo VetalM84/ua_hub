@@ -133,7 +133,7 @@ def get_marker(request, marker_id):
     return render(request, "hub/marker.html", context)
 
 
-@cache_page(0)
+@cache_page(60 * 60 * 24)
 def about(request):
     """About project page."""
     return render(request, template_name="hub/about.html")
