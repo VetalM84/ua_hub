@@ -2,6 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
+from imagekit.admin import AdminThumbnail
 
 from apps.accounts.forms import CustomUserChangeForm, CustomUserCreationForm
 from apps.accounts.models import User
@@ -20,6 +21,7 @@ class UserAdmin(BaseUserAdmin):
         "get_full_name",
         "hometown",
         "date_joined",
+        "admin_thumbnail",
         "is_staff",
     )
     list_filter = ("is_staff",)
@@ -68,6 +70,7 @@ class UserAdmin(BaseUserAdmin):
             },
         ),
     )
+    admin_thumbnail = AdminThumbnail(image_field="avatar_s")
     ordering = ("email",)
     search_fields = ("email",)
     filter_horizontal = ()
