@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-from imagekit.models import ImageSpecField
+from imagekit.models import ImageSpecField, ProcessedImageField
 from imagekit.processors import Thumbnail
 
 from apps.accounts.managers import UserManager
@@ -18,34 +18,32 @@ class User(AbstractUser):
     facebook_link = models.URLField(blank=True, verbose_name=_("Facebook profile link"))
     contacts = models.CharField(blank=True, max_length=250, verbose_name=_("Contacts"))
     hometown = models.CharField(blank=True, max_length=250, verbose_name=_("Hometown"))
-    avatar = models.ImageField(
+    avatar = ProcessedImageField(
         upload_to="avatar/",
-        verbose_name=_("Image"),
+        format="JPEG",
+        options={"quality": 80},
         default="avatar/default_avatar.jpg",
+        verbose_name=_("Image"),
     )
     avatar_xl = ImageSpecField(
         source="avatar",
         processors=[Thumbnail(150, 150)],
         format="JPEG",
-        options={"quality": 70},
     )
     avatar_l = ImageSpecField(
         source="avatar",
         processors=[Thumbnail(110, 110)],
         format="JPEG",
-        options={"quality": 70},
     )
     avatar_m = ImageSpecField(
         source="avatar",
         processors=[Thumbnail(50, 50)],
         format="JPEG",
-        options={"quality": 70},
     )
     avatar_s = ImageSpecField(
         source="avatar",
         processors=[Thumbnail(32, 32)],
         format="JPEG",
-        options={"quality": 70},
     )
 
     USERNAME_FIELD = "email"
