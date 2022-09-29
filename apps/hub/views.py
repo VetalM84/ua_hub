@@ -213,8 +213,8 @@ def popup_html(marker):
     if owner:
         owner_data = f"""
               <a target="_top" href="profile-public/{owner.pk}/">
-                <img style="width: 56px; height: 56px; border-radius: 50%;" alt="user_image"
-                    src="media/{owner.avatar if owner else "avatar/default_avatar.jpg"}">
+                <img style="width: 50px; height: 50px; border-radius: 50%;" alt="user_image"
+                    src="{owner.avatar_m.url if owner else "media/avatar/default_avatar.jpg"}">
               </a>
                 <h5 style="font-weight:bold; margin:10px 0px 0px 0px;">
                     {owner.get_full_name() if owner else ""}

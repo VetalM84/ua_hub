@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load custom_filters %}
+{% load imagekit %}
 {% load static %}
 {% block title %}
     <title>{% translate "Mark" %}# {{ marker.pk }}</title>
@@ -16,7 +17,7 @@
                 <div class="card-up aqua-gradient"></div>
                 <div class="avatar mx-auto white">
                     <a href="{% url "public-profile" marker.owner.pk %}">
-                        <img src="{{ MEDIA_URL }}{{ marker.owner.avatar }}" class="rounded-circle img-fluid" alt="image">
+                        <img src="{{ marker.owner.avatar_l.url }}" width="110" height="110" class="rounded-circle img-fluid" alt="image">
                     </a>
                 </div>
                 <div class="card-body text-center position-relative">
@@ -53,7 +54,7 @@
                         <div id="div-comment-{{ item.pk }}" class="d-flex flex-row comment-row text-start">
                             <div class="p-2">
                                 <a href="{% url "public-profile" item.owner.pk %}">
-                                    <img class="rounded-circle" src="{{ MEDIA_URL }}{{ item.owner.avatar }}" alt="user" width="50">
+                                    <img class="rounded-circle" src="{{ item.owner.avatar_m.url }}" alt="user" height="50" width="50">
                                 </a>
                             </div>
                             <div class="w-100">
@@ -74,7 +75,7 @@
                     <!-- comment form -->
                     <div class="bg-light p-2">
                         <div class="d-flex flex-row align-items-start">
-                            <img class="rounded-circle me-2" src="{{ MEDIA_URL }}{{ request.user.avatar }}" width="40" alt="user">
+                            <img class="rounded-circle me-2" src="{{ request.user.avatar_s.url }}" height="32" width="32" alt="user">
                             <textarea class="form-control" rows="2" name="comment-text" id="comment-text-{{ marker.pk }}" placeholder="{% translate "Comment" %}"></textarea>
                         </div>
                         <div class="mt-2 text-end">

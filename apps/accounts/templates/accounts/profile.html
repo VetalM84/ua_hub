@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load custom_filters %}
+{% load imagekit %} %}
 {% block title %}
     <title>{% translate "My profile" %}</title>
 {% endblock %}
@@ -10,7 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-md-3">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" width="150px" height="150px" alt="image" src="{{ MEDIA_URL }}{{ request.user.avatar }}">
+                    <img class="rounded-circle mt-5" width="150" height="150" alt="image" src="{{ request.user.avatar_xl.url }}">
                     <span class="font-weight-bold">{{ request.user.first_name }}</span>
                     <span class="font-weight-bold mt-3">{% translate "Sign up date" %}:</span>
                     <span class="text-black-50">{{ request.user.date_joined|to_user_tz_short }}</span>
