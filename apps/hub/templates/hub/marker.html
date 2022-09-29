@@ -44,7 +44,10 @@
                     {% endif %}
                     <div class="d-flex" style="font-size: small;">
                         <div class="flex-fill text-end me-2">
-                            {% translate "Category" %}: {{ marker.category.name }}
+                            {% translate "Category" %}:
+                            <span class="p-1 rounded" style="background-color: {{ marker.category.color }}; color: white;">
+                                {{ marker.category.name }}
+                            </span>
                         </div>
                         <div class="flex-fill text-start ms-2">
                             {{ marker.created_at|to_user_tz_short }}
