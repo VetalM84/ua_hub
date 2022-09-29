@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load custom_filters %}
 {% block title %}
     <title>{% translate "My profile" %}</title>
 {% endblock %}
@@ -12,7 +13,7 @@
                     <img class="rounded-circle mt-5" width="150px" height="150px" alt="image" src="{{ MEDIA_URL }}{{ request.user.avatar }}">
                     <span class="font-weight-bold">{{ request.user.first_name }}</span>
                     <span class="font-weight-bold mt-3">{% translate "Sign up date" %}:</span>
-                    <span class="text-black-50">{{ request.user.date_joined }}</span>
+                    <span class="text-black-50">{{ request.user.date_joined|to_user_tz_short }}</span>
                     <a href="{% url "password_change" %}">{% translate "Change password" %}</a>
                 </div>
             </div>
