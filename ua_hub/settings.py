@@ -39,6 +39,8 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1, 0.0.0.0, localhost').spli
 INSTALLED_APPS = [
     # Installed app for model translation
     'modeltranslation',
+    # Image processing
+    'imagekit',
     # Django app
     'django.contrib.admin',
     'django.contrib.auth',
