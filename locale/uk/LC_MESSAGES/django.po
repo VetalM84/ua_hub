@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-23 14:26+0300\n"
+"POT-Creation-Date: 2022-09-28 16:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,30 +21,30 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: .\templates\inc\_footer.html:14 .\templates\inc\_header.html:17
+#: .\templates\inc\_footer.html:11 .\templates\inc\_header.html:17
 msgid "Map"
 msgstr "Мапа"
 
-#: .\templates\inc\_footer.html:15 .\templates\inc\_header.html:20
+#: .\templates\inc\_footer.html:12 .\templates\inc\_header.html:20
 msgid "About"
 msgstr "Про проєкт"
 
-#: .\templates\inc\_header.html:59
-msgid "My profile"
-msgstr "Мій профіль"
-
-#: .\templates\inc\_header.html:61
+#: .\templates\inc\_header.html:60
 msgid "My marks"
 msgstr "Мої мітки"
 
-#: .\templates\inc\_header.html:65
+#: .\templates\inc\_header.html:62
+msgid "My profile"
+msgstr "Мій профіль"
+
+#: .\templates\inc\_header.html:66
 msgid "Log out"
 msgstr "Вихід"
 
-#: .\templates\inc\_header.html:74
+#: .\templates\inc\_header.html:75
 msgid "Sign in"
 msgstr "Логін"
 
-#: .\templates\inc\_header.html:75
+#: .\templates\inc\_header.html:76
 msgid "Sign up"
 msgstr "Реєстрація"
