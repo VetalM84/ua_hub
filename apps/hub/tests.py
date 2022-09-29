@@ -249,7 +249,6 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.post(path=reverse("password_change"), data=data)
         self.assertRedirects(response, expected_url=reverse("profile"))
 
-    @skip(reason="Unknown problem")
     def test_get_marker(self):
         """Test single marker view page."""
         response = self.client.get(path=reverse("get_marker", args=(1,)))
