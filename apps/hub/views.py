@@ -117,12 +117,15 @@ def home(request):
 
 def get_marker(request, marker_id):
     """Get marker page."""
-    # TODO: add cache
-    marker = get_object_or_404(
-        Marker.objects.select_related("category", "owner").prefetch_related(
-            "comments__owner", "comments"
+    marker = cache.get_or_set(
+        f"marker_{marker_id}",
+        get_object_or_404(
+            Marker.objects.select_related("category", "owner").prefetch_related(
+                "comments__owner", "comments"
+            ),
+            pk=marker_id,
         ),
-        pk=marker_id,
+        timeout=3600,
     )
     context = {
         "marker": marker,
