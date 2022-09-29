@@ -16,9 +16,13 @@
             <div class="card testimonial-card mt-2 mb-3">
                 <div class="card-up aqua-gradient"></div>
                 <div class="avatar mx-auto white">
+                    {% if marker.owner %}
                     <a href="{% url "public-profile" marker.owner.pk %}">
                         <img src="{{ marker.owner.avatar_l.url }}" width="110" height="110" class="rounded-circle img-fluid" alt="image">
                     </a>
+                    {% else %}
+                        <img src="{{ MEDIA_URL }}avatar/default_avatar.jpg" width="110" height="110" class="rounded-circle img-fluid" alt="image">
+                    {% endif %}
                 </div>
                 <div class="card-body text-center position-relative">
                     <!-- likes -->
@@ -33,7 +37,11 @@
                         {% endif %}
                     </div>
                     <!-- likes END -->
-                    <h4 class="card-title font-weight-bold">{{ marker.owner.get_full_name }}</h4>
+                    {% if marker.owner %}
+                        <h4 class="card-title font-weight-bold">{{ marker.owner.get_full_name }}</h4>
+                    {% else %}
+                        <h4 class="card-title font-weight-bold">{% translate "Anonymous user" %}</h4>
+                    {% endif %}
                     <div class="d-flex" style="font-size: small;">
                         <div class="flex-fill text-end me-2">
                             {% translate "Category" %}: {{ marker.category.name }}
@@ -42,9 +50,11 @@
                             {{ marker.created_at|to_user_tz_short }}
                         </div>
                     </div>
+                    <hr>
                     {% if marker.comment %}
-                        <hr>
                         <p><i class="bi bi-quote"></i>{{ marker.comment }}</p>
+                    {% else %}
+                        <p><i class="bi bi-quote"></i>{% translate "Comment is empty" %}</p>
                     {% endif %}
                     <hr>
                     <!-- comments -->
