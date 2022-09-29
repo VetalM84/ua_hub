@@ -5,7 +5,7 @@ from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 from django.utils.translation import get_language
 
-from apps.hub.models import Marker
+from apps.hub.models import Comment, Marker
 
 
 @receiver(signal=post_delete, sender=Marker, dispatch_uid="marker_deleted")
@@ -18,6 +18,22 @@ def clear_cache_delete_handler(sender, **kwargs):
 def clear_cache_save_handler(sender, **kwargs):
     """Method for clearing a cache on home page after Marker instance has been updated."""
     cache.delete("markers_frontend")
+
+
+@receiver(signal=post_delete, sender=Comment, dispatch_uid="comment_deleted")
+def clear_cache_delete_handler(sender, instance, **kwargs):
+    """Method for clearing a cache on Marker page after Comment instance has been deleted."""
+    marker_id = instance.marker_id
+    key = f"marker_{marker_id}"
+    cache.delete(key)
+
+
+@receiver(signal=post_save, sender=Comment, dispatch_uid="comment_added")
+def clear_cache_save_handler(sender, instance, **kwargs):
+    """Method for clearing a cache on Marker page after Comment instance has been added."""
+    marker_id = instance.marker_id
+    key = f"marker_{marker_id}"
+    cache.delete(key)
 
 
 @receiver(signal=post_delete, sender=Marker, dispatch_uid="user_deleted_marker")
