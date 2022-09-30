@@ -307,8 +307,6 @@ class ViewsWithNoUserLoggedInTest(TestCase):
 
         self.assertEqual(response.status_code, 200)
         fields = [
-            'id="id_first_name"',
-            'id="id_last_name"',
             'id="id_email"',
             'id="id_password1"',
             'id="id_password2"',
@@ -319,8 +317,6 @@ class ViewsWithNoUserLoggedInTest(TestCase):
     def test_user_register_post(self):
         """Test user register post data."""
         data = {
-            "first_name": "TestFirstName2",
-            "last_name": "TestLastName2",
             "email": "test222@test.com",
             "password1": "i2Cmb3xnpC69",
             "password2": "i2Cmb3xnpC69",

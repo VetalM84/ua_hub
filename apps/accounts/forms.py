@@ -25,16 +25,16 @@ class UserLoginForm(AuthenticationForm):
 class UserRegisterForm(UserCreationForm):
     """User register form on frontend."""
 
-    first_name = forms.CharField(
-        required=False,
-        label=_("First name"),
-        widget=forms.TextInput(attrs={"class": "form-control"}),
-    )
-    last_name = forms.CharField(
-        required=False,
-        label=_("Last name"),
-        widget=forms.TextInput(attrs={"class": "form-control"}),
-    )
+    # first_name = forms.CharField(
+    #     required=False,
+    #     label=_("First name"),
+    #     widget=forms.TextInput(attrs={"class": "form-control"}),
+    # )
+    # last_name = forms.CharField(
+    #     required=False,
+    #     label=_("Last name"),
+    #     widget=forms.TextInput(attrs={"class": "form-control"}),
+    # )
     email = forms.EmailField(
         label=_("Email"),
         widget=forms.EmailInput(attrs={"class": "form-control"}),
@@ -52,7 +52,7 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         required = False
-        fields = ("first_name", "last_name", "email", "password1", "password2")
+        fields = ("email", "password1", "password2")
 
 
 class UserProfileForm(forms.ModelForm):
