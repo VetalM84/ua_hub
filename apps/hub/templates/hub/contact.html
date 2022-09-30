@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+    <title>{% translate "Contact us" %}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container pt-5">
+        <h1 class="h2">{% translate "Contact us" %}</h1>
+        <p>
+            {% blocktranslate %}
+                For any purposes regarding project you may reach developer via form below.
+            {% endblocktranslate %}
+        </p>
+    </div>
+{% endblock %}

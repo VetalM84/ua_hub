@@ -139,6 +139,11 @@ def about(request):
     return render(request, template_name="hub/about.html")
 
 
+def contact(request):
+    """Contacts page."""
+    return render(request, template_name="hub/contact.html")
+
+
 @login_required
 def user_markers(request):
     """User markers list page with Delete functionality on POST."""

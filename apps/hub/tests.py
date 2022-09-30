@@ -255,6 +255,12 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "hub/marker.html")
 
+    def test_contact(self):
+        """Test contact view page."""
+        response = self.client.get(path=reverse("contact"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "hub/contact.html")
+
 
 class ViewsWithNoUserLoggedInTest(TestCase):
     @classmethod
