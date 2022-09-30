@@ -1,5 +1,7 @@
 """Form management for HUB app."""
 
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV3
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
@@ -32,6 +34,7 @@ class AddMarkerForm(forms.ModelForm):
         empty_label=_("Choose category"),
         widget=forms.Select(attrs={"class": "form-select"}),
     )
+    captcha = ReCaptchaField(widget=ReCaptchaV3)
 
     class Meta:
         model = Marker

@@ -20,11 +20,12 @@
                                 {{ field }}
                             </div>
                         {% endfor %}
-                        {% for field in form.visible_fields|slice:"2:" %}
+                        {% for field in form.visible_fields|slice:"2:4" %}
                             <div class="col-12">
                                 {{ field }}
                             </div>
                         {% endfor %}
+                        {{ form.captcha }}
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">{% translate "Close" %}</button>

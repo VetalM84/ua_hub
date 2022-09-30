@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     # Installed apps
     'debug_toolbar',
     'rosetta',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -218,3 +219,6 @@ else:
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY', '')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY', '')
