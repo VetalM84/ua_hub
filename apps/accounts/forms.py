@@ -1,5 +1,7 @@
 """Forms management."""
 
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV3
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
@@ -45,6 +47,7 @@ class UserRegisterForm(UserCreationForm):
         label=_("Repeat password"),
         widget=forms.PasswordInput(attrs={"class": "form-control"}),
     )
+    captcha = ReCaptchaField(widget=ReCaptchaV3)
 
     class Meta:
         model = User
