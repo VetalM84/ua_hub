@@ -91,4 +91,4 @@ class ContactForm(forms.Form):
             }
         ),
     )
-    captcha = ReCaptchaField(label=_(""), widget=ReCaptchaV3)
+    captcha = ReCaptchaField(widget=ReCaptchaV3)
