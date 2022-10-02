@@ -70,3 +70,25 @@ class UpdateMarkerForm(forms.ModelForm):
             ),
             "category": forms.Select(attrs={"class": "form-select"}),
         }
+
+
+class ContactForm(forms.Form):
+    """Contact for on frontend."""
+
+    from_email = forms.EmailField(
+        label=_("Email"),
+        required=True,
+        widget=forms.EmailInput(attrs={"class": "form-control"}),
+    )
+    message = forms.CharField(
+        label=_("Message"),
+        required=True,
+        widget=forms.Textarea(
+            attrs={
+                "class": "form-control",
+                "rows": 5,
+                "max-length": 2000,
+            }
+        ),
+    )
+    captcha = ReCaptchaField(label=_(""), widget=ReCaptchaV3)

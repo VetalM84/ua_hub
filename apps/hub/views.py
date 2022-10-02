@@ -1,13 +1,15 @@
 """Hub app views."""
+import os
 
 import branca
 import folium
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+from django.core.mail import BadHeaderError, send_mail
 from django.core.paginator import Paginator
 from django.db.models import Count, Prefetch
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.formats import date_format
 from django.utils.translation import get_language
@@ -19,7 +21,7 @@ from jinja2 import Template
 
 from apps.accounts.models import User
 
-from .forms import AddMarkerForm, UpdateMarkerForm
+from .forms import AddMarkerForm, ContactForm, UpdateMarkerForm
 from .models import Comment, Marker
 
 
@@ -133,15 +135,39 @@ def get_marker(request, marker_id):
     return render(request, "hub/marker.html", context)
 
 
-@cache_page(60 * 60 * 24)
 def about(request):
     """About project page."""
     return render(request, template_name="hub/about.html")
 
 
 def contact(request):
-    """Contacts page."""
-    return render(request, template_name="hub/contact.html")
+    """Contact us form page."""
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = "A message from UAHub"
+            from_email = form.cleaned_data["from_email"]
+            message = form.cleaned_data["message"]
+            try:
+                send_mail(
+                    subject=subject,
+                    message=message,
+                    from_email=from_email,
+                    recipient_list=os.getenv("RECIPIENT_LIST").split(","),
+                )
+            except BadHeaderError:
+                return HttpResponse(_("Invalid header found."))
+            messages.success(
+                request, _("Email sent successfully!"), extra_tags="success"
+            )
+            return redirect("home")
+
+    if request.user.is_anonymous:
+        form = ContactForm()
+    else:
+        form = ContactForm(initial={"from_email": request.user.email})
+
+    return render(request, template_name="hub/contact.html", context={"form": form})
 
 
 @login_required
