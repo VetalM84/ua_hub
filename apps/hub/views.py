@@ -1,5 +1,6 @@
 """Hub app views."""
 import os
+from typing import List
 
 import branca
 import folium
@@ -11,7 +12,9 @@ from django.core.paginator import Paginator
 from django.db.models import Count, Prefetch
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.template.loader import render_to_string
 from django.utils.formats import date_format
+from django.utils.html import strip_tags
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
 from django.views.decorators.cache import cache_page
@@ -20,6 +23,7 @@ from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
 
 from apps.accounts.models import User
+from ua_hub import settings
 
 from .forms import AddMarkerForm, ContactForm, UpdateMarkerForm
 from .models import Comment, Marker
@@ -145,18 +149,12 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = "A message from UAHub"
-            from_email = form.cleaned_data["from_email"]
-            message = form.cleaned_data["message"]
-            try:
-                send_mail(
-                    subject=subject,
-                    message=message,
-                    from_email=from_email,
-                    recipient_list=os.getenv("RECIPIENT_LIST").split(","),
-                )
-            except BadHeaderError:
-                return HttpResponse(_("Invalid header found."))
+            send_email(
+                subject="A message from UAHub",
+                message=form.cleaned_data["message"],
+                from_email=form.cleaned_data["from_email"],
+                recipient_list=os.getenv("RECIPIENT_LIST").split(","),
+            )
             messages.success(
                 request, _("Email sent successfully!"), extra_tags="success"
             )
@@ -282,6 +280,26 @@ def popup_html(marker):
     </html>
     """
     return html
+
+
+def send_email(
+    subject: str,
+    from_email: str,
+    recipient_list: List[str],
+    message: str = None,
+    html_message: str = None,
+):
+    """Method to send email."""
+    try:
+        send_mail(
+            subject=subject,
+            message=message,
+            from_email=from_email,
+            recipient_list=recipient_list,
+            html_message=html_message,
+        )
+    except BadHeaderError:
+        return HttpResponse(_("Invalid header found."))
 
 
 def get_client_ip(request):
