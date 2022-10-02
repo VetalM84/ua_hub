@@ -8,82 +8,185 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-23 14:17+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-10-02 16:41+0300\n"
+"PO-Revision-Date: 2022-10-02 16:55+0000\n"
+"Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\apps\hub\forms.py:17 .\apps\hub\models.py:13
+#: .\apps\hub\forms.py:19 .\apps\hub\models.py:13
 msgid "Latitude"
 msgstr "Широта"
 
-#: .\apps\hub\forms.py:26 .\apps\hub\models.py:14
+#: .\apps\hub\forms.py:28 .\apps\hub\models.py:14
 msgid "Longitude"
 msgstr "Довгота"
 
-#: .\apps\hub\forms.py:32
+#: .\apps\hub\forms.py:34
 msgid "Choose category"
 msgstr "Виберіть категорію"
 
-#: .\apps\hub\forms.py:45 .\apps\hub\forms.py:65
+#: .\apps\hub\forms.py:48 .\apps\hub\forms.py:68
 msgid "Comment, not required"
 msgstr "Коментар, не обов'язково"
 
-#: .\apps\hub\models.py:16 .\apps\hub\models.py:77
+#: .\apps\hub\forms.py:79
+msgid "Email"
+msgstr "Email"
+
+#: .\apps\hub\forms.py:84
+msgid "Message"
+msgstr "Повідомлення"
+
+#: .\apps\hub\models.py:16 .\apps\hub\models.py:104
+#: .\apps\hub\templates\hub\marker.html:47
 msgid "Category"
 msgstr "Категорія"
 
-#: .\apps\hub\models.py:18
+#: .\apps\hub\models.py:18 .\apps\hub\models.py:57 .\apps\hub\models.py:65
+#: .\apps\hub\templates\hub\marker.html:92
 msgid "Comment"
 msgstr "Коментар"
 
-#: .\apps\hub\models.py:19
+#: .\apps\hub\models.py:19 .\apps\hub\models.py:59
 msgid "Date"
 msgstr "Дата"
 
-#: .\apps\hub\models.py:26
+#: .\apps\hub\models.py:26 .\apps\hub\models.py:49
 msgid "Owner"
 msgstr "Власник"
 
 #: .\apps\hub\models.py:29
+msgid "Like"
+msgstr "Лайк"
+
+#: .\apps\hub\models.py:31
+msgid "Likes count"
+msgstr "Кількість лайків"
+
+#: .\apps\hub\models.py:33
 msgid "IP address"
 msgstr "IP адреса"
 
-#: .\apps\hub\models.py:37
+#: .\apps\hub\models.py:41 .\apps\hub\models.py:54
+#: .\apps\hub\templates\hub\marker.html:7
 msgid "Mark"
 msgstr "Мітка"
 
-#: .\apps\hub\models.py:38
+#: .\apps\hub\models.py:42
 msgid "Marks"
 msgstr "Мітки"
 
-#: .\apps\hub\models.py:66 .\apps\hub\models.py:85
+#: .\apps\hub\models.py:66 .\apps\hub\templates\hub\marker.html:64
+#| msgid "Comment"
+msgid "Comments"
+msgstr "Коментарі"
+
+#: .\apps\hub\models.py:93 .\apps\hub\models.py:112
 msgid "Name"
 msgstr "Назва"
 
-#: .\apps\hub\models.py:68 .\apps\hub\models.py:92
+#: .\apps\hub\models.py:95 .\apps\hub\models.py:119
 msgid "Icon"
 msgstr "Іконка"
 
-#: .\apps\hub\models.py:70
+#: .\apps\hub\models.py:97
 msgid "Color"
 msgstr "Колір"
 
-#: .\apps\hub\models.py:78
+#: .\apps\hub\models.py:105
 msgid "Categories"
 msgstr "Категорії"
 
-#: .\apps\hub\models.py:93
+#: .\apps\hub\models.py:120
 msgid "Icons"
 msgstr "Іконки"
+
+#: .\apps\hub\templates\hub\about.html:5
+msgid "About"
+msgstr "Про проєкт"
+
+#: .\apps\hub\templates\hub\about.html:10
+msgid "About project"
+msgstr "Про проєкт"
+
+#: .\apps\hub\templates\hub\about.html:12
+msgid ""
+"\n"
+"                Dear users! This project is made for Ukrainian refuges and for everyone else may find it helpfully as well.\n"
+"                The aim of this project is to help you to connect with other refuges in any country in a world,\n"
+"                find help and offer your help, find accommodation, services, job, etc.\n"
+"            "
+msgstr ""
+"\n"
+"Шановні користувачі! Цей проект створений для українських біженців і для всіх інших, хто також зможе знайти його корисним для себе. Мета цього проекту-допомогти вам встановити зв'язок з іншими біженцями в будь-якій країні світу, знайти допомогу і запропонувати свою допомогу, знайти житло, послуги, роботу і т.д.\n"
+"            "
+
+#: .\apps\hub\templates\hub\about.html:18
+msgid "How does this work"
+msgstr "Як це працює"
+
+#: .\apps\hub\templates\hub\about.html:20
+msgid ""
+"\n"
+"                All you need to do - is to add a mark on a map with exact coordinates, choose mark category and type\n"
+"                a comment (if you like). If you want anybody to contact you, then leave you contacts in comment field.\n"
+"                If you want to edit or delete your marks, you need to sign up then.\n"
+"            "
+msgstr ""
+"\n"
+"Все, що вам потрібно зробити - це додати мітку на мапу з точними координатами, вибрати категорію мітки і ввести коментар (по бажанню). Якщо ви хочете, щоб хтось зв'язався з вами, залиште свої контакти в полі для коментарів. Якщо ви хочете відредагувати або видалити свої позначки, вам необхідно зареєструватися.\n"
+"            "
+
+#: .\apps\hub\templates\hub\about.html:26
+msgid "Your account"
+msgstr "Ваш обліковий запис"
+
+#: .\apps\hub\templates\hub\about.html:28
+msgid ""
+"\n"
+"                After registering you can update you account details with your image, first and last name,\n"
+"                facebook profile link and any other contacts.\n"
+"            "
+msgstr ""
+"\n"
+"Після реєстрації ви можете оновити дані свого облікового запису, вказавши своє зображення, ім'я та прізвище, посилання на профіль facebook і будь-які інші контакти."
+
+#: .\apps\hub\templates\hub\about.html:33
+msgid "Feature request"
+msgstr "Запит функції"
+
+#: .\apps\hub\templates\hub\about.html:35
+msgid ""
+"\n"
+"                If you need to add a new category or request a new feature, please refer to Contact us page.\n"
+"            "
+msgstr ""
+"\n"
+"Якщо вам потрібно додати нову категорію або запросити нову функцію, будь ласка, заповніть форму на сторінці \"Зв'яжіться з нами\".\n"
+"            "
+
+#: .\apps\hub\templates\hub\contact.html:6
+#: .\apps\hub\templates\hub\contact.html:25
+#| msgid "Contact"
+msgid "Contact us"
+msgstr "Зв'язатися з нами"
+
+#: .\apps\hub\templates\hub\contact.html:26
+msgid ""
+"For any purposes regarding project you may reach developer via form below."
+msgstr ""
+"З усіх питань, що стосуються проекту, ви можете зв'язатися з розробником "
+"через форму нижче."
+
+#: .\apps\hub\templates\hub\contact.html:38
+msgid "Submit"
+msgstr "Відправити"
 
 #: .\apps\hub\templates\hub\edit-marker.html:4
 #: .\apps\hub\templates\hub\edit-marker.html:13
@@ -95,18 +198,30 @@ msgid "Save"
 msgstr "Зберегти"
 
 #: .\apps\hub\templates\hub\index.html:10
-#: .\apps\hub\templates\hub\index.html:43
+#: .\apps\hub\templates\hub\index.html:44
 msgid "Add mark"
 msgstr "Додати мітку"
 
 #: .\apps\hub\templates\hub\index.html:12
-#: .\apps\hub\templates\hub\index.html:30
+#: .\apps\hub\templates\hub\index.html:31
 msgid "Close"
 msgstr "Закрити"
 
-#: .\apps\hub\templates\hub\index.html:31
+#: .\apps\hub\templates\hub\index.html:32
 msgid "Add"
 msgstr "Додати"
+
+#: .\apps\hub\templates\hub\marker.html:43
+msgid "Anonymous user"
+msgstr "Анонімний користувач"
+
+#: .\apps\hub\templates\hub\marker.html:60
+msgid "No data"
+msgstr "Немає даних"
+
+#: .\apps\hub\templates\hub\marker.html:97
+msgid "Post comment"
+msgstr "Додати коментар"
 
 #: .\apps\hub\templates\hub\markers.html:7
 #: .\apps\hub\templates\hub\markers.html:14
@@ -119,44 +234,77 @@ msgstr "Коментар порожній"
 
 #: .\apps\hub\templates\hub\markers.html:55
 msgid "You have no any markers. Why not to add some?"
-msgstr "У вас ще немає міток. Допоможіть іншим, додайте їх."
+msgstr "У вас ще немає міток. Допоможіть іншим - додайте їх."
 
 #: .\apps\hub\translation.py:14
 msgid "-- sorry, no translation provided --"
 msgstr "-- вибачте, немає перекладу --"
 
-#: .\apps\hub\views.py:33
+#: .\apps\hub\views.py:38
 msgid "Fullscreen"
 msgstr "Повний екран"
 
-#: .\apps\hub\views.py:33
+#: .\apps\hub\views.py:38
 msgid "Exit"
 msgstr "Вихід"
 
-#: .\apps\hub\views.py:37
+#: .\apps\hub\views.py:42
 msgid "My location"
-msgstr "Де я"
+msgstr "Моє місце розташування"
 
-#: .\apps\hub\views.py:98
+#: .\apps\hub\views.py:108
 msgid "Marker added successfully!"
 msgstr "Мітка успішно додана!"
 
-#: .\apps\hub\views.py:102
+#: .\apps\hub\views.py:112
 msgid "Error. Check coordinates."
 msgstr "Помилка. Перевірте координати."
 
-#: .\apps\hub\views.py:129
+#: .\apps\hub\views.py:159
+msgid "Invalid header found."
+msgstr "Знайдено недійсний заголовок листа."
+
+#: .\apps\hub\views.py:161
+#| msgid "Marker added successfully!"
+msgid "Email sent successfully!"
+msgstr "Лист відправлено успішно!"
+
+#: .\apps\hub\views.py:189
 msgid "The marker has been deleted!"
 msgstr "Мітка видалена!"
 
-#: .\apps\hub\views.py:153
+#: .\apps\hub\views.py:213
 msgid "The marker has been updated!"
 msgstr "Мітка оновлена!"
 
-#: .\apps\hub\views.py:157
+#: .\apps\hub\views.py:217
 msgid "Please, correct errors."
 msgstr "Будь ласка, виправте помилки."
 
-#: .\apps\hub\views.py:162 .\apps\hub\views.py:163
+#: .\apps\hub\views.py:222 .\apps\hub\views.py:223
 msgid "Access forbidden!"
 msgstr "Доступ заборонено!"
+
+#: .\apps\hub\views.py:332
+msgid "Comment has added. Reload page."
+msgstr "Коментар додано. Оновіть сторінку"
+
+#: .\apps\hub\views.py:335
+msgid "Error! Enter at least 10 symbols."
+msgstr "Помилка. Має бути більше 10 символів"
+
+#: .\apps\hub\views.py:338
+msgid "Sign in to leave a comment"
+msgstr "Увійдіть щоб додати коментар"
+
+#: .\apps\hub\views.py:349
+msgid "You've deleted the mark. Reload page."
+msgstr "Коментар видалено. Оновіть сторінку"
+
+#: .\apps\hub\views.py:351
+msgid "Error!"
+msgstr "Помилка!"
+
+#: .\apps\hub\views.py:353
+msgid "Sign in to delete a comment"
+msgstr "Увійдіть щоб видалити коментар"

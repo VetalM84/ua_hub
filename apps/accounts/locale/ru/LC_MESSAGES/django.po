@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-23 14:17+0300\n"
+"POT-Creation-Date: 2022-09-30 14:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,42 +20,42 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\apps\accounts\forms.py:14 .\apps\accounts\forms.py:37
-#: .\apps\accounts\forms.py:74 .\apps\accounts\models.py:15
+#: .\apps\accounts\forms.py:16 .\apps\accounts\forms.py:39
+#: .\apps\accounts\forms.py:77 .\apps\accounts\models.py:17
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\accounts\forms.py:18 .\apps\accounts\forms.py:41
+#: .\apps\accounts\forms.py:20 .\apps\accounts\forms.py:43
 msgid "Password"
 msgstr "Пароль"
 
-#: .\apps\accounts\forms.py:28 .\apps\accounts\forms.py:60
-msgid "First name"
-msgstr "Имя"
-
-#: .\apps\accounts\forms.py:33 .\apps\accounts\forms.py:65
-msgid "Last name"
-msgstr "Фамилия"
-
-#: .\apps\accounts\forms.py:45
+#: .\apps\accounts\forms.py:47
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: .\apps\accounts\forms.py:70 .\apps\accounts\models.py:18
-#: .\apps\accounts\templates\accounts\profile-public.html:25
+#: .\apps\accounts\forms.py:63
+msgid "First name"
+msgstr "Имя"
+
+#: .\apps\accounts\forms.py:68
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\apps\accounts\forms.py:73 .\apps\accounts\models.py:20
+#: .\apps\accounts\templates\accounts\profile-public.html:27
 msgid "Hometown"
 msgstr "Родной город"
 
-#: .\apps\accounts\forms.py:79
+#: .\apps\accounts\forms.py:82
 msgid "Facebook"
 msgstr "Facebook"
 
-#: .\apps\accounts\forms.py:84 .\apps\accounts\models.py:17
+#: .\apps\accounts\forms.py:87 .\apps\accounts\models.py:19
 #: .\apps\accounts\templates\accounts\profile-public.html:40
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\apps\accounts\forms.py:89 .\apps\accounts\models.py:21
+#: .\apps\accounts\forms.py:92 .\apps\accounts\models.py:26
 msgid "Image"
 msgstr "Изображение"
 
@@ -71,29 +71,29 @@ msgstr ""
 msgid "Superuser must have is_superuser=True."
 msgstr ""
 
-#: .\apps\accounts\models.py:16
-#: .\apps\accounts\templates\accounts\profile-public.html:34
+#: .\apps\accounts\models.py:18
+#: .\apps\accounts\templates\accounts\profile-public.html:36
 msgid "Facebook profile link"
 msgstr "Ссылка на профиль Facebook"
 
-#: .\apps\accounts\models.py:43
+#: .\apps\accounts\models.py:67
 msgid "Full name"
 msgstr "Полное имя"
 
-#: .\apps\accounts\models.py:46
-#: .\apps\accounts\templates\accounts\profile-public.html:4
+#: .\apps\accounts\models.py:70
+#: .\apps\accounts\templates\accounts\profile-public.html:6
 msgid "User"
 msgstr "Пользователь"
 
-#: .\apps\accounts\models.py:47
+#: .\apps\accounts\models.py:71
 msgid "Users"
 msgstr "Пользователи"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:19
 #: .\apps\accounts\templates\accounts\login.html:28
-#: .\apps\accounts\templates\accounts\register.html:47
-#: .\apps\accounts\templates\accounts\register.html:49
+#: .\apps\accounts\templates\accounts\register.html:42
+#: .\apps\accounts\templates\accounts\register.html:44
 msgid "Sign in"
 msgstr "Вход"
 
@@ -102,6 +102,7 @@ msgid "Sign in to your account"
 msgstr "Войдите в ваш аккаунт"
 
 #: .\apps\accounts\templates\accounts\login.html:32
+#: .\apps\accounts\templates\accounts\password_change.html:51
 msgid "Forgot password?"
 msgstr "Забыли пароль?"
 
@@ -109,7 +110,7 @@ msgstr "Забыли пароль?"
 #: .\apps\accounts\templates\accounts\login.html:44
 #: .\apps\accounts\templates\accounts\register.html:6
 #: .\apps\accounts\templates\accounts\register.html:18
-#: .\apps\accounts\templates\accounts\register.html:38
+#: .\apps\accounts\templates\accounts\register.html:33
 msgid "Sign up"
 msgstr "Регистрация"
 
@@ -121,37 +122,41 @@ msgstr ""
 "Регистрация необязательна, но зарегистрированные пользователи имеют доступ "
 "ко всем своим меткам."
 
-#: .\apps\accounts\templates\accounts\profile-public.html:14
-#: .\apps\accounts\templates\accounts\profile.html:15
+#: .\apps\accounts\templates\accounts\password_change.html:6
+#: .\apps\accounts\templates\accounts\password_change.html:27
+#: .\apps\accounts\templates\accounts\profile.html:18
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: .\apps\accounts\templates\accounts\password_change.html:47
+#: .\apps\accounts\templates\accounts\profile.html:33
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\apps\accounts\templates\accounts\profile-public.html:16
+#: .\apps\accounts\templates\accounts\profile.html:16
 msgid "Sign up date"
 msgstr "Дата регистрации"
 
-#: .\apps\accounts\templates\accounts\profile-public.html:21
-#, fuzzy
-#| msgid "My profile"
+#: .\apps\accounts\templates\accounts\profile-public.html:23
 msgid "User profile"
-msgstr "Мой профиль"
+msgstr "Профиль пользователя"
 
-#: .\apps\accounts\templates\accounts\profile-public.html:29
-#: .\apps\accounts\templates\accounts\profile-public.html:36
+#: .\apps\accounts\templates\accounts\profile-public.html:31
 #: .\apps\accounts\templates\accounts\profile-public.html:44
 msgid "No data"
 msgstr "Нет данных"
 
-#: .\apps\accounts\templates\accounts\profile.html:4
-#: .\apps\accounts\templates\accounts\profile.html:22
+#: .\apps\accounts\templates\accounts\profile.html:6
+#: .\apps\accounts\templates\accounts\profile.html:24
 msgid "My profile"
 msgstr "Мой профиль"
-
-#: .\apps\accounts\templates\accounts\profile.html:31
-msgid "Save"
-msgstr "Сохранить"
 
 #: .\apps\accounts\templates\accounts\register.html:19
 msgid "Create your account"
 msgstr "Создайте ваш аккаунт"
 
-#: .\apps\accounts\templates\accounts\register.html:48
+#: .\apps\accounts\templates\accounts\register.html:43
 msgid "Already have an account?"
 msgstr "Уже зарегистрированы?"
 
@@ -172,10 +177,8 @@ msgid "You have successfully signed in!"
 msgstr "Вы успешно вошли!"
 
 #: .\apps\accounts\views.py:83
-#, fuzzy
-#| msgid "Error registering!"
 msgid "Error logging-in!"
-msgstr "Ошибка регистрации!"
+msgstr "Ошибка входа!"
 
 #: .\apps\accounts\views.py:103
 msgid "You have successfully signed up!"
