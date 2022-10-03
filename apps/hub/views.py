@@ -26,7 +26,7 @@ from apps.accounts.models import User
 from ua_hub import settings
 
 from .forms import AddMarkerForm, ContactForm, UpdateMarkerForm
-from .models import Comment, Marker
+from .models import Category, Comment, Marker
 
 
 def home(request):
@@ -70,10 +70,6 @@ def home(request):
     )
     lat_lng_popup.add_to(current_map)
 
-    # deliver_layer = folium.FeatureGroup(name="Вручают").add_to(current_map)
-    # Layer control button
-    folium.LayerControl(position="topleft").add_to(current_map)
-
     # get or set cache for markers queryset
     markers = cache.get_or_set(
         "markers_frontend",
@@ -86,19 +82,32 @@ def home(request):
         timeout=3600,
     )
 
-    for marker in markers:
-        folium.Marker(
-            location=(marker.latitude, marker.longitude),
-            popup=folium.Popup(
-                html=popup_html(marker), min_width=130, max_width=280, max_height=320
-            ),
-            icon=folium.Icon(
-                color=marker.category.color,
-                icon=marker.category.icon.name,
-                prefix="fa",
-            ),
-            tooltip=marker.category.name,
-        ).add_to(current_map)
+    # create a list of Layers from markers categories
+    layers_list = []
+    for item in Category.objects.all().only("name"):
+        layers_list.append(folium.FeatureGroup(name=item.name).add_to(current_map))
+
+    # add marker to appropriate layer
+    for layer in layers_list:
+        for marker in markers:
+            if marker.category.name == layer.tile_name:
+                folium.Marker(
+                    location=(marker.latitude, marker.longitude),
+                    popup=folium.Popup(
+                        html=popup_html(marker),
+                        min_width=130,
+                        max_width=280,
+                        max_height=320,
+                    ),
+                    icon=folium.Icon(
+                        color=marker.category.color,
+                        icon=marker.category.icon.name,
+                        prefix="fa",
+                    ),
+                    tooltip=marker.category.name,
+                ).add_to(layer)
+
+    folium.LayerControl(position="topleft").add_to(current_map)
 
     # add new Marker
     if request.method == "POST":
@@ -354,7 +363,9 @@ def add_comment(request):
                     "marker": marker,
                     "comment_text": comment_text,
                 }
-                html_message = render_to_string(template_name="hub/mail/new_comment.html", context=context)
+                html_message = render_to_string(
+                    template_name="hub/mail/new_comment.html", context=context
+                )
                 send_email(
                     subject=_("A new comment added to your mark on UAHub"),
                     from_email=settings.DEFAULT_FROM_EMAIL,
