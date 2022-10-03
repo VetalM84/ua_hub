@@ -30,7 +30,7 @@ class AddMarkerForm(forms.ModelForm):
         )
     )
     category = forms.ModelChoiceField(
-        queryset=Category.objects.all(),
+        queryset=Category.objects.all().only("name"),
         empty_label=_("Choose category"),
         widget=forms.Select(attrs={"class": "form-select"}),
     )
