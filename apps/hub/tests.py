@@ -113,8 +113,6 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.get(path=reverse("about"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "hub/about.html")
-        # check for Add marker button popup form
-        self.assertNotContains(response, text='name="addMarkerForm"')
 
     def test_public_user_profile(self):
         """Test public user profile page."""
@@ -261,6 +259,17 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.get(path=reverse("contact"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "hub/contact.html")
+
+    def test_contact_post(self):
+        """Test contact form post method with success."""
+        data = {
+            "subject": "test subject",
+            "message": "test message",
+            "from_email": "from@email.co",
+            "recipient_list": ["to@email.co"]
+        }
+        response = self.client.post(path=reverse("contact"), data=data)
+        self.assertRedirects(response, expected_url=reverse("home"))
 
 
 class ViewsWithNoUserLoggedInTest(TestCase):
