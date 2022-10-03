@@ -38,6 +38,8 @@ def home(request):
         current_map = folium.Map(location=start_coordinates, zoom_start=6)
     except (ValueError, User.DoesNotExist):
         current_map = folium.Map(location=(48.51, 32.25), zoom_start=6)
+        if request.user.is_authenticated:
+            messages.error(request, _("Wrong start coordinates in your profile."), extra_tags="danger")
 
     map_container = branca.element.Figure(height="100%")
     map_container.add_child(current_map)
