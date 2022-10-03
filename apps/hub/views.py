@@ -32,8 +32,13 @@ from .models import Category, Comment, Marker
 def home(request):
     """Home page with map."""
 
-    start_location = (50.45, 30.52)  # Ukraine
-    current_map = folium.Map(location=start_location, zoom_start=6)
+    try:
+        user = User.objects.only("start_coordinates").get(pk=request.user.pk)
+        start_coordinates = user.start_coordinates.split(",")
+        current_map = folium.Map(location=start_coordinates, zoom_start=6)
+    except (ValueError, User.DoesNotExist):
+        current_map = folium.Map(location=(48.51, 32.25), zoom_start=6)
+
     map_container = branca.element.Figure(height="100%")
     map_container.add_child(current_map)
 

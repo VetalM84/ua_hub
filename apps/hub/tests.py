@@ -20,6 +20,7 @@ class ViewsWithLoggedInUserTest(TestCase):
             hometown="Kiev",
             facebook_link="https://www.facebook.com/profile.php?id=1000",
             contacts="+380991111111",
+            start_coordinates="50.45, 30.52",
             avatar="avatar/default_avatar.jpg",
         )
         Icon.objects.create(name="cloud")
