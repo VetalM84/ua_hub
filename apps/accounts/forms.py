@@ -25,16 +25,6 @@ class UserLoginForm(AuthenticationForm):
 class UserRegisterForm(UserCreationForm):
     """User register form on frontend."""
 
-    # first_name = forms.CharField(
-    #     required=False,
-    #     label=_("First name"),
-    #     widget=forms.TextInput(attrs={"class": "form-control"}),
-    # )
-    # last_name = forms.CharField(
-    #     required=False,
-    #     label=_("Last name"),
-    #     widget=forms.TextInput(attrs={"class": "form-control"}),
-    # )
     email = forms.EmailField(
         label=_("Email"),
         widget=forms.EmailInput(attrs={"class": "form-control"}),
@@ -87,6 +77,13 @@ class UserProfileForm(forms.ModelForm):
         label=_("Contacts"),
         widget=forms.Textarea(attrs={"class": "form-control", "rows": 3}),
     )
+    start_coordinates = forms.CharField(
+        required=False,
+        label=_("Start coordinates"),
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": _("Format: 48.1630, 16.3250")}
+        ),
+    )
     avatar = forms.ImageField(
         required=False,
         label=_("Image"),
@@ -103,6 +100,7 @@ class UserProfileForm(forms.ModelForm):
             "email",
             "facebook_link",
             "contacts",
+            "start_coordinates",
             "avatar",
         )
 

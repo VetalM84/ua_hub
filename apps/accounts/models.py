@@ -18,6 +18,7 @@ class User(AbstractUser):
     facebook_link = models.URLField(blank=True, verbose_name=_("Facebook profile link"))
     contacts = models.CharField(blank=True, max_length=250, verbose_name=_("Contacts"))
     hometown = models.CharField(blank=True, max_length=250, verbose_name=_("Hometown"))
+    start_coordinates = models.CharField(blank=True, max_length=100, verbose_name=_("Start coordinates"))
     avatar = ProcessedImageField(
         upload_to="avatar/",
         format="JPEG",

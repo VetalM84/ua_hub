@@ -48,6 +48,7 @@ class UserAdmin(BaseUserAdmin):
                     "last_name",
                     "facebook_link",
                     "contacts",
+                    "start_coordinates",
                     "hometown",
                     "avatar",
                 ),
