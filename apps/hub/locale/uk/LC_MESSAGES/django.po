@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 16:41+0300\n"
-"PO-Revision-Date: 2022-10-02 16:55+0000\n"
+"POT-Creation-Date: 2022-10-03 20:47+0300\n"
+"PO-Revision-Date: 2022-10-03 20:51+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -83,7 +83,6 @@ msgid "Marks"
 msgstr "Мітки"
 
 #: .\apps\hub\models.py:66 .\apps\hub\templates\hub\marker.html:64
-#| msgid "Comment"
 msgid "Comments"
 msgstr "Коментарі"
 
@@ -173,7 +172,6 @@ msgstr ""
 
 #: .\apps\hub\templates\hub\contact.html:6
 #: .\apps\hub\templates\hub\contact.html:25
-#| msgid "Contact"
 msgid "Contact us"
 msgstr "Зв'язатися з нами"
 
@@ -240,71 +238,74 @@ msgstr "У вас ще немає міток. Допоможіть іншим - 
 msgid "-- sorry, no translation provided --"
 msgstr "-- вибачте, немає перекладу --"
 
-#: .\apps\hub\views.py:38
+#: .\apps\hub\views.py:47
 msgid "Fullscreen"
 msgstr "Повний екран"
 
-#: .\apps\hub\views.py:38
+#: .\apps\hub\views.py:47
 msgid "Exit"
 msgstr "Вихід"
 
-#: .\apps\hub\views.py:42
+#: .\apps\hub\views.py:51
 msgid "My location"
 msgstr "Моє місце розташування"
 
-#: .\apps\hub\views.py:108
+#: .\apps\hub\views.py:126
 msgid "Marker added successfully!"
 msgstr "Мітка успішно додана!"
 
-#: .\apps\hub\views.py:112
+#: .\apps\hub\views.py:130
 msgid "Error. Check coordinates."
 msgstr "Помилка. Перевірте координати."
 
-#: .\apps\hub\views.py:159
-msgid "Invalid header found."
-msgstr "Знайдено недійсний заголовок листа."
-
-#: .\apps\hub\views.py:161
-#| msgid "Marker added successfully!"
+#: .\apps\hub\views.py:173
 msgid "Email sent successfully!"
 msgstr "Лист відправлено успішно!"
 
-#: .\apps\hub\views.py:189
+#: .\apps\hub\views.py:201
 msgid "The marker has been deleted!"
 msgstr "Мітка видалена!"
 
-#: .\apps\hub\views.py:213
+#: .\apps\hub\views.py:225
 msgid "The marker has been updated!"
 msgstr "Мітка оновлена!"
 
-#: .\apps\hub\views.py:217
+#: .\apps\hub\views.py:229
 msgid "Please, correct errors."
 msgstr "Будь ласка, виправте помилки."
 
-#: .\apps\hub\views.py:222 .\apps\hub\views.py:223
+#: .\apps\hub\views.py:234 .\apps\hub\views.py:235
 msgid "Access forbidden!"
 msgstr "Доступ заборонено!"
 
-#: .\apps\hub\views.py:332
+#: .\apps\hub\views.py:316
+msgid "Invalid header found."
+msgstr "Знайдено недійсний заголовок листа."
+
+#: .\apps\hub\views.py:364
 msgid "Comment has added. Reload page."
 msgstr "Коментар додано. Оновіть сторінку"
 
-#: .\apps\hub\views.py:335
+#: .\apps\hub\views.py:375
+msgid "A new comment added to your mark on UAHub"
+msgstr "Новий коментар додано до вашої позначки на UAHub"
+
+#: .\apps\hub\views.py:383
 msgid "Error! Enter at least 10 symbols."
 msgstr "Помилка. Має бути більше 10 символів"
 
-#: .\apps\hub\views.py:338
+#: .\apps\hub\views.py:386
 msgid "Sign in to leave a comment"
 msgstr "Увійдіть щоб додати коментар"
 
-#: .\apps\hub\views.py:349
+#: .\apps\hub\views.py:397
 msgid "You've deleted the mark. Reload page."
 msgstr "Коментар видалено. Оновіть сторінку"
 
-#: .\apps\hub\views.py:351
+#: .\apps\hub\views.py:399
 msgid "Error!"
 msgstr "Помилка!"
 
-#: .\apps\hub\views.py:353
+#: .\apps\hub\views.py:401
 msgid "Sign in to delete a comment"
 msgstr "Увійдіть щоб видалити коментар"

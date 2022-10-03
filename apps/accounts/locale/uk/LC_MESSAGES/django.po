@@ -8,55 +8,61 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-30 14:05+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-10-03 20:47+0300\n"
+"PO-Revision-Date: 2022-10-03 20:51+0000\n"
+"Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\apps\accounts\forms.py:16 .\apps\accounts\forms.py:39
-#: .\apps\accounts\forms.py:77 .\apps\accounts\models.py:17
+#: .\apps\accounts\forms.py:16 .\apps\accounts\forms.py:29
+#: .\apps\accounts\forms.py:67 .\apps\accounts\models.py:17
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\accounts\forms.py:20 .\apps\accounts\forms.py:43
+#: .\apps\accounts\forms.py:20 .\apps\accounts\forms.py:33
 msgid "Password"
 msgstr "Пароль"
 
-#: .\apps\accounts\forms.py:47
+#: .\apps\accounts\forms.py:37
 msgid "Repeat password"
 msgstr "Повторіть пароль"
 
-#: .\apps\accounts\forms.py:63
+#: .\apps\accounts\forms.py:53
 msgid "First name"
 msgstr "Ім'я"
 
-#: .\apps\accounts\forms.py:68
+#: .\apps\accounts\forms.py:58
 msgid "Last name"
 msgstr "Прізвище"
 
-#: .\apps\accounts\forms.py:73 .\apps\accounts\models.py:20
+#: .\apps\accounts\forms.py:63 .\apps\accounts\models.py:20
 #: .\apps\accounts\templates\accounts\profile-public.html:27
 msgid "Hometown"
 msgstr "Рідне місто"
 
-#: .\apps\accounts\forms.py:82
+#: .\apps\accounts\forms.py:72
 msgid "Facebook"
 msgstr "Facebook"
 
-#: .\apps\accounts\forms.py:87 .\apps\accounts\models.py:19
+#: .\apps\accounts\forms.py:77 .\apps\accounts\models.py:19
 #: .\apps\accounts\templates\accounts\profile-public.html:40
 msgid "Contacts"
 msgstr "Контакти"
 
-#: .\apps\accounts\forms.py:92 .\apps\accounts\models.py:26
+#: .\apps\accounts\forms.py:82 .\apps\accounts\models.py:21
+msgid "Start coordinates"
+msgstr "Початкові координати"
+
+#: .\apps\accounts\forms.py:84
+msgid "Format: 48.1630, 16.3250"
+msgstr "Формат: 48.1630, 16.3250"
+
+#: .\apps\accounts\forms.py:89 .\apps\accounts\models.py:27
 msgid "Image"
 msgstr "Зображення"
 
@@ -77,16 +83,16 @@ msgstr "Superuser must have is_superuser=True."
 msgid "Facebook profile link"
 msgstr "Посилання на профіль Facebook"
 
-#: .\apps\accounts\models.py:67
+#: .\apps\accounts\models.py:68
 msgid "Full name"
 msgstr "Повне ім'я"
 
-#: .\apps\accounts\models.py:70
+#: .\apps\accounts\models.py:71
 #: .\apps\accounts\templates\accounts\profile-public.html:6
 msgid "User"
 msgstr "Користувач"
 
-#: .\apps\accounts\models.py:71
+#: .\apps\accounts\models.py:72
 msgid "Users"
 msgstr "Користувачі"
 
@@ -120,8 +126,8 @@ msgid ""
 "Creating an account is not required, but you'll have an access to all your "
 "markers."
 msgstr ""
-"Реєстрація необов'язкова, але зареєстровані користувачі мають доступ до всіх "
-"своїх міток."
+"Реєстрація необов'язкова, але зареєстровані користувачі мають доступ до всіх"
+" своїх міток."
 
 #: .\apps\accounts\templates\accounts\password_change.html:6
 #: .\apps\accounts\templates\accounts\password_change.html:27
