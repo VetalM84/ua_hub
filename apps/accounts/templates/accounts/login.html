@@ -28,7 +28,7 @@
                                     <button type="submit" class="btn btn-primary px-4">{% translate "Sign in" %}</button>
                                 </div>
                                 <div class="flex-fill text-end">
-                                    <a href="{% url 'change_password' %}" type="button" class="btn btn-link px-0">
+                                    <a href="{% url "password_reset" %}" type="button" class="btn btn-link px-0">
                                         {% translate "Forgot password?" %}
                                     </a>
                                 </div>
@@ -51,12 +51,3 @@
 </div>
 <!-- login END -->
 {% endblock %}
-
-    {% if request.user.is_authenticated %}
-        <p>You may change your password by this <a >link</a></p>
-    {% endif %}
-
-    {% if not request.user.is_authenticated %}
-    {% endif %}
-
-
