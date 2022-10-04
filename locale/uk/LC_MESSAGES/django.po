@@ -8,15 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 16:28+0300\n"
-"PO-Revision-Date: 2022-10-02 16:56+0000\n"
+"POT-Creation-Date: 2022-10-04 20:57+0300\n"
+"PO-Revision-Date: 2022-10-04 20:52+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\templates\inc\_footer.html:11 .\templates\inc\_header.html:18
@@ -44,9 +47,12 @@ msgid "Log out"
 msgstr "Вихід"
 
 #: .\templates\inc\_header.html:76
-msgid "Sign in"
-msgstr "Логін"
+msgid "Log in"
+msgstr "Вхід"
 
 #: .\templates\inc\_header.html:77
 msgid "Sign up"
 msgstr "Реєстрація"
+
+#~ msgid "Sign in"
+#~ msgstr "Логін"
