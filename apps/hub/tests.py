@@ -271,6 +271,13 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.post(path=reverse("contact"), data=data)
         self.assertRedirects(response, expected_url=reverse("home"))
 
+    def test_password_reset_page(self):
+        """Test access to password reset page, check if it contains form."""
+        response = self.client.get(path=reverse("password_reset"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "accounts/password/password_reset.html")
+        self.assertContains(response, text='<input type="email"')
+
 
 class ViewsWithNoUserLoggedInTest(TestCase):
     @classmethod
@@ -391,3 +398,8 @@ class ViewsWithNoUserLoggedInTest(TestCase):
         }
         response = self.client.post(path=reverse("login"), data=data, follow=True)
         self.assertRedirects(response, expected_url=reverse("markers"))
+
+    def test_password_change(self):
+        """Test access to password change page with redirect for non-logged-in users."""
+        response = self.client.get(path=reverse("password_change"))
+        self.assertEqual(response.status_code, 302)
