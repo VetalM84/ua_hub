@@ -278,6 +278,11 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertTemplateUsed(response, "accounts/password/password_reset.html")
         self.assertContains(response, text='<input type="email"')
 
+    def test_password_reset_post(self):
+        """Test password reset post."""
+        response = self.client.post(path=reverse("password_reset"), data={"email": "test@test.com"})
+        self.assertRedirects(response, expected_url=reverse("home"))
+
 
 class ViewsWithNoUserLoggedInTest(TestCase):
     @classmethod
