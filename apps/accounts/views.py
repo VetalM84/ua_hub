@@ -65,7 +65,7 @@ def password_change(request):
             )
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, "accounts/password_change.html", {"form": form})
+    return render(request, "accounts/password/password_change.html", {"form": form})
 
 
 def user_login(request):
