@@ -1,4 +1,5 @@
 """Hub app views."""
+
 import os
 from typing import List
 
@@ -17,7 +18,6 @@ from django.utils.formats import date_format
 from django.utils.html import strip_tags
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
-from django.views.decorators.cache import cache_page
 from folium.features import LatLngPopup
 from folium.plugins import Fullscreen, LocateControl
 from jinja2 import Template
@@ -374,7 +374,7 @@ def add_comment(request):
                     template_name="hub/mail/new_comment.html", context=context
                 )
                 send_email(
-                    subject=_("A new comment added to your mark on UAHub"),
+                    subject="A new comment added to your mark on UAHub",
                     from_email=settings.DEFAULT_FROM_EMAIL,
                     recipient_list=[marker.owner.email],
                     message=strip_tags(html_message),
