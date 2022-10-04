@@ -236,7 +236,7 @@ class ViewsWithLoggedInUserTest(TestCase):
         """Test change password method page."""
         response = self.client.get(path=reverse("password_change"))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "accounts/password_change.html")
+        self.assertTemplateUsed(response, "accounts/password/password_change.html")
 
     def test_change_password_success(self):
         """Test change password method page with success."""
