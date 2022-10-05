@@ -4,7 +4,10 @@ from django.contrib import messages
 from django.contrib.auth import login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 
 from apps.accounts.forms import UserLoginForm, UserProfileForm, UserRegisterForm
@@ -66,6 +69,18 @@ def password_change(request):
     else:
         form = PasswordChangeForm(request.user)
     return render(request, "accounts/password/password_change.html", {"form": form})
+
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    """User reset password page with form."""
+
+    template_name = "accounts/password/password_reset.html"
+    success_message = _(
+        """We've emailed you the instruction for resetting your password. 
+        If you didn't receive it, please make sure you've entered a valid address 
+        and check your spam folder."""
+    )
+    success_url = reverse_lazy("home")
 
 
 def user_login(request):
