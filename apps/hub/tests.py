@@ -248,6 +248,17 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.post(path=reverse("password_change"), data=data)
         self.assertRedirects(response, expected_url=reverse("profile"))
 
+    def test_change_password_fail(self):
+        """Test change password method page with wrong old password."""
+        data = {
+            "old_password": "test1111",
+            "new_password1": "111111",
+            "new_password2": "test_new_password",
+        }
+        response = self.client.post(path=reverse("password_change"), data=data)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, text=b'<div id="form_errors">')
+
     def test_get_marker(self):
         """Test single marker view page."""
         response = self.client.get(path=reverse("get_marker", args=(1,)))
