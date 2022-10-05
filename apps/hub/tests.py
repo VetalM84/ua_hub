@@ -294,6 +294,12 @@ class ViewsWithLoggedInUserTest(TestCase):
         response = self.client.post(path=reverse("password_reset"), data={"email": "test@test.com"})
         self.assertRedirects(response, expected_url=reverse("home"))
 
+    def test_password_reset_complete(self):
+        """Test access to complete password reset page."""
+        response = self.client.get(path=reverse("password_reset_complete"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "accounts/password/password_reset_complete.html")
+
 
 class ViewsWithNoUserLoggedInTest(TestCase):
     @classmethod
