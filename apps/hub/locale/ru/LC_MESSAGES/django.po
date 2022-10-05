@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-03 20:47+0300\n"
-"PO-Revision-Date: 2022-10-03 20:50+0000\n"
+"POT-Creation-Date: 2022-10-04 20:40+0300\n"
+"PO-Revision-Date: 2022-10-04 20:44+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -238,74 +238,77 @@ msgstr "У вас еще нет меток. Помогите другим - до
 msgid "-- sorry, no translation provided --"
 msgstr "-- извините, нет перевода --"
 
-#: .\apps\hub\views.py:47
+#: .\apps\hub\views.py:42
+msgid "Wrong start coordinates in your profile."
+msgstr "Неверные стартовые координаты в вашем профиле."
+
+#: .\apps\hub\views.py:49
 msgid "Fullscreen"
 msgstr "Полный экран"
 
-#: .\apps\hub\views.py:47
+#: .\apps\hub\views.py:49
 msgid "Exit"
 msgstr "Выход"
 
-#: .\apps\hub\views.py:51
+#: .\apps\hub\views.py:53
 msgid "My location"
 msgstr "Моё местоположение"
 
-#: .\apps\hub\views.py:126
+#: .\apps\hub\views.py:128
 msgid "Marker added successfully!"
 msgstr "Метка успешно добавлена!"
 
-#: .\apps\hub\views.py:130
+#: .\apps\hub\views.py:132
 msgid "Error. Check coordinates."
 msgstr "Ошибка. Проверьте координаты."
 
-#: .\apps\hub\views.py:173
+#: .\apps\hub\views.py:175
 msgid "Email sent successfully!"
 msgstr "Письмо отправлено успешно!"
 
-#: .\apps\hub\views.py:201
+#: .\apps\hub\views.py:203
 msgid "The marker has been deleted!"
 msgstr "Метка удалена!"
 
-#: .\apps\hub\views.py:225
+#: .\apps\hub\views.py:227
 msgid "The marker has been updated!"
 msgstr "Метка обновлена!"
 
-#: .\apps\hub\views.py:229
+#: .\apps\hub\views.py:231
 msgid "Please, correct errors."
 msgstr "Пожалуйста исправьте ошибки."
 
-#: .\apps\hub\views.py:234 .\apps\hub\views.py:235
+#: .\apps\hub\views.py:236 .\apps\hub\views.py:237
 msgid "Access forbidden!"
 msgstr "Доступ запрещен!"
 
-#: .\apps\hub\views.py:316
+#: .\apps\hub\views.py:318
 msgid "Invalid header found."
 msgstr "Найден недопустимый заголовок письма."
 
-#: .\apps\hub\views.py:364
+#: .\apps\hub\views.py:366
 msgid "Comment has added. Reload page."
 msgstr "Комментарий добавлен. Обновите страницу"
 
-#: .\apps\hub\views.py:375
-msgid "A new comment added to your mark on UAHub"
-msgstr "Новый комментарий добавлен к вашей метке на UAHub"
-
-#: .\apps\hub\views.py:383
+#: .\apps\hub\views.py:385
 msgid "Error! Enter at least 10 symbols."
 msgstr "Ошибка! Введите хотя бы 10 символов"
 
-#: .\apps\hub\views.py:386
+#: .\apps\hub\views.py:388
 msgid "Sign in to leave a comment"
 msgstr "Войдите чтобы оставить комментарий"
 
-#: .\apps\hub\views.py:397
+#: .\apps\hub\views.py:399
 msgid "You've deleted the mark. Reload page."
 msgstr "Комментарий удален. Обновите страницу"
 
-#: .\apps\hub\views.py:399
+#: .\apps\hub\views.py:401
 msgid "Error!"
 msgstr "Ошибка!"
 
-#: .\apps\hub\views.py:401
+#: .\apps\hub\views.py:403
 msgid "Sign in to delete a comment"
 msgstr "Войдите чтобы удалить комментарий"
+
+#~ msgid "A new comment added to your mark on UAHub"
+#~ msgstr "Новый комментарий добавлен к вашей метке на UAHub"
