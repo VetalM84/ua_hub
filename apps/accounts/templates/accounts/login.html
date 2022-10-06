@@ -6,6 +6,7 @@
     <title>{% translate "Login" %} - UAHub.online</title>
 
     <link href="{% static "css/login.css" %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -34,6 +35,17 @@
                                     <a href="{% url "password_reset" %}" type="button" class="btn btn-link px-0">
                                         {% translate "Forgot password?" %}
                                     </a>
+                                </div>
+                            </div>
+                            <h1 class="h4 mt-4">{% translate "Social login" %}</h1>
+                            <div class="d-flex">
+                                <div class="flex-fill">
+                                    <!-- social buttons -->
+                                    <a href="{% url 'social:begin' 'github' %}" class="btn btn-dark">
+                                        <i class="fa-brands fa-github"></i></a>
+                                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-danger">
+                                        <i class="fa-brands fa-google"></i></a>
+                                    <!-- social buttons end -->
                                 </div>
                             </div>
                         </form>

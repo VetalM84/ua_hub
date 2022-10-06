@@ -113,7 +113,7 @@ def user_register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             messages.success(
                 request, _("You have successfully signed up!"), extra_tags="success"
             )

@@ -14,7 +14,7 @@ from apps.accounts.views import (
 )
 
 urlpatterns = [
-    path("profile/", user_profile, name="profile"),
+    path("accounts/profile/", user_profile, name="profile"),
     path("profile-public/<int:user_id>/", public_user_profile, name="public-profile"),
     path("register/", user_register, name="register"),
     path("login/", user_login, name="login"),

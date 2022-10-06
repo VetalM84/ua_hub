@@ -23,6 +23,7 @@ urlpatterns = [
     path("", include("apps.accounts.urls")),
     path("", include("apps.hub.urls")),
     re_path(r"^rosetta/", include("rosetta.urls")),
+    re_path(r"^oauth/", include("social_django.urls", namespace="social")),
 ]
 
 if settings.DEBUG:

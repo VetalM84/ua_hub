@@ -12,6 +12,7 @@ django-modeltranslation~=0.18.4
 gunicorn==20.1.0
 django-imagekit~=4.1.0
 django-recaptcha~=3.0.0
+social-auth-app-django==5.0.0
 # for Redis caching
 django_redis==5.2.0
 # for MySQL DB
