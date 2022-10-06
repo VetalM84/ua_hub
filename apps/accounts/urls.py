@@ -1,7 +1,7 @@
 """URL path for user management on frontend."""
 
 from django.contrib.auth import views as auth_views
-from django.urls import path
+from django.urls import path, include
 
 from apps.accounts.views import (
     ResetPasswordView,
@@ -14,7 +14,8 @@ from apps.accounts.views import (
 )
 
 urlpatterns = [
-    path("profile/", user_profile, name="profile"),
+    path('accounts/', include('allauth.urls')),
+    path("accounts/profile/", user_profile, name="profile"),
     path("profile-public/<int:user_id>/", public_user_profile, name="public-profile"),
     path("register/", user_register, name="register"),
     path("login/", user_login, name="login"),
