@@ -88,7 +88,11 @@
                     <!-- comment form -->
                     <div class="bg-light p-2">
                         <div class="d-flex flex-row align-items-start">
-                            <img class="rounded-circle me-2" src="{{ request.user.avatar_s.url }}" height="32" width="32" alt="user">
+                            {% if request.user.is_authenticated %}
+                                <img class="rounded-circle me-2" src="{{ request.user.avatar_s.url }}" height="32" width="32" alt="user">
+                            {% else %}
+                                <img class="rounded-circle me-2" src="{{ MEDIA_URL }}avatar/default_avatar.jpg" height="32" width="32" alt="user">
+                            {% endif %}
                             <textarea class="form-control" rows="2" name="comment-text" id="comment-text-{{ marker.pk }}" placeholder="{% translate "Comment" %}"></textarea>
                         </div>
                         <div class="mt-2 text-end">
