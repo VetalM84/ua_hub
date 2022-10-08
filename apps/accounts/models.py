@@ -1,6 +1,7 @@
 """DB objects for User model."""
 
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import URLValidator
 from django.db import models
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
@@ -15,10 +16,17 @@ class User(AbstractUser):
 
     username = None
     email = models.EmailField(blank=False, unique=True, verbose_name=_("Email"))
-    facebook_link = models.URLField(blank=True, verbose_name=_("Facebook profile link"))
+    facebook_link = models.CharField(
+        blank=True,
+        max_length=2048,
+        validators=[URLValidator(["http", "https"])],
+        verbose_name=_("Facebook profile link"),
+    )
     contacts = models.CharField(blank=True, max_length=250, verbose_name=_("Contacts"))
     hometown = models.CharField(blank=True, max_length=250, verbose_name=_("Hometown"))
-    start_coordinates = models.CharField(blank=True, max_length=100, verbose_name=_("Start coordinates"))
+    start_coordinates = models.CharField(
+        blank=True, max_length=100, verbose_name=_("Start coordinates")
+    )
     avatar = ProcessedImageField(
         upload_to="avatar/",
         format="JPEG",
