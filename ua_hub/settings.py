@@ -69,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'ua_hub.urls'
@@ -242,6 +243,7 @@ SOCIAL_AUTH_USER_MODEL = 'accounts.User'
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
 SOCIAL_AUTH_LOGIN_URL = 'login'
+SOCIAL_AUTH_LOGIN_ERROR_URL = 'login'
 
 SOCIAL_AUTH_GITHUB_KEY = os.getenv('SOCIAL_AUTH_GITHUB_KEY')
 SOCIAL_AUTH_GITHUB_SECRET = os.getenv('SOCIAL_AUTH_GITHUB_SECRET')
