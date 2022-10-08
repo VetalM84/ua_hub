@@ -238,7 +238,19 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'apps.accounts.social_auth.save_profile',  # save extra info from Facebook response to user profile
+    'social_core.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+)
+
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
 SOCIAL_AUTH_USER_MODEL = 'accounts.User'
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
@@ -247,8 +259,10 @@ SOCIAL_AUTH_LOGIN_ERROR_URL = 'login'
 
 SOCIAL_AUTH_GITHUB_KEY = os.getenv('SOCIAL_AUTH_GITHUB_KEY')
 SOCIAL_AUTH_GITHUB_SECRET = os.getenv('SOCIAL_AUTH_GITHUB_SECRET')
+
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+
 SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link', 'user_hometown']
