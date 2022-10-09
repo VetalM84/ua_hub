@@ -158,6 +158,11 @@ def about(request):
     return render(request, template_name="hub/about.html")
 
 
+def privacy_policy(request):
+    """Privacy Policy page."""
+    return render(request, template_name="hub/gdrp.html")
+
+
 def contact(request):
     """Contact us form page."""
     if request.method == "POST":

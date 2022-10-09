@@ -11,6 +11,7 @@ from apps.hub.views import (
     get_marker,
     home,
     like,
+    privacy_policy,
     user_markers,
 )
 
@@ -18,6 +19,7 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("", home, name="home"),
     path("about/", about, name="about"),
+    path("privacy-policy/", privacy_policy, name="privacy_policy"),
     path("contacts/", contact, name="contact"),
     path("markers/", user_markers, name="markers"),
     path("edit-marker/<int:marker_id>/", edit_marker, name="edit_marker"),

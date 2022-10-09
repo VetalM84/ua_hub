@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-05 15:27+0300\n"
-"PO-Revision-Date: 2022-10-05 15:33+0000\n"
+"POT-Creation-Date: 2022-10-09 12:27+0300\n"
+"PO-Revision-Date: 2022-10-09 12:32+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\apps\accounts\forms.py:16 .\apps\accounts\forms.py:29
-#: .\apps\accounts\forms.py:67 .\apps\accounts\models.py:17
+#: .\apps\accounts\forms.py:67 .\apps\accounts\models.py:18
 #: .\apps\accounts\templates\accounts\password\password_reset.html:24
 msgid "Email"
 msgstr "Email"
@@ -41,7 +41,7 @@ msgstr "Имя"
 msgid "Last name"
 msgstr "Фамилия"
 
-#: .\apps\accounts\forms.py:63 .\apps\accounts\models.py:20
+#: .\apps\accounts\forms.py:63 .\apps\accounts\models.py:26
 #: .\apps\accounts\templates\accounts\profile-public.html:27
 msgid "Hometown"
 msgstr "Родной город"
@@ -50,12 +50,12 @@ msgstr "Родной город"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: .\apps\accounts\forms.py:77 .\apps\accounts\models.py:19
+#: .\apps\accounts\forms.py:77 .\apps\accounts\models.py:25
 #: .\apps\accounts\templates\accounts\profile-public.html:40
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\apps\accounts\forms.py:82 .\apps\accounts\models.py:21
+#: .\apps\accounts\forms.py:82 .\apps\accounts\models.py:28
 msgid "Start coordinates"
 msgstr "Начальные координаты"
 
@@ -63,7 +63,7 @@ msgstr "Начальные координаты"
 msgid "Format: 48.1630, 16.3250"
 msgstr "Формат: 48.1630, 16.3250"
 
-#: .\apps\accounts\forms.py:89 .\apps\accounts\models.py:27
+#: .\apps\accounts\forms.py:89 .\apps\accounts\models.py:35
 msgid "Image"
 msgstr "Изображение"
 
@@ -79,55 +79,82 @@ msgstr "Superuser должен иметь is_staff=True."
 msgid "Superuser must have is_superuser=True."
 msgstr "Superuser должен иметь is_superuser=True."
 
-#: .\apps\accounts\models.py:18
+#: .\apps\accounts\models.py:23
 #: .\apps\accounts\templates\accounts\profile-public.html:36
 msgid "Facebook profile link"
 msgstr "Ссылка на профиль Facebook"
 
-#: .\apps\accounts\models.py:68
+#: .\apps\accounts\models.py:76
 msgid "Full name"
 msgstr "Полное имя"
 
-#: .\apps\accounts\models.py:71
+#: .\apps\accounts\models.py:79
 #: .\apps\accounts\templates\accounts\profile-public.html:6
 msgid "User"
 msgstr "Пользователь"
 
-#: .\apps\accounts\models.py:72
+#: .\apps\accounts\models.py:80
 msgid "Users"
 msgstr "Пользователи"
 
+#: .\apps\accounts\templates\accounts\delete-user.html:5
+#: .\apps\accounts\templates\accounts\delete-user.html:13
+msgid "Profile deleting confirmation"
+msgstr "Подтверждение удаления профиля"
+
+#: .\apps\accounts\templates\accounts\delete-user.html:14
+msgid ""
+"Upon deleting your profile we will anonymize the marks you've added, erase "
+"your personal data and your comments to marks"
+msgstr ""
+"После удаления вашего профиля мы обезличим добавленные вами отметки, удалим "
+"ваши личные данные и ваши комментарии к отметкам"
+
+#: .\apps\accounts\templates\accounts\delete-user.html:18
+#: .\apps\accounts\templates\accounts\profile.html:19
+#| msgid "My profile"
+msgid "Delete my profile"
+msgstr "Удалить мой профиль"
+
 #: .\apps\accounts\templates\accounts\login.html:6
-#: .\apps\accounts\templates\accounts\login.html:19
-#: .\apps\accounts\templates\accounts\register.html:42
+#: .\apps\accounts\templates\accounts\login.html:20
+#: .\apps\accounts\templates\accounts\register.html:51
 msgid "Login"
 msgstr "Вход"
 
-#: .\apps\accounts\templates\accounts\login.html:20
+#: .\apps\accounts\templates\accounts\login.html:22
+msgid "You are already logged in"
+msgstr "Вы уже вошли в систему"
+
+#: .\apps\accounts\templates\accounts\login.html:24
 msgid "Log in to your account"
 msgstr "Войдите в вашу учетную запись"
 
-#: .\apps\accounts\templates\accounts\login.html:28
+#: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:44
+#: .\apps\accounts\templates\accounts\register.html:53
 msgid "Log in"
 msgstr "Войти"
 
-#: .\apps\accounts\templates\accounts\login.html:32
+#: .\apps\accounts\templates\accounts\login.html:36
 msgid "Forgot password?"
 msgstr "Забыли пароль?"
 
-#: .\apps\accounts\templates\accounts\login.html:42
-#: .\apps\accounts\templates\accounts\login.html:44
+#: .\apps\accounts\templates\accounts\login.html:40
+msgid "Social login"
+msgstr "Войти с помощью"
+
+#: .\apps\accounts\templates\accounts\login.html:60
+#: .\apps\accounts\templates\accounts\login.html:62
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
-#: .\apps\accounts\templates\accounts\register.html:18
-#: .\apps\accounts\templates\accounts\register.html:33
+#: .\apps\accounts\templates\accounts\register.html:27
+#: .\apps\accounts\templates\accounts\register.html:42
 msgid "Sign up"
 msgstr "Регистрация"
 
-#: .\apps\accounts\templates\accounts\login.html:43
+#: .\apps\accounts\templates\accounts\login.html:61
 msgid ""
 "Creating an account is not required, but you'll have an access to all your "
 "markers."
@@ -142,14 +169,13 @@ msgid "Change password"
 msgstr "Изменить пароль"
 
 #: .\apps\accounts\templates\accounts\password\password_change.html:47
-#: .\apps\accounts\templates\accounts\profile.html:33
+#: .\apps\accounts\templates\accounts\profile.html:34
 msgid "Save"
 msgstr "Сохранить"
 
 #: .\apps\accounts\templates\accounts\password\password_reset.html:6
 #: .\apps\accounts\templates\accounts\password\password_reset.html:19
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:6
-#| msgid "Password"
 msgid "Password reset"
 msgstr "Сброс пароля"
 
@@ -167,7 +193,6 @@ msgstr "Что еще вы можете сделать"
 
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:6
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:26
-#| msgid "Password"
 msgid "Password reset complete"
 msgstr "Сброс пароля завершен"
 
@@ -176,12 +201,10 @@ msgid "Your new password has been set. You may go ahead and"
 msgstr "Ваш новый пароль был сохранен. Теперь вы можете "
 
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:28
-#| msgid "Repeat password"
 msgid "Reset your password"
 msgstr "Сбросьте свой пароль"
 
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:43
-#| msgid "Repeat password"
 msgid "Reset password"
 msgstr "Сброс пароля"
 
@@ -211,15 +234,15 @@ msgid "No data"
 msgstr "Нет данных"
 
 #: .\apps\accounts\templates\accounts\profile.html:6
-#: .\apps\accounts\templates\accounts\profile.html:24
+#: .\apps\accounts\templates\accounts\profile.html:25
 msgid "My profile"
 msgstr "Мой профиль"
 
-#: .\apps\accounts\templates\accounts\register.html:19
+#: .\apps\accounts\templates\accounts\register.html:28
 msgid "Create your account"
 msgstr "Создайте вашу учетную запись"
 
-#: .\apps\accounts\templates\accounts\register.html:43
+#: .\apps\accounts\templates\accounts\register.html:52
 msgid "Already have an account?"
 msgstr "Уже зарегистрированы?"
 
@@ -227,15 +250,19 @@ msgstr "Уже зарегистрированы?"
 msgid "Profile updated!"
 msgstr "Профиль обновлен!"
 
-#: .\apps\accounts\views.py:28 .\apps\accounts\views.py:67
+#: .\apps\accounts\views.py:28 .\apps\accounts\views.py:77
 msgid "Please, correct the errors."
 msgstr "Пожалуйста исправьте ошибки."
 
-#: .\apps\accounts\views.py:62
+#: .\apps\accounts\views.py:58
+msgid "User deleted!"
+msgstr "Пользователь удален!"
+
+#: .\apps\accounts\views.py:72
 msgid "Password has been updated!"
 msgstr "Пароль обновлен!"
 
-#: .\apps\accounts\views.py:79
+#: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
 "        If you didn't receive it, please make sure you've entered a valid address \n"
@@ -245,22 +272,18 @@ msgstr ""
 "получили, пожалуйста, убедитесь, что вы ввели правильный адрес и проверьте "
 "папку со спамом."
 
-#: .\apps\accounts\views.py:94
+#: .\apps\accounts\views.py:104
 msgid "You have successfully signed in!"
 msgstr "Вы успешно вошли!"
 
-#: .\apps\accounts\views.py:98
+#: .\apps\accounts\views.py:108
 msgid "Error logging-in!"
 msgstr "Ошибка входа!"
 
-#: .\apps\accounts\views.py:118
+#: .\apps\accounts\views.py:128
 msgid "You have successfully signed up!"
 msgstr "Вы успешно зарегистрировались!"
 
-#: .\apps\accounts\views.py:122
+#: .\apps\accounts\views.py:132
 msgid "Error registering!"
 msgstr "Ошибка регистрации!"
-
-#, fuzzy
-#~ msgid "Password Reset"
-#~ msgstr "Пароль"

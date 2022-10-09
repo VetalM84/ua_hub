@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-04 20:40+0300\n"
-"PO-Revision-Date: 2022-10-04 20:44+0000\n"
+"POT-Creation-Date: 2022-10-09 12:27+0300\n"
+"PO-Revision-Date: 2022-10-09 12:36+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -49,7 +49,7 @@ msgid "Category"
 msgstr "Категория"
 
 #: .\apps\hub\models.py:18 .\apps\hub\models.py:57 .\apps\hub\models.py:65
-#: .\apps\hub\templates\hub\marker.html:92
+#: .\apps\hub\templates\hub\marker.html:96
 msgid "Comment"
 msgstr "Комментарий"
 
@@ -156,11 +156,21 @@ msgstr ""
 "\n"
 "После регистрации вы можете обновить данные своей учетной записи, указав свое изображение, имя и фамилию, ссылку на профиль facebook и любые другие контактные данные."
 
-#: .\apps\hub\templates\hub\about.html:33
+#: .\apps\hub\templates\hub\about.html:34
+msgid ""
+"\n"
+"                You may manually delete your account at any time or send us a request.\n"
+"            "
+msgstr ""
+"\n"
+"Вы можете вручную удалить свою учетную запись в любое время или отправить нам запрос.\n"
+"            "
+
+#: .\apps\hub\templates\hub\about.html:38
 msgid "Feature request"
 msgstr "Запрос функциональности"
 
-#: .\apps\hub\templates\hub\about.html:35
+#: .\apps\hub\templates\hub\about.html:40
 msgid ""
 "\n"
 "                If you need to add a new category or request a new feature, please refer to Contact us page.\n"
@@ -195,6 +205,186 @@ msgstr "Редактирование метки #"
 msgid "Save"
 msgstr "Сохранить"
 
+#: .\apps\hub\templates\hub\gdrp.html:5
+msgid "Privacy policy GDRP"
+msgstr "Политика конфиденциальности GDRP"
+
+#: .\apps\hub\templates\hub\gdrp.html:10
+msgid "Privacy Policy"
+msgstr "Политика конфиденциальности"
+
+#: .\apps\hub\templates\hub\gdrp.html:12
+msgid ""
+"\n"
+"                uahub.online website administration is obliged to maintain your privacy on the Internet.\n"
+"                We pay great attention to securing the data you provided to us.\n"
+"                Our privacy policy is based on the General Data Protection Regulation (GDPR) of the European Union.\n"
+"                The purposes, for which we collect your personal data are: improvement of our service,\n"
+"                communication with visitors to this site, presenting the information requested by the user,\n"
+"                providing services associated with the website’s specialization and for other actions listed below.\n"
+"            "
+msgstr ""
+"\n"
+"Администрация сайта uahub.online обязуется сохранять вашу конфиденциальность в Интернете. Мы уделяем большое значение охране предоставленных вами данных. Наша политика конфиденциальности основана на требованиях Общего регламента о защите персональных данных Европейского Союза (GDPR). Цели, в которых мы собираем персональные данные: улучшение работы нашего сервиса, осуществление контактов с посетителями данного сайта, предоставление информации, которую запрашивал пользователь, осуществление услуг, связанных с направлением деятельности данного сайта, , а так же для указанных ниже действий."
+
+#: .\apps\hub\templates\hub\gdrp.html:21
+msgid "Personal data storage and processing"
+msgstr "Сбор и использование персональных данных"
+
+#: .\apps\hub\templates\hub\gdrp.html:23
+msgid ""
+"\n"
+"                We collect and process your personal data only with your willing consent.\n"
+"                With your permission, we can collect and process the following data:\n"
+"                name and surname, e-mail address, phone number, home address, personal photos,\n"
+"                social media account information. Collection and processing of your personal\n"
+"                information is carried out in accordance with the laws of the European Union and Ukraine.\n"
+"            "
+msgstr ""
+"\n"
+"Мы собираем и используем ваши персональные данные только в случае вашего добровольного согласия. При согласии с этим вы разрешаете нам собирать и использовать следующие данные: имя и фамилия, электронная почта, номер телефона, домашний адрес, личные фотографии , данные аккаунтов в социальных сетях, . Сбор и обработка ваших данных проводится соответствии с законами, действующими на территории Европейского Союза и в государстве Украина."
+
+#: .\apps\hub\templates\hub\gdrp.html:31
+msgid "Data storage, alteration, and removal"
+msgstr "Хранение данных, изменение и удаление"
+
+#: .\apps\hub\templates\hub\gdrp.html:33
+msgid ""
+"\n"
+"                The user, who has provided uahub.online with their personal data, has the right for their\n"
+"                alteration and removal, as well as the right to recall the agreement to data processing.\n"
+"                Time, during which your personal data will be stored is: time the personal data is used that is\n"
+"                necessary for the website’s main activity. After finishing with the processing of your personal data,\n"
+"                the website’s administration will permanently delete it. To access your personal data, you can\n"
+"                contact the administration on: uahub.online/accounts/profile/. We will be able to pass your data\n"
+"                to a third party only with your willing consent. If the data was transferred to a third party,\n"
+"                which is not associated with our organization, we cannot perform any changes to that data.\n"
+"            "
+msgstr ""
+"\n"
+"Пользователь, предоставивший свои персональные данные сайту uahub.online имеет право на их изменение и удаление, а так же на отзыв своего согласия с их использованием. Срок, в течение которого будут храниться ваши персональные данные: время, необходимое для использования данных для основной деятельности сайта. При завершении использования ваших данных администрация сайта удаляет их. Для доступа к своим персональным данным вы можете связаться с администрацией сайта по следующему адресу: info@uahub.online. Мы можем передавать ваши личные данные третьей стороне только с вашего добровольного согласия, если они были переданы, то изменение данных в других организациях, не связанных с нами, мы осуществить не можем."
+
+#: .\apps\hub\templates\hub\gdrp.html:44
+msgid "Processing of visiting technical data"
+msgstr "Использование технических данных при посещении сайта"
+
+#: .\apps\hub\templates\hub\gdrp.html:46
+msgid ""
+"\n"
+"                Records of your IP address, time of visit, browser settings, operational system and other\n"
+"                technical information is saved in the database when you visit uahub.online.\n"
+"                This data is necessary for the correct display of the website’s content.\n"
+"                It is impossible to identify the person of the visitor using this data.\n"
+"            "
+msgstr ""
+"\n"
+"При посещении вами сайта uahub.online в базе данных сохраняются записи о вашем IP адресе, времени посещения, настройках браузера, операционной системе, а также другая техническая информация необходимая для корректного отображения содержимого сайта. По этим данным нам невозможно идентифицировать личность посетителя."
+
+#: .\apps\hub\templates\hub\gdrp.html:53
+msgid "Children’s personal information"
+msgstr "Предоставление информации детьми"
+
+#: .\apps\hub\templates\hub\gdrp.html:55
+msgid ""
+"\n"
+"                If you are a parent or a legal guardian of an underage child, and you know that the child has\n"
+"                provided us with their personal information without your consent, please contact us on:\n"
+"                uahub.online/accounts/profile/. It is forbidden to enter personal data of underage users without\n"
+"                the agreement of parents or lawful guardians.\n"
+"            "
+msgstr ""
+"\n"
+"Если Вы являетесь родителем или опекуном, и вы знаете, что ваши дети предоставили нам свои личные данные без Вашего согласия, свяжитесь с нами: uahub.online/accounts/profile/. На нашем сервисе запрещено оставлять личные данные несовершеннолетних без согласия родителей или опекунов."
+
+#: .\apps\hub\templates\hub\gdrp.html:62
+msgid "Cookies processing"
+msgstr "Использование cookies"
+
+#: .\apps\hub\templates\hub\gdrp.html:64
+msgid ""
+"\n"
+"                We use cookie files for the correct display of the website’s content and for the convenience\n"
+"                of browsing uahub.online. They are small files, that are stored on your device.\n"
+"                They help the website to remember information about you, such as in which language you use\n"
+"                the website and which pages have you already opened. This information will be useful in the next visit.\n"
+"                Thanks to cookie files, the website’s browsing becomes much more convenient.\n"
+"                You can learn more about these files here. You can set up cookies reception and blocking\n"
+"                in your browser yourself. Inability to receive cookie files may limit the functionality of the website.\n"
+"            "
+msgstr ""
+"\n"
+"Для корректного отображения содержимого и для удобства использования сайта uahub.online мы используем cookie файлы. Это небольшие файлы, которые хранятся на вашем устройстве. Они помогают сайту запомнить информацию о вас, например на каком языке вы просматриваете сайт и какие страницы вы уже открывали, эта информация будет полезна при следующем посещении. Благодаря файлам cookie просмотр сайта становится значительно более удобным. Подробнее про эти файлы вы можете прочитать в поисковых системах. Вы можете настроить прием или блокировку cookie в браузере самостоятельно. Невозможность принимать cookie может ограничить работоспособность сайта."
+
+#: .\apps\hub\templates\hub\gdrp.html:74
+msgid "Processing of personal data by other services"
+msgstr "Использование персональных данных другими сервисами"
+
+#: .\apps\hub\templates\hub\gdrp.html:76
+msgid ""
+"\n"
+"                This website uses third-party online services, which perform data collecting, independent of us.\n"
+"                Such services include: Google Analytics , Facebook.com. Data collected by these services may be\n"
+"                provided to other services within those organizations. They can use the data for advertising\n"
+"                personalization of their own advertising network. You can learn about user agreements of those\n"
+"                organizations on their websites. You can also refuse their collection of your personal data.\n"
+"                For example, Google Analytics Opt-out Browser Add-on can be found in search services.\n"
+"                We do not pass any personal data to other organizations or services, which are not listed in\n"
+"                this privacy policy. As an exception, the collected data may be provided on a lawful request of\n"
+"                state authorities, that are authorized to request such information.\n"
+"            "
+msgstr ""
+"\n"
+"На этом сайте используются сторонние интернет-сервисы, осуществляющие независимый от нас сбор информации: Google Analytics , Facebook.com, . Собранные ими данные могут предоставляться другим службам внутри этих организаций, они могут использовать данные для персонализации рекламы своей собственной рекламной сети.  Вы можете прочитать пользовательские соглашения этих организаций на их сайтах. Там же вы можете отказаться от сбора ими персональных данных, к примеру блокировщик Google Analytics находится тут, блокировщик Яндекс Метрики тут. Мы не передаем персональные данные другим организациям и службам, не указанным в данной политике конфиденциальности. Исключение составляет только передача информации при законных требованиях государственных органов уполномоченных осуществлять данные действия."
+
+#: .\apps\hub\templates\hub\gdrp.html:88
+msgid "Links to other websites"
+msgstr "Ссылки на другие сайты"
+
+#: .\apps\hub\templates\hub\gdrp.html:90
+msgid ""
+"\n"
+"                Our website uahub.online may contain links to other websites, which are not under our control.\n"
+"                We are not responsible for the content of these websites. We recommend you familiarize yourself\n"
+"                with the privacy policy of every website that you visit, if such policy exists.\n"
+"            "
+msgstr ""
+"\n"
+"Наш сайт uahub.online может содержать ссылки на другие сайты, которые не управляются нами. Мы не несем ответственность за их содержание. Мы рекомендуем вам ознакомиться с политикой конфиденциальности каждого сайта, который вы посещаете, если она там есть."
+
+#: .\apps\hub\templates\hub\gdrp.html:96
+msgid "Changes to the privacy policy"
+msgstr "Изменения в политике конфиденциальности"
+
+#: .\apps\hub\templates\hub\gdrp.html:98
+msgid ""
+"\n"
+"                From time to time, our website uahub.online may update our privacy policy.\n"
+"                We inform about any changes to the privacy policy, placed on this webpage.\n"
+"                We are monitoring any changes in legislation, which is related to personal data in European Union\n"
+"                and Ukraine. If you have entered any of your personal data on our website, we will inform you\n"
+"                about the changes in our privacy policy. If your personal data, and more specifically,\n"
+"                your contact information was entered incorrectly, we will not be able to contact you.\n"
+"            "
+msgstr ""
+"\n"
+"Наш сайт uahub.online может обновлять нашу политику конфиденциальности время от времени. Мы сообщаем о любых изменениях, разместив новую политику конфиденциальности на этой странице. Мы отслеживаем изменения законодательства, касающегося персональных данных в Европейском Союзе и в государстве Украина. Если вы оставили персональные данные у нас, то мы оповестим вас об изменении в политике конфиденциальности. Если ваши персональные данные были введены не корректно, то мы не сможем с вами связаться."
+
+#: .\apps\hub\templates\hub\gdrp.html:107
+msgid "Feedback and final clauses"
+msgstr "Обратная связь, заключительные положения"
+
+#: .\apps\hub\templates\hub\gdrp.html:109
+msgid ""
+"\n"
+"                You can contact the administration of uahub.online regarding any questions related to privacy\n"
+"                policy on: uahub.online/accounts/profile/, or by filling a contact form specified in a\n"
+"                corresponding section of this website. If you do not agree with this privacy policy,\n"
+"                you cannot use the services of uahub.online. In this case you should avoid visiting our website.\n"
+"            "
+msgstr ""
+"\n"
+"Связаться с администрацией сайта uahub.online по вопросам, связанным с политикой конфиденциальности можно по адресу: uahub.online/accounts/profile/, либо с помощью контактной формы указанной в соответствующем разделе данного сайта. Если вы не согласны с данной политикой конфиденциальности, вы не можете пользоваться услугами сайта uahub.online, в этом случае вы должны воздержаться от посещения нашего сайта."
+
 #: .\apps\hub\templates\hub\index.html:10
 #: .\apps\hub\templates\hub\index.html:44
 msgid "Add mark"
@@ -217,7 +407,7 @@ msgstr "Анонимный пользователь"
 msgid "No data"
 msgstr "Нет данных"
 
-#: .\apps\hub\templates\hub\marker.html:97
+#: .\apps\hub\templates\hub\marker.html:101
 msgid "Post comment"
 msgstr "Добавить"
 
@@ -238,77 +428,70 @@ msgstr "У вас еще нет меток. Помогите другим - до
 msgid "-- sorry, no translation provided --"
 msgstr "-- извините, нет перевода --"
 
-#: .\apps\hub\views.py:42
-msgid "Wrong start coordinates in your profile."
-msgstr "Неверные стартовые координаты в вашем профиле."
-
-#: .\apps\hub\views.py:49
+#: .\apps\hub\views.py:47
 msgid "Fullscreen"
 msgstr "Полный экран"
 
-#: .\apps\hub\views.py:49
+#: .\apps\hub\views.py:47
 msgid "Exit"
 msgstr "Выход"
 
-#: .\apps\hub\views.py:53
+#: .\apps\hub\views.py:51
 msgid "My location"
 msgstr "Моё местоположение"
 
-#: .\apps\hub\views.py:128
+#: .\apps\hub\views.py:126
 msgid "Marker added successfully!"
 msgstr "Метка успешно добавлена!"
 
-#: .\apps\hub\views.py:132
+#: .\apps\hub\views.py:130
 msgid "Error. Check coordinates."
 msgstr "Ошибка. Проверьте координаты."
 
-#: .\apps\hub\views.py:175
+#: .\apps\hub\views.py:178
 msgid "Email sent successfully!"
 msgstr "Письмо отправлено успешно!"
 
-#: .\apps\hub\views.py:203
+#: .\apps\hub\views.py:206
 msgid "The marker has been deleted!"
 msgstr "Метка удалена!"
 
-#: .\apps\hub\views.py:227
+#: .\apps\hub\views.py:230
 msgid "The marker has been updated!"
 msgstr "Метка обновлена!"
 
-#: .\apps\hub\views.py:231
+#: .\apps\hub\views.py:234
 msgid "Please, correct errors."
 msgstr "Пожалуйста исправьте ошибки."
 
-#: .\apps\hub\views.py:236 .\apps\hub\views.py:237
+#: .\apps\hub\views.py:239 .\apps\hub\views.py:240
 msgid "Access forbidden!"
 msgstr "Доступ запрещен!"
 
-#: .\apps\hub\views.py:318
+#: .\apps\hub\views.py:321
 msgid "Invalid header found."
 msgstr "Найден недопустимый заголовок письма."
 
-#: .\apps\hub\views.py:366
+#: .\apps\hub\views.py:369
 msgid "Comment has added. Reload page."
 msgstr "Комментарий добавлен. Обновите страницу"
 
-#: .\apps\hub\views.py:385
+#: .\apps\hub\views.py:388
 msgid "Error! Enter at least 10 symbols."
 msgstr "Ошибка! Введите хотя бы 10 символов"
 
-#: .\apps\hub\views.py:388
+#: .\apps\hub\views.py:391
 msgid "Sign in to leave a comment"
 msgstr "Войдите чтобы оставить комментарий"
 
-#: .\apps\hub\views.py:399
+#: .\apps\hub\views.py:402
 msgid "You've deleted the mark. Reload page."
 msgstr "Комментарий удален. Обновите страницу"
 
-#: .\apps\hub\views.py:401
+#: .\apps\hub\views.py:404
 msgid "Error!"
 msgstr "Ошибка!"
 
-#: .\apps\hub\views.py:403
+#: .\apps\hub\views.py:406
 msgid "Sign in to delete a comment"
 msgstr "Войдите чтобы удалить комментарий"
-
-#~ msgid "A new comment added to your mark on UAHub"
-#~ msgstr "Новый комментарий добавлен к вашей метке на UAHub"

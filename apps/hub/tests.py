@@ -114,6 +114,12 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "hub/about.html")
 
+    def test_privacy_policy_page(self):
+        """Test privacy policy page."""
+        response = self.client.get(path=reverse("privacy_policy"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "hub/gdrp.html")
+
     def test_public_user_profile(self):
         """Test public user profile page."""
         url = reverse("public-profile", args=(User.objects.get(pk=1).id,))
