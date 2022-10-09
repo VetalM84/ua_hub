@@ -369,20 +369,21 @@ def add_comment(request):
                 message = _("Comment has added. Reload page.")
 
                 # send email to marker's owner
-                context = {
-                    "marker": marker,
-                    "comment_text": comment_text,
-                }
-                html_message = render_to_string(
-                    template_name="hub/mail/new_comment.html", context=context
-                )
-                send_email(
-                    subject="A new comment added to your mark on UAHub",
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[marker.owner.email],
-                    message=strip_tags(html_message),
-                    html_message=html_message,
-                )
+                if marker.owner:
+                    context = {
+                        "marker": marker,
+                        "comment_text": comment_text,
+                    }
+                    html_message = render_to_string(
+                        template_name="hub/mail/new_comment.html", context=context
+                    )
+                    send_email(
+                        subject="A new comment added to your mark on UAHub",
+                        from_email=settings.DEFAULT_FROM_EMAIL,
+                        recipient_list=[marker.owner.email],
+                        message=strip_tags(html_message),
+                        html_message=html_message,
+                    )
             else:
                 result = ""
                 message = _("Error! Enter at least 10 symbols.")
