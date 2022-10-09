@@ -46,11 +46,11 @@ class Marker(models.Model):
 class Comment(models.Model):
     """Comment model for Marker."""
 
-    owner = models.ForeignKey(to=User, on_delete=models.PROTECT, verbose_name=_("Owner"))
+    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name=_("Owner"))
     marker = models.ForeignKey(
         to="Marker",
         related_name="comments",
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         verbose_name=_("Mark"),
     )
     comment_text = models.TextField(
