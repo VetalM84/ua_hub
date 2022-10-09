@@ -277,8 +277,8 @@ def popup_html(marker):
     <html>
     <head></head>
     <body>
-        <div class="text-center position-relative">
-            <div class="d-flex position-absolute" style="right: 0px; top: 0px;">
+        <div class="text-center">
+            <div class="d-flex">
                 <div>{comments_data}</div>
                 <div>{likes_data}</div>
             </div>
