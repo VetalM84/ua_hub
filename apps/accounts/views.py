@@ -51,6 +51,16 @@ def public_user_profile(request, user_id):
 
 
 @login_required
+def delete_user(request):
+    """Delete user from DB."""
+    if request.method == "POST":
+        get_object_or_404(User, pk=request.user.pk).delete()
+        messages.success(request, _("User deleted!"), extra_tags="success")
+        return redirect("home")
+    return render(request, "accounts/delete-user.html")
+
+
+@login_required
 def password_change(request):
     """User change password method."""
     if request.method == "POST":
@@ -113,7 +123,7 @@ def user_register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            login(request, user, backend="django.contrib.auth.backends.ModelBackend")
             messages.success(
                 request, _("You have successfully signed up!"), extra_tags="success"
             )

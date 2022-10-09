@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+    <title>{% translate "Profile deleting confirmation" %} - UAHub.online</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <h1>{% translate "Profile deleting confirmation" %}</h1>
+                    <p>{% translate "Upon deleting your profile we will anonymize the marks you've added, erase your personal data and your comments to marks" %}</p>
+                    <form method="POST" id="user_delete_form">
+                        {% csrf_token %}
+                            <button class="mt-4 btn btn-danger" type="submit">
+                                {% translate "Delete my profile" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

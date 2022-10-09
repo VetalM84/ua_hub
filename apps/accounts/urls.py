@@ -5,6 +5,7 @@ from django.urls import path
 
 from apps.accounts.views import (
     ResetPasswordView,
+    delete_user,
     password_change,
     public_user_profile,
     user_login,
@@ -16,6 +17,7 @@ from apps.accounts.views import (
 urlpatterns = [
     path("accounts/profile/", user_profile, name="profile"),
     path("profile-public/<int:user_id>/", public_user_profile, name="public-profile"),
+    path("delete-user/", delete_user, name="delete_user"),
     path("register/", user_register, name="register"),
     path("login/", user_login, name="login"),
     path("logout/", user_logout, name="logout"),

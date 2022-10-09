@@ -16,6 +16,7 @@
                     <span class="font-weight-bold mt-3">{% translate "Sign up date" %}:</span>
                     <span class="text-black-50">{{ request.user.date_joined|to_user_tz_short }}</span>
                     <a href="{% url "password_change" %}">{% translate "Change password" %}</a>
+                    <a href="{% url "delete_user" %}">{% translate "Delete my profile" %}</a>
                 </div>
             </div>
             <div class="col-md-6">
