@@ -37,19 +37,9 @@
                                     </a>
                                 </div>
                             </div>
-                            <h1 class="h4 mt-4">{% translate "Social login" %}</h1>
-                            <div class="d-flex">
-                                <div class="flex-fill">
-                                    <!-- social buttons -->
-                                    <a href="{% url 'social:begin' 'github' %}" class="btn btn-dark">
-                                        <i class="fa-brands fa-github"></i></a>
-                                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-danger">
-                                        <i class="fa-brands fa-google"></i></a>
-                                    <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary">
-                                        <i class="fa-brands fa-facebook"></i></a>
-                                    <!-- social buttons end -->
-                                </div>
-                            </div>
+                            <!-- social buttons -->
+                                {% include "accounts/inc/_social.html" %}
+                            <!-- social buttons end -->
                         </form>
                         {% endif %}
                     </div>
