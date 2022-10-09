@@ -1,16 +1,16 @@
 {% load i18n %}
 <h3 class="h4 mt-4 text-center">{% translate "Or connect with" %}</h3>
 <div class="row text-center">
-        <div class="col">
-            <a href="{% url 'social:begin' 'facebook' %}" class="link-primary fs-2" title="Facebook">
-            <i class="fa-brands fa-facebook"></i></a>
+        <div class="col p-1">
+            <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-outline-primary" title="Facebook">
+            <i class="fa-brands fa-facebook me-1"></i>Facebook</a>
         </div>
-        <div class="col">
-            <a href="{% url 'social:begin' 'google-oauth2' %}" class="link-danger fs-2" title="Google">
-                <i class="fa-brands fa-google"></i></a>
+        <div class="col p-1">
+            <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-outline-danger" title="Google">
+                <i class="fa-brands fa-google me-1"></i>Google</a>
         </div>
-        <div class="col">
-            <a href="{% url 'social:begin' 'github' %}" class="link-dark fs-2" title="GitHub">
-                <i class="fa-brands fa-github"></i></a>
+        <div class="col p-1">
+            <a href="{% url 'social:begin' 'github' %}" class="btn btn-outline-dark" title="GitHub">
+                <i class="fa-brands fa-github me-1"></i>GitHub</a>
         </div>
 </div>
