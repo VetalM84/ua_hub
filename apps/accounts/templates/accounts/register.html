@@ -6,6 +6,7 @@
     <title>{% translate "Sign up" %} - UAHub.online</title>
 
     <link href="{% static "css/login.css" %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -42,6 +43,9 @@
                                     <button type="submit" class="btn btn-primary px-4">{% translate "Sign up" %}</button>
                                 </div>
                             </div>
+                            <!-- social buttons -->
+                                {% include "accounts/inc/_social.html" %}
+                            <!-- social buttons end -->
                         </form>
                     </div>
                 </div>
