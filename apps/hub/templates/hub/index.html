@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
+{% block meta %}
+    <meta name="description" lang="en" content="Project for Ukrainian refugees. The goal is to help you connect with other refugees in any country in the world, find help, housing, services, work...">
+    <meta name="description" lang="ru" content="Проект для украинских беженцев. Цель - помочь вам установить связь с другими беженцами в любой стране мира, найти помощь, жилье, услуги, работу...">
+    <meta name="description" lang="ua" content="Проект для українських біженців. Мета - допомогти вам встановити зв'язок з іншими біженцями у будь-якій країні світу, знайти допомогу, житло, послуги, роботу...">
+{% endblock %}
+
 {% block content %}
     <!-- Modal window add marker -->
     <div class="modal fade" id="addMarker" tabindex="-1" aria-labelledby="addMarkerLabel" aria-hidden="true">
