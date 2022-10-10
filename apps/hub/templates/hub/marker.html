@@ -37,11 +37,8 @@
                         {% endif %}
                     </div>
                     <!-- likes END -->
-                    {% if marker.owner %}
-                        <h4 class="card-title font-weight-bold">{{ marker.owner.get_full_name }}</h4>
-                    {% else %}
-                        <h4 class="card-title font-weight-bold">{% translate "Anonymous user" %}</h4>
-                    {% endif %}
+                    {% translate "Anonymous user" as transl_anon_user %}
+                    <h4 class="card-title font-weight-bold">{{ marker.owner.get_full_name|default:transl_anon_user }}</h4>
                     <div class="d-flex" style="font-size: small;">
                         <div class="flex-fill text-end me-2">
                             {% translate "Category" %}:
@@ -54,11 +51,8 @@
                         </div>
                     </div>
                     <hr>
-                    {% if marker.comment %}
-                        <p><i class="bi bi-quote"></i>{{ marker.comment }}</p>
-                    {% else %}
-                        <p><i class="bi bi-quote"></i>{% translate "No data" %}</p>
-                    {% endif %}
+                    {% translate "No data" as transl_no_data %}
+                    <p><i class="bi bi-quote"></i>{{ marker.comment|default:transl_no_data }}</p>
                     <hr>
                     <!-- comments -->
                     <h3 class="h5 mb-4 text-start">{% translate "Comments" %}

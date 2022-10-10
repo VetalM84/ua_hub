@@ -25,11 +25,8 @@
                     <div class="row mt-3">
                         <p>
                             <strong>{% translate "Hometown" %}: </strong>
-                            {% if user.hometown %}
-                                {{ user.hometown.title }}
-                            {% else %}
-                                {% translate "No data" %}
-                            {% endif %}
+                            {% translate "No data" as transl_no_data %}
+                            {{ user.hometown.title|default:transl_no_data }}
                         </p>
                         {% if user.facebook_link %}
                             <p>
@@ -38,25 +35,9 @@
                         {% endif %}
                         <p>
                             <strong>{% translate "Contacts" %}: </strong>
-                            {% if user.contacts %}
-                                {{ user.contacts }}
-                            {% else %}
-                                {% translate "No data" %}
-                            {% endif %}
+                            {{ user.contacts|default:transl_no_data }}
                         </p>
                     </div>
-{#                    <div class="d-flex justify-content-between align-items-center mt-4 mb-3">#}
-{#                        <h4 class="text-right">{% translate "User marks" %}</h4>#}
-{#                    </div>#}
-{#                    <div class="row mt-3">#}
-{#                        {% for marker in markers %}#}
-{#                            <ol>#}
-{#                                <li>{{ marker }}</li>#}
-{#                            </ol>#}
-{#                        {% empty %}#}
-{#                            {% translate "User has no marks." %}#}
-{#                        {% endfor %}#}
-{#                    </div>#}
                 </div>
             </div>
         </div>
