@@ -306,6 +306,20 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "accounts/password/password_reset_complete.html")
 
+    def test_delete_user_page(self):
+        """Test delete user view page."""
+        response = self.client.get(path=reverse("delete_user"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "accounts/delete-user.html")
+
+    def test_delete_user_post(self):
+        """Test delete user post."""
+        response = self.client.post(path=reverse("delete_user"))
+        with self.assertRaises(User.DoesNotExist):
+            self.user.refresh_from_db()
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, expected_url=reverse("home"))
+
 
 class ViewsWithNoUserLoggedInTest(TestCase):
     @classmethod
@@ -430,4 +444,9 @@ class ViewsWithNoUserLoggedInTest(TestCase):
     def test_password_change(self):
         """Test access to password change page with redirect for non-logged-in users."""
         response = self.client.get(path=reverse("password_change"))
+        self.assertEqual(response.status_code, 302)
+
+    def test_delete_user_page_redirect(self):
+        """Test delete user view page for non-loggen in user."""
+        response = self.client.get(path=reverse("delete_user"))
         self.assertEqual(response.status_code, 302)
