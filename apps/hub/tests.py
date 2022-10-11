@@ -1,4 +1,5 @@
 """Tests for HUB app."""
+
 from unittest import skip
 from unittest.mock import patch
 
@@ -6,7 +7,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 from apps.accounts.models import User
-from apps.hub.models import Category, Icon, Marker
+from apps.hub.models import Category, Comment, Icon, Marker
 
 
 class ViewsWithLoggedInUserTest(TestCase):
@@ -34,6 +35,12 @@ class ViewsWithLoggedInUserTest(TestCase):
             comment="Test comment",
             owner=None,
             ip="127.0.0.1",
+        )
+        Comment.objects.create(
+            pk=1,
+            comment_text="Test comment to marker 1",
+            owner_id=1,
+            marker_id=1
         )
         print("setUpClass")
 
@@ -326,10 +333,41 @@ class ViewsWithLoggedInUserTest(TestCase):
     def test_delete_user_post(self):
         """Test delete user post."""
         response = self.client.post(path=reverse("delete_user"))
-        with self.assertRaises(User.DoesNotExist):
-            self.user.refresh_from_db()
+        self.assertFalse(User.objects.filter(pk=self.user.pk).exists())
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, expected_url=reverse("home"))
+
+    def test_add_comment(self):
+        """Test add comment to marker."""
+        data = {"action": "post", "marker_id": 1, "comment_text": "Test add comment to marker"}
+        marker = Marker.objects.get(pk=1)
+        self.assertEqual(marker.comments.count(), 1)
+        response = self.client.post(path=reverse("add_comment"), data=data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(marker.comments.count(), 2)
+        self.assertEqual(response.json()["result"], 2)
+
+    def test_delete_comment(self):
+        """Test delete comment to marker."""
+        data = {"action": "post", "comment_id": 1}
+        marker = Marker.objects.get(pk=1)
+        self.assertEqual(marker.comments.count(), 1)
+        response = self.client.post(path=reverse("delete_comment"), data=data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(marker.comments.count(), 0)
+
+    def test_like(self):
+        """Test add and remove like to marker."""
+        data = {"action": "post", "marker_id": 1}
+        marker = Marker.objects.get(pk=1)
+        self.assertEqual(marker.likes_count, 0)
+        # add like on first request
+        response = self.client.post(path=reverse("like"), data=data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["result"], 1)
+        # remove like on second request
+        response = self.client.post(path=reverse("like"), data=data)
+        self.assertEqual(response.json()["result"], 0)
 
 
 class ViewsWithNoUserLoggedInTest(TestCase):
