@@ -1,5 +1,6 @@
 """Tests for HUB app."""
 from unittest import skip
+from unittest.mock import patch
 
 from django.test import TestCase
 from django.urls import reverse
@@ -78,7 +79,8 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, expected_url=reverse("home"))
 
-    def test_index_post(self):
+    @patch("captcha.fields.ReCaptchaField.validate")
+    def test_index_post(self, validate_method):
         """Test post Marker request to home page."""
         response = self.client.post(
             path=reverse("home"),
@@ -88,9 +90,11 @@ class ViewsWithLoggedInUserTest(TestCase):
                 "comment": "comment",
                 "category": 1,
                 "owner": 1,
+                "captcha": "PASSED",
             },
             follow=True,
         )
+        validate_method.return_value = True
         self.assertEqual(Marker.objects.all().count(), 2)
         self.assertEqual(Marker.objects.filter(owner_id=1).count(), 1)
         self.assertEqual(response.status_code, 200)
@@ -277,14 +281,17 @@ class ViewsWithLoggedInUserTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "hub/contact.html")
 
-    def test_contact_post(self):
+    @patch("captcha.fields.ReCaptchaField.validate")
+    def test_contact_post(self, validate_method):
         """Test contact form post method with success."""
         data = {
             "subject": "test subject",
             "message": "test message",
             "from_email": "from@email.co",
-            "recipient_list": ["to@email.co"]
+            "recipient_list": ["to@email.co"],
+            "captcha": "PASSED",
         }
+        validate_method.return_value = True
         response = self.client.post(path=reverse("contact"), data=data)
         self.assertRedirects(response, expected_url=reverse("home"))
 
@@ -297,14 +304,18 @@ class ViewsWithLoggedInUserTest(TestCase):
 
     def test_password_reset_post(self):
         """Test password reset post."""
-        response = self.client.post(path=reverse("password_reset"), data={"email": "test@test.com"})
+        response = self.client.post(
+            path=reverse("password_reset"), data={"email": "test@test.com"}
+        )
         self.assertRedirects(response, expected_url=reverse("home"))
 
     def test_password_reset_complete(self):
         """Test access to complete password reset page."""
         response = self.client.get(path=reverse("password_reset_complete"))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "accounts/password/password_reset_complete.html")
+        self.assertTemplateUsed(
+            response, "accounts/password/password_reset_complete.html"
+        )
 
     def test_delete_user_page(self):
         """Test delete user view page."""
@@ -379,13 +390,16 @@ class ViewsWithNoUserLoggedInTest(TestCase):
         for field in fields:
             self.assertContains(response, text=field)
 
-    def test_user_register_post(self):
+    @patch("captcha.fields.ReCaptchaField.validate")
+    def test_user_register_post(self, validate_method):
         """Test user register post data."""
         data = {
             "email": "test222@test.com",
             "password1": "i2Cmb3xnpC69",
             "password2": "i2Cmb3xnpC69",
+            "captcha": "PASSED",
         }
+        validate_method.return_value = True
         response = self.client.post(path=reverse("register"), data=data, follow=True)
         self.assertRedirects(response, expected_url=reverse("profile"))
 
