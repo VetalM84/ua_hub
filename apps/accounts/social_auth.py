@@ -23,3 +23,8 @@ def save_profile(backend, user, response, *args, **kwargs):
         image_content = ContentFile(requests.get(google_img_url).content)
         user.avatar.save(f"{name_from_email[0]}.jpg", image_content)
         user.save()
+
+    elif backend.name == "github":
+        image_content = ContentFile(requests.get(response.get("avatar_url")).content)
+        user.avatar.save(f"{name_from_email[0]}.jpg", image_content)
+        user.save()
