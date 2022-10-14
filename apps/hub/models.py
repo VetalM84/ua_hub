@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 from imagekit.models import ImageSpecField, ProcessedImageField
-from imagekit.processors import SmartResize
+from imagekit.processors import SmartResize, Thumbnail
 
 from apps.accounts.models import User
 
@@ -44,6 +44,11 @@ class Marker(models.Model):
     image_preview_bg = ImageSpecField(
         source="image",
         processors=[SmartResize(646, 140)],
+        format="JPEG",
+    )
+    thumb_s = ImageSpecField(
+        source="image",
+        processors=[Thumbnail(32, 32)],
         format="JPEG",
     )
 

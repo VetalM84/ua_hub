@@ -1,6 +1,7 @@
 """Backend admin page."""
 
 from django.contrib import admin
+from imagekit.admin import AdminThumbnail
 from modeltranslation.admin import TranslationAdmin
 
 from apps.hub.models import Category, Comment, Icon, Marker
@@ -36,11 +37,12 @@ class IconAdmin(admin.ModelAdmin):
 class MarkerAdmin(admin.ModelAdmin):
     """Marker model views on backend."""
 
-    list_display = ("id", "latitude", "longitude", "category", "created_at")
-    list_display_links = ("id", "category")
+    list_display = ("id", "owner", "category", "marker_thumbnail", "created_at")
+    list_display_links = ("id", "category", "owner")
     list_filter = ("category",)
     ordering = ("created_at", "category")
     search_fields = ("text",)
+    marker_thumbnail = AdminThumbnail(image_field="thumb_s")
 
 
 @admin.register(Comment)
