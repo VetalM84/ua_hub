@@ -1,0 +1,559 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-14 16:32+0300\n"
+"PO-Revision-Date: 2022-10-14 16:41+0000\n"
+"Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\apps\hub\forms.py:19 .\apps\hub\models.py:13
+msgid "Latitude"
+msgstr "Szerokość geograficzna"
+
+#: .\apps\hub\forms.py:28 .\apps\hub\models.py:14
+msgid "Longitude"
+msgstr "Długość geograficzna"
+
+#: .\apps\hub\forms.py:34
+msgid "Choose category"
+msgstr "Wybierz kategorię"
+
+#: .\apps\hub\forms.py:48 .\apps\hub\forms.py:68
+msgid "Comment, not required"
+msgstr "Komentarz, nie jest wymagany"
+
+#: .\apps\hub\forms.py:79
+msgid "Email"
+msgstr "E-mail"
+
+#: .\apps\hub\forms.py:84
+msgid "Message"
+msgstr "Wiadomość"
+
+#: .\apps\hub\models.py:16 .\apps\hub\models.py:104
+#: .\apps\hub\templates\hub\marker.html:44
+msgid "Category"
+msgstr "Kategoria"
+
+#: .\apps\hub\models.py:18 .\apps\hub\models.py:57 .\apps\hub\models.py:65
+#: .\apps\hub\templates\hub\marker.html:90
+msgid "Comment"
+msgstr "Komentarz"
+
+#: .\apps\hub\models.py:19 .\apps\hub\models.py:59
+msgid "Date"
+msgstr "Data"
+
+#: .\apps\hub\models.py:26 .\apps\hub\models.py:49
+msgid "Owner"
+msgstr "Właściciel"
+
+#: .\apps\hub\models.py:29
+msgid "Like"
+msgstr "Jak"
+
+#: .\apps\hub\models.py:31
+msgid "Likes count"
+msgstr "Likes count"
+
+#: .\apps\hub\models.py:33
+msgid "IP address"
+msgstr "Adres IP"
+
+#: .\apps\hub\models.py:41 .\apps\hub\models.py:54
+#: .\apps\hub\templates\hub\marker.html:7
+msgid "Mark"
+msgstr "Mark"
+
+#: .\apps\hub\models.py:42
+msgid "Marks"
+msgstr "Marks"
+
+#: .\apps\hub\models.py:66 .\apps\hub\templates\hub\marker.html:58
+msgid "Comments"
+msgstr "Komentarze"
+
+#: .\apps\hub\models.py:93 .\apps\hub\models.py:112
+msgid "Name"
+msgstr "Nazwa"
+
+#: .\apps\hub\models.py:95 .\apps\hub\models.py:119
+msgid "Icon"
+msgstr "Icon"
+
+#: .\apps\hub\models.py:97
+msgid "Color"
+msgstr "Kolor"
+
+#: .\apps\hub\models.py:105
+msgid "Categories"
+msgstr "Kategorie"
+
+#: .\apps\hub\models.py:120
+msgid "Icons"
+msgstr "Ikony"
+
+#: .\apps\hub\templates\hub\about.html:5
+msgid "About"
+msgstr "O firmie"
+
+#: .\apps\hub\templates\hub\about.html:10
+msgid "About project"
+msgstr "O projekcie"
+
+#: .\apps\hub\templates\hub\about.html:12
+msgid ""
+"\n"
+"                Dear users! This project is made for Ukrainian refuges and for everyone else may find it helpfully as well.\n"
+"                The aim of this project is to help you to connect with other refuges in any country in a world,\n"
+"                find help and offer your help, find accommodation, services, job, etc.\n"
+"            "
+msgstr ""
+"\n"
+"                Drodzy użytkownicy! Ten projekt jest przeznaczony dla ukraińskich schronisk i dla wszystkich innych może być pomocny.\n"
+"                Celem tego projektu jest pomoc w nawiązaniu kontaktu z innymi schroniskami w dowolnym kraju na świecie,\n"
+"                Znajdź pomoc i zaoferuj swoją pomoc, znajdź zakwaterowanie, usługi, pracę itp.\n"
+"            "
+
+#: .\apps\hub\templates\hub\about.html:18
+msgid "How does this work"
+msgstr "Jak to działa"
+
+#: .\apps\hub\templates\hub\about.html:20
+msgid ""
+"\n"
+"                All you need to do - is to add a mark on a map with exact coordinates, choose mark category and type\n"
+"                a comment (if you like). If you want anybody to contact you, then leave you contacts in comment field.\n"
+"                If you want to edit or delete your marks, you need to sign up then.\n"
+"            "
+msgstr ""
+"\n"
+"                Wszystko, co musisz zrobić-to dodać znak na mapie z dokładnymi współrzędnymi, wybrać kategorię znaku i typ\n"
+"                komentarz (jeśli chcesz). Jeśli chcesz, aby ktoś się z tobą skontaktował, zostaw kontakty w polu komentarza.\n"
+"                Jeśli chcesz edytować lub usunąć swoje znaki, musisz się zarejestrować.\n"
+"            "
+
+#: .\apps\hub\templates\hub\about.html:26
+msgid "Your account"
+msgstr "Twoje konto"
+
+#: .\apps\hub\templates\hub\about.html:28
+msgid ""
+"\n"
+"                After registering you can update you account details with your image, first and last name,\n"
+"                facebook profile link and any other contacts.\n"
+"            "
+msgstr ""
+"\n"
+"                Po rejestracji możesz zaktualizować dane konta o swój obraz, imię i nazwisko,\n"
+"                link do profilu na Facebooku i wszelkie inne kontakty.\n"
+"            "
+
+#: .\apps\hub\templates\hub\about.html:34
+msgid ""
+"\n"
+"                You may manually delete your account at any time or send us a request.\n"
+"            "
+msgstr ""
+"\n"
+"                Możesz ręcznie usunąć swoje konto w dowolnym momencie lub wysłać do nas żądanie.\n"
+"            "
+
+#: .\apps\hub\templates\hub\about.html:38
+msgid "Feature request"
+msgstr "Żądanie funkcji"
+
+#: .\apps\hub\templates\hub\about.html:40
+msgid ""
+"\n"
+"                If you need to add a new category or request a new feature, please refer to Contact us page.\n"
+"            "
+msgstr ""
+"\n"
+"                Jeśli chcesz dodać nową kategorię lub poprosić o nową funkcję, zapoznaj się ze stroną kontakt.\n"
+"            "
+
+#: .\apps\hub\templates\hub\contact.html:6
+#: .\apps\hub\templates\hub\contact.html:25
+msgid "Contact us"
+msgstr "Skontaktuj się z nami"
+
+#: .\apps\hub\templates\hub\contact.html:26
+msgid ""
+"For any purposes regarding project you may reach developer via form below."
+msgstr ""
+"W celach związanych z projektem możesz skontaktować się z deweloperem za "
+"pomocą poniższego formularza."
+
+#: .\apps\hub\templates\hub\contact.html:38
+msgid "Submit"
+msgstr "Kontakt"
+
+#: .\apps\hub\templates\hub\edit-marker.html:4
+#: .\apps\hub\templates\hub\edit-marker.html:13
+msgid "Edit mark #"
+msgstr "Edytuj znak #"
+
+#: .\apps\hub\templates\hub\edit-marker.html:22
+msgid "Save"
+msgstr "Zapisz"
+
+#: .\apps\hub\templates\hub\gdrp.html:5
+msgid "Privacy policy GDRP"
+msgstr "Polityka Prywatności GDRP"
+
+#: .\apps\hub\templates\hub\gdrp.html:10
+msgid "Privacy Policy"
+msgstr "Polityka Prywatności"
+
+#: .\apps\hub\templates\hub\gdrp.html:12
+msgid ""
+"\n"
+"                uahub.online website administration is obliged to maintain your privacy on the Internet.\n"
+"                We pay great attention to securing the data you provided to us.\n"
+"                Our privacy policy is based on the General Data Protection Regulation (GDPR) of the European Union.\n"
+"                The purposes, for which we collect your personal data are: improvement of our service,\n"
+"                communication with visitors to this site, presenting the information requested by the user,\n"
+"                providing services associated with the website’s specialization and for other actions listed below.\n"
+"            "
+msgstr ""
+"\n"
+"                uahub.administracja strony internetowej online jest zobowiązana do zachowania prywatności w Internecie.\n"
+"                Przywiązujemy dużą wagę do zabezpieczenia danych, które nam przekazałeś.\n"
+"                Nasza polityka prywatności opiera się na ogólnym rozporządzeniu o ochronie danych (RODO) Unii Europejskiej.\n"
+"                Cele, dla których zbieramy Twoje dane osobowe to:,\n"
+"                komunikacja z odwiedzającymi tę stronę, prezentowanie informacji wymaganych przez użytkownika,\n"
+"                świadczenie usług związanych ze specjalizacją serwisu oraz innych działań wymienionych poniżej.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:21
+msgid "Personal data storage and processing"
+msgstr "Przechowywanie i przetwarzanie danych osobowych"
+
+#: .\apps\hub\templates\hub\gdrp.html:23
+msgid ""
+"\n"
+"                We collect and process your personal data only with your willing consent.\n"
+"                With your permission, we can collect and process the following data:\n"
+"                name and surname, e-mail address, phone number, home address, personal photos,\n"
+"                social media account information. Collection and processing of your personal\n"
+"                information is carried out in accordance with the laws of the European Union and Ukraine.\n"
+"            "
+msgstr ""
+"\n"
+"                Zbieramy i przetwarzamy Twoje dane osobowe tylko za Twoją dobrowolną zgodą.\n"
+"                Za twoją zgodą możemy zbierać i przetwarzać następujące dane:\n"
+"                imię i nazwisko, adres e-mail, numer telefonu, adres domowy, zdjęcia osobiste,\n"
+"                informacje o koncie w mediach społecznościowych. Gromadzenie i przetwarzanie Twoich danych osobowych\n"
+"                informacje są przeprowadzane zgodnie z prawem Unii Europejskiej i Ukrainy.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:31
+msgid "Data storage, alteration, and removal"
+msgstr "Przechowywanie, zmiana i usuwanie danych"
+
+#: .\apps\hub\templates\hub\gdrp.html:33
+msgid ""
+"\n"
+"                The user, who has provided uahub.online with their personal data, has the right for their\n"
+"                alteration and removal, as well as the right to recall the agreement to data processing.\n"
+"                Time, during which your personal data will be stored is: time the personal data is used that is\n"
+"                necessary for the website’s main activity. After finishing with the processing of your personal data,\n"
+"                the website’s administration will permanently delete it. To access your personal data, you can\n"
+"                contact the administration on: uahub.online/accounts/profile/. We will be able to pass your data\n"
+"                to a third party only with your willing consent. If the data was transferred to a third party,\n"
+"                which is not associated with our organization, we cannot perform any changes to that data.\n"
+"            "
+msgstr ""
+"\n"
+"                Użytkownik, który dostarczył uahub.online ze swoimi danymi osobowymi, ma prawo do ich\n"
+"                zmiany i usunięcia, a także prawo do odwołania zgody na przetwarzanie danych.\n"
+"                Czas, w którym Twoje dane osobowe będą przechowywane to: czas wykorzystania danych osobowych, który jest\n"
+"                niezbędne do głównej działalności strony internetowej. Po zakończeniu przetwarzania Twoich danych osobowych,\n"
+"                Administracja Witryny usunie ją na stałe. Aby uzyskać dostęp do swoich danych osobowych, możesz\n"
+"                skontaktuj się z administracją na: uahub.online / konta / profil/. Będziemy mogli przekazać Twoje dane\n"
+"                osobom trzecim tylko za Twoją dobrowolną zgodą. Jeżeli dane zostały przekazane osobie trzeciej,\n"
+"                które nie są związane z naszą organizacją, nie możemy wprowadzać żadnych zmian w tych danych.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:44
+msgid "Processing of visiting technical data"
+msgstr "Przetwarzanie danych technicznych odwiedzających"
+
+#: .\apps\hub\templates\hub\gdrp.html:46
+msgid ""
+"\n"
+"                Records of your IP address, time of visit, browser settings, operational system and other\n"
+"                technical information is saved in the database when you visit uahub.online.\n"
+"                This data is necessary for the correct display of the website’s content.\n"
+"                It is impossible to identify the person of the visitor using this data.\n"
+"            "
+msgstr ""
+"\n"
+"                Zapis twojego adresu IP, czasu wizyty, ustawień przeglądarki, systemu operacyjnego i innych\n"
+"                informacje techniczne są zapisywane w bazie danych podczas odwiedzania uahub.online.\n"
+"                Dane te są niezbędne do prawidłowego wyświetlania treści strony internetowej.\n"
+"                Nie jest możliwe zidentyfikowanie osoby odwiedzającej za pomocą tych danych.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:53
+msgid "Children’s personal information"
+msgstr "Dane osobowe dzieci"
+
+#: .\apps\hub\templates\hub\gdrp.html:55
+msgid ""
+"\n"
+"                If you are a parent or a legal guardian of an underage child, and you know that the child has\n"
+"                provided us with their personal information without your consent, please contact us on:\n"
+"                uahub.online/accounts/profile/. It is forbidden to enter personal data of underage users without\n"
+"                the agreement of parents or lawful guardians.\n"
+"            "
+msgstr ""
+"\n"
+"                Jeśli jesteś rodzicem lub opiekunem prawnym nieletniego dziecka i wiesz, że dziecko ma\n"
+"                podałeś nam swoje dane osobowe bez Twojej zgody, skontaktuj się z nami na:\n"
+"                uahub.online / konta / profil/. Zabronione jest wprowadzanie danych osobowych nieletnich użytkowników bez\n"
+"                zgoda rodziców lub prawowitych opiekunów.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:62
+msgid "Cookies processing"
+msgstr "Przetwarzanie plików cookie"
+
+#: .\apps\hub\templates\hub\gdrp.html:64
+msgid ""
+"\n"
+"                We use cookie files for the correct display of the website’s content and for the convenience\n"
+"                of browsing uahub.online. They are small files, that are stored on your device.\n"
+"                They help the website to remember information about you, such as in which language you use\n"
+"                the website and which pages have you already opened. This information will be useful in the next visit.\n"
+"                Thanks to cookie files, the website’s browsing becomes much more convenient.\n"
+"                You can learn more about these files here. You can set up cookies reception and blocking\n"
+"                in your browser yourself. Inability to receive cookie files may limit the functionality of the website.\n"
+"            "
+msgstr ""
+"\n"
+"                Używamy plików cookies w celu poprawnego wyświetlania zawartości Strony oraz dla wygody\n"
+"                przeglądanie uahub.online. Są to małe pliki, które są przechowywane na Twoim urządzeniu.\n"
+"                Pomagają one stronie internetowej zapamiętać informacje o tobie, takie jak język, którego używasz\n"
+"                strony internetowej i które strony zostały już otwarte. Ta informacja będzie przydatna podczas następnej wizyty.\n"
+"                Dzięki plikom cookies przeglądanie strony staje się znacznie wygodniejsze.\n"
+"                Możesz dowiedzieć się więcej o tych plikach tutaj. Możesz ustawić odbiór i blokowanie plików cookie\n"
+"                w przeglądarce. Brak możliwości otrzymywania plików cookies może ograniczyć funkcjonalność strony internetowej.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:74
+msgid "Processing of personal data by other services"
+msgstr "Przetwarzanie danych osobowych przez inne usługi"
+
+#: .\apps\hub\templates\hub\gdrp.html:76
+msgid ""
+"\n"
+"                This website uses third-party online services, which perform data collecting, independent of us.\n"
+"                Such services include: Google Analytics , Facebook.com. Data collected by these services may be\n"
+"                provided to other services within those organizations. They can use the data for advertising\n"
+"                personalization of their own advertising network. You can learn about user agreements of those\n"
+"                organizations on their websites. You can also refuse their collection of your personal data.\n"
+"                For example, Google Analytics Opt-out Browser Add-on can be found in search services.\n"
+"                We do not pass any personal data to other organizations or services, which are not listed in\n"
+"                this privacy policy. As an exception, the collected data may be provided on a lawful request of\n"
+"                state authorities, that are authorized to request such information.\n"
+"            "
+msgstr ""
+"\n"
+"                Ta strona internetowa korzysta z usług internetowych stron trzecich, które zbierają dane, niezależnie od nas.\n"
+"                Do takich usług należą: Google Analytics , Facebook.com. dane zbierane przez te usługi mogą być\n"
+"                innych usług w ramach tych organizacji. Mogą wykorzystywać dane do celów reklamowych\n"
+"                Personalizacja własnej sieci reklamowej. Możesz dowiedzieć się o umowach z użytkownikami tych\n"
+"                organizacje na swoich stronach internetowych. Możesz również odmówić ich zbierania danych osobowych.\n"
+"                Na przykład dodatek do przeglądarki blokujący Google Analytics można znaleźć w usługach wyszukiwania.\n"
+"                Nie przekazujemy żadnych danych osobowych innym organizacjom lub usługom, które nie są wymienione w\n"
+"                niniejsza Polityka Prywatności. W drodze wyjątku zebrane dane mogą być dostarczone na zgodne z prawem żądanie\n"
+"                Organy państwowe, które są upoważnione do żądania takich informacji.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:88
+msgid "Links to other websites"
+msgstr "Linki do innych stron internetowych"
+
+#: .\apps\hub\templates\hub\gdrp.html:90
+msgid ""
+"\n"
+"                Our website uahub.online may contain links to other websites, which are not under our control.\n"
+"                We are not responsible for the content of these websites. We recommend you familiarize yourself\n"
+"                with the privacy policy of every website that you visit, if such policy exists.\n"
+"            "
+msgstr ""
+"\n"
+"                Nasza strona internetowa uahub.online może zawierać linki do innych stron internetowych, które nie są pod naszą kontrolą.\n"
+"                Nie ponosimy odpowiedzialności za zawartość tych stron internetowych. Zalecamy zapoznanie się\n"
+"                z Polityką prywatności każdej odwiedzanej strony internetowej, jeśli taka polityka istnieje.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:96
+msgid "Changes to the privacy policy"
+msgstr "Zmiany w Polityce prywatności"
+
+#: .\apps\hub\templates\hub\gdrp.html:98
+msgid ""
+"\n"
+"                From time to time, our website uahub.online may update our privacy policy.\n"
+"                We inform about any changes to the privacy policy, placed on this webpage.\n"
+"                We are monitoring any changes in legislation, which is related to personal data in European Union\n"
+"                and Ukraine. If you have entered any of your personal data on our website, we will inform you\n"
+"                about the changes in our privacy policy. If your personal data, and more specifically,\n"
+"                your contact information was entered incorrectly, we will not be able to contact you.\n"
+"            "
+msgstr ""
+"\n"
+"                Od czasu do czasu nasza strona internetowa uahub.online może aktualizować naszą Politykę prywatności.\n"
+"                Informujemy o wszelkich zmianach w Polityce prywatności, umieszczonej na tej stronie.\n"
+"                Monitorujemy wszelkie zmiany w przepisach, które dotyczą danych osobowych w Unii Europejskiej\n"
+"                i Ukrainy. Jeśli wprowadziłeś jakiekolwiek swoje dane osobowe na naszej stronie internetowej, poinformujemy Cię o tym\n"
+"                o zmianach w naszej polityce prywatności. Jeśli Twoje dane osobowe, a dokładniej,\n"
+"                Twoje dane kontaktowe zostały wprowadzone nieprawidłowo, nie będziemy mogli się z Tobą skontaktować.\n"
+"            "
+
+#: .\apps\hub\templates\hub\gdrp.html:107
+msgid "Feedback and final clauses"
+msgstr "Informacje zwrotne i klauzule końcowe"
+
+#: .\apps\hub\templates\hub\gdrp.html:109
+msgid ""
+"\n"
+"                You can contact the administration of uahub.online regarding any questions related to privacy\n"
+"                policy on: uahub.online/accounts/profile/, or by filling a contact form specified in a\n"
+"                corresponding section of this website. If you do not agree with this privacy policy,\n"
+"                you cannot use the services of uahub.online. In this case you should avoid visiting our website.\n"
+"            "
+msgstr ""
+"\n"
+"                Możesz skontaktować się z administracją uahub.online na wszelkie pytania związane z prywatnością\n"
+"                polityka dotycząca: uahub.online / konta / profil/ lub poprzez wypełnienie formularza kontaktowego określonego w\n"
+"                odpowiedniej sekcji tej strony internetowej. Jeśli nie zgadzasz się z niniejszą Polityką Prywatności,\n"
+"                nie możesz korzystać z usług uahub.online. W takim przypadku należy unikać odwiedzania naszej strony internetowej.\n"
+"            "
+
+#: .\apps\hub\templates\hub\index.html:16
+#: .\apps\hub\templates\hub\index.html:50
+msgid "Add mark"
+msgstr "Dodaj znak"
+
+#: .\apps\hub\templates\hub\index.html:18
+#: .\apps\hub\templates\hub\index.html:37
+msgid "Close"
+msgstr "Zamknij"
+
+#: .\apps\hub\templates\hub\index.html:38
+msgid "Add"
+msgstr "Dodaj"
+
+#: .\apps\hub\templates\hub\marker.html:40
+msgid "Anonymous user"
+msgstr "Użytkownik anonimowy"
+
+#: .\apps\hub\templates\hub\marker.html:54
+msgid "No data"
+msgstr "Brak danych"
+
+#: .\apps\hub\templates\hub\marker.html:95
+msgid "Post comment"
+msgstr "Dodaj komentarz"
+
+#: .\apps\hub\templates\hub\markers.html:7
+#: .\apps\hub\templates\hub\markers.html:14
+msgid "My marks"
+msgstr "Moje znaki"
+
+#: .\apps\hub\templates\hub\markers.html:35
+msgid "Comment is empty"
+msgstr "Komentarz jest pusty"
+
+#: .\apps\hub\templates\hub\markers.html:55
+msgid "You have no any markers. Why not to add some?"
+msgstr "Nie masz żadnych markerów. Dlaczego nie dodać trochę?"
+
+#: .\apps\hub\translation.py:14
+msgid "-- sorry, no translation provided --"
+msgstr "-- przepraszamy, brak tłumaczenia --"
+
+#: .\apps\hub\views.py:47
+msgid "Fullscreen"
+msgstr "Fullscreen"
+
+#: .\apps\hub\views.py:47
+msgid "Exit"
+msgstr "Exit"
+
+#: .\apps\hub\views.py:51
+msgid "My location"
+msgstr "Moja lokalizacja"
+
+#: .\apps\hub\views.py:126
+msgid "Marker added successfully!"
+msgstr "Marker dodany pomyślnie!"
+
+#: .\apps\hub\views.py:130
+msgid "Error. Check coordinates."
+msgstr "Błąd. Sprawdź współrzędne."
+
+#: .\apps\hub\views.py:178
+msgid "Email sent successfully!"
+msgstr "E-mail wysłany pomyślnie!"
+
+#: .\apps\hub\views.py:206
+msgid "The marker has been deleted!"
+msgstr "Marker został usunięty!"
+
+#: .\apps\hub\views.py:230
+msgid "The marker has been updated!"
+msgstr "Marker został zaktualizowany!"
+
+#: .\apps\hub\views.py:234
+msgid "Please, correct errors."
+msgstr "Proszę poprawić błędy."
+
+#: .\apps\hub\views.py:239 .\apps\hub\views.py:240
+msgid "Access forbidden!"
+msgstr "Dostęp zabroniony!"
+
+#: .\apps\hub\views.py:321
+msgid "Invalid header found."
+msgstr "Znaleziono nieprawidłowy nagłówek."
+
+#: .\apps\hub\views.py:369
+msgid "Comment has added. Reload page."
+msgstr "Komentarz został dodany. Przeładuj stronę."
+
+#: .\apps\hub\views.py:389
+msgid "Error! Enter at least 10 symbols."
+msgstr "Błąd! Wprowadź co najmniej 10 symboli."
+
+#: .\apps\hub\views.py:392
+msgid "Sign in to leave a comment"
+msgstr "Zaloguj się, aby zostawić komentarz"
+
+#: .\apps\hub\views.py:403
+msgid "You've deleted the mark. Reload page."
+msgstr "Usunąłeś znak. Przeładuj stronę."
+
+#: .\apps\hub\views.py:405
+msgid "Error!"
+msgstr "Błąd!"
+
+#: .\apps\hub\views.py:407
+msgid "Sign in to delete a comment"
+msgstr "Zaloguj się, aby usunąć komentarz"

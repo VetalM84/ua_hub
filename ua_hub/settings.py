@@ -165,12 +165,12 @@ YANDEX_TRANSLATE_KEY = os.getenv('YANDEX_TRANSLATE_KEY')
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 MODELTRANSLATION_FALLBACK_LANGUAGES = {
-    'default': ('uk', 'ru', 'en'),
-    # 'pl': ('uk',),
-    # 'fr': ('en',),
-    # 'de': ('en',),
-    # 'it': ('en',),
-    # 'es': ('en',),
+    'default': ('uk', 'ru', 'en', 'pl', 'de', 'fr', 'it', 'es'),
+    'pl': ('uk',),
+    'de': ('en',),
+    'fr': ('en',),
+    'it': ('en',),
+    'es': ('en',),
 }
 
 LOCALE_PATHS = (
@@ -183,11 +183,11 @@ LANGUAGES = (
     ('en', 'English'),
     ('uk', 'Українська'),
     ('ru', 'Русский'),
-    # ('pl', 'Polish'),
-    # ('de', 'German'),
-    # ('fr', 'French'),
-    # ('it', 'Italian'),
-    # ('es', 'Spanish'),
+    ('pl', 'Polish'),
+    ('de', 'German'),
+    ('fr', 'French'),
+    ('it', 'Italian'),
+    ('es', 'Spanish'),
 )
 
 # Static files (CSS, JavaScript, Images)

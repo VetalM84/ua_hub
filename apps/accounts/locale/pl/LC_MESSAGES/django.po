@@ -8,46 +8,43 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:31+0300\n"
-"PO-Revision-Date: 2022-10-09 23:31+0000\n"
-"Last-Translator:   <vetalmit@gmail.com>\n"
+"POT-Creation-Date: 2022-10-14 16:32+0300\n"
+"PO-Revision-Date: 2022-10-14 16:38+0000\n"
+"Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\apps\accounts\forms.py:16 .\apps\accounts\forms.py:29
 #: .\apps\accounts\forms.py:67 .\apps\accounts\models.py:18
 #: .\apps\accounts\templates\accounts\password\password_reset.html:24
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: .\apps\accounts\forms.py:20 .\apps\accounts\forms.py:33
 msgid "Password"
-msgstr "Пароль"
+msgstr "Hasło"
 
 #: .\apps\accounts\forms.py:37
 msgid "Repeat password"
-msgstr "Повторіть пароль"
+msgstr "Powtórz hasło"
 
 #: .\apps\accounts\forms.py:53
 msgid "First name"
-msgstr "Ім'я"
+msgstr "Imię"
 
 #: .\apps\accounts\forms.py:58
 msgid "Last name"
-msgstr "Прізвище"
+msgstr "Nazwisko"
 
 #: .\apps\accounts\forms.py:63 .\apps\accounts\models.py:26
 #: .\apps\accounts\templates\accounts\profile-public.html:27
 msgid "Hometown"
-msgstr "Рідне місто"
+msgstr "Hometown"
 
 #: .\apps\accounts\forms.py:72
 msgid "Facebook"
@@ -56,96 +53,96 @@ msgstr "Facebook"
 #: .\apps\accounts\forms.py:77 .\apps\accounts\models.py:25
 #: .\apps\accounts\templates\accounts\profile-public.html:37
 msgid "Contacts"
-msgstr "Контакти"
+msgstr "Kontakt"
 
 #: .\apps\accounts\forms.py:82 .\apps\accounts\models.py:28
 msgid "Start coordinates"
-msgstr "Початкові координати"
+msgstr "Współrzędne startowe"
 
 #: .\apps\accounts\forms.py:84
 msgid "Format: 48.1630, 16.3250"
-msgstr "Формат: 48.1630, 16.3250"
+msgstr "Format: 48.1630, 16.3250"
 
 #: .\apps\accounts\forms.py:89 .\apps\accounts\models.py:35
 msgid "Image"
-msgstr "Зображення"
+msgstr "Obraz"
 
 #: .\apps\accounts\managers.py:16
 msgid "Email required"
-msgstr "Email обов'язковий"
+msgstr "E-mail wymagany"
 
 #: .\apps\accounts\managers.py:29
 msgid "Superuser must have is_staff=True."
-msgstr "Superuser повинен мати is_staff=True."
+msgstr "Superuser must have is_staff=True."
 
 #: .\apps\accounts\managers.py:31
 msgid "Superuser must have is_superuser=True."
-msgstr "Superuser повинен мати is_superuser=True."
+msgstr "Superuser must have is_superuser=True."
 
 #: .\apps\accounts\models.py:23
 #: .\apps\accounts\templates\accounts\profile-public.html:33
 msgid "Facebook profile link"
-msgstr "Посилання на профіль Facebook"
+msgstr "Link do profilu na Facebooku"
 
 #: .\apps\accounts\models.py:76
 msgid "Full name"
-msgstr "Повне ім'я"
+msgstr "Imię i nazwisko"
 
 #: .\apps\accounts\models.py:79
 #: .\apps\accounts\templates\accounts\profile-public.html:6
 msgid "User"
-msgstr "Користувач"
+msgstr "Użytkownik"
 
 #: .\apps\accounts\models.py:80
 msgid "Users"
-msgstr "Користувачі"
+msgstr "Użytkownicy"
 
 #: .\apps\accounts\templates\accounts\delete-user.html:5
 #: .\apps\accounts\templates\accounts\delete-user.html:13
 msgid "Profile deleting confirmation"
-msgstr "Підтвердження видалення профілю"
+msgstr "Potwierdzenie usunięcia profilu"
 
 #: .\apps\accounts\templates\accounts\delete-user.html:14
 msgid ""
 "Upon deleting your profile we will anonymize the marks you've added, erase "
 "your personal data and your comments to marks"
 msgstr ""
-"Після видалення вашого профілю ми знеособимо додані Вами позначки, видалимо "
-"ваші особисті дані і Ваші коментарі до відміток"
+"Po usunięciu profilu dokonamy anonimizacji dodanych przez Ciebie znaków, "
+"usuniemy Twoje dane osobowe i komentarze do znaków"
 
 #: .\apps\accounts\templates\accounts\delete-user.html:17
 #: .\apps\accounts\templates\accounts\profile.html:19
 msgid "Delete my profile"
-msgstr "Видалити мій профіль"
+msgstr "Usuń mój profil"
 
 #: .\apps\accounts\templates\accounts\inc\_social.html:2
 msgid "Or connect with"
-msgstr "Або увійти за допомогою"
+msgstr "Lub połącz się z"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
 #: .\apps\accounts\templates\accounts\register.html:55
 msgid "Login"
-msgstr "Вхід"
+msgstr "Logowanie"
 
 #: .\apps\accounts\templates\accounts\login.html:22
 msgid "You are already logged in"
-msgstr "Ви вже увійшли в систему"
+msgstr "Jesteś już zalogowany"
 
 #: .\apps\accounts\templates\accounts\login.html:24
 msgid "Log in to your account"
-msgstr "Увійдіть до вашого облікового запису"
+msgstr "Zaloguj się na swoje konto"
 
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
 #: .\apps\accounts\templates\accounts\register.html:57
 msgid "Log in"
-msgstr "Увійти"
+msgstr "Zaloguj się"
 
 #: .\apps\accounts\templates\accounts\login.html:36
 msgid "Forgot password?"
-msgstr "Забули пароль?"
+msgstr "Zapomniałeś hasła?"
 
 #: .\apps\accounts\templates\accounts\login.html:50
 #: .\apps\accounts\templates\accounts\login.html:52
@@ -154,143 +151,138 @@ msgstr "Забули пароль?"
 #: .\apps\accounts\templates\accounts\register.html:28
 #: .\apps\accounts\templates\accounts\register.html:43
 msgid "Sign up"
-msgstr "Реєстрація"
+msgstr "Zapisz się"
 
 #: .\apps\accounts\templates\accounts\login.html:51
 msgid ""
 "Creating an account is not required, but you'll have an access to all your "
 "markers."
 msgstr ""
-"Реєстрація необов'язкова, але зареєстровані користувачі мають доступ до всіх "
-"своїх міток."
+"Utworzenie konta nie jest wymagane, ale będziesz mieć dostęp do wszystkich "
+"swoich znaczników."
 
 #: .\apps\accounts\templates\accounts\password\password_change.html:6
 #: .\apps\accounts\templates\accounts\password\password_change.html:27
 #: .\apps\accounts\templates\accounts\profile.html:18
 msgid "Change password"
-msgstr "Змінити пароль"
+msgstr "Zmień hasło"
 
 #: .\apps\accounts\templates\accounts\password\password_change.html:47
 #: .\apps\accounts\templates\accounts\profile.html:34
 msgid "Save"
-msgstr "Зберегти"
+msgstr "Zapisz"
 
 #: .\apps\accounts\templates\accounts\password\password_reset.html:6
 #: .\apps\accounts\templates\accounts\password\password_reset.html:19
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:6
 msgid "Password reset"
-msgstr "Скидання пароля"
+msgstr "Resetowanie hasła"
 
 #: .\apps\accounts\templates\accounts\password\password_reset.html:20
 msgid "You may reset your password here"
-msgstr "Ви можете скинути свій пароль тут"
+msgstr "Tutaj możesz zresetować swoje hasło"
 
 #: .\apps\accounts\templates\accounts\password\password_reset.html:29
 msgid "Submit"
-msgstr "Відправити"
+msgstr "Kontakt"
 
 #: .\apps\accounts\templates\accounts\password\password_reset.html:38
 msgid "What else you can do"
-msgstr "Що ще ви можете зробити"
+msgstr "Co jeszcze możesz zrobić"
 
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:6
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:26
 msgid "Password reset complete"
-msgstr "Скидання пароля завершено"
+msgstr "Reset hasła zakończony"
 
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:28
 msgid "Your new password has been set. You may go ahead and"
-msgstr "Ваш новий пароль був збережений. Зараз ви можете "
+msgstr "Twoje nowe hasło zostało ustawione. Możesz iść dalej i"
 
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:28
 msgid "Reset your password"
-msgstr "Скиньте свій пароль"
+msgstr "Zresetuj hasło"
 
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:43
 msgid "Reset password"
-msgstr "Скидання пароля"
+msgstr "Zresetuj hasło"
 
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:51
 msgid ""
 "\n"
-"                    The password reset link was invalid, possibly because it "
-"has already been used.\n"
+"                    The password reset link was invalid, possibly because it has already been used.\n"
 "                    Please request a new password reset.\n"
 "                "
 msgstr ""
 "\n"
-"Посилання для скидання пароля недійсне, можливо, тому що воно вже "
-"використовувалося. Будь ласка, зробіть скидання пароля ще раз.\n"
+"                    Link resetowania hasła był nieprawidłowy, prawdopodobnie dlatego, że był już używany.\n"
+"                    Prosimy o zresetowanie nowego hasła.\n"
 "                "
 
 #: .\apps\accounts\templates\accounts\profile-public.html:16
 #: .\apps\accounts\templates\accounts\profile.html:16
 msgid "Sign up date"
-msgstr "Дата реєстрації"
+msgstr "Data rejestracji"
 
 #: .\apps\accounts\templates\accounts\profile-public.html:23
 msgid "User profile"
-msgstr "Профіль користувача"
+msgstr "Profil użytkownika"
 
 #: .\apps\accounts\templates\accounts\profile-public.html:28
 msgid "No data"
-msgstr "Немає даних"
+msgstr "Brak danych"
 
 #: .\apps\accounts\templates\accounts\profile.html:6
 #: .\apps\accounts\templates\accounts\profile.html:25
 msgid "My profile"
-msgstr "Мій профіль"
+msgstr "Mój profil"
 
 #: .\apps\accounts\templates\accounts\register.html:29
 msgid "Create your account"
-msgstr "Створіть ваш обліковий запис"
+msgstr "Załóż konto"
 
 #: .\apps\accounts\templates\accounts\register.html:56
 msgid "Already have an account?"
-msgstr "Вже зареєстровані?"
+msgstr "Masz już konto?"
 
 #: .\apps\accounts\views.py:24
 msgid "Profile updated!"
-msgstr "Профіль оновлено!"
+msgstr "Profil zaktualizowany!"
 
 #: .\apps\accounts\views.py:28 .\apps\accounts\views.py:77
 msgid "Please, correct the errors."
-msgstr "Будь ласка, виправте помилки."
+msgstr "Proszę poprawić błędy."
 
 #: .\apps\accounts\views.py:58
 msgid "User deleted!"
-msgstr "Користувач видалений!"
+msgstr "Użytkownik usunięty!"
 
 #: .\apps\accounts\views.py:72
 msgid "Password has been updated!"
-msgstr "Пароль оновлено!"
+msgstr "Hasło zostało zaktualizowane!"
 
 #: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
-"        If you didn't receive it, please make sure you've entered a valid "
-"address \n"
+"        If you didn't receive it, please make sure you've entered a valid address \n"
 "        and check your spam folder."
 msgstr ""
-"Ми відправили вам інструкцію по скиданню пароля. Якщо ви її не отримали, "
-"будь ласка, переконайтеся, що ви ввели дійсну адресу і перевірте папку зі "
-"спамом."
+"Wysłaliśmy Ci instrukcję resetowania hasła. \n"
+"        Jeśli go nie otrzymałeś, upewnij się, że podałeś prawidłowy adres \n"
+"        sprawdź folder spam."
 
 #: .\apps\accounts\views.py:104
 msgid "You have successfully signed in!"
-msgstr "Ви успішно увійшли!"
+msgstr "Pomyślnie się zalogowałeś!"
 
 #: .\apps\accounts\views.py:108
 msgid "Error logging-in!"
-msgstr "Помилка входу!"
+msgstr "Błąd logowania!"
 
 #: .\apps\accounts\views.py:128
 msgid "You have successfully signed up!"
-msgstr "Ви успішно зареєструвалися!"
+msgstr "Pomyślnie się zarejestrowałeś!"
 
 #: .\apps\accounts\views.py:132
 msgid "Error registering!"
-msgstr "Помилка реєстрації!"
-
-#~ msgid "Social login"
-#~ msgstr "Увійти за допомогою"
+msgstr "Błąd rejestracji!"

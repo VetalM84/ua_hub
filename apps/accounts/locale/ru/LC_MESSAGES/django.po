@@ -8,15 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-09 12:27+0300\n"
-"PO-Revision-Date: 2022-10-09 12:32+0000\n"
+"POT-Creation-Date: 2022-10-14 16:31+0300\n"
+"PO-Revision-Date: 2022-10-09 23:31+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\apps\accounts\forms.py:16 .\apps\accounts\forms.py:29
@@ -51,7 +53,7 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: .\apps\accounts\forms.py:77 .\apps\accounts\models.py:25
-#: .\apps\accounts\templates\accounts\profile-public.html:40
+#: .\apps\accounts\templates\accounts\profile-public.html:37
 msgid "Contacts"
 msgstr "Контакты"
 
@@ -80,7 +82,7 @@ msgid "Superuser must have is_superuser=True."
 msgstr "Superuser должен иметь is_superuser=True."
 
 #: .\apps\accounts\models.py:23
-#: .\apps\accounts\templates\accounts\profile-public.html:36
+#: .\apps\accounts\templates\accounts\profile-public.html:33
 msgid "Facebook profile link"
 msgstr "Ссылка на профиль Facebook"
 
@@ -110,15 +112,18 @@ msgstr ""
 "После удаления вашего профиля мы обезличим добавленные вами отметки, удалим "
 "ваши личные данные и ваши комментарии к отметкам"
 
-#: .\apps\accounts\templates\accounts\delete-user.html:18
+#: .\apps\accounts\templates\accounts\delete-user.html:17
 #: .\apps\accounts\templates\accounts\profile.html:19
-#| msgid "My profile"
 msgid "Delete my profile"
 msgstr "Удалить мой профиль"
 
+#: .\apps\accounts\templates\accounts\inc\_social.html:2
+msgid "Or connect with"
+msgstr "Или войти используя"
+
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
-#: .\apps\accounts\templates\accounts\register.html:51
+#: .\apps\accounts\templates\accounts\register.html:55
 msgid "Login"
 msgstr "Вход"
 
@@ -133,7 +138,7 @@ msgstr "Войдите в вашу учетную запись"
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:53
+#: .\apps\accounts\templates\accounts\register.html:57
 msgid "Log in"
 msgstr "Войти"
 
@@ -141,20 +146,16 @@ msgstr "Войти"
 msgid "Forgot password?"
 msgstr "Забыли пароль?"
 
-#: .\apps\accounts\templates\accounts\login.html:40
-msgid "Social login"
-msgstr "Войти с помощью"
-
-#: .\apps\accounts\templates\accounts\login.html:60
-#: .\apps\accounts\templates\accounts\login.html:62
+#: .\apps\accounts\templates\accounts\login.html:50
+#: .\apps\accounts\templates\accounts\login.html:52
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
-#: .\apps\accounts\templates\accounts\register.html:27
-#: .\apps\accounts\templates\accounts\register.html:42
+#: .\apps\accounts\templates\accounts\register.html:28
+#: .\apps\accounts\templates\accounts\register.html:43
 msgid "Sign up"
 msgstr "Регистрация"
 
-#: .\apps\accounts\templates\accounts\login.html:61
+#: .\apps\accounts\templates\accounts\login.html:51
 msgid ""
 "Creating an account is not required, but you'll have an access to all your "
 "markers."
@@ -211,12 +212,14 @@ msgstr "Сброс пароля"
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:51
 msgid ""
 "\n"
-"                    The password reset link was invalid, possibly because it has already been used.\n"
+"                    The password reset link was invalid, possibly because it "
+"has already been used.\n"
 "                    Please request a new password reset.\n"
 "                "
 msgstr ""
 "\n"
-"Ссылка для сброса пароля недействительна, возможно, потому, что она уже использовалась. Пожалуйста, запросите сброс пароля еще раз.\n"
+"Ссылка для сброса пароля недействительна, возможно, потому, что она уже "
+"использовалась. Пожалуйста, запросите сброс пароля еще раз.\n"
 "                "
 
 #: .\apps\accounts\templates\accounts\profile-public.html:16
@@ -228,8 +231,7 @@ msgstr "Дата регистрации"
 msgid "User profile"
 msgstr "Профиль пользователя"
 
-#: .\apps\accounts\templates\accounts\profile-public.html:31
-#: .\apps\accounts\templates\accounts\profile-public.html:44
+#: .\apps\accounts\templates\accounts\profile-public.html:28
 msgid "No data"
 msgstr "Нет данных"
 
@@ -238,11 +240,11 @@ msgstr "Нет данных"
 msgid "My profile"
 msgstr "Мой профиль"
 
-#: .\apps\accounts\templates\accounts\register.html:28
+#: .\apps\accounts\templates\accounts\register.html:29
 msgid "Create your account"
 msgstr "Создайте вашу учетную запись"
 
-#: .\apps\accounts\templates\accounts\register.html:52
+#: .\apps\accounts\templates\accounts\register.html:56
 msgid "Already have an account?"
 msgstr "Уже зарегистрированы?"
 
@@ -265,7 +267,8 @@ msgstr "Пароль обновлен!"
 #: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
-"        If you didn't receive it, please make sure you've entered a valid address \n"
+"        If you didn't receive it, please make sure you've entered a valid "
+"address \n"
 "        and check your spam folder."
 msgstr ""
 "Мы отправили вам на почту инструкцию по сбросу пароля. Если вы её не "
@@ -287,3 +290,6 @@ msgstr "Вы успешно зарегистрировались!"
 #: .\apps\accounts\views.py:132
 msgid "Error registering!"
 msgstr "Ошибка регистрации!"
+
+#~ msgid "Social login"
+#~ msgstr "Войти с помощью"
