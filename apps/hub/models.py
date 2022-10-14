@@ -3,6 +3,8 @@
 from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
+from imagekit.models import ImageSpecField, ProcessedImageField
+from imagekit.processors import SmartResize
 
 from apps.accounts.models import User
 
@@ -32,6 +34,18 @@ class Marker(models.Model):
     ip = models.GenericIPAddressField(
         max_length=128, null=True, verbose_name=_("IP address")
     )
+    image = ProcessedImageField(
+        upload_to="marker/",
+        blank=True,
+        format="JPEG",
+        options={"quality": 90},
+        verbose_name=_("Image"),
+    )
+    image_preview_bg = ImageSpecField(
+        source="image",
+        processors=[SmartResize(646, 140)],
+        format="JPEG",
+    )
 
     def __str__(self):
         """Model representation."""
@@ -46,7 +60,9 @@ class Marker(models.Model):
 class Comment(models.Model):
     """Comment model for Marker."""
 
-    owner = models.ForeignKey(to=User, on_delete=models.CASCADE, verbose_name=_("Owner"))
+    owner = models.ForeignKey(
+        to=User, on_delete=models.CASCADE, verbose_name=_("Owner")
+    )
     marker = models.ForeignKey(
         to="Marker",
         related_name="comments",

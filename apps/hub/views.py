@@ -116,7 +116,7 @@ def home(request):
 
     # add new Marker
     if request.method == "POST":
-        form = AddMarkerForm(request.POST)
+        form = AddMarkerForm(request.POST, request.FILES)
         if form.is_valid():
             form = form.save(commit=False)
             form.ip = get_client_ip(request)

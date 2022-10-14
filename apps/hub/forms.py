@@ -34,11 +34,16 @@ class AddMarkerForm(forms.ModelForm):
         empty_label=_("Choose category"),
         widget=forms.Select(attrs={"class": "form-select"}),
     )
+    image = forms.ImageField(
+        required=False,
+        label=_("Image"),
+        widget=forms.FileInput(attrs={"class": "form-control"}),
+    )
     captcha = ReCaptchaField(widget=ReCaptchaV3)
 
     class Meta:
         model = Marker
-        fields = ["latitude", "longitude", "comment", "category"]
+        fields = ["latitude", "longitude", "comment", "category", "image"]
         widgets = {
             "comment": forms.Textarea(
                 attrs={

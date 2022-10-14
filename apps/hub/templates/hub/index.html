@@ -31,6 +31,10 @@
                                 {{ field }}
                             </div>
                         {% endfor %}
+                        <div class="col-12">
+                            {{ form.image.label_tag }}
+                            {{ form.image }}
+                        </div>
                         {{ form.captcha }}
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
