@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     # Custom apps
     'apps.accounts.apps.AccountsConfig',
     'apps.hub.apps.HubConfig',
+    # delete old images
+    'django_cleanup',
     # Installed apps
     'debug_toolbar',
     'rosetta',
