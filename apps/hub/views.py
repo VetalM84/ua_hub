@@ -259,6 +259,10 @@ def popup_html(marker):
     if likes:
         likes_data = f"""{likes}<i class="fa-solid fa-heart p-1"></i>"""
 
+    image_data = ""
+    if marker.image:
+        image_data = f"""<i class="fa-regular fa-image p-1"></i>"""
+
     owner = marker.owner
     owner_data = ""
     if owner:
@@ -281,6 +285,7 @@ def popup_html(marker):
             <div class="d-flex">
                 <div>{comments_data}</div>
                 <div>{likes_data}</div>
+                <div>{image_data}</div>
             </div>
             {owner_data}
             <p style="font-size:15px; margin:10px 0;">
