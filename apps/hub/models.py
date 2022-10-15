@@ -92,8 +92,6 @@ class Category(models.Model):
 
     COLORS = (
         ("cadetblue", "cadetblue"),
-        ("lightred", "lightred"),
-        ("beige", "beige"),
         ("green", "green"),
         ("blue", "blue"),
         ("red", "red"),
@@ -105,11 +103,9 @@ class Category(models.Model):
         ("pink", "pink"),
         ("lightblue", "lightblue"),
         ("lightgray", "lightgray"),
-        ("darkpurple", "darkpurple"),
         ("darkgreen", "darkgreen"),
         ("darkred", "darkred"),
         ("black", "black"),
-        ("white", "white"),
     )
     name = models.CharField(max_length=50, verbose_name=_("Name"))
     icon = models.ForeignKey(
