@@ -27,7 +27,7 @@
                     <form method="POST" id="user_update_form" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row mt-3">
-                            {{ form.as_div }}
+                            {{ form.as_p }}
                         </div>
                         <div class="mt-4 text-center">
                             <button class="btn btn-primary profile-button" type="submit">
