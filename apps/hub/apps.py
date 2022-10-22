@@ -8,4 +8,4 @@ class HubConfig(AppConfig):
     def ready(self):
         """Register all signals."""
         # Implicitly connect a signal handlers decorated with @receiver.
-        from . import signals
+        import apps.hub.signals

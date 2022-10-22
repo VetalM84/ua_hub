@@ -8,19 +8,19 @@ from django.utils.translation import get_language
 from apps.hub.models import Comment, Marker
 
 
-@receiver(signal=post_delete, sender=Marker, dispatch_uid="marker_deleted")
+@receiver(signal=post_delete, sender=Marker, dispatch_uid="marker_deleted", weak=False)
 def clear_cache_delete_handler(sender, **kwargs):
     """Method for clearing a cache on home page after Marker instance has been deleted."""
     cache.delete("markers_frontend")
 
 
-@receiver(signal=post_save, sender=Marker, dispatch_uid="marker_updated")
+@receiver(signal=post_save, sender=Marker, dispatch_uid="marker_updated", weak=False)
 def clear_cache_save_handler(sender, **kwargs):
     """Method for clearing a cache on home page after Marker instance has been updated."""
     cache.delete("markers_frontend")
 
 
-@receiver(signal=post_delete, sender=Comment, dispatch_uid="comment_deleted")
+@receiver(signal=post_delete, sender=Comment, dispatch_uid="comment_deleted", weak=False)
 def clear_cache_delete_handler(sender, instance, **kwargs):
     """Method for clearing a cache on Marker page after Comment instance has been deleted."""
     marker_id = instance.marker_id
@@ -28,7 +28,7 @@ def clear_cache_delete_handler(sender, instance, **kwargs):
     cache.delete(key)
 
 
-@receiver(signal=post_save, sender=Comment, dispatch_uid="comment_added")
+@receiver(signal=post_save, sender=Comment, dispatch_uid="comment_added", weak=False)
 def clear_cache_save_handler(sender, instance, **kwargs):
     """Method for clearing a cache on Marker page after Comment instance has been added."""
     marker_id = instance.marker_id
@@ -36,7 +36,7 @@ def clear_cache_save_handler(sender, instance, **kwargs):
     cache.delete(key)
 
 
-@receiver(signal=post_delete, sender=Marker, dispatch_uid="user_deleted_marker")
+@receiver(signal=post_delete, sender=Marker, dispatch_uid="user_deleted_marker", weak=False)
 def clear_cache_block(sender, instance, **kwargs):
     """Method for clearing a markers cache after Marker instance has been deleted."""
     user = instance.owner_id
@@ -45,7 +45,7 @@ def clear_cache_block(sender, instance, **kwargs):
     cache.delete(key)
 
 
-@receiver(signal=post_save, sender=Marker, dispatch_uid="user_updated_marker")
+@receiver(signal=post_save, sender=Marker, dispatch_uid="user_updated_marker", weak=False)
 def clear_cache_block(sender, instance, **kwargs):
     """Method for clearing a markers cache after Marker instance has been updated."""
     user = instance.owner_id
