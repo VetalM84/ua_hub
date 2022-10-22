@@ -251,23 +251,11 @@ if os.getenv('CACHES') == 'Redis':
             'KEY_PREFIX': 'redis_hub'
         }
     }
-elif os.getenv('CACHES') == 'PyLibMC':
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
-            'LOCATION': os.getenv('MC_CACHE_LOCATION', '127.0.0.1:11211'),
-            'OPTIONS': {
-                'binary': True,
-                'username': os.getenv('MC_CACHE_USERNAME', ''),
-                'password': os.getenv('MC_CACHE_PASSWORD', ''),
-            }
-        }
-    }
 else:
     CACHES = {
         'default': {
-            'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-            'LOCATION': os.path.join(BASE_DIR, 'django_cache'),
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'uahub-online',
         }
     }
 

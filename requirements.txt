@@ -21,5 +21,3 @@ django_redis==5.2.0
 mysqlclient==2.1.1
 # for Postgres
 psycopg2~=2.9.4
-# for Memcached caching
-pylibmc~=1.6.3
