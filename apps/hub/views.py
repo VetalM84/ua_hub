@@ -127,7 +127,7 @@ def home(request):
             )
             return redirect(to="home")
         else:
-            messages.error(request, _("Error. Check coordinates."), extra_tags="danger")
+            messages.error(request, form.errors, extra_tags="danger")
     else:
         form = AddMarkerForm()
 
