@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load l10n %}
 {% load custom_filters %}
 {% load imagekit %}
 {% load static %}
@@ -54,6 +55,17 @@
                         </div>
                         <div class="flex-fill text-start ms-2">
                             {{ marker.created_at|to_user_tz_short }}
+                        </div>
+                    </div>
+                    <div class="d-flex mt-2" style="font-size: small;">
+                        <div class="flex-fill text-end me-2">
+                            {% translate "Open on map" %}:
+                            <a href="https://www.google.com/maps/@{{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }},12z" target="_blank">
+                                {{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }}</a>
+                        </div>
+                        <div class="flex-fill text-start ms-2">
+                            <a href="https://maps.google.com?saddr=Current+Location&daddr={{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }}" target="_blank">
+                                {% translate "Get directions" %}</a>
                         </div>
                     </div>
                     <hr>
