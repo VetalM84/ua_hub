@@ -1,7 +1,7 @@
 """Form management for HUB app."""
 
 from captcha.fields import ReCaptchaField
-from captcha.widgets import ReCaptchaV3
+from captcha.widgets import ReCaptchaV2Checkbox
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
@@ -39,7 +39,7 @@ class AddMarkerForm(forms.ModelForm):
         label=_("Image"),
         widget=forms.FileInput(attrs={"class": "form-control"}),
     )
-    captcha = ReCaptchaField(widget=ReCaptchaV3)
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     class Meta:
         model = Marker
@@ -96,4 +96,4 @@ class ContactForm(forms.Form):
             }
         ),
     )
-    captcha = ReCaptchaField(widget=ReCaptchaV3)
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
