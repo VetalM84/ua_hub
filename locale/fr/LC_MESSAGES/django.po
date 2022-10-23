@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:32+0300\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
 "PO-Revision-Date: 2022-10-14 16:48+0000\n"
 "Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\templates\base.html:9
+#: .\templates\base.html:26
 msgid "Help to Ukrainian refugees in any country of the world"
 msgstr "Aide aux réfugiés ukrainiens dans n'importe quel pays du monde"
 

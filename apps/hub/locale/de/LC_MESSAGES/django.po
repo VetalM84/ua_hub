@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:32+0300\n"
-"PO-Revision-Date: 2022-10-14 16:44+0000\n"
-"Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
+"PO-Revision-Date: 2022-10-23 15:34+0000\n"
+"Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\apps\hub\forms.py:19 .\apps\hub\models.py:13
+#: .\apps\hub\forms.py:19 .\apps\hub\models.py:15
 msgid "Latitude"
 msgstr "Breitengrad"
 
-#: .\apps\hub\forms.py:28 .\apps\hub\models.py:14
+#: .\apps\hub\forms.py:28 .\apps\hub\models.py:16
 msgid "Longitude"
 msgstr "Längengrad"
 
@@ -31,78 +31,82 @@ msgstr "Längengrad"
 msgid "Choose category"
 msgstr "Kategorie wählen"
 
-#: .\apps\hub\forms.py:48 .\apps\hub\forms.py:68
+#: .\apps\hub\forms.py:39 .\apps\hub\models.py:42
+msgid "Image"
+msgstr "Bild"
+
+#: .\apps\hub\forms.py:53 .\apps\hub\forms.py:73
 msgid "Comment, not required"
 msgstr "Kommentar, nicht erforderlich"
 
-#: .\apps\hub\forms.py:79
+#: .\apps\hub\forms.py:84
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\hub\forms.py:84
+#: .\apps\hub\forms.py:89
 msgid "Message"
 msgstr "Nachricht"
 
-#: .\apps\hub\models.py:16 .\apps\hub\models.py:104
-#: .\apps\hub\templates\hub\marker.html:44
+#: .\apps\hub\models.py:18 .\apps\hub\models.py:121
+#: .\apps\hub\templates\hub\marker.html:51
 msgid "Category"
 msgstr "Zimmerkategorie"
 
-#: .\apps\hub\models.py:18 .\apps\hub\models.py:57 .\apps\hub\models.py:65
-#: .\apps\hub\templates\hub\marker.html:90
+#: .\apps\hub\models.py:20 .\apps\hub\models.py:78 .\apps\hub\models.py:86
+#: .\apps\hub\templates\hub\marker.html:108
 msgid "Comment"
 msgstr "Kommentar"
 
-#: .\apps\hub\models.py:19 .\apps\hub\models.py:59
+#: .\apps\hub\models.py:21 .\apps\hub\models.py:80
 msgid "Date"
 msgstr "Datum"
 
-#: .\apps\hub\models.py:26 .\apps\hub\models.py:49
+#: .\apps\hub\models.py:28 .\apps\hub\models.py:69
 msgid "Owner"
 msgstr "Besitzer"
 
-#: .\apps\hub\models.py:29
+#: .\apps\hub\models.py:31
 msgid "Like"
 msgstr "Wie"
 
-#: .\apps\hub\models.py:31
+#: .\apps\hub\models.py:33
 msgid "Likes count"
 msgstr "Anzahl der Likes"
 
-#: .\apps\hub\models.py:33
+#: .\apps\hub\models.py:35
 msgid "IP address"
 msgstr "IP-Adresse"
 
-#: .\apps\hub\models.py:41 .\apps\hub\models.py:54
-#: .\apps\hub\templates\hub\marker.html:7
+#: .\apps\hub\models.py:60 .\apps\hub\models.py:75
+#: .\apps\hub\templates\hub\marker.html:8
 msgid "Mark"
 msgstr "Markieren"
 
-#: .\apps\hub\models.py:42
+#: .\apps\hub\models.py:61
 msgid "Marks"
 msgstr "Marks"
 
-#: .\apps\hub\models.py:66 .\apps\hub\templates\hub\marker.html:58
+#: .\apps\hub\models.py:87 .\apps\hub\templates\hub\marker.html:76
 msgid "Comments"
 msgstr "Kommentare"
 
-#: .\apps\hub\models.py:93 .\apps\hub\models.py:112
+#: .\apps\hub\models.py:110 .\apps\hub\models.py:129
 msgid "Name"
 msgstr "Name"
 
-#: .\apps\hub\models.py:95 .\apps\hub\models.py:119
+#: .\apps\hub\models.py:112 .\apps\hub\models.py:136
 msgid "Icon"
 msgstr "Symbol"
 
-#: .\apps\hub\models.py:97
+#: .\apps\hub\models.py:114
 msgid "Color"
 msgstr "Farbig"
 
-#: .\apps\hub\models.py:105
+#: .\apps\hub\models.py:122
 msgid "Categories"
 msgstr "Kategorien"
 
-#: .\apps\hub\models.py:120
+#: .\apps\hub\models.py:137
 msgid "Icons"
 msgstr "Bausteinsymbole"
 
@@ -198,7 +202,7 @@ msgstr ""
 "Für alle Projektzwecke können Sie den Entwickler über das untenstehende "
 "Formular erreichen."
 
-#: .\apps\hub\templates\hub\contact.html:38
+#: .\apps\hub\templates\hub\contact.html:40
 msgid "Submit"
 msgstr "Abgeben"
 
@@ -448,28 +452,36 @@ msgstr ""
 "            "
 
 #: .\apps\hub\templates\hub\index.html:16
-#: .\apps\hub\templates\hub\index.html:50
+#: .\apps\hub\templates\hub\index.html:55
 msgid "Add mark"
 msgstr "Markierung hinzufügen"
 
 #: .\apps\hub\templates\hub\index.html:18
-#: .\apps\hub\templates\hub\index.html:37
+#: .\apps\hub\templates\hub\index.html:43
 msgid "Close"
 msgstr "Schließen"
 
-#: .\apps\hub\templates\hub\index.html:38
+#: .\apps\hub\templates\hub\index.html:44
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: .\apps\hub\templates\hub\marker.html:40
+#: .\apps\hub\templates\hub\marker.html:47
 msgid "Anonymous user"
 msgstr "Anonymer Benutzer"
 
-#: .\apps\hub\templates\hub\marker.html:54
+#: .\apps\hub\templates\hub\marker.html:62
+msgid "Open on map"
+msgstr "Auf der Karte öffnen"
+
+#: .\apps\hub\templates\hub\marker.html:68
+msgid "Get directions"
+msgstr "Wegbeschreibung abrufen"
+
+#: .\apps\hub\templates\hub\marker.html:72
 msgid "No data"
 msgstr "Keine Daten"
 
-#: .\apps\hub\templates\hub\marker.html:95
+#: .\apps\hub\templates\hub\marker.html:113
 msgid "Post comment"
 msgstr "Kommentar posten"
 
@@ -506,10 +518,6 @@ msgstr "Mein Standort"
 msgid "Marker added successfully!"
 msgstr "Marker erfolgreich hinzugefügt!"
 
-#: .\apps\hub\views.py:130
-msgid "Error. Check coordinates."
-msgstr "Fehlermeldung. Koordinaten überprüfen."
-
 #: .\apps\hub\views.py:178
 msgid "Email sent successfully!"
 msgstr "E-Mail erfolgreich gesendet!"
@@ -530,30 +538,34 @@ msgstr "Bitte korrigieren Sie Fehler."
 msgid "Access forbidden!"
 msgstr "Zutritt verboten!"
 
-#: .\apps\hub\views.py:321
+#: .\apps\hub\views.py:326
 msgid "Invalid header found."
 msgstr "Ungültiger Header gefunden."
 
-#: .\apps\hub\views.py:369
+#: .\apps\hub\views.py:374
 msgid "Comment has added. Reload page."
 msgstr "Kommentar hinzugefügt. Seite neu laden."
 
-#: .\apps\hub\views.py:389
+#: .\apps\hub\views.py:394
 msgid "Error! Enter at least 10 symbols."
 msgstr "Fehler! Geben Sie mindestens 10 Symbole ein."
 
-#: .\apps\hub\views.py:392
+#: .\apps\hub\views.py:397
 msgid "Sign in to leave a comment"
 msgstr "Melde dich an, um einen Kommentar zu hinterlassen"
 
-#: .\apps\hub\views.py:403
+#: .\apps\hub\views.py:408
 msgid "You've deleted the mark. Reload page."
 msgstr "Sie haben die Markierung gelöscht. Seite neu laden."
 
-#: .\apps\hub\views.py:405
+#: .\apps\hub\views.py:410
 msgid "Error!"
 msgstr "Fehler!"
 
-#: .\apps\hub\views.py:407
+#: .\apps\hub\views.py:412
 msgid "Sign in to delete a comment"
 msgstr "Melden Sie sich an, um einen Kommentar zu löschen"
+
+#, fuzzy
+#~ msgid "Open coordinates"
+#~ msgstr "Fehlermeldung. Koordinaten überprüfen."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:31+0300\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
 "PO-Revision-Date: 2022-10-09 23:31+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,7 +123,7 @@ msgstr "Или войти используя"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
-#: .\apps\accounts\templates\accounts\register.html:55
+#: .\apps\accounts\templates\accounts\register.html:57
 msgid "Login"
 msgstr "Вход"
 
@@ -138,7 +138,7 @@ msgstr "Войдите в вашу учетную запись"
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:57
+#: .\apps\accounts\templates\accounts\register.html:59
 msgid "Log in"
 msgstr "Войти"
 
@@ -151,7 +151,7 @@ msgstr "Забыли пароль?"
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
 #: .\apps\accounts\templates\accounts\register.html:28
-#: .\apps\accounts\templates\accounts\register.html:43
+#: .\apps\accounts\templates\accounts\register.html:45
 msgid "Sign up"
 msgstr "Регистрация"
 
@@ -244,7 +244,7 @@ msgstr "Мой профиль"
 msgid "Create your account"
 msgstr "Создайте вашу учетную запись"
 
-#: .\apps\accounts\templates\accounts\register.html:56
+#: .\apps\accounts\templates\accounts\register.html:58
 msgid "Already have an account?"
 msgstr "Уже зарегистрированы?"
 

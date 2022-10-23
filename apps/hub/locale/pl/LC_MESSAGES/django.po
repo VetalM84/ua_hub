@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:32+0300\n"
-"PO-Revision-Date: 2022-10-14 16:41+0000\n"
-"Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
+"PO-Revision-Date: 2022-10-23 15:34+0000\n"
+"Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\apps\hub\forms.py:19 .\apps\hub\models.py:13
+#: .\apps\hub\forms.py:19 .\apps\hub\models.py:15
 msgid "Latitude"
 msgstr "Szerokość geograficzna"
 
-#: .\apps\hub\forms.py:28 .\apps\hub\models.py:14
+#: .\apps\hub\forms.py:28 .\apps\hub\models.py:16
 msgid "Longitude"
 msgstr "Długość geograficzna"
 
@@ -31,78 +31,82 @@ msgstr "Długość geograficzna"
 msgid "Choose category"
 msgstr "Wybierz kategorię"
 
-#: .\apps\hub\forms.py:48 .\apps\hub\forms.py:68
+#: .\apps\hub\forms.py:39 .\apps\hub\models.py:42
+msgid "Image"
+msgstr "Obraz"
+
+#: .\apps\hub\forms.py:53 .\apps\hub\forms.py:73
 msgid "Comment, not required"
 msgstr "Komentarz, nie jest wymagany"
 
-#: .\apps\hub\forms.py:79
+#: .\apps\hub\forms.py:84
 msgid "Email"
 msgstr "E-mail"
 
-#: .\apps\hub\forms.py:84
+#: .\apps\hub\forms.py:89
 msgid "Message"
 msgstr "Wiadomość"
 
-#: .\apps\hub\models.py:16 .\apps\hub\models.py:104
-#: .\apps\hub\templates\hub\marker.html:44
+#: .\apps\hub\models.py:18 .\apps\hub\models.py:121
+#: .\apps\hub\templates\hub\marker.html:51
 msgid "Category"
 msgstr "Kategoria"
 
-#: .\apps\hub\models.py:18 .\apps\hub\models.py:57 .\apps\hub\models.py:65
-#: .\apps\hub\templates\hub\marker.html:90
+#: .\apps\hub\models.py:20 .\apps\hub\models.py:78 .\apps\hub\models.py:86
+#: .\apps\hub\templates\hub\marker.html:108
 msgid "Comment"
 msgstr "Komentarz"
 
-#: .\apps\hub\models.py:19 .\apps\hub\models.py:59
+#: .\apps\hub\models.py:21 .\apps\hub\models.py:80
 msgid "Date"
 msgstr "Data"
 
-#: .\apps\hub\models.py:26 .\apps\hub\models.py:49
+#: .\apps\hub\models.py:28 .\apps\hub\models.py:69
 msgid "Owner"
 msgstr "Właściciel"
 
-#: .\apps\hub\models.py:29
+#: .\apps\hub\models.py:31
 msgid "Like"
 msgstr "Jak"
 
-#: .\apps\hub\models.py:31
+#: .\apps\hub\models.py:33
 msgid "Likes count"
 msgstr "Likes count"
 
-#: .\apps\hub\models.py:33
+#: .\apps\hub\models.py:35
 msgid "IP address"
 msgstr "Adres IP"
 
-#: .\apps\hub\models.py:41 .\apps\hub\models.py:54
-#: .\apps\hub\templates\hub\marker.html:7
+#: .\apps\hub\models.py:60 .\apps\hub\models.py:75
+#: .\apps\hub\templates\hub\marker.html:8
 msgid "Mark"
 msgstr "Mark"
 
-#: .\apps\hub\models.py:42
+#: .\apps\hub\models.py:61
 msgid "Marks"
 msgstr "Marks"
 
-#: .\apps\hub\models.py:66 .\apps\hub\templates\hub\marker.html:58
+#: .\apps\hub\models.py:87 .\apps\hub\templates\hub\marker.html:76
 msgid "Comments"
 msgstr "Komentarze"
 
-#: .\apps\hub\models.py:93 .\apps\hub\models.py:112
+#: .\apps\hub\models.py:110 .\apps\hub\models.py:129
 msgid "Name"
 msgstr "Nazwa"
 
-#: .\apps\hub\models.py:95 .\apps\hub\models.py:119
+#: .\apps\hub\models.py:112 .\apps\hub\models.py:136
 msgid "Icon"
 msgstr "Icon"
 
-#: .\apps\hub\models.py:97
+#: .\apps\hub\models.py:114
 msgid "Color"
 msgstr "Kolor"
 
-#: .\apps\hub\models.py:105
+#: .\apps\hub\models.py:122
 msgid "Categories"
 msgstr "Kategorie"
 
-#: .\apps\hub\models.py:120
+#: .\apps\hub\models.py:137
 msgid "Icons"
 msgstr "Ikony"
 
@@ -198,7 +202,7 @@ msgstr ""
 "W celach związanych z projektem możesz skontaktować się z deweloperem za "
 "pomocą poniższego formularza."
 
-#: .\apps\hub\templates\hub\contact.html:38
+#: .\apps\hub\templates\hub\contact.html:40
 msgid "Submit"
 msgstr "Kontakt"
 
@@ -448,28 +452,36 @@ msgstr ""
 "            "
 
 #: .\apps\hub\templates\hub\index.html:16
-#: .\apps\hub\templates\hub\index.html:50
+#: .\apps\hub\templates\hub\index.html:55
 msgid "Add mark"
 msgstr "Dodaj znak"
 
 #: .\apps\hub\templates\hub\index.html:18
-#: .\apps\hub\templates\hub\index.html:37
+#: .\apps\hub\templates\hub\index.html:43
 msgid "Close"
 msgstr "Zamknij"
 
-#: .\apps\hub\templates\hub\index.html:38
+#: .\apps\hub\templates\hub\index.html:44
 msgid "Add"
 msgstr "Dodaj"
 
-#: .\apps\hub\templates\hub\marker.html:40
+#: .\apps\hub\templates\hub\marker.html:47
 msgid "Anonymous user"
 msgstr "Użytkownik anonimowy"
 
-#: .\apps\hub\templates\hub\marker.html:54
+#: .\apps\hub\templates\hub\marker.html:62
+msgid "Open on map"
+msgstr "Otwórz na mapie"
+
+#: .\apps\hub\templates\hub\marker.html:68
+msgid "Get directions"
+msgstr "Uzyskaj wskazówki dojazdu"
+
+#: .\apps\hub\templates\hub\marker.html:72
 msgid "No data"
 msgstr "Brak danych"
 
-#: .\apps\hub\templates\hub\marker.html:95
+#: .\apps\hub\templates\hub\marker.html:113
 msgid "Post comment"
 msgstr "Dodaj komentarz"
 
@@ -506,10 +518,6 @@ msgstr "Moja lokalizacja"
 msgid "Marker added successfully!"
 msgstr "Marker dodany pomyślnie!"
 
-#: .\apps\hub\views.py:130
-msgid "Error. Check coordinates."
-msgstr "Błąd. Sprawdź współrzędne."
-
 #: .\apps\hub\views.py:178
 msgid "Email sent successfully!"
 msgstr "E-mail wysłany pomyślnie!"
@@ -530,30 +538,34 @@ msgstr "Proszę poprawić błędy."
 msgid "Access forbidden!"
 msgstr "Dostęp zabroniony!"
 
-#: .\apps\hub\views.py:321
+#: .\apps\hub\views.py:326
 msgid "Invalid header found."
 msgstr "Znaleziono nieprawidłowy nagłówek."
 
-#: .\apps\hub\views.py:369
+#: .\apps\hub\views.py:374
 msgid "Comment has added. Reload page."
 msgstr "Komentarz został dodany. Przeładuj stronę."
 
-#: .\apps\hub\views.py:389
+#: .\apps\hub\views.py:394
 msgid "Error! Enter at least 10 symbols."
 msgstr "Błąd! Wprowadź co najmniej 10 symboli."
 
-#: .\apps\hub\views.py:392
+#: .\apps\hub\views.py:397
 msgid "Sign in to leave a comment"
 msgstr "Zaloguj się, aby zostawić komentarz"
 
-#: .\apps\hub\views.py:403
+#: .\apps\hub\views.py:408
 msgid "You've deleted the mark. Reload page."
 msgstr "Usunąłeś znak. Przeładuj stronę."
 
-#: .\apps\hub\views.py:405
+#: .\apps\hub\views.py:410
 msgid "Error!"
 msgstr "Błąd!"
 
-#: .\apps\hub\views.py:407
+#: .\apps\hub\views.py:412
 msgid "Sign in to delete a comment"
 msgstr "Zaloguj się, aby usunąć komentarz"
+
+#, fuzzy
+#~ msgid "Open coordinates"
+#~ msgstr "Błąd. Sprawdź współrzędne."

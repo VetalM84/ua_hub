@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:32+0300\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
 "PO-Revision-Date: 2022-10-14 16:42+0000\n"
 "Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,8 +107,8 @@ msgid ""
 "Upon deleting your profile we will anonymize the marks you've added, erase "
 "your personal data and your comments to marks"
 msgstr ""
-"Nach dem Löschen Ihres Profils anonymisieren wir die von Ihnen hinzugefügten"
-" Markierungen, löschen Ihre persönlichen Daten und Ihre Kommentare zu "
+"Nach dem Löschen Ihres Profils anonymisieren wir die von Ihnen hinzugefügten "
+"Markierungen, löschen Ihre persönlichen Daten und Ihre Kommentare zu "
 "Markierungen"
 
 #: .\apps\accounts\templates\accounts\delete-user.html:17
@@ -122,7 +122,7 @@ msgstr "Oder verbinden Sie sich mit"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
-#: .\apps\accounts\templates\accounts\register.html:55
+#: .\apps\accounts\templates\accounts\register.html:57
 msgid "Login"
 msgstr "Login"
 
@@ -137,7 +137,7 @@ msgstr "Melden Sie sich bei Ihrem Konto an"
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:57
+#: .\apps\accounts\templates\accounts\register.html:59
 msgid "Log in"
 msgstr "Anmelden"
 
@@ -150,7 +150,7 @@ msgstr "Passwort vergessen?"
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
 #: .\apps\accounts\templates\accounts\register.html:28
-#: .\apps\accounts\templates\accounts\register.html:43
+#: .\apps\accounts\templates\accounts\register.html:45
 msgid "Sign up"
 msgstr "Anmelden"
 
@@ -211,12 +211,14 @@ msgstr "Passwort zurücksetzen"
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:51
 msgid ""
 "\n"
-"                    The password reset link was invalid, possibly because it has already been used.\n"
+"                    The password reset link was invalid, possibly because it "
+"has already been used.\n"
 "                    Please request a new password reset.\n"
 "                "
 msgstr ""
 "\n"
-"                    Der Link zum Zurücksetzen des Passworts war ungültig, möglicherweise weil er bereits verwendet wurde.\n"
+"                    Der Link zum Zurücksetzen des Passworts war ungültig, "
+"möglicherweise weil er bereits verwendet wurde.\n"
 "                    Bitte fordern Sie ein neues Passwort an.\n"
 "                "
 
@@ -242,7 +244,7 @@ msgstr "Mein Profil"
 msgid "Create your account"
 msgstr "Erstellen Sie Ihr Konto"
 
-#: .\apps\accounts\templates\accounts\register.html:56
+#: .\apps\accounts\templates\accounts\register.html:58
 msgid "Already have an account?"
 msgstr "Haben Sie bereits ein Konto?"
 
@@ -265,11 +267,14 @@ msgstr "Passwort wurde aktualisiert!"
 #: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
-"        If you didn't receive it, please make sure you've entered a valid address \n"
+"        If you didn't receive it, please make sure you've entered a valid "
+"address \n"
 "        and check your spam folder."
 msgstr ""
-"Wir haben Ihnen die Anleitung zum Zurücksetzen Ihres Passworts per E-Mail zugesandt. \n"
-"        Wenn Sie es nicht erhalten haben, stellen Sie bitte sicher, dass Sie eine gültige Adresse eingegeben haben \n"
+"Wir haben Ihnen die Anleitung zum Zurücksetzen Ihres Passworts per E-Mail "
+"zugesandt. \n"
+"        Wenn Sie es nicht erhalten haben, stellen Sie bitte sicher, dass Sie "
+"eine gültige Adresse eingegeben haben \n"
 "        und überprüfen Sie Ihren Spam-Ordner."
 
 #: .\apps\accounts\views.py:104

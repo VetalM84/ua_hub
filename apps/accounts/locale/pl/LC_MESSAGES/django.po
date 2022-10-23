@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:32+0300\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
 "PO-Revision-Date: 2022-10-14 16:38+0000\n"
 "Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\apps\accounts\forms.py:16 .\apps\accounts\forms.py:29
@@ -121,7 +123,7 @@ msgstr "Lub połącz się z"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
-#: .\apps\accounts\templates\accounts\register.html:55
+#: .\apps\accounts\templates\accounts\register.html:57
 msgid "Login"
 msgstr "Logowanie"
 
@@ -136,7 +138,7 @@ msgstr "Zaloguj się na swoje konto"
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:57
+#: .\apps\accounts\templates\accounts\register.html:59
 msgid "Log in"
 msgstr "Zaloguj się"
 
@@ -149,7 +151,7 @@ msgstr "Zapomniałeś hasła?"
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
 #: .\apps\accounts\templates\accounts\register.html:28
-#: .\apps\accounts\templates\accounts\register.html:43
+#: .\apps\accounts\templates\accounts\register.html:45
 msgid "Sign up"
 msgstr "Zapisz się"
 
@@ -210,12 +212,14 @@ msgstr "Zresetuj hasło"
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:51
 msgid ""
 "\n"
-"                    The password reset link was invalid, possibly because it has already been used.\n"
+"                    The password reset link was invalid, possibly because it "
+"has already been used.\n"
 "                    Please request a new password reset.\n"
 "                "
 msgstr ""
 "\n"
-"                    Link resetowania hasła był nieprawidłowy, prawdopodobnie dlatego, że był już używany.\n"
+"                    Link resetowania hasła był nieprawidłowy, prawdopodobnie "
+"dlatego, że był już używany.\n"
 "                    Prosimy o zresetowanie nowego hasła.\n"
 "                "
 
@@ -241,7 +245,7 @@ msgstr "Mój profil"
 msgid "Create your account"
 msgstr "Załóż konto"
 
-#: .\apps\accounts\templates\accounts\register.html:56
+#: .\apps\accounts\templates\accounts\register.html:58
 msgid "Already have an account?"
 msgstr "Masz już konto?"
 
@@ -264,7 +268,8 @@ msgstr "Hasło zostało zaktualizowane!"
 #: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
-"        If you didn't receive it, please make sure you've entered a valid address \n"
+"        If you didn't receive it, please make sure you've entered a valid "
+"address \n"
 "        and check your spam folder."
 msgstr ""
 "Wysłaliśmy Ci instrukcję resetowania hasła. \n"

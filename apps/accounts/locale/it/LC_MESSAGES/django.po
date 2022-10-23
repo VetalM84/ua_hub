@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:32+0300\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
 "PO-Revision-Date: 2022-10-14 16:49+0000\n"
 "Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,8 +107,8 @@ msgid ""
 "Upon deleting your profile we will anonymize the marks you've added, erase "
 "your personal data and your comments to marks"
 msgstr ""
-"Dopo aver eliminato il tuo profilo anonimizzeremo i marchi che hai aggiunto,"
-" cancelleremo i tuoi dati personali e i tuoi commenti ai marchi"
+"Dopo aver eliminato il tuo profilo anonimizzeremo i marchi che hai aggiunto, "
+"cancelleremo i tuoi dati personali e i tuoi commenti ai marchi"
 
 #: .\apps\accounts\templates\accounts\delete-user.html:17
 #: .\apps\accounts\templates\accounts\profile.html:19
@@ -121,7 +121,7 @@ msgstr "O connettersi con"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
-#: .\apps\accounts\templates\accounts\register.html:55
+#: .\apps\accounts\templates\accounts\register.html:57
 msgid "Login"
 msgstr "Login"
 
@@ -136,7 +136,7 @@ msgstr "Accedi al tuo account"
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:57
+#: .\apps\accounts\templates\accounts\register.html:59
 msgid "Log in"
 msgstr "Login"
 
@@ -149,7 +149,7 @@ msgstr "Hai dimenticato la password?"
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
 #: .\apps\accounts\templates\accounts\register.html:28
-#: .\apps\accounts\templates\accounts\register.html:43
+#: .\apps\accounts\templates\accounts\register.html:45
 msgid "Sign up"
 msgstr "Iscrivere"
 
@@ -158,8 +158,8 @@ msgid ""
 "Creating an account is not required, but you'll have an access to all your "
 "markers."
 msgstr ""
-"La creazione di un account non è necessaria, ma avrai accesso a tutti i tuoi"
-" marcatori."
+"La creazione di un account non è necessaria, ma avrai accesso a tutti i tuoi "
+"marcatori."
 
 #: .\apps\accounts\templates\accounts\password\password_change.html:6
 #: .\apps\accounts\templates\accounts\password\password_change.html:27
@@ -210,13 +210,16 @@ msgstr "Reimposta password"
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:51
 msgid ""
 "\n"
-"                    The password reset link was invalid, possibly because it has already been used.\n"
+"                    The password reset link was invalid, possibly because it "
+"has already been used.\n"
 "                    Please request a new password reset.\n"
 "                "
 msgstr ""
 "\n"
-"                    Il collegamento di reimpostazione della password non era valido, probabilmente perché è già stato utilizzato.\n"
-"                    Si prega di richiedere una nuova reimpostazione della password.\n"
+"                    Il collegamento di reimpostazione della password non era "
+"valido, probabilmente perché è già stato utilizzato.\n"
+"                    Si prega di richiedere una nuova reimpostazione della "
+"password.\n"
 "                "
 
 #: .\apps\accounts\templates\accounts\profile-public.html:16
@@ -241,7 +244,7 @@ msgstr "Il mio profilo"
 msgid "Create your account"
 msgstr "Crea il tuo account"
 
-#: .\apps\accounts\templates\accounts\register.html:56
+#: .\apps\accounts\templates\accounts\register.html:58
 msgid "Already have an account?"
 msgstr "Hai già un account?"
 
@@ -264,11 +267,14 @@ msgstr "La password è stata aggiornata!"
 #: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
-"        If you didn't receive it, please make sure you've entered a valid address \n"
+"        If you didn't receive it, please make sure you've entered a valid "
+"address \n"
 "        and check your spam folder."
 msgstr ""
-"Ti abbiamo inviato via email le istruzioni per reimpostare la tua password. \n"
-"        Se non l'hai ricevuto, assicurati di aver inserito un indirizzo valido \n"
+"Ti abbiamo inviato via email le istruzioni per reimpostare la tua "
+"password. \n"
+"        Se non l'hai ricevuto, assicurati di aver inserito un indirizzo "
+"valido \n"
 "        e controlla la tua cartella spam."
 
 #: .\apps\accounts\views.py:104

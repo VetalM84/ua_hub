@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:33+0300\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
 "PO-Revision-Date: 2022-10-14 16:52+0000\n"
 "Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgstr "O conéctese con"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
-#: .\apps\accounts\templates\accounts\register.html:55
+#: .\apps\accounts\templates\accounts\register.html:57
 msgid "Login"
 msgstr "Sesión"
 
@@ -136,7 +136,7 @@ msgstr "Inicia sesión en tu cuenta"
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:57
+#: .\apps\accounts\templates\accounts\register.html:59
 msgid "Log in"
 msgstr "Iniciar sesión"
 
@@ -149,7 +149,7 @@ msgstr "Olvidó su contraseña?"
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
 #: .\apps\accounts\templates\accounts\register.html:28
-#: .\apps\accounts\templates\accounts\register.html:43
+#: .\apps\accounts\templates\accounts\register.html:45
 msgid "Sign up"
 msgstr "Inscribir"
 
@@ -209,13 +209,16 @@ msgstr "Restablecer contraseña"
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:51
 msgid ""
 "\n"
-"                    The password reset link was invalid, possibly because it has already been used.\n"
+"                    The password reset link was invalid, possibly because it "
+"has already been used.\n"
 "                    Please request a new password reset.\n"
 "                "
 msgstr ""
 "\n"
-"                    El enlace de restablecimiento de contraseña no era válido, posiblemente porque ya se ha utilizado.\n"
-"                    Por favor, solicite un nuevo restablecimiento de contraseña.\n"
+"                    El enlace de restablecimiento de contraseña no era "
+"válido, posiblemente porque ya se ha utilizado.\n"
+"                    Por favor, solicite un nuevo restablecimiento de "
+"contraseña.\n"
 "                "
 
 #: .\apps\accounts\templates\accounts\profile-public.html:16
@@ -240,7 +243,7 @@ msgstr "Mi perfil"
 msgid "Create your account"
 msgstr "Crea tu cuenta"
 
-#: .\apps\accounts\templates\accounts\register.html:56
+#: .\apps\accounts\templates\accounts\register.html:58
 msgid "Already have an account?"
 msgstr "¿Ya tienes una cuenta?"
 
@@ -263,11 +266,14 @@ msgstr "La contraseña ha sido actualizada!"
 #: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
-"        If you didn't receive it, please make sure you've entered a valid address \n"
+"        If you didn't receive it, please make sure you've entered a valid "
+"address \n"
 "        and check your spam folder."
 msgstr ""
-"Le hemos enviado por correo electrónico las instrucciones para restablecer su contraseña. \n"
-"        Si no lo recibiste, asegúrate de haber ingresado una dirección válida \n"
+"Le hemos enviado por correo electrónico las instrucciones para restablecer "
+"su contraseña. \n"
+"        Si no lo recibiste, asegúrate de haber ingresado una dirección "
+"válida \n"
 "        y revisa tu carpeta de correo no deseado."
 
 #: .\apps\accounts\views.py:104

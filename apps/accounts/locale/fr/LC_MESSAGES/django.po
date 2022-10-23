@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:32+0300\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
 "PO-Revision-Date: 2022-10-14 16:46+0000\n"
 "Last-Translator: Виталий Митенко <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,7 @@ msgstr "Ou connectez-vous avec"
 
 #: .\apps\accounts\templates\accounts\login.html:6
 #: .\apps\accounts\templates\accounts\login.html:20
-#: .\apps\accounts\templates\accounts\register.html:55
+#: .\apps\accounts\templates\accounts\register.html:57
 msgid "Login"
 msgstr "Connexion"
 
@@ -137,7 +137,7 @@ msgstr "Connectez-vous à votre compte"
 #: .\apps\accounts\templates\accounts\login.html:32
 #: .\apps\accounts\templates\accounts\password\password_reset.html:40
 #: .\apps\accounts\templates\accounts\password\password_reset_complete.html:29
-#: .\apps\accounts\templates\accounts\register.html:57
+#: .\apps\accounts\templates\accounts\register.html:59
 msgid "Log in"
 msgstr "Connecter"
 
@@ -150,7 +150,7 @@ msgstr "Mot de passe oublié?"
 #: .\apps\accounts\templates\accounts\password\password_reset.html:39
 #: .\apps\accounts\templates\accounts\register.html:6
 #: .\apps\accounts\templates\accounts\register.html:28
-#: .\apps\accounts\templates\accounts\register.html:43
+#: .\apps\accounts\templates\accounts\register.html:45
 msgid "Sign up"
 msgstr "Inscrire"
 
@@ -212,13 +212,16 @@ msgstr "Réinitialiser le mot de passe"
 #: .\apps\accounts\templates\accounts\password\password_reset_confirm.html:51
 msgid ""
 "\n"
-"                    The password reset link was invalid, possibly because it has already been used.\n"
+"                    The password reset link was invalid, possibly because it "
+"has already been used.\n"
 "                    Please request a new password reset.\n"
 "                "
 msgstr ""
 "\n"
-"                    Le lien de réinitialisation du mot de passe n'était pas valide, peut-être parce qu'il a déjà été utilisé.\n"
-"                    Veuillez demander une nouvelle réinitialisation de mot de passe.\n"
+"                    Le lien de réinitialisation du mot de passe n'était pas "
+"valide, peut-être parce qu'il a déjà été utilisé.\n"
+"                    Veuillez demander une nouvelle réinitialisation de mot "
+"de passe.\n"
 "                "
 
 #: .\apps\accounts\templates\accounts\profile-public.html:16
@@ -243,7 +246,7 @@ msgstr "Mon profil"
 msgid "Create your account"
 msgstr "Créez votre compte"
 
-#: .\apps\accounts\templates\accounts\register.html:56
+#: .\apps\accounts\templates\accounts\register.html:58
 msgid "Already have an account?"
 msgstr "Vous avez déjà un compte?"
 
@@ -266,11 +269,14 @@ msgstr "Le mot de passe a été mis à jour!"
 #: .\apps\accounts\views.py:89
 msgid ""
 "We've emailed you the instruction for resetting your password. \n"
-"        If you didn't receive it, please make sure you've entered a valid address \n"
+"        If you didn't receive it, please make sure you've entered a valid "
+"address \n"
 "        and check your spam folder."
 msgstr ""
-"Nous vous avons envoyé par e-mail les instructions pour réinitialiser votre mot de passe. \n"
-"        Si vous ne l'avez pas reçu, assurez-vous d'avoir entré une adresse valide \n"
+"Nous vous avons envoyé par e-mail les instructions pour réinitialiser votre "
+"mot de passe. \n"
+"        Si vous ne l'avez pas reçu, assurez-vous d'avoir entré une adresse "
+"valide \n"
 "        et vérifiez votre dossier spam."
 
 #: .\apps\accounts\views.py:104

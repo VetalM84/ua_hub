@@ -8,25 +8,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 16:31+0300\n"
-"PO-Revision-Date: 2022-10-09 12:45+0000\n"
+"POT-Creation-Date: 2022-10-23 15:31+0300\n"
+"PO-Revision-Date: 2022-10-23 15:32+0000\n"
 "Last-Translator:   <vetalmit@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\apps\hub\forms.py:19 .\apps\hub\models.py:13
+#: .\apps\hub\forms.py:19 .\apps\hub\models.py:15
 msgid "Latitude"
 msgstr "Широта"
 
-#: .\apps\hub\forms.py:28 .\apps\hub\models.py:14
+#: .\apps\hub\forms.py:28 .\apps\hub\models.py:16
 msgid "Longitude"
 msgstr "Довгота"
 
@@ -34,78 +31,82 @@ msgstr "Довгота"
 msgid "Choose category"
 msgstr "Оберіть категорію"
 
-#: .\apps\hub\forms.py:48 .\apps\hub\forms.py:68
+#: .\apps\hub\forms.py:39 .\apps\hub\models.py:42
+msgid "Image"
+msgstr "Зображення"
+
+#: .\apps\hub\forms.py:53 .\apps\hub\forms.py:73
 msgid "Comment, not required"
 msgstr "Коментар, не обов'язково"
 
-#: .\apps\hub\forms.py:79
+#: .\apps\hub\forms.py:84
 msgid "Email"
 msgstr "Email"
 
-#: .\apps\hub\forms.py:84
+#: .\apps\hub\forms.py:89
 msgid "Message"
 msgstr "Повідомлення"
 
-#: .\apps\hub\models.py:16 .\apps\hub\models.py:104
-#: .\apps\hub\templates\hub\marker.html:44
+#: .\apps\hub\models.py:18 .\apps\hub\models.py:121
+#: .\apps\hub\templates\hub\marker.html:51
 msgid "Category"
 msgstr "Категорія"
 
-#: .\apps\hub\models.py:18 .\apps\hub\models.py:57 .\apps\hub\models.py:65
-#: .\apps\hub\templates\hub\marker.html:90
+#: .\apps\hub\models.py:20 .\apps\hub\models.py:78 .\apps\hub\models.py:86
+#: .\apps\hub\templates\hub\marker.html:108
 msgid "Comment"
 msgstr "Коментар"
 
-#: .\apps\hub\models.py:19 .\apps\hub\models.py:59
+#: .\apps\hub\models.py:21 .\apps\hub\models.py:80
 msgid "Date"
 msgstr "Дата"
 
-#: .\apps\hub\models.py:26 .\apps\hub\models.py:49
+#: .\apps\hub\models.py:28 .\apps\hub\models.py:69
 msgid "Owner"
 msgstr "Власник"
 
-#: .\apps\hub\models.py:29
+#: .\apps\hub\models.py:31
 msgid "Like"
 msgstr "Лайк"
 
-#: .\apps\hub\models.py:31
+#: .\apps\hub\models.py:33
 msgid "Likes count"
 msgstr "Кількість лайків"
 
-#: .\apps\hub\models.py:33
+#: .\apps\hub\models.py:35
 msgid "IP address"
 msgstr "IP адреса"
 
-#: .\apps\hub\models.py:41 .\apps\hub\models.py:54
-#: .\apps\hub\templates\hub\marker.html:7
+#: .\apps\hub\models.py:60 .\apps\hub\models.py:75
+#: .\apps\hub\templates\hub\marker.html:8
 msgid "Mark"
 msgstr "Мітка"
 
-#: .\apps\hub\models.py:42
+#: .\apps\hub\models.py:61
 msgid "Marks"
 msgstr "Мітки"
 
-#: .\apps\hub\models.py:66 .\apps\hub\templates\hub\marker.html:58
+#: .\apps\hub\models.py:87 .\apps\hub\templates\hub\marker.html:76
 msgid "Comments"
 msgstr "Коментарі"
 
-#: .\apps\hub\models.py:93 .\apps\hub\models.py:112
+#: .\apps\hub\models.py:110 .\apps\hub\models.py:129
 msgid "Name"
 msgstr "Назва"
 
-#: .\apps\hub\models.py:95 .\apps\hub\models.py:119
+#: .\apps\hub\models.py:112 .\apps\hub\models.py:136
 msgid "Icon"
 msgstr "Іконка"
 
-#: .\apps\hub\models.py:97
+#: .\apps\hub\models.py:114
 msgid "Color"
 msgstr "Колір"
 
-#: .\apps\hub\models.py:105
+#: .\apps\hub\models.py:122
 msgid "Categories"
 msgstr "Категорії"
 
-#: .\apps\hub\models.py:120
+#: .\apps\hub\models.py:137
 msgid "Icons"
 msgstr "Іконки"
 
@@ -120,20 +121,13 @@ msgstr "Про проєкт"
 #: .\apps\hub\templates\hub\about.html:12
 msgid ""
 "\n"
-"                Dear users! This project is made for Ukrainian refuges and "
-"for everyone else may find it helpfully as well.\n"
-"                The aim of this project is to help you to connect with other "
-"refuges in any country in a world,\n"
-"                find help and offer your help, find accommodation, services, "
-"job, etc.\n"
+"                Dear users! This project is made for Ukrainian refuges and for everyone else may find it helpfully as well.\n"
+"                The aim of this project is to help you to connect with other refuges in any country in a world,\n"
+"                find help and offer your help, find accommodation, services, job, etc.\n"
 "            "
 msgstr ""
 "\n"
-"Шановні користувачі! Цей проект створений для українських біженців і для "
-"всіх інших, хто також зможе знайти його корисним для себе. Мета цього "
-"проекту-допомогти вам встановити зв'язок з іншими біженцями в будь-якій "
-"країні світу, знайти допомогу і запропонувати свою допомогу, знайти житло, "
-"послуги, роботу і т.д.\n"
+"Шановні користувачі! Цей проект створений для українських біженців і для всіх інших, хто також зможе знайти його корисним для себе. Мета цього проекту-допомогти вам встановити зв'язок з іншими біженцями в будь-якій країні світу, знайти допомогу і запропонувати свою допомогу, знайти житло, послуги, роботу і т.д.\n"
 "            "
 
 #: .\apps\hub\templates\hub\about.html:18
@@ -143,20 +137,13 @@ msgstr "Як це працює"
 #: .\apps\hub\templates\hub\about.html:20
 msgid ""
 "\n"
-"                All you need to do - is to add a mark on a map with exact "
-"coordinates, choose mark category and type\n"
-"                a comment (if you like). If you want anybody to contact you, "
-"then leave you contacts in comment field.\n"
-"                If you want to edit or delete your marks, you need to sign "
-"up then.\n"
+"                All you need to do - is to add a mark on a map with exact coordinates, choose mark category and type\n"
+"                a comment (if you like). If you want anybody to contact you, then leave you contacts in comment field.\n"
+"                If you want to edit or delete your marks, you need to sign up then.\n"
 "            "
 msgstr ""
 "\n"
-"Все, що вам потрібно зробити - це додати мітку на мапу з точними "
-"координатами, вибрати категорію мітки і ввести коментар (по бажанню). Якщо "
-"ви хочете, щоб хтось зв'язався з вами, залиште свої контакти в полі для "
-"коментарів. Якщо ви хочете відредагувати або видалити свої позначки, вам "
-"необхідно зареєструватися.\n"
+"Все, що вам потрібно зробити - це додати мітку на мапу з точними координатами, вибрати категорію мітки і ввести коментар (по бажанню). Якщо ви хочете, щоб хтось зв'язався з вами, залиште свої контакти в полі для коментарів. Якщо ви хочете відредагувати або видалити свої позначки, вам необхідно зареєструватися.\n"
 "            "
 
 #: .\apps\hub\templates\hub\about.html:26
@@ -166,26 +153,21 @@ msgstr "Ваш обліковий запис"
 #: .\apps\hub\templates\hub\about.html:28
 msgid ""
 "\n"
-"                After registering you can update you account details with "
-"your image, first and last name,\n"
+"                After registering you can update you account details with your image, first and last name,\n"
 "                facebook profile link and any other contacts.\n"
 "            "
 msgstr ""
 "\n"
-"Після реєстрації ви можете оновити дані свого облікового запису, вказавши "
-"своє зображення, ім'я та прізвище, посилання на профіль facebook і будь-які "
-"інші контакти."
+"Після реєстрації ви можете оновити дані свого облікового запису, вказавши своє зображення, ім'я та прізвище, посилання на профіль facebook і будь-які інші контакти."
 
 #: .\apps\hub\templates\hub\about.html:34
 msgid ""
 "\n"
-"                You may manually delete your account at any time or send us "
-"a request.\n"
+"                You may manually delete your account at any time or send us a request.\n"
 "            "
 msgstr ""
 "\n"
-"Ви можете вручну видалити свій обліковий запис у будь-який час або надіслати "
-"нам запит.\n"
+"Ви можете вручну видалити свій обліковий запис у будь-який час або надіслати нам запит.\n"
 "            "
 
 #: .\apps\hub\templates\hub\about.html:38
@@ -195,13 +177,11 @@ msgstr "Запит функції"
 #: .\apps\hub\templates\hub\about.html:40
 msgid ""
 "\n"
-"                If you need to add a new category or request a new feature, "
-"please refer to Contact us page.\n"
+"                If you need to add a new category or request a new feature, please refer to Contact us page.\n"
 "            "
 msgstr ""
 "\n"
-"Якщо вам потрібно додати нову категорію або запросити нову функцію, будь "
-"ласка, заповніть форму на сторінці \"Зв'яжіться з нами\".\n"
+"Якщо вам потрібно додати нову категорію або запросити нову функцію, будь ласка, заповніть форму на сторінці \"Зв'яжіться з нами\".\n"
 "            "
 
 #: .\apps\hub\templates\hub\contact.html:6
@@ -216,7 +196,7 @@ msgstr ""
 "З усіх питань, що стосуються проекту, ви можете зв'язатися з розробником "
 "через форму нижче."
 
-#: .\apps\hub\templates\hub\contact.html:38
+#: .\apps\hub\templates\hub\contact.html:40
 msgid "Submit"
 msgstr "Відправити"
 
@@ -240,30 +220,18 @@ msgstr "Політика конфіденційності"
 #: .\apps\hub\templates\hub\gdrp.html:12
 msgid ""
 "\n"
-"                uahub.online website administration is obliged to maintain "
-"your privacy on the Internet.\n"
-"                We pay great attention to securing the data you provided to "
-"us.\n"
-"                Our privacy policy is based on the General Data Protection "
-"Regulation (GDPR) of the European Union.\n"
-"                The purposes, for which we collect your personal data are: "
-"improvement of our service,\n"
-"                communication with visitors to this site, presenting the "
-"information requested by the user,\n"
-"                providing services associated with the website’s "
-"specialization and for other actions listed below.\n"
+"                uahub.online website administration is obliged to maintain your privacy on the Internet.\n"
+"                We pay great attention to securing the data you provided to us.\n"
+"                Our privacy policy is based on the General Data Protection Regulation (GDPR) of the European Union.\n"
+"                The purposes, for which we collect your personal data are: improvement of our service,\n"
+"                communication with visitors to this site, presenting the information requested by the user,\n"
+"                providing services associated with the website’s specialization and for other actions listed below.\n"
 "            "
 msgstr ""
 "\n"
-"Адміністрація сайту uahub.online зобов'язана підтримувати вашу "
-"конфіденційність в Інтернеті.\n"
-"Ми приділяємо велику увагу захисту даних, які ви нам надали. Наша Політика "
-"конфіденційності заснована на загальному регламенті Європейського Союзу щодо "
-"захисту даних (GDPR). Цілями, для яких ми збираємо ваші персональні дані, є: "
-"поліпшення нашого сервісу,\n"
-"спілкування з відвідувачами цього сайту, представлення інформації, запитаної "
-"Користувачем, надання послуг, пов'язаних зі спеціалізацією веб-сайту, і для "
-"інших дій, перерахованих нижче."
+"Адміністрація сайту uahub.online зобов'язана підтримувати вашу конфіденційність в Інтернеті.\n"
+"Ми приділяємо велику увагу захисту даних, які ви нам надали. Наша Політика конфіденційності заснована на загальному регламенті Європейського Союзу щодо захисту даних (GDPR). Цілями, для яких ми збираємо ваші персональні дані, є: поліпшення нашого сервісу,\n"
+"спілкування з відвідувачами цього сайту, представлення інформації, запитаної Користувачем, надання послуг, пов'язаних зі спеціалізацією веб-сайту, і для інших дій, перерахованих нижче."
 
 #: .\apps\hub\templates\hub\gdrp.html:21
 msgid "Personal data storage and processing"
@@ -272,25 +240,15 @@ msgstr "Зберігання та обробка персональних дан
 #: .\apps\hub\templates\hub\gdrp.html:23
 msgid ""
 "\n"
-"                We collect and process your personal data only with your "
-"willing consent.\n"
-"                With your permission, we can collect and process the "
-"following data:\n"
-"                name and surname, e-mail address, phone number, home "
-"address, personal photos,\n"
-"                social media account information. Collection and processing "
-"of your personal\n"
-"                information is carried out in accordance with the laws of "
-"the European Union and Ukraine.\n"
+"                We collect and process your personal data only with your willing consent.\n"
+"                With your permission, we can collect and process the following data:\n"
+"                name and surname, e-mail address, phone number, home address, personal photos,\n"
+"                social media account information. Collection and processing of your personal\n"
+"                information is carried out in accordance with the laws of the European Union and Ukraine.\n"
 "            "
 msgstr ""
 "\n"
-"Ми збираємо і обробляємо ваші персональні дані тільки з вашої добровільної "
-"згоди. З вашого дозволу ми можемо збирати і обробляти наступні дані: ім'я та "
-"прізвище, адреса електронної пошти, номер телефону, домашня адреса, особисті "
-"фотографії, інформація про обліковий запис у соціальних мережах. Збір та "
-"обробка Ваших персональних обробка інформації здійснюється відповідно до "
-"законодавства Європейського Союзу та України."
+"Ми збираємо і обробляємо ваші персональні дані тільки з вашої добровільної згоди. З вашого дозволу ми можемо збирати і обробляти наступні дані: ім'я та прізвище, адреса електронної пошти, номер телефону, домашня адреса, особисті фотографії, інформація про обліковий запис у соціальних мережах. Збір та обробка Ваших персональних обробка інформації здійснюється відповідно до законодавства Європейського Союзу та України."
 
 #: .\apps\hub\templates\hub\gdrp.html:31
 msgid "Data storage, alteration, and removal"
@@ -299,35 +257,18 @@ msgstr "Зберігання, зміна і видалення даних"
 #: .\apps\hub\templates\hub\gdrp.html:33
 msgid ""
 "\n"
-"                The user, who has provided uahub.online with their personal "
-"data, has the right for their\n"
-"                alteration and removal, as well as the right to recall the "
-"agreement to data processing.\n"
-"                Time, during which your personal data will be stored is: "
-"time the personal data is used that is\n"
-"                necessary for the website’s main activity. After finishing "
-"with the processing of your personal data,\n"
-"                the website’s administration will permanently delete it. To "
-"access your personal data, you can\n"
-"                contact the administration on: uahub.online/accounts/"
-"profile/. We will be able to pass your data\n"
-"                to a third party only with your willing consent. If the data "
-"was transferred to a third party,\n"
-"                which is not associated with our organization, we cannot "
-"perform any changes to that data.\n"
+"                The user, who has provided uahub.online with their personal data, has the right for their\n"
+"                alteration and removal, as well as the right to recall the agreement to data processing.\n"
+"                Time, during which your personal data will be stored is: time the personal data is used that is\n"
+"                necessary for the website’s main activity. After finishing with the processing of your personal data,\n"
+"                the website’s administration will permanently delete it. To access your personal data, you can\n"
+"                contact the administration on: uahub.online/accounts/profile/. We will be able to pass your data\n"
+"                to a third party only with your willing consent. If the data was transferred to a third party,\n"
+"                which is not associated with our organization, we cannot perform any changes to that data.\n"
 "            "
 msgstr ""
 "\n"
-"Користувач, який надав uahub.online свої персональні дані, має право на їх "
-"зміна та видалення, а також право відкликати згоду на обробку даних. Час, "
-"протягом якого будуть зберігатися ваші персональні дані: час використання "
-"персональних даних, який необхідно для основної діяльності веб-сайту. Після "
-"завершення обробки Ваших персональних даних, Адміністрація сайту видалить "
-"його безповоротно. Щоб отримати доступ до ваших особистих даних, ви можете "
-"зв'яжіться з адміністрацією за адресою: uahub.online/account/profile/. Ми "
-"зможемо передати ваші дані третій стороні тільки з вашої добровільної згоди. "
-"Якщо дані були передані третій стороні, який не пов'язаний з нашою "
-"організацією, ми не можемо вносити будь-які зміни в ці дані."
+"Користувач, який надав uahub.online свої персональні дані, має право на їх зміна та видалення, а також право відкликати згоду на обробку даних. Час, протягом якого будуть зберігатися ваші персональні дані: час використання персональних даних, який необхідно для основної діяльності веб-сайту. Після завершення обробки Ваших персональних даних, Адміністрація сайту видалить його безповоротно. Щоб отримати доступ до ваших особистих даних, ви можете зв'яжіться з адміністрацією за адресою: uahub.online/account/profile/. Ми зможемо передати ваші дані третій стороні тільки з вашої добровільної згоди. Якщо дані були передані третій стороні, який не пов'язаний з нашою організацією, ми не можемо вносити будь-які зміни в ці дані."
 
 #: .\apps\hub\templates\hub\gdrp.html:44
 msgid "Processing of visiting technical data"
@@ -336,22 +277,14 @@ msgstr "Обробка технічних даних відвідування"
 #: .\apps\hub\templates\hub\gdrp.html:46
 msgid ""
 "\n"
-"                Records of your IP address, time of visit, browser settings, "
-"operational system and other\n"
-"                technical information is saved in the database when you "
-"visit uahub.online.\n"
-"                This data is necessary for the correct display of the "
-"website’s content.\n"
-"                It is impossible to identify the person of the visitor using "
-"this data.\n"
+"                Records of your IP address, time of visit, browser settings, operational system and other\n"
+"                technical information is saved in the database when you visit uahub.online.\n"
+"                This data is necessary for the correct display of the website’s content.\n"
+"                It is impossible to identify the person of the visitor using this data.\n"
 "            "
 msgstr ""
 "\n"
-"Записи вашого IP-адреси, часу відвідування, налаштувань браузера, "
-"операційної системи та інших технічна інформація зберігається в базі даних, "
-"коли ви відвідуєте uahub.online. Ці дані необхідні для правильного "
-"відображення вмісту веб-сайту. Неможливо ідентифікувати особу відвідувача, "
-"використовуючи ці дані.\n"
+"Записи вашого IP-адреси, часу відвідування, налаштувань браузера, операційної системи та інших технічна інформація зберігається в базі даних, коли ви відвідуєте uahub.online. Ці дані необхідні для правильного відображення вмісту веб-сайту. Неможливо ідентифікувати особу відвідувача, використовуючи ці дані.\n"
 "            "
 
 #: .\apps\hub\templates\hub\gdrp.html:53
@@ -361,20 +294,14 @@ msgstr "Особиста інформація дітей"
 #: .\apps\hub\templates\hub\gdrp.html:55
 msgid ""
 "\n"
-"                If you are a parent or a legal guardian of an underage "
-"child, and you know that the child has\n"
-"                provided us with their personal information without your "
-"consent, please contact us on:\n"
-"                uahub.online/accounts/profile/. It is forbidden to enter "
-"personal data of underage users without\n"
+"                If you are a parent or a legal guardian of an underage child, and you know that the child has\n"
+"                provided us with their personal information without your consent, please contact us on:\n"
+"                uahub.online/accounts/profile/. It is forbidden to enter personal data of underage users without\n"
 "                the agreement of parents or lawful guardians.\n"
 "            "
 msgstr ""
 "\n"
-"Якщо ви є батьком або законним опікуном неповнолітньої дитини, і ви знаєте, "
-"що у дитини є надали нам свою особисту інформацію без вашої згоди, будь "
-"ласка, зв'яжіться з нами по: uahub.online/accounts/profile/. Забороняється "
-"вводити персональні дані неповнолітніх користувачів без\n"
+"Якщо ви є батьком або законним опікуном неповнолітньої дитини, і ви знаєте, що у дитини є надали нам свою особисту інформацію без вашої згоди, будь ласка, зв'яжіться з нами по: uahub.online/accounts/profile/. Забороняється вводити персональні дані неповнолітніх користувачів без\n"
 "згода батьків або законних опікунів."
 
 #: .\apps\hub\templates\hub\gdrp.html:62
@@ -384,33 +311,18 @@ msgstr "Обробка файлів cookie"
 #: .\apps\hub\templates\hub\gdrp.html:64
 msgid ""
 "\n"
-"                We use cookie files for the correct display of the website’s "
-"content and for the convenience\n"
-"                of browsing uahub.online. They are small files, that are "
-"stored on your device.\n"
-"                They help the website to remember information about you, "
-"such as in which language you use\n"
-"                the website and which pages have you already opened. This "
-"information will be useful in the next visit.\n"
-"                Thanks to cookie files, the website’s browsing becomes much "
-"more convenient.\n"
-"                You can learn more about these files here. You can set up "
-"cookies reception and blocking\n"
-"                in your browser yourself. Inability to receive cookie files "
-"may limit the functionality of the website.\n"
+"                We use cookie files for the correct display of the website’s content and for the convenience\n"
+"                of browsing uahub.online. They are small files, that are stored on your device.\n"
+"                They help the website to remember information about you, such as in which language you use\n"
+"                the website and which pages have you already opened. This information will be useful in the next visit.\n"
+"                Thanks to cookie files, the website’s browsing becomes much more convenient.\n"
+"                You can learn more about these files here. You can set up cookies reception and blocking\n"
+"                in your browser yourself. Inability to receive cookie files may limit the functionality of the website.\n"
 "            "
 msgstr ""
 "\n"
-" Ми використовуємо файли cookie для правильного відображення вмісту веб-"
-"сайту і для зручності про перегляд uahub.online. Це невеликі файли, які "
-"зберігаються на вашому пристрої. Вони допомагають веб-сайту запам'ятовувати "
-"інформацію про вас, наприклад, якою мовою Ви використовуєте\n"
-"веб-сайт і які сторінки ви вже відкрили. Ця інформація буде корисна при "
-"наступному відвідуванні. Завдяки файлам cookie перегляд веб-сайту стає "
-"набагато зручнішим. Ви можете дізнатись більше про ці файли тут. Ви можете "
-"налаштувати прийом і блокування файлів cookie у вашому браузері самостійно. "
-"Неможливість отримання файлів cookie може обмежити функціональність веб-"
-"сайту."
+" Ми використовуємо файли cookie для правильного відображення вмісту веб-сайту і для зручності про перегляд uahub.online. Це невеликі файли, які зберігаються на вашому пристрої. Вони допомагають веб-сайту запам'ятовувати інформацію про вас, наприклад, якою мовою Ви використовуєте\n"
+"веб-сайт і які сторінки ви вже відкрили. Ця інформація буде корисна при наступному відвідуванні. Завдяки файлам cookie перегляд веб-сайту стає набагато зручнішим. Ви можете дізнатись більше про ці файли тут. Ви можете налаштувати прийом і блокування файлів cookie у вашому браузері самостійно. Неможливість отримання файлів cookie може обмежити функціональність веб-сайту."
 
 #: .\apps\hub\templates\hub\gdrp.html:74
 msgid "Processing of personal data by other services"
@@ -419,40 +331,19 @@ msgstr "Обробка персональних даних іншими серв
 #: .\apps\hub\templates\hub\gdrp.html:76
 msgid ""
 "\n"
-"                This website uses third-party online services, which perform "
-"data collecting, independent of us.\n"
-"                Such services include: Google Analytics , Facebook.com. Data "
-"collected by these services may be\n"
-"                provided to other services within those organizations. They "
-"can use the data for advertising\n"
-"                personalization of their own advertising network. You can "
-"learn about user agreements of those\n"
-"                organizations on their websites. You can also refuse their "
-"collection of your personal data.\n"
-"                For example, Google Analytics Opt-out Browser Add-on can be "
-"found in search services.\n"
-"                We do not pass any personal data to other organizations or "
-"services, which are not listed in\n"
-"                this privacy policy. As an exception, the collected data may "
-"be provided on a lawful request of\n"
-"                state authorities, that are authorized to request such "
-"information.\n"
+"                This website uses third-party online services, which perform data collecting, independent of us.\n"
+"                Such services include: Google Analytics , Facebook.com. Data collected by these services may be\n"
+"                provided to other services within those organizations. They can use the data for advertising\n"
+"                personalization of their own advertising network. You can learn about user agreements of those\n"
+"                organizations on their websites. You can also refuse their collection of your personal data.\n"
+"                For example, Google Analytics Opt-out Browser Add-on can be found in search services.\n"
+"                We do not pass any personal data to other organizations or services, which are not listed in\n"
+"                this privacy policy. As an exception, the collected data may be provided on a lawful request of\n"
+"                state authorities, that are authorized to request such information.\n"
 "            "
 msgstr ""
 "\n"
-"Цей веб-сайт використовує сторонні онлайн-сервіси, які здійснюють збір даних "
-"незалежно від нас. До таких сервісів належать: Google Analytics, Facebook."
-"com . Дані, зібрані цими сервісами, можуть бути надається іншим службам в "
-"рамках цих організацій. Вони можуть використовувати ці дані для реклами "
-"Персоналізація власної рекламної мережі. Ви можете ознайомитися з "
-"користувацькими угодами цих організацій на їх веб-сайтах. Ви також можете "
-"відмовитися від збору Ваших персональних даних. Наприклад, надбудову для "
-"браузера Google Analytics, що дозволяє відмовитися від використання Google "
-"Analytics, можна знайти в пошукових сервісах. Ми не передаємо жодних "
-"персональних даних іншим організаціям або службам, які не перераховані в "
-"справжня політика конфіденційності. Як виняток зібрані дані можуть бути "
-"надані за законним запитом державні органи, які уповноважені запитувати таку "
-"інформацію."
+"Цей веб-сайт використовує сторонні онлайн-сервіси, які здійснюють збір даних незалежно від нас. До таких сервісів належать: Google Analytics, Facebook.com . Дані, зібрані цими сервісами, можуть бути надається іншим службам в рамках цих організацій. Вони можуть використовувати ці дані для реклами Персоналізація власної рекламної мережі. Ви можете ознайомитися з користувацькими угодами цих організацій на їх веб-сайтах. Ви також можете відмовитися від збору Ваших персональних даних. Наприклад, надбудову для браузера Google Analytics, що дозволяє відмовитися від використання Google Analytics, можна знайти в пошукових сервісах. Ми не передаємо жодних персональних даних іншим організаціям або службам, які не перераховані в справжня політика конфіденційності. Як виняток зібрані дані можуть бути надані за законним запитом державні органи, які уповноважені запитувати таку інформацію."
 
 #: .\apps\hub\templates\hub\gdrp.html:88
 msgid "Links to other websites"
@@ -461,19 +352,13 @@ msgstr "Посилання на інші веб-сайти"
 #: .\apps\hub\templates\hub\gdrp.html:90
 msgid ""
 "\n"
-"                Our website uahub.online may contain links to other "
-"websites, which are not under our control.\n"
-"                We are not responsible for the content of these websites. We "
-"recommend you familiarize yourself\n"
-"                with the privacy policy of every website that you visit, if "
-"such policy exists.\n"
+"                Our website uahub.online may contain links to other websites, which are not under our control.\n"
+"                We are not responsible for the content of these websites. We recommend you familiarize yourself\n"
+"                with the privacy policy of every website that you visit, if such policy exists.\n"
 "            "
 msgstr ""
 "\n"
-"Наш веб-сайт uahub.online може містити посилання на інші веб-сайти, які не "
-"знаходяться під нашим контролем. Ми не несемо відповідальності за зміст цих "
-"веб-сайтів. Ми рекомендуємо вам ознайомитися з політикою конфіденційності "
-"кожного веб-сайту, який ви відвідуєте, якщо така політика існує."
+"Наш веб-сайт uahub.online може містити посилання на інші веб-сайти, які не знаходяться під нашим контролем. Ми не несемо відповідальності за зміст цих веб-сайтів. Ми рекомендуємо вам ознайомитися з політикою конфіденційності кожного веб-сайту, який ви відвідуєте, якщо така політика існує."
 
 #: .\apps\hub\templates\hub\gdrp.html:96
 msgid "Changes to the privacy policy"
@@ -482,29 +367,16 @@ msgstr "Зміни в політиці конфіденційності"
 #: .\apps\hub\templates\hub\gdrp.html:98
 msgid ""
 "\n"
-"                From time to time, our website uahub.online may update our "
-"privacy policy.\n"
-"                We inform about any changes to the privacy policy, placed on "
-"this webpage.\n"
-"                We are monitoring any changes in legislation, which is "
-"related to personal data in European Union\n"
-"                and Ukraine. If you have entered any of your personal data "
-"on our website, we will inform you\n"
-"                about the changes in our privacy policy. If your personal "
-"data, and more specifically,\n"
-"                your contact information was entered incorrectly, we will "
-"not be able to contact you.\n"
+"                From time to time, our website uahub.online may update our privacy policy.\n"
+"                We inform about any changes to the privacy policy, placed on this webpage.\n"
+"                We are monitoring any changes in legislation, which is related to personal data in European Union\n"
+"                and Ukraine. If you have entered any of your personal data on our website, we will inform you\n"
+"                about the changes in our privacy policy. If your personal data, and more specifically,\n"
+"                your contact information was entered incorrectly, we will not be able to contact you.\n"
 "            "
 msgstr ""
 "\n"
-"Час від часу наш веб-сайт uahub.online може оновлювати нашу Політику "
-"конфіденційності. Ми повідомляємо про будь-які зміни в політиці "
-"конфіденційності, розміщеній на цій веб-сторінці. Ми відстежуємо будь-які "
-"зміни в законодавстві, яке пов'язане з персональними даними в Європейському "
-"Союзі і Україні. Якщо ви ввели будь-які свої персональні дані на нашому веб "
-"- сайті, ми повідомимо вам про зміни в нашій Політиці конфіденційності. Якщо "
-"ваші персональні дані, і більш конкретно, ваша контактна інформація була "
-"введена неправильно, ми не зможемо зв'язатися з вами."
+"Час від часу наш веб-сайт uahub.online може оновлювати нашу Політику конфіденційності. Ми повідомляємо про будь-які зміни в політиці конфіденційності, розміщеній на цій веб-сторінці. Ми відстежуємо будь-які зміни в законодавстві, яке пов'язане з персональними даними в Європейському Союзі і Україні. Якщо ви ввели будь-які свої персональні дані на нашому веб - сайті, ми повідомимо вам про зміни в нашій Політиці конфіденційності. Якщо ваші персональні дані, і більш конкретно, ваша контактна інформація була введена неправильно, ми не зможемо зв'язатися з вами."
 
 #: .\apps\hub\templates\hub\gdrp.html:107
 msgid "Feedback and final clauses"
@@ -513,47 +385,46 @@ msgstr "Зворотній зв'язок і кінцеві положення"
 #: .\apps\hub\templates\hub\gdrp.html:109
 msgid ""
 "\n"
-"                You can contact the administration of uahub.online regarding "
-"any questions related to privacy\n"
-"                policy on: uahub.online/accounts/profile/, or by filling a "
-"contact form specified in a\n"
-"                corresponding section of this website. If you do not agree "
-"with this privacy policy,\n"
-"                you cannot use the services of uahub.online. In this case "
-"you should avoid visiting our website.\n"
+"                You can contact the administration of uahub.online regarding any questions related to privacy\n"
+"                policy on: uahub.online/accounts/profile/, or by filling a contact form specified in a\n"
+"                corresponding section of this website. If you do not agree with this privacy policy,\n"
+"                you cannot use the services of uahub.online. In this case you should avoid visiting our website.\n"
 "            "
 msgstr ""
 "\n"
-"Ви можете зв'язатися з адміністрацією uahub.online з будь-яких питань, "
-"пов'язаних з конфіденційністю політика на: uahub.online/accounts/profile/, "
-"або заповнивши контактну форму, зазначену в відповідний розділ цього веб-"
-"сайту. Якщо ви не згодні з цією Політикою конфіденційності, ви не можете "
-"користуватися послугами uahub.online. У цьому випадку вам слід уникати "
-"відвідування нашого веб-сайту."
+"Ви можете зв'язатися з адміністрацією uahub.online з будь-яких питань, пов'язаних з конфіденційністю політика на: uahub.online/accounts/profile/, або заповнивши контактну форму, зазначену в відповідний розділ цього веб-сайту. Якщо ви не згодні з цією Політикою конфіденційності, ви не можете користуватися послугами uahub.online. У цьому випадку вам слід уникати відвідування нашого веб-сайту."
 
 #: .\apps\hub\templates\hub\index.html:16
-#: .\apps\hub\templates\hub\index.html:50
+#: .\apps\hub\templates\hub\index.html:55
 msgid "Add mark"
 msgstr "Додати мітку"
 
 #: .\apps\hub\templates\hub\index.html:18
-#: .\apps\hub\templates\hub\index.html:37
+#: .\apps\hub\templates\hub\index.html:43
 msgid "Close"
 msgstr "Закрити"
 
-#: .\apps\hub\templates\hub\index.html:38
+#: .\apps\hub\templates\hub\index.html:44
 msgid "Add"
 msgstr "Додати"
 
-#: .\apps\hub\templates\hub\marker.html:40
+#: .\apps\hub\templates\hub\marker.html:47
 msgid "Anonymous user"
 msgstr "Анонімний користувач"
 
-#: .\apps\hub\templates\hub\marker.html:54
+#: .\apps\hub\templates\hub\marker.html:62
+msgid "Open on map"
+msgstr "Відкрити на мапі"
+
+#: .\apps\hub\templates\hub\marker.html:68
+msgid "Get directions"
+msgstr "Прокласти маршрут"
+
+#: .\apps\hub\templates\hub\marker.html:72
 msgid "No data"
 msgstr "Немає даних"
 
-#: .\apps\hub\templates\hub\marker.html:95
+#: .\apps\hub\templates\hub\marker.html:113
 msgid "Post comment"
 msgstr "Додати коментар"
 
@@ -590,10 +461,6 @@ msgstr "Моє місце розташування"
 msgid "Marker added successfully!"
 msgstr "Мітка успішно додана!"
 
-#: .\apps\hub\views.py:130
-msgid "Error. Check coordinates."
-msgstr "Помилка. Перевірте координати."
-
 #: .\apps\hub\views.py:178
 msgid "Email sent successfully!"
 msgstr "Лист відправлено успішно!"
@@ -614,30 +481,34 @@ msgstr "Будь ласка, виправте помилки."
 msgid "Access forbidden!"
 msgstr "Доступ заборонено!"
 
-#: .\apps\hub\views.py:321
+#: .\apps\hub\views.py:326
 msgid "Invalid header found."
 msgstr "Знайдено недійсний заголовок листа."
 
-#: .\apps\hub\views.py:369
+#: .\apps\hub\views.py:374
 msgid "Comment has added. Reload page."
 msgstr "Коментар додано. Оновіть сторінку"
 
-#: .\apps\hub\views.py:389
+#: .\apps\hub\views.py:394
 msgid "Error! Enter at least 10 symbols."
 msgstr "Помилка. Має бути більше 10 символів"
 
-#: .\apps\hub\views.py:392
+#: .\apps\hub\views.py:397
 msgid "Sign in to leave a comment"
 msgstr "Увійдіть щоб додати коментар"
 
-#: .\apps\hub\views.py:403
+#: .\apps\hub\views.py:408
 msgid "You've deleted the mark. Reload page."
 msgstr "Коментар видалено. Оновіть сторінку"
 
-#: .\apps\hub\views.py:405
+#: .\apps\hub\views.py:410
 msgid "Error!"
 msgstr "Помилка!"
 
-#: .\apps\hub\views.py:407
+#: .\apps\hub\views.py:412
 msgid "Sign in to delete a comment"
 msgstr "Увійдіть щоб видалити коментар"
+
+#, fuzzy
+#~ msgid "Open coordinates"
+#~ msgstr "Помилка. Перевірте координати."
