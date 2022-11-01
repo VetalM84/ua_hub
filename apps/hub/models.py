@@ -17,7 +17,7 @@ class Marker(models.Model):
     category = models.ForeignKey(
         to="Category", on_delete=models.PROTECT, verbose_name=_("Category")
     )
-    comment = models.CharField(max_length=200, blank=True, verbose_name=_("Comment"))
+    comment = models.TextField(max_length=2000, blank=True, verbose_name=_("Comment"))
     created_at = models.DateTimeField(default=now, verbose_name=_("Date"))
     owner = models.ForeignKey(
         to=User,

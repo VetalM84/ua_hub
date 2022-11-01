@@ -48,8 +48,8 @@ class AddMarkerForm(forms.ModelForm):
             "comment": forms.Textarea(
                 attrs={
                     "class": "form-control",
-                    "rows": 3,
-                    "max-length": 200,
+                    "rows": 4,
+                    "max-length": 2000,
                     "placeholder": _("Comment, not required"),
                 }
             ),
@@ -69,7 +69,7 @@ class UpdateMarkerForm(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "rows": 5,
-                    "max-length": 200,
+                    "max-length": 2000,
                     "placeholder": _("Comment, not required"),
                 }
             ),
@@ -92,7 +92,6 @@ class ContactForm(forms.Form):
             attrs={
                 "class": "form-control",
                 "rows": 5,
-                "max-length": 2000,
             }
         ),
     )

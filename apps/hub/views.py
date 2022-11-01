@@ -244,7 +244,7 @@ def edit_marker(request, marker_id):
 
 def popup_html(marker):
     """Return HTML template for Marker popup window on a map."""
-    comment = marker.comment
+    comment = marker.comment[:160]
     # format UTC timestamp from DB to local user's short datetime format with appropriate timezone
     created_at = date_format(
         marker.created_at.astimezone(), format="SHORT_DATETIME_FORMAT", use_l10n=True
@@ -289,7 +289,7 @@ def popup_html(marker):
             </div>
             {owner_data}
             <p style="font-size:15px; margin:10px 0;">
-                {comment}
+                {comment}{"..." if len(comment) >= 160 else ""}
             </p>
             <div class="d-flex">
                 <div class="flex-fill text-start fw-bold">{created_at}</div>
