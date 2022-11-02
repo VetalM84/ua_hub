@@ -26,11 +26,17 @@
                                 {{ field }}
                             </div>
                         {% endfor %}
-                        {% for field in form.visible_fields|slice:"2:4" %}
-                            <div class="col-12">
-                                {{ field }}
-                            </div>
-                        {% endfor %}
+                        <div class="col-12">
+                            {{ form.comment }}
+                        </div>
+                        <div class="col-md-7">
+                            {{ form.category.label_tag }}
+                            {{ form.category }}
+                        </div>
+                        <div class="col-md-5">
+                            {{ form.valid_till.label_tag }}
+                            {{ form.valid_till }}
+                        </div>
                         <div class="col-12">
                             {{ form.image.label_tag }}
                             {{ form.image }}

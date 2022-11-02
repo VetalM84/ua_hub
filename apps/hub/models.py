@@ -34,6 +34,7 @@ class Marker(models.Model):
     ip = models.GenericIPAddressField(
         max_length=128, null=True, verbose_name=_("IP address")
     )
+    valid_till = models.DateField(blank=True, null=True, verbose_name=_("Valid till"))
     image = ProcessedImageField(
         upload_to="marker/",
         blank=True,

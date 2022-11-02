@@ -37,7 +37,7 @@ class IconAdmin(admin.ModelAdmin):
 class MarkerAdmin(admin.ModelAdmin):
     """Marker model views on backend."""
 
-    list_display = ("id", "owner", "category", "marker_thumbnail", "created_at")
+    list_display = ("id", "owner", "category", "valid_till", "marker_thumbnail", "created_at")
     list_display_links = ("id", "category", "owner")
     list_filter = ("category",)
     ordering = ("created_at", "category")

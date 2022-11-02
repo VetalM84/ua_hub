@@ -1,5 +1,5 @@
 """Hub app views."""
-
+import datetime
 import os
 from typing import List
 
@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
 from django.core.mail import BadHeaderError, send_mail
 from django.core.paginator import Paginator
-from django.db.models import Count, Prefetch
+from django.db.models import Count, Prefetch, Q
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.template.loader import render_to_string
@@ -78,12 +78,16 @@ def home(request):
     # get or set cache for markers queryset
     markers = cache.get_or_set(
         "markers_frontend",
-        Marker.objects.prefetch_related(
+        Marker.objects.filter(
+            Q(valid_till__isnull=True) | Q(valid_till__gt=datetime.date.today())
+        )
+        .prefetch_related(
             Prefetch(
                 "comments",
                 queryset=Comment.objects.annotate(cmns_cnt=Count("marker__comment")),
             )
-        ).select_related("category", "owner", "category__icon"),
+        )
+        .select_related("category", "owner", "category__icon"),
         timeout=3600,
     )
 

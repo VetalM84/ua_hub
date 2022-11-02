@@ -34,6 +34,11 @@ class AddMarkerForm(forms.ModelForm):
         empty_label=_("Choose category"),
         widget=forms.Select(attrs={"class": "form-select"}),
     )
+    valid_till = forms.DateField(
+        required=False,
+        label=_("Valid till"),
+        widget=forms.DateInput(attrs={"type": "date", "class": "form-control"}),
+    )
     image = forms.ImageField(
         required=False,
         label=_("Image"),
@@ -43,7 +48,7 @@ class AddMarkerForm(forms.ModelForm):
 
     class Meta:
         model = Marker
-        fields = ["latitude", "longitude", "comment", "category", "image"]
+        fields = ["latitude", "longitude", "comment", "category", "valid_till", "image"]
         widgets = {
             "comment": forms.Textarea(
                 attrs={
