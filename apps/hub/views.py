@@ -42,10 +42,6 @@ def home(request):
     map_container = branca.element.Figure(height="100%")
     map_container.add_child(current_map)
 
-    # Fullscreen map button
-    Fullscreen(
-        position="topleft", title=_("Fullscreen"), title_cancel=_("Exit")
-    ).add_to(current_map)
     # A button to define user's location
     LocateControl(
         auto_start=False, position="topleft", strings={"title": _("My location")}
