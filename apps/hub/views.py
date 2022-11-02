@@ -19,7 +19,7 @@ from django.utils.html import strip_tags
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
 from folium.features import LatLngPopup
-from folium.plugins import Fullscreen, LocateControl
+from folium.plugins import Fullscreen, LocateControl, MarkerCluster
 from jinja2 import Template
 
 from apps.accounts.models import User
@@ -90,12 +90,12 @@ def home(request):
     # create a list of Layers from markers categories
     layers_list = []
     for item in Category.objects.all().only("name"):
-        layers_list.append(folium.FeatureGroup(name=item.name).add_to(current_map))
+        layers_list.append(MarkerCluster(name=item.name).add_to(current_map))
 
     # add marker to appropriate layer
     for layer in layers_list:
         for marker in markers:
-            if marker.category.name == layer.tile_name:
+            if marker.category.name == layer.layer_name:
                 folium.Marker(
                     location=(marker.latitude, marker.longitude),
                     popup=folium.Popup(
