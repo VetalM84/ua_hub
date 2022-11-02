@@ -39,6 +39,16 @@
                                 <div class="time">
                                     <p>{{ marker.created_at|to_user_tz_short }}</p>
                                 </div>
+                                {% if marker.valid_till %}
+                                    <div class="time">
+                                        {% now "Y-m-d" as date_now %}
+                                        {% if marker.valid_till|date:"Y-m-d" <= date_now %}
+                                            <p class="p-1 bg-danger rounded" style="color: white;">{% translate "Expired" %}</p>
+                                        {% else %}
+                                            <p>{% translate "Time left" %}: {{ marker.valid_till|timeuntil }}</p>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
                                 <div class="marker-controls">
                                     <a href="{% url "edit_marker" marker.pk %}" id="edit-{{ marker.pk }}" type="button" class="border-0 btn btn-outline-success">
                                         <i class="bi bi-pencil-square"></i>
