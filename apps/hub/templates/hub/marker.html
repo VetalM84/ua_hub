@@ -57,6 +57,23 @@
                             {{ marker.created_at|to_user_tz_short }}
                         </div>
                     </div>
+                    {% if marker.valid_till %}
+                        <div class="d-flex mt-2 fw-bold" style="font-size: small">
+                            <div class="flex-fill text-end me-2">
+                                <span>{% translate "Valid till" %}: </span>
+                                <span>{{ marker.valid_till }}</span>
+                            </div>
+                            <div class="flex-fill text-start ms-2">
+                                {% now "Y-m-d" as date_now %}
+                                {% if marker.valid_till|date:"Y-m-d" <= date_now %}
+                                    <span class="p-1 bg-danger rounded" style="color: white;">{% translate "Expired" %}</span>
+                                {% else %}
+                                    <span>{% translate "Time left" %}: </span>
+                                    <span>{{ marker.valid_till|timeuntil }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
                     <div class="d-flex mt-2" style="font-size: small;">
                         <div class="flex-fill text-end me-2">
                             {% translate "Open on Google map" %}:
