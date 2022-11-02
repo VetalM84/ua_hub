@@ -14,8 +14,17 @@
                     </div>
                     <form method="POST" id="marker_update_form" name="marker_update_form">
                         {% csrf_token %}
-                        <div class="row mt-3">
-                            {{ form.as_p }}
+                        {% for field in form.visible_fields|slice:":4" %}
+                            <div class="col-12">
+                                {{ field.label_tag }}
+                                {{ field }}
+                            </div>
+                        {%  endfor %}
+                        <div class="col-12">
+                            {{ form.valid_till.label_tag }}
+                            <div class="input-group">
+                                {{ form.valid_till }}
+                            </div>
                         </div>
                         <div class="mt-4 text-center">
                             <button class="btn btn-primary profile-button" type="submit">

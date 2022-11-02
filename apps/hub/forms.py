@@ -66,7 +66,7 @@ class UpdateMarkerForm(forms.ModelForm):
 
     class Meta:
         model = Marker
-        fields = ["latitude", "longitude", "comment", "category"]
+        fields = ["latitude", "longitude", "comment", "category", "valid_till"]
         widgets = {
             "latitude": forms.TextInput(attrs={"class": "form-control"}),
             "longitude": forms.TextInput(attrs={"class": "form-control"}),
@@ -79,6 +79,7 @@ class UpdateMarkerForm(forms.ModelForm):
                 }
             ),
             "category": forms.Select(attrs={"class": "form-select"}),
+            "valid_till": forms.SelectDateWidget(attrs={"class": "form-select"}),
         }
 
 
