@@ -87,9 +87,14 @@ def home(request):
         timeout=3600,
     )
 
+    categories_names = cache.get_or_set(
+        "categories_names_frontend",
+        Category.objects.all().only("name"),
+        timeout=3600,
+    )
     # create a list of Layers from markers categories
     layers_list = []
-    for item in Category.objects.all().only("name"):
+    for item in categories_names:
         layers_list.append(MarkerCluster(name=item.name).add_to(current_map))
 
     # add marker to appropriate layer
