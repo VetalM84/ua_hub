@@ -267,6 +267,10 @@ def popup_html(marker):
     if marker.image:
         image_data = f"""<i class="fa-regular fa-image p-1"></i>"""
 
+    valid_till_data = ""
+    if marker.valid_till:
+        valid_till_data = f"""<i class="fa-regular fa-clock p-1"></i>"""
+
     owner = marker.owner
     owner_data = ""
     if owner:
@@ -290,6 +294,7 @@ def popup_html(marker):
                 <div>{comments_data}</div>
                 <div>{likes_data}</div>
                 <div>{image_data}</div>
+                <div>{valid_till_data}</div>
             </div>
             {owner_data}
             <p style="font-size:15px; margin:10px 0;">
