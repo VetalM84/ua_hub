@@ -59,12 +59,12 @@
                     </div>
                     <div class="d-flex mt-2" style="font-size: small;">
                         <div class="flex-fill text-end me-2">
-                            {% translate "Open on map" %}:
-                            <a href="https://www.google.com/maps/@{{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }},12z" target="_blank">
+                            {% translate "Open on Google map" %}:
+                            <a href="https://www.google.com/maps/@{{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }},12z" target="_blank" rel="nofollow">
                                 {{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }}</a>
                         </div>
                         <div class="flex-fill text-start ms-2">
-                            <a href="https://maps.google.com?saddr=Current+Location&daddr={{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }}" target="_blank">
+                            <a href="https://maps.google.com?saddr=Current+Location&daddr={{ marker.latitude|unlocalize }},{{ marker.longitude|unlocalize }}" target="_blank" rel="nofollow">
                                 {% translate "Get directions" %}</a>
                         </div>
                     </div>
