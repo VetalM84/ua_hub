@@ -19,7 +19,7 @@ from django.utils.html import strip_tags
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
 from folium.features import LatLngPopup
-from folium.plugins import Fullscreen, LocateControl, MarkerCluster
+from folium.plugins import FeatureGroupSubGroup, LocateControl, MarkerCluster
 from jinja2 import Template
 
 from apps.accounts.models import User
@@ -92,10 +92,16 @@ def home(request):
         Category.objects.all().only("name"),
         timeout=3600,
     )
+
+    cluster = MarkerCluster(name="MarkerCluster", control=False)
+    current_map.add_child(cluster)
+
     # create a list of Layers from markers categories
     layers_list = []
     for item in categories_names:
-        layers_list.append(MarkerCluster(name=item.name).add_to(current_map))
+        feature_sub_group = FeatureGroupSubGroup(group=cluster, name=item.name)
+        layers_list.append(feature_sub_group)
+        current_map.add_child(feature_sub_group)
 
     # add marker to appropriate layer
     for layer in layers_list:
