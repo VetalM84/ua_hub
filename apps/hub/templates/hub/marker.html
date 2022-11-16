@@ -5,6 +5,7 @@
 
     <link href="{% static "css/markers.css" %}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block content %}
@@ -100,8 +101,14 @@
                                 <div>
                                     <span class="text-muted" style="font-size: small">{{ item.created_at|to_user_tz_short }}</span>
                                     {% if item.owner.pk == request.user.id %}
-                                        <button class="btn btn-link btn-sm text-muted delete-comment-btn" data-id="{{ item.pk }}"
-                                                value="{{ item.pk }}" type="button"><i class="bi bi-trash-fill"></i></button>
+		                                    <!-- HTMX request-->
+                                        <button type="button" class="btn btn-link btn-sm text-muted delete-comment-btn"
+	                                        hx-post="{% url "delete_comment" item.pk %}"
+	                                        hx-target="#div-comment-{{ item.pk }}"
+	                                        hx-swap="outerHTML">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                        <!-- HTMX END-->
                                     {% endif %}
                                 </div>
                                 <div class="m-b-5 m-t-10" style="font-size: smaller">{{ item.comment_text }}</div>
@@ -132,6 +139,10 @@
         </section>
     </div>
     <script type="text/javascript">
+	    document.body.addEventListener('htmx:configRequest', (event) => {
+	    event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+	    });
+
         {#Add like#}
         $(document).ready(function () {
             $(document).on('click', '.bi-heart-fill', function (e) {
@@ -177,31 +188,6 @@
                     }
                 });
             })
-            {#Delete comment#}
-            $(document).on('click', '.delete-comment-btn', function (e) {
-                var id = $(this).attr('data-id');
-                e.preventDefault();
-                $.ajax({
-                    type: 'POST',
-                    url: '{% url "delete_comment" %}',
-                    data: {
-                        comment_id: id,
-                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-                        action: 'post'
-                    },
-                    success: function (json) {
-                        var div_el = document.getElementById("div-comment-" + id);
-                        div_el.innerHTML = '';
-                        var p = document.createElement("p").innerHTML = json['message']
-                        div_el.append(p)
-                        var cmnts_cnt = document.getElementById("comments-count-" + {{ marker.pk }});
-                        cmnts_cnt.innerHTML = Number(cmnts_cnt.innerHTML) - 1;
-                    },
-                    error: function (xhr, errmsg, err) {
-                    }
-                });
-            })
-
         })
     </script>
 {% endblock %}

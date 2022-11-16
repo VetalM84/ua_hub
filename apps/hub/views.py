@@ -8,6 +8,7 @@ import folium
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+from django.core.exceptions import ValidationError
 from django.core.mail import BadHeaderError, send_mail
 from django.core.paginator import Paginator
 from django.db.models import Count, Prefetch, Q
@@ -419,17 +420,13 @@ def add_comment(request):
         return JsonResponse({"result": result, "message": message})
 
 
+@login_required
 @require_http_methods(["POST"])
-def delete_comment(request):
+def delete_comment(request, comment_id):
     """Delete comment from Marker."""
-    if request.POST.get("action") == "post":
-        comment_id = int(request.POST.get("comment_id"))
-        comment = get_object_or_404(Comment, id=comment_id)
-        if request.user.is_authenticated and comment.owner == request.user:
-            comment.delete()
-            message = _("You've deleted the mark. Reload page.")
-        else:
-            message = _("Error!")
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if comment.owner == request.user:
+        comment.delete()
+        return HttpResponse()
     else:
-        message = _("Sign in to delete a comment")
-    return JsonResponse({"message": message})
+        raise ValidationError("Access forbidden!")

@@ -27,11 +27,11 @@ urlpatterns = [
     path("marker/<int:marker_id>/", get_marker, name="get_marker"),
     path("like/", like, name="like"),
     path("add_comment/", add_comment, name="add_comment"),
-    path("delete_comment/", delete_comment, name="delete_comment"),
 ]
 
 htmx_patterns = [
     path("delete_marker/<int:marker_id>/", delete_marker, name="delete_marker"),
+    path("delete_comment/<int:comment_id>/", delete_comment, name="delete_comment"),
 ]
 
 urlpatterns += htmx_patterns
