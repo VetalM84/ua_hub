@@ -7,6 +7,7 @@ from apps.hub.views import (
     add_comment,
     contact,
     delete_comment,
+    delete_marker,
     edit_marker,
     get_marker,
     home,
@@ -28,3 +29,9 @@ urlpatterns = [
     path("add_comment/", add_comment, name="add_comment"),
     path("delete_comment/", delete_comment, name="delete_comment"),
 ]
+
+htmx_patterns = [
+    path("delete_marker/<int:marker_id>/", delete_marker, name="delete_marker"),
+]
+
+urlpatterns += htmx_patterns

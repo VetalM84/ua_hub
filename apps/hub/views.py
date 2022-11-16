@@ -18,6 +18,7 @@ from django.utils.formats import date_format
 from django.utils.html import strip_tags
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
+from django.views.decorators.http import require_http_methods
 from folium.features import LatLngPopup
 from folium.plugins import FeatureGroupSubGroup, LocateControl, MarkerCluster
 from jinja2 import Template
@@ -199,9 +200,21 @@ def contact(request):
 
 
 @login_required
-def user_markers(request):
-    """User markers list page with Delete functionality on POST."""
+@require_http_methods(["POST"])
+def delete_marker(request, marker_id):
+    """Delete marker by HTMX request."""
+    marker = get_object_or_404(Marker, pk=marker_id)
+    if request.user != marker.owner:
+        messages.error(request, _("Access forbidden!"), extra_tags="danger")
+        raise ValueError(_("Access forbidden!"))
+    marker.delete()
+    messages.success(request, _("The marker has been deleted!"), extra_tags="success")
+    return HttpResponse()
 
+
+@login_required
+def user_markers(request):
+    """User markers list page."""
     markers = cache.get_or_set(
         f"markers_user_{request.user.pk}_{get_language()}",
         Marker.objects.filter(owner_id=request.user.id)
@@ -209,14 +222,6 @@ def user_markers(request):
         .select_related(),
         3600,
     )
-    if request.method == "POST":
-        get_object_or_404(
-            Marker, owner=request.user, pk=request.POST.get("delete")
-        ).delete()
-        messages.success(
-            request, _("The marker has been deleted!"), extra_tags="success"
-        )
-        return redirect("markers")
 
     paginator = Paginator(markers, 10)
     page_number = request.GET.get("page", 1)
@@ -414,6 +419,7 @@ def add_comment(request):
         return JsonResponse({"result": result, "message": message})
 
 
+@require_http_methods(["POST"])
 def delete_comment(request):
     """Delete comment from Marker."""
     if request.POST.get("action") == "post":
