@@ -1,5 +1,5 @@
-Django~=4.1.1
-requests~=2.28.1
+Django~=4.2.7
+requests~=2.31.0
 # use tweaked local copy of folium
 ./distr/folium-0.12.1.post1.tar.gz
 branca~=0.5.0
