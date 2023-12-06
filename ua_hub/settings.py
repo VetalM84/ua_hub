@@ -36,7 +36,7 @@ SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', True)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'uahub.online', 'www.uahub.online',
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'uahub.space', 'www.uahub.space',
                  'uahub.eskimo.com.ua', 'www.uahub.eskimo.com.ua']
 
 # Application definition

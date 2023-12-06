@@ -1,8 +1,8 @@
-## UAHub.online
+## UAHub.space
 
 Project for ukrainian citizens and refuges to find each other, find help in any country in the world.
 
-See it in action https://uahub.online/
+See it in action https://uahub.space/
 
 ### Setup
 
